@@ -1,3 +1,5 @@
 {
-  "mappings": ["/content/eds-warmup/:/"  ]
+  "mappings": [
+    "/content/eds-warmup/:/"
+  ]
 }
