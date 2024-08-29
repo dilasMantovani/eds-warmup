@@ -19,11 +19,11 @@
     ]
   },
   {
-    "id": "timeline",
-    "components": ["timelineItem"]
+    "id": "timelineComponent",
+    "components": ["timelineComponentItem"]
   },
   {
-    "id": "timelineItem",
+    "id": "timelineComponentItem",
     "components": [
       "text",
       "image",
@@ -43,7 +43,7 @@
       "columns",
       "quote",
       "carousel",
-      "timeline"
+      "timelineComponent"
     ]
   },
   {

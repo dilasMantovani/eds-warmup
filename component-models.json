@@ -130,7 +130,7 @@
     ]
   },
   {
-    "id": "timeline",
+    "id": "timelineComponent",
     "fields": [
       {
         "component": "text",
@@ -149,7 +149,7 @@
     ]
   },
   {
-    "id": "timelineItem",
+    "id": "timelineComponentItem",
     "fields": [
       {
         "component": "richtext",
