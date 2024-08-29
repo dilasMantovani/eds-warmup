@@ -169,36 +169,6 @@
               }
             }
           }
-        },
-        {
-          "title": "TimelineComponent",
-          "id": "timelineComponent",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "TimelineComponentItem",
-                  "model": "timelineComponentItem"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "TimelineComponentItem",
-          "id": "timelineComponentItem",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "TimelineComponentItem",
-                  "model": "timelineComponentItem"
-                }
-              }
-            }
-          }
         }
       ]
     }

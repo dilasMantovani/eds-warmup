@@ -19,19 +19,6 @@
     ]
   },
   {
-    "id": "timelineComponent",
-    "components": ["timelineComponentItem"]
-  },
-  {
-    "id": "timelineComponentItem",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
     "id": "section",
     "components": [
       "text",
@@ -42,8 +29,7 @@
       "cards",
       "columns",
       "quote",
-      "carousel",
-      "timelineComponent"
+      "carousel"
     ]
   },
   {
