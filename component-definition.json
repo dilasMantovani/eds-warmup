@@ -179,7 +179,8 @@
                 "resourceType": "core/franklin/components/columns/v1/columns",
                 "template": {
                   "columns": "1",
-                  "rows": "2"
+                  "rows": "2",
+                  "filter":"columns"
                 }
               }
             }
