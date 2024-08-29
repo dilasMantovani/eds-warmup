@@ -20,7 +20,7 @@
   },
   {
     "id": "timeline",
-    "components": []
+    "components": ["timelineItem"]
   },
   {
     "id": "timelineItem",

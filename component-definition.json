@@ -184,6 +184,21 @@
               }
             }
           }
+        },
+        {
+          "title": "TimelineItem",
+          "id": "timelineItem",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "TimelineItem",
+                  "model": "timelineItem"
+                }
+              }
+            }
+          }
         }
       ]
     }
