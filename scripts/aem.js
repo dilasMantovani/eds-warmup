@@ -22,7 +22,6 @@
  * for instance the href of a link, or a search term
  */
 function sampleRUM(checkpoint, data = {}) {
-  const SESSION_STORAGE_KEY = 'aem-rum';
   sampleRUM.baseURL = sampleRUM.baseURL
     || new URL(window.RUM_BASE == null ? 'https://rum.hlx.page' : window.RUM_BASE, window.location);
   sampleRUM.defer = sampleRUM.defer || [];
@@ -50,10 +49,7 @@ function sampleRUM(checkpoint, data = {}) {
     if (!window.hlx.rum) {
       const usp = new URLSearchParams(window.location.search);
       const weight = usp.get('rum') === 'on' ? 1 : 100; // with parameter, weight is 1. Defaults to 100.
-      const id = Array.from({ length: 75 }, (_, i) => String.fromCharCode(48 + i))
-        .filter((a) => /\d|[A-Z]/i.test(a))
-        .filter(() => Math.random() * 75 > 70)
-        .join('');
+      const id = Math.random().toString(36).slice(-4);
       const random = Math.random();
       const isSelected = random * weight < 1;
       const firstReadTime = window.performance ? window.performance.timeOrigin : Date.now();
@@ -62,15 +58,6 @@ function sampleRUM(checkpoint, data = {}) {
         origin: () => window.location.origin,
         path: () => window.location.href.replace(/\?.*$/, ''),
       };
-      // eslint-disable-next-line max-len
-      const rumSessionStorage = sessionStorage.getItem(SESSION_STORAGE_KEY)
-        ? JSON.parse(sessionStorage.getItem(SESSION_STORAGE_KEY))
-        : {};
-      // eslint-disable-next-line max-len
-      rumSessionStorage.pages = (rumSessionStorage.pages ? rumSessionStorage.pages : 0)
-        + 1
-        /* noise */ + (Math.floor(Math.random() * 20) - 10);
-      sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(rumSessionStorage));
       // eslint-disable-next-line object-curly-newline, max-len
       window.hlx.rum = {
         weight,
@@ -80,7 +67,6 @@ function sampleRUM(checkpoint, data = {}) {
         firstReadTime,
         sampleRUM,
         sanitizeURL: urlSanitizers[window.hlx.RUM_MASK_URL || 'path'],
-        rumSessionStorage,
       };
     }
 
@@ -119,7 +105,6 @@ function sampleRUM(checkpoint, data = {}) {
         console.debug(`ping:${checkpoint}`, pdata);
       };
       sampleRUM.cases = sampleRUM.cases || {
-        load: () => sampleRUM('pagesviewed', { source: window.hlx.rum.rumSessionStorage.pages }) || true,
         cwv: () => sampleRUM.cwv(data) || true,
         lazy: () => {
           // use classic script to avoid CORS issues
@@ -180,12 +165,22 @@ function init() {
 
   window.addEventListener('load', () => sampleRUM('load'));
 
-  window.addEventListener('unhandledrejection', (event) => {
-    sampleRUM('error', { source: event.reason.sourceURL, target: event.reason.line });
-  });
-
-  window.addEventListener('error', (event) => {
-    sampleRUM('error', { source: event.filename, target: event.lineno });
+  ['error', 'unhandledrejection'].forEach((event) => {
+    window.addEventListener(event, ({ reason, error }) => {
+      const errData = { source: 'undefined error' };
+      try {
+        errData.target = (reason || error).toString();
+        errData.source = (reason || error).stack
+          .split('\n')
+          .filter((line) => line.match(/https?:\/\//))
+          .shift()
+          .replace(/at ([^ ]+) \((.+)\)/, '$1@$2')
+          .trim();
+      } catch (err) {
+        /* error structure was not as expected */
+      }
+      sampleRUM('error', errData);
+    });
   });
 }
 
@@ -378,6 +373,58 @@ function decorateTemplateAndTheme() {
 }
 
 /**
+ * Wrap inline text content of block cells within a <p> tag.
+ * @param {Element} block the block element
+ */
+function wrapTextNodes(block) {
+  const validWrappers = [
+    'P',
+    'PRE',
+    'UL',
+    'OL',
+    'PICTURE',
+    'TABLE',
+    'H1',
+    'H2',
+    'H3',
+    'H4',
+    'H5',
+    'H6',
+  ];
+
+  const wrap = (el) => {
+    const wrapper = document.createElement('p');
+    wrapper.append(...el.childNodes);
+    [...el.attributes]
+      // move the instrumentation from the cell to the new paragraph, also keep the class
+      // in case the content is a buttton and the cell the button-container
+      .filter(({ nodeName }) => nodeName === 'class'
+        || nodeName.startsWith('data-aue')
+        || nodeName.startsWith('data-richtext'))
+      .forEach(({ nodeName, nodeValue }) => {
+        wrapper.setAttribute(nodeName, nodeValue);
+        el.removeAttribute(nodeName);
+      });
+    el.append(wrapper);
+  };
+
+  block.querySelectorAll(':scope > div > div').forEach((blockColumn) => {
+    if (blockColumn.hasChildNodes()) {
+      const hasWrapper = !!blockColumn.firstElementChild
+        && validWrappers.some((tagName) => blockColumn.firstElementChild.tagName === tagName);
+      if (!hasWrapper) {
+        wrap(blockColumn);
+      } else if (
+        blockColumn.firstElementChild.tagName === 'PICTURE'
+        && (blockColumn.children.length > 1 || !!blockColumn.textContent.trim())
+      ) {
+        wrap(blockColumn);
+      }
+    }
+  });
+}
+
+/**
  * Decorates paragraphs containing a single link as buttons.
  * @param {Element} element container element
  */
@@ -454,10 +501,10 @@ function decorateSections(main) {
     const wrappers = [];
     let defaultContent = false;
     [...section.children].forEach((e) => {
-      if (e.tagName === 'DIV' || !defaultContent) {
+      if ((e.tagName === 'DIV' && e.className) || !defaultContent) {
         const wrapper = document.createElement('div');
         wrappers.push(wrapper);
-        defaultContent = e.tagName !== 'DIV';
+        defaultContent = e.tagName !== 'DIV' || !e.className;
         if (defaultContent) wrapper.classList.add('default-content-wrapper');
       }
       wrappers[wrappers.length - 1].append(e);
@@ -640,31 +687,11 @@ function decorateBlock(block) {
     block.classList.add('block');
     block.dataset.blockName = shortBlockName;
     block.dataset.blockStatus = 'initialized';
+    wrapTextNodes(block);
     const blockWrapper = block.parentElement;
     blockWrapper.classList.add(`${shortBlockName}-wrapper`);
     const section = block.closest('.section');
     if (section) section.classList.add(`${shortBlockName}-container`);
-    // wrap plain text and non-block elements in a <p> or <pre>
-    block.querySelectorAll(':scope > div > div').forEach((cell) => {
-      const firstChild = cell.firstElementChild;
-      const cellText = cell.textContent.trim();
-      if ((!firstChild && cellText)
-        || (firstChild && !firstChild.tagName.match(/^(P(RE)?|H[1-6]|(U|O)L|TABLE)$/))) {
-        const paragraph = document.createElement('p');
-        [...cell.attributes]
-          // move the instrumentation from the cell to the new paragraph, also keep the class
-          // in case the content is a buttton and the cell the button-container
-          .filter(({ nodeName }) => nodeName === 'class'
-            || nodeName.startsWith('data-aue')
-            || nodeName.startsWith('data-richtext'))
-          .forEach(({ nodeName, nodeValue }) => {
-            paragraph.setAttribute(nodeName, nodeValue);
-            cell.removeAttribute(nodeName);
-          });
-        paragraph.append(...cell.childNodes);
-        cell.replaceChildren(paragraph);
-      }
-    });
     // eslint-disable-next-line no-use-before-define
     decorateButtons(block);
   }
@@ -751,4 +778,5 @@ export {
   toClassName,
   updateSectionsStatus,
   waitForLCP,
+  wrapTextNodes,
 };
