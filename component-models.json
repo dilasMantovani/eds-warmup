@@ -133,12 +133,12 @@
   {
     "id": "timeline",
     "fields": [
-      {"component": "title",
+      {"component": "text",
        "name": "title",
        "label": "Title",
        "valueType": "string"
       },
-      {"component": "title",
+      {"component": "text",
        "name": "subtitle",
        "label": "Subtitle",
        "valueType": "string"
