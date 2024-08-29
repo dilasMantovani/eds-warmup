@@ -184,5 +184,24 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "timelineCMP",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columnAmount",
+        "value": "",
+        "label": "Column Amount"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rowAmount",
+        "value": "",
+        "label": "Row Amount"
+      }
+    ]
   }
 ]
