@@ -15,7 +15,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "timelines"
     ]
   },
   {
@@ -37,6 +38,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "timelines",
+    "components": [
+      "timeline"
     ]
   }
 ]

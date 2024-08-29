@@ -131,6 +131,35 @@
     ]
   },
   {
+    "id": "timeline",
+    "fields": [
+      {"component": "title",
+       "name": "title",
+       "label": "Title",
+       "valueType": "string"
+      },
+      {"component": "title",
+       "name": "subtitle",
+       "label": "Subtitle",
+       "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
