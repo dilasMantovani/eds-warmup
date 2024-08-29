@@ -135,13 +135,11 @@
     "fields": [
       {"component": "text",
        "name": "title",
-       "label": "Title",
-       "valueType": "string"
+       "label": "Title"
       },
       {"component": "text",
        "name": "subtitle",
-       "label": "Subtitle",
-       "valueType": "string"
+       "label": "Subtitle"
       },
       {
         "component": "richtext",
