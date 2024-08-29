@@ -15,8 +15,7 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "timelineCMP"
+      "fragment"
     ]
   },
   {
@@ -33,21 +32,6 @@
   },
   {
     "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
-    "id": "timelineCMP",
-    "components": [
-      "timelineItemCMP"
-    ]
-  },
-  {
-    "id": "timelineItemCMP",
     "components": [
       "text",
       "image",

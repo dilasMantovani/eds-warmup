@@ -128,21 +128,6 @@
           }
         },
         {
-          "title": "TimelineCMP",
-          "id": "timelineCMP",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/columns/v1/columns",
-                "template": {
-                  "columnAmount": "2",
-                  "rowAmount": "1"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Fragment",
           "id": "fragment",
           "plugins": {
