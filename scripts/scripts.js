@@ -151,4 +151,27 @@ async function loadPage() {
   loadDelayed();
 }
 
+/**
+ * Fetch the author information from the author page.
+ * @param {HTMLAnchorElement} anchor || {string} link
+ */
+export async function fetchAuthorBio(anchor) {
+  const link = anchor.href ? anchor.href : anchor;
+  return fetch(link)
+    .then((response) => response.text())
+    .then((html) => {
+      const parser = new DOMParser();
+      const htmlDoc = parser.parseFromString(html, 'text/html');
+      const authorInfoEl = htmlDoc.querySelector('.author-bio');
+      if (!authorInfoEl) {
+        return null;
+      }
+      const authorInfo = extractAuthorInfo(authorInfoEl);
+      return authorInfo;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
 loadPage();
