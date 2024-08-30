@@ -43,11 +43,7 @@
   {
     "id": "timelines",
     "components": [
-      "timeline",
-      "text",
-      "image",
-      "button",
-      "title"
+      "timeline"
     ]
   }
 ]
