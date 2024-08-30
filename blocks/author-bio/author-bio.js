@@ -12,6 +12,8 @@ export default function decorate(block) {
     authorSocialLinkURL,
   } = extractAuthorInfo(block);
 
+  console.log("oie")
+
   const authorBioPicture = createOptimizedPicture(authorImage, 'author-bio-picture');
   const authorSocialLinkElement = authorSocialLinkURL ?? '#';
   const authorBioDOM = htmlToElement(`

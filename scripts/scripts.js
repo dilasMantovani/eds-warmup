@@ -60,6 +60,19 @@ async function loadFonts() {
   }
 }
 
+
+/**
+ * creates an element from html string
+ * @param {string} html
+ * @returns {HTMLElement}
+ */
+export function htmlToElement(html) {
+  const template = document.createElement('template');
+  const trimmedHtml = html.trim(); // Never return a text node of whitespace as the result
+  template.innerHTML = trimmedHtml;
+  return template.content.firstElementChild;
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -149,6 +162,23 @@ async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
+}
+
+/**
+ * Extract author information from the author page.
+ * @param {HTMLElement} block
+ */
+export function extractAuthorInfo(block) {
+  const authorInfo = [...block.children].map((row) => row.firstElementChild);
+  return {
+    authorImage: authorInfo[0]?.querySelector('img')?.getAttribute('src'),
+    authorName: authorInfo[1]?.textContent.trim(),
+    authorTitle: authorInfo[2]?.textContent.trim(),
+    authorCompany: authorInfo[3]?.textContent.trim(),
+    authorDescription: authorInfo[4],
+    authorSocialLinkText: authorInfo[5]?.textContent.trim(),
+    authorSocialLinkURL: authorInfo[6]?.textContent.trim(),
+  };
 }
 
 /**
