@@ -2,7 +2,7 @@
   {
     "id": "main",
     "components": [
-      "section", "tab-section"
+      "section"
     ]
   },
   {
@@ -17,8 +17,7 @@
       "columns",
       "fragment",
       "timelines",
-      "author-bio",
-      "tabs"
+      "author-bio"
     ]
   },
   {
@@ -46,15 +45,6 @@
     "id": "timelines",
     "components": [
       "timeline"
-    ]
-  },
-  {
-    "id": "tab-section",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
     ]
   }
 ]

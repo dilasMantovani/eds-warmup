@@ -281,45 +281,5 @@
         "description": "Sets the social link url for author"
       }
     ]
-  },
-  {
-    "id": "tabs",
-    "fields": []
-  },
-  {
-    "id": "tab",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "value": "",
-        "label": "Heading"
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "content",
-        "value": "",
-        "label": "Body"
-      }
-    ]
-  },
-  {
-    "title": "Tab Section",
-    "id": "tab-section",
-    "plugins": {
-      "xwalk": {
-        "page": {
-          "resourceType": "core/franklin/components/section/v1/section",
-          "template": {
-            "name": "Tab Section",
-            "model": "tab-section",
-            "filter": "tab-section",
-            "style": "tab-section"
-          }
-        }
-      }
-    }
   }
 ]
