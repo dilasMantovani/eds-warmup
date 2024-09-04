@@ -193,9 +193,10 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
+                "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "model": "section"
+                  "name": "TimelineV2",
+                  "model": "timelinev2"
                 }
               }
             }
