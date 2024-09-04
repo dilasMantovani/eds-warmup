@@ -49,6 +49,12 @@
     ]
   },
   {
+    "id": "accordion",
+    "components": [
+      "accordion-items"
+    ]
+  },
+  {
     "id": "accordion-items",
     "components": [
       "text",
