@@ -18,7 +18,9 @@
       "fragment",
       "timelines",
       "author-bio",
-      "accordion"
+      "accordion",
+      "accordion-item"
+
     ]
   },
   {
