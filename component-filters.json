@@ -44,7 +44,17 @@
   {
     "id": "timelines",
     "components": [
-      "timeline"
+      "timeline",
+      "timelinev2"
+    ]
+  },
+  {
+    "id": "timelinev2",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   }
 ]
