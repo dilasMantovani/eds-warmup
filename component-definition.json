@@ -232,7 +232,11 @@
                   "model": "accordion-item",
                   "headerText":"Header da seção",
                   "accordionItemId":"header1",
-                  "filter":"accordion-item"
+                  "filter":"accordion-item",
+                  "item_0": {
+                    "model": "title"
+                  }
+                  
                 }
               }
             }
