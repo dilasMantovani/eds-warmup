@@ -214,7 +214,7 @@
                   "model": "accordion",
                   "title":"Titulo",
                   "titleType": "h2",
-                  "filter":"accordion-items"
+                  "filter":"accordion"
                 }
               }
             }
