@@ -188,21 +188,6 @@
           }
         },
         {
-          "title": "TimelineV2",
-          "id": "timelinev2",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "TimelineV2",
-                  "model": "timelinev2"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Author Bio",
           "id": "author-bio",
           "plugins": {
