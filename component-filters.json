@@ -53,5 +53,11 @@
     "components": [
       "accordion-item"
     ]
+  },
+  {
+    "id": "accordion-item",
+    "components": [
+      "text"
+    ]
   }
 ]
