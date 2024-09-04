@@ -47,5 +47,14 @@
     "components": [
       "timeline"
     ]
+  },
+  {
+    "id": "accordion-items",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
   }
 ]

@@ -213,7 +213,8 @@
                   "name": "Accordion",
                   "model": "accordion",
                   "title":"Titulo",
-                  "titleType": "h2"
+                  "titleType": "h2",
+                  "filter":"accordion-items"
                 }
               }
             }
