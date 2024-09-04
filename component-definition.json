@@ -219,6 +219,24 @@
               }
             }
           }
+        },
+        {
+          "title": "Accordion Item",
+          "id": "accordion-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Accordion Item",
+                  "model": "accordion-item",
+                  "headerText":"Header da seção",
+                  "accordionItemId":"header1",
+                  "filter":"accordion-item"
+                }
+              }
+            }
+          }
         }
       ]
     }

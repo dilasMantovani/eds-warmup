@@ -322,5 +322,20 @@
         ]
       }
     ]
+  },
+  {
+    "id": "accordion-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "headerText",
+        "label": "Texto do header"
+      },
+      {
+        "component": "text",
+        "name": "accordionItemId",
+        "label": "ID do item de accordeão"
+      }
+    ]
   }
 ]
