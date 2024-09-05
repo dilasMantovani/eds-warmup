@@ -19,8 +19,8 @@
       "timelines",
       "author-bio",
       "accordion",
-      "accordion-item"
-
+      "accordion-item",
+      "teaser"
     ]
   },
   {
@@ -64,4 +64,5 @@
       "button",
       "title"    ]
   }
+
 ]
