@@ -172,9 +172,9 @@
                     "name": "Timeline",
                     "model": "timeline",
                     "key-value": true,
-                    "timeline_title": "Título",
-                    "timeline_subtitle": "subtítulo",
-                    "timeline_text": "Lorem ipsum dolor"
+                    "title": "Título",
+                    "subtitle": "subtítulo",
+                    "text": "Lorem ipsum dolor"
                   }
                 }
               }
@@ -192,9 +192,9 @@
                   "name": "Timeline",
                   "model": "timeline",
                   "key-value": true,
-                  "timeline_title": "Título",
-                  "timeline_subtitle": "subtítulo",
-                  "timeline_text": "Lorem ipsum dolor"
+                  "title": "Título",
+                  "subtitle": "subtítulo",
+                  "text": "Lorem ipsum dolor"
                 }
               }
             }
