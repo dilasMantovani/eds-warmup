@@ -168,7 +168,7 @@
                   "name": "Timelines",
                   "filter": "timelines",
                   "item0":{
-                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "sling:resourceType": "core/franklin/components/block/v1/block",
                     "name": "Timeline",
                     "model": "timeline",
                     "title": "Título",
