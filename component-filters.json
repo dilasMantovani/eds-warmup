@@ -50,7 +50,8 @@
     "components": [
       "timelineItem",
       "teaser",
-      "columns"
+      "columns",
+      "column"
     ]
   },
   {
