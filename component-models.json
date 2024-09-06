@@ -131,33 +131,6 @@
     ]
   },
   {
-    "id": "timeline",
-    "fields": [
-      {"component": "text",
-       "name": "title",
-       "label": "Title"
-      },
-      {"component": "text",
-       "name": "subtitle",
-       "label": "Subtitle"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      }
-    ]
-  },
-  {
     "id": "timelineItem",
     "fields": [
       {"component": "text",
