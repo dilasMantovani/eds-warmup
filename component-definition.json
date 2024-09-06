@@ -171,6 +171,7 @@
                     "name": "TimelineItem",
                     "model": "timelineItem",
                     "title": "Título",
+                    "titleType":"h2",
                     "subtitle": "subtítulo",
                     "text": "Lorem ipsum dolor",
                     "key-value": true
@@ -191,6 +192,7 @@
                   "name": "TimelineItem",
                   "model": "timelineItem",
                   "title": "Título",
+                  "titleType":"h2",
                   "subtitle": "subtítulo",
                   "text": "Lorem ipsum dolor",
                   "key-value": true

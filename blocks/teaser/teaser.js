@@ -19,8 +19,7 @@ export default function decorate(block) {
         propMap[key] = element.lastElementChild;
     })
 
-    console.log(propMap.image)
-    console.log(propMap?.image?.firstElementChild.lastElementChild.src)
+
 
     const html = 
     `

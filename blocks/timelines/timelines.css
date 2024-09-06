@@ -3,7 +3,6 @@
   text-align: left;
   margin-left: 10px;
 }
-
 .timeline-left {
   padding-right: 50%;
   text-align: right;
@@ -17,7 +16,7 @@
   content: "";
   height: 100%;
   width: 1px;
-  background-color: green;
+  background-color: red;
   position: absolute;
   left: 50%;
 }
