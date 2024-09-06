@@ -158,7 +158,7 @@
           }
         },
         {
-          "title": "Timelines",
+          "title": "Timelines2",
           "id": "timelines",
           "plugins": {
             "xwalk": {
