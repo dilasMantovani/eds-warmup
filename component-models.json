@@ -134,16 +134,16 @@
     "id": "timeline",
     "fields": [
       {"component": "text",
-       "name": "timeline_title",
+       "name": "title",
        "label": "Title"
       },
       {"component": "text",
-       "name": "timeline_subtitle",
+       "name": "subtitle",
        "label": "Subtitle"
       },
       {
         "component": "richtext",
-        "name": "timeline_text",
+        "name": "text",
         "value": "",
         "label": "Text",
         "valueType": "string"
@@ -151,7 +151,7 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "timeline_image",
+        "name": "image",
         "label": "Image",
         "multi": false
       }
