@@ -49,9 +49,7 @@
     "id": "timelines",
     "components": [
       "timelineItem",
-      "teaser",
-      "columns",
-      "column"
+      "teaser"
     ]
   },
   {
