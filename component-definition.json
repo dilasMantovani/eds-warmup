@@ -168,7 +168,7 @@
                   "name": "Timelines",
                   "filter": "timelines",
                   "item0":{
-                    "name": "Timeline",
+                    "name": "TimelineItem",
                     "model": "timelineItem",
                     "title": "Título",
                     "subtitle": "subtítulo",
@@ -190,6 +190,25 @@
                 "template": {
                   "name": "Timeline",
                   "model": "timeline",
+                  "title": "Título",
+                  "subtitle": "subtítulo",
+                  "text": "Lorem ipsum dolor",
+                  "key-value": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "TimelineItem",
+          "id": "timelineItem",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "TimelineItem",
+                  "model": "timelineItem",
                   "title": "Título",
                   "subtitle": "subtítulo",
                   "text": "Lorem ipsum dolor",
