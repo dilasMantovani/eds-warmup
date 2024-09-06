@@ -169,7 +169,7 @@
                   "filter": "timelines",
                   "item0":{
                     "name": "Timeline",
-                    "model": "timeline",
+                    "model": "timelineItem",
                     "title": "Título",
                     "subtitle": "subtítulo",
                     "text": "Lorem ipsum dolor",

@@ -47,7 +47,8 @@
   {
     "id": "timelines",
     "components": [
-      "timeline"
+      "timeline",
+      "timelineItem"
     ]
   },
   {
