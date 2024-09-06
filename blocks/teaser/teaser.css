@@ -1,0 +1,149 @@
+figcaption {
+  user-select: none;
+}
+
+/**
+ * The wrapper outside of the teaser component, used to size the teaser, and
+ * allow it to use the padding hack to preserve ratio (1:1 here).
+ */
+.teaser-container {
+  width: 300px;
+  max-width: 100%;
+  margin: 1em auto;
+}
+
+/**
+ * The teaser component, unstyled on small screens.
+ * 1. Reset `figure` default margin.
+ */
+.teaser {
+  margin: 0; /* 1 */
+}
+
+/**
+ * The teaser textual content container.
+ */
+.teaser-meta {
+  padding: 15px;
+}
+
+/**
+ * The teaser title.
+ */
+.teaser-title {
+  display: block;
+  font-weight: bold;
+  font-size: 100%;
+  margin-bottom: 5px;
+}
+
+/**
+ * The teaser description.
+ */
+.teaser-description {
+  margin: 0;
+}
+
+@media (min-width: 350px) {
+  /**
+   * The teaser component itself.
+   * 1. Position context for children.
+   * 2. Padding hack to preserve ratio.
+   * 3. Prevent image from overflowing even when too large.
+   */
+  .teaser {
+    position: relative; /* 1 */
+    padding-top: 100%; /* 2 */
+    overflow: hidden; /* 3 */
+  }
+  /**
+   * The teaser image.
+   * 1. Absolute centering of the image inside the container.
+   */
+  .teaser-image {
+    position: absolute; /* 1 */
+    top: 50%; /* 1 */
+    left: 50%; /* 1 */
+    transform: translate(-50%, -50%); /* 1 */
+  }
+  /**
+   * The teaser overlay. It acts as a container and is always fully visible.
+   * Only its background color changes on hover/active states.
+   */
+  .teaser-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 0.2s ease-in-out;
+  }
+  /**
+   * Overlay becomes transparent black when teaser is being hovered or active.
+   */
+  .teaser-overlay:hover,
+  .teaser-overlay:active {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  /**
+   * The teaser textual content container.
+   * 1. Positioned off-screen as a default.
+   * 2. Spacing from the edges of the container.
+   * 3. Transition is being inherit from parent to synchronize background color
+   *    change with slide-in transition.
+   */
+  .teaser-meta {
+    position: absolute;
+    top: 100%; /* 1 */
+    right: 0;
+    left: 0;
+    padding: 0 20px 20px; /* 2 */
+    color: rgb(255, 255, 255);
+    transition: inherit; /* 3 */
+  }
+  /**
+   * When the teaser is being hovered or active, the content slide in from the
+   * bottom.
+   */
+  .teaser:hover .teaser-meta,
+  .teaser:active .teaser-meta {
+    transform: translateY(-100%);
+  }
+  /**
+   * The teaser title.
+   * 1. `.teaser-meta` is off-screen but we want the title to remain visible at
+   *    all time, so we translate it to the top by its full height.
+   * 2. To give a bit of spacing between the title and the bottom of the teaser.
+   *    Cannot be done with `translateY(..)` because `calc(..)` is not widely
+   *    supported inside transforms.
+   * 3. Spacing between title and description.
+   */
+  .teaser-title {
+    transform: translateY(-100%); /* 1 */
+    margin-top: -20px; /* 2 */
+    margin-bottom: 5px; /* 3 */
+    transition: inherit;
+  }
+  /**
+   * When teaser is being hovered or active, the title cancels its translation
+   * to avoid having a huge gap between itself and the description. This acts as
+   * a counter-transition: content goes up, title goes down.
+   */
+  .teaser:hover .teaser-title,
+  .teaser:active .teaser-title {
+    transform: translateY(0);
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.3;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
