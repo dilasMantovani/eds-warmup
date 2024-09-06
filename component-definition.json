@@ -168,13 +168,13 @@
                   "name": "Timelines",
                   "filter": "timelines",
                   "item0":{
-                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "sling:resourceType": "core/franklin/components/block/v1/block",
                     "name": "Timeline",
                     "model": "timeline",
-                    "key-value": true,
                     "title": "Título",
                     "subtitle": "subtítulo",
-                    "text": "Lorem ipsum dolor"
+                    "text": "Lorem ipsum dolor",
+                    "key-value": true
                   }
                 }
               }
@@ -191,10 +191,10 @@
                 "template": {
                   "name": "Timeline",
                   "model": "timeline",
-                  "key-value": true,
                   "title": "Título",
                   "subtitle": "subtítulo",
-                  "text": "Lorem ipsum dolor"
+                  "text": "Lorem ipsum dolor",
+                  "key-value": true
                 }
               }
             }
