@@ -17,7 +17,7 @@
   content: "";
   height: 100%;
   width: 1px;
-  background-color: red;
+  background-color: green;
   position: absolute;
   left: 50%;
 }
