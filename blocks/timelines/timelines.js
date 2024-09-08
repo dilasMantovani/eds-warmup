@@ -5,8 +5,11 @@ export default function decorate(block) {
         const subtitle = child?.children[1]
         const text = child?.children[2]
         const image = child?.children[3]
-
-        console.log
+        
+        title.className = "timeline-title"
+        subtitle.className = "timeline-subtitle"
+        text.className = "timeline-text"
+        image.className="timeline-image"
 
         if(i % 2 === 0)
             child.className = 'timeline-right'
