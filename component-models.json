@@ -131,6 +131,43 @@
     ]
   },
   {
+    "id": "timelines",
+    "fields":[
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "startAt",
+        "label": "Primeiro card à:",
+        "options": [
+          {
+            "name": "Direita",
+            "value": "right"
+          },
+          {
+            "name": "Esquerda",
+            "value": "left"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "timelineItem",
     "fields": [
       {"component": "text",
