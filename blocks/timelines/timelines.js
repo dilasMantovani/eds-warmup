@@ -30,6 +30,7 @@ export default function decorate(block) {
         timelineItemHeader.className = "timeline-item-header"
         timelineItemHeader.appendChild(title)
 
+
         let timelineItemContent = document.createElement("div")
         timelineItemContent.className = "timeline-item-content"
         timelineItemContent.appendChild(subtitle)
