@@ -7,18 +7,17 @@
   text-align: right;
 }
 
-.timelines-wrapper {
+.timelines.default {
   position: relative;
 }
-.timelines-wrapper::before {
+.timelines.default::before {
   content: "";
   height: 100%;
-  width: 1px;
-  background-color: red;
+  width: 2px;
+  background-color: #00368c;
   position: absolute;
   left: 50%;
 }
-
 .timelines.default .timeline-right .timeline-item-title, .timelines.default .timeline-right .timeline-item-wrapper {
   border-radius: 0px 10px 0px 0px;
 }
@@ -51,30 +50,43 @@
 .timelines.default .timeline-item-text {
   color: #3a3a3a;
 }
-.timelines.deep-purple .timeline-right .timeline-item-title, .timelines.deep-purple .timeline-right .timeline-item-wrapper {
-  border-radius: 0px 10px 0px 0px;
+.timelines.deep-purple {
+  position: relative;
+}
+.timelines.deep-purple::before {
+  content: "";
+  height: 100%;
+  width: 2px;
+  background-color: #b982ff;
+  position: absolute;
+  left: 50%;
 }
 .timelines.deep-purple .timeline-right .timeline-item-wrapper {
   margin-left: 20px;
 }
-.timelines.deep-purple .timeline-left .timeline-item-title, .timelines.deep-purple .timeline-left .timeline-item-wrapper {
-  border-radius: 10px 0px 0px 0px;
+.timelines.deep-purple .timeline-left {
+  text-align: left;
 }
 .timelines.deep-purple .timeline-left .timeline-item-wrapper {
   margin-right: 20px;
 }
-.timelines.deep-purple .timeline-item-wrapper {
-  background-color: unset;
+.timelines.deep-purple .timeline-item-content {
+  background-color: #e5d7f7;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
 }
 .timelines.deep-purple .timeline-item-title {
-  padding: 0px 20px;
-  background-color: #00368c;
+  padding: 0 20px;
+  background-color: #b982ff;
+  border-radius: 10px 10px 0px 0px;
 }
 .timelines.deep-purple .timeline-item-title h1, .timelines.deep-purple .timeline-item-title h2, .timelines.deep-purple .timeline-item-title h3, .timelines.deep-purple .timeline-item-title h4, .timelines.deep-purple .timeline-item-title h5, .timelines.deep-purple .timeline-item-title h6 {
+  font-family: "Orbitron-Regular";
   font-size: 1.5rem;
   line-height: 3rem;
   color: white;
   text-transform: uppercase;
+  margin-bottom: 0;
 }
 .timelines.deep-purple .timeline-item-subtitle {
   color: #00368c;
@@ -82,4 +94,8 @@
 }
 .timelines.deep-purple .timeline-item-text {
   color: #3a3a3a;
+}
+.timelines.deep-purple .timeline-item-text p {
+  margin-top: 0;
+  margin-bottom: 0;
 }

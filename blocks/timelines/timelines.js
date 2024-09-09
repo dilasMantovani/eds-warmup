@@ -25,10 +25,20 @@ export default function decorate(block) {
         
         let timelineItemWrapper = document.createElement("div")
         timelineItemWrapper.className = "timeline-item-wrapper"
-        timelineItemWrapper.appendChild(title)
-        timelineItemWrapper.appendChild(subtitle)
-        timelineItemWrapper.appendChild(text)
-        timelineItemWrapper.appendChild(image)
+        
+        let timelineItemHeader = document.createElement("div")
+        timelineItemHeader.className = "timeline-item-header"
+        timelineItemHeader.appendChild(title)
+
+        let timelineItemContent = document.createElement("div")
+        timelineItemContent.className = "timeline-item-content"
+        timelineItemContent.appendChild(subtitle)
+        timelineItemContent.appendChild(text)
+        timelineItemContent.appendChild(image)
+
+        timelineItemWrapper.appendChild(timelineItemHeader)
+        timelineItemWrapper.appendChild(timelineItemContent)
+
 
 
         child.appendChild(timelineItemWrapper);
