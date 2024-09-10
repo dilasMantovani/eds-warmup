@@ -1,11 +1,26 @@
 @charset "UTF-8";
-.timeline-right {
+.timelines-wrapper {
+  overflow: hidden;
+}
+.timelines-wrapper .timeline-right {
   padding-left: 50%;
   text-align: left;
 }
-.timeline-left {
+.timelines-wrapper .timeline-left {
   padding-right: 50%;
   text-align: right;
+}
+@media (max-width: 575px) {
+  .timelines-wrapper .timeline-right {
+    padding-left: 0;
+  }
+  .timelines-wrapper .timeline-left {
+    text-align: left;
+    padding-right: 0;
+  }
+  .timelines-wrapper .timeline-item-wrapper {
+    margin: 0 !important;
+  }
 }
 
 .timelines.default {
@@ -47,6 +62,17 @@
   left: calc(50% - 20px);
   color: #00368c;
 }
+.timelines.default .timeline-right, .timelines.default .timeline-left {
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-delay: 500ms;
+}
+.timelines.default .timeline-right.visible, .timelines.default .timeline-left.visible {
+  transform: rotatex(0deg);
+}
+.timelines.default .timeline-right.invisible, .timelines.default .timeline-left.invisible {
+  transform: rotatex(90deg);
+}
 .timelines.default .timeline-item-wrapper {
   background-color: unset;
 }
@@ -78,14 +104,38 @@
   position: absolute;
   left: 50%;
 }
+.timelines.deep-purple .timeline-right {
+  transition-property: transform, opacity;
+  transition-duration: 500ms;
+  transition-delay: 500ms;
+}
 .timelines.deep-purple .timeline-right .timeline-item-wrapper {
   margin-left: 20px;
 }
+.timelines.deep-purple .timeline-right.visible {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.timelines.deep-purple .timeline-right.invisible {
+  opacity: 0;
+  transform: translateX(-50%);
+}
 .timelines.deep-purple .timeline-left {
   text-align: left;
+  transition-property: transform, opacity;
+  transition-duration: 500ms;
+  transition-delay: 500ms;
 }
 .timelines.deep-purple .timeline-left .timeline-item-wrapper {
   margin-right: 20px;
+}
+.timelines.deep-purple .timeline-left.visible {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.timelines.deep-purple .timeline-left.invisible {
+  opacity: 0;
+  transform: translateX(50%);
 }
 .timelines.deep-purple .timeline-right, .timelines.deep-purple .timeline-left {
   position: relative;

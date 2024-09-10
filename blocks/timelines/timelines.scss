@@ -1,11 +1,28 @@
-.timeline{
-    &-right{
-        padding-left: 50%;
-        text-align: left;
-    }
-    &-left{
-        padding-right: 50%;
-        text-align: right;
+.timelines-wrapper{
+    overflow: hidden;
+    .timeline{
+        &-right{
+            padding-left: 50%;
+            text-align: left;
+        }
+        &-left{
+            padding-right: 50%;
+            text-align: right;
+        }
+    
+        @media (max-width: 575px){ //mobile breakpoint
+            &-right{
+                padding-left: 0;
+            }
+            &-left{
+                text-align: left;
+                padding-right: 0;
+            }
+    
+            &-item-wrapper{
+                margin: 0 !important;
+            }
+        }
     }
 }
 
@@ -52,6 +69,18 @@
                 color: #00368c; 
             }
         }
+        &-right,&-left{
+            // animation chunk
+            transition-property: transform;
+            transition-duration: 500ms;
+            transition-delay: 500ms;
+            &.visible{
+                transform: rotatex(0deg);
+            }
+            &.invisible{
+                transform: rotatex(90deg);
+            }
+        }
         &-item{
             &-wrapper{
                 background-color: unset;
@@ -92,14 +121,39 @@
     }
     .timeline{ 
         &-right{
+            transition-property: transform, opacity;
+            transition-duration: 500ms;
+            transition-delay: 500ms;
             .timeline-item-wrapper{
                 margin-left: 20px;
+            }
+            &.visible{
+                opacity: 1;
+                transform: translateX(0%);
+            }
+            &.invisible{
+                opacity: 0;
+                transform: translateX(-50%);
             }
         }
         &-left{
             text-align: left;
+
+            transition-property: transform, opacity;
+            transition-duration: 500ms;
+            transition-delay: 500ms;
+
             .timeline-item-wrapper{
                 margin-right: 20px;
+            }
+            &.visible{
+                opacity: 1;
+                transform: translateX(0%);
+            }
+            &.invisible{
+                opacity: 0;
+                transform: translateX(50%);
+
             }
         }
         &-right,&-left{

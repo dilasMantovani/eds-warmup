@@ -1,3 +1,14 @@
+var observer = new IntersectionObserver(function(entries) {
+    if(entries[0].isIntersecting === true){
+        entries[0]?.target?.classList?.remove("invisible");
+        entries[0]?.target?.classList?.add("visible");
+    }
+    if(entries[0].isIntersecting === false && window.scrollY < entries[0].target.getBoundingClientRect().bottom){
+        entries[0]?.target?.classList?.remove("visible");
+        entries[0]?.target?.classList?.add("invisible");
+    }
+    }, { threshold: [0] });
+
 export default function decorate(block) {
     //o primeiro elemento será sempre a propriedade startAt
     const startAtElement = block?.children[0]
@@ -9,9 +20,9 @@ export default function decorate(block) {
 
     for (const child of block?.children) {
         if(i % 2 === 0)
-            child.className = 'timeline-right'
+            child.className = 'timeline-right invisible'
         else
-            child.className = 'timeline-left'
+            child.className = 'timeline-left invisible'
 
         const title = child?.children[0]
         const subtitle = child?.children[1]
@@ -43,6 +54,8 @@ export default function decorate(block) {
 
 
         child.appendChild(timelineItemWrapper);
+
+        observer.observe(child);
         i++
-    }
+    }    
 }
