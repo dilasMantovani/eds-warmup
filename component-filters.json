@@ -2,7 +2,8 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "tab-section"
     ]
   },
   {
@@ -20,6 +21,16 @@
       "author-bio",
       "accordion",
       "accordion-item",
+      "teaser"
+    ]
+  },
+  {
+    "id": "tab-section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
       "teaser"
     ]
   },
