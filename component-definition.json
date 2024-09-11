@@ -75,6 +75,23 @@
               }
             }
           }
+        },
+        {
+          "title": "Tab Section",
+          "id": "tab-section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "Tab Section",
+                  "model": "tab-section",
+                  "filter": "tab-section",
+                  "style": "tab-section"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -277,23 +294,6 @@
                   "ctaText": "ctaText",
                   "cta": "cta",
                   "key-value": true
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Tab Section",
-          "id": "tab-section",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "name": "Tab Section",
-                  "model": "tab-section",
-                  "filter": "tab-section",
-                  "style": "tab-section"
                 }
               }
             }
