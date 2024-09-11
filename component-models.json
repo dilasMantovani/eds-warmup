@@ -109,11 +109,11 @@
           },
           {
             "name": "Duas colunas",
-            "value": "two-columns"
+            "value": "columns-two"
           },
           {
             "name": "Três colunas",
-            "value": "three-columns"
+            "value": "columns-three"
           }
         ]
       }
