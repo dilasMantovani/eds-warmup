@@ -491,32 +491,5 @@
         "label": "CTA Link"
       }
     ]
-  },
-  {
-    "id": "tab-section",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "value": "",
-        "label": "Tab heading"
-      },
-      {
-        "component": "select",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "50-50",
-            "value": "50-50"
-          },
-          {
-            "name": "33-33-33",
-            "value": "33-33-33"
-          }
-        ]
-      }
-    ]
   }
 ]

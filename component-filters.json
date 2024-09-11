@@ -2,8 +2,7 @@
   {
     "id": "main",
     "components": [
-      "section",
-      "tab-section"
+      "section"
     ]
   },
   {
@@ -22,28 +21,6 @@
       "accordion",
       "accordion-item",
       "teaser"
-    ]
-  },
-  {
-    "id": "tab-section",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "teaser"
-    ]
-  },
-  {
-    "id": "cards",
-    "components": [
-      "card"
-    ]
-  },
-  {
-    "id": "columns",
-    "components": [
-      "column"
     ]
   },
   {
