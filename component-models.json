@@ -106,6 +106,14 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "50-50",
+            "value": "50-50"
+          },
+          {
+            "name": "33-33-33",
+            "value": "33-33-33"
           }
         ]
       }
