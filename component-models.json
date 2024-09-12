@@ -136,7 +136,7 @@
       {
         "component": "text",
         "label": "Identificador",
-        "name": "id"
+        "name": "tab-id"
       }
     ]
   },
