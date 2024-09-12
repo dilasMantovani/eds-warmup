@@ -120,6 +120,27 @@
     ]
   },
   {
+    "id": "tab-section",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "label": "Identificador",
+        "name": "id"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

@@ -2,7 +2,8 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "tab-section"
     ]
   },
   {
@@ -21,6 +22,22 @@
       "accordion",
       "accordion-item",
       "teaser",
+      "texto-rico"
+    ]
+  },
+  {
+    "id": "tab-section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "columns",
+      "fragment",
+      "timelines",
+      "author-bio",
       "texto-rico"
     ]
   },
