@@ -86,7 +86,7 @@
                 "template": {
                   "name": "Tab Section",
                   "model": "tab-section",
-                  "classes": ["tab-section"]
+                  "section-type": "tab-section"
                 }
               }
             }
