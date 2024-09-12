@@ -136,7 +136,14 @@
       {
         "component": "text",
         "label": "Identificador",
-        "name": "tab-id"
+        "name": "tab-id",
+        "required": true
+      },
+      {
+        "component": "text",
+        "label": "Título da aba",
+        "name": "tab-title",
+        "required": true
       }
     ]
   },
@@ -554,6 +561,17 @@
           "placeholder": "Enter your text here...",
           "maxLength": 500
         }
+      },
+      {
+        "id": "tab-controller",
+        "fields": [
+          {
+            "component": "text",
+            "name": "specificTabs",
+            "label": "Abas específicas",
+            "multi": true
+          }
+        ]
       }
     ]
   }
