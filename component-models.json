@@ -520,7 +520,19 @@
         "name": "text",
         "value": "",
         "label": "Texto",
-        "valueType": "string"
+        "valueType": "string",
+        "options": {
+          "toolbar": [
+            "bold", 
+            "italic", 
+            "underline", 
+            "strikethrough", 
+            "bulletList", 
+            "numberList"
+          ],
+          "placeholder": "Enter your text here...",
+          "maxLength": 500
+        }
       }
     ]
   }
