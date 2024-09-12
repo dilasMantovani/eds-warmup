@@ -569,7 +569,8 @@
             "component": "text",
             "name": "specificTabs",
             "label": "Abas específicas",
-            "multi": true
+            "description": "Coloque os ids da aba que deseja. Caso queira todas as abas, deixe em branco. Ex: tab1,tab2,tab3"
+
           }
         ]
       }
