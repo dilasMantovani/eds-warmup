@@ -1,4 +1,8 @@
+const isInEditor = window.location.href.includes("author");
+
 var observer = new IntersectionObserver(function(entries) {
+
+    console.log("isInEditor", isInEditor)
     if(entries[0].isIntersecting === true){
         entries[0]?.target?.classList?.remove("invisible");
         entries[0]?.target?.classList?.add("visible");
