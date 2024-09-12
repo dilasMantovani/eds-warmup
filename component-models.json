@@ -499,5 +499,29 @@
         "label": "CTA Link"
       }
     ]
+  },
+  {
+    "id": "texto-rico",
+    "fields":[
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Texto",
+        "valueType": "string"
+      }
+    ]
   }
 ]
