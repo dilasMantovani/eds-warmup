@@ -75,13 +75,7 @@
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "title": "Tab Section",
-      "id": "tab-section",
-      "components": [
+        },
         {
           "title": "Tab Section",
           "id": "tab-section",
