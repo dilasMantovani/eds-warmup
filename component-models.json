@@ -590,5 +590,28 @@
         ]
       }
     ]
+  },
+  {
+    "id": "spacer",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "height",
+        "label": "Altura do espaçador"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "heightMobile",
+        "label": "Altura do espaçador para mobile"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "hasDivider",
+        "label": "Possui divisor?"
+      }
+    ]
   }
 ]

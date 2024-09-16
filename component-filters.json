@@ -23,7 +23,8 @@
       "accordion-item",
       "teaser",
       "texto-rico",
-      "tab-controller"
+      "tab-controller",
+      "spacer"
     ]
   },
   {
@@ -39,7 +40,8 @@
       "fragment",
       "timelines",
       "author-bio",
-      "texto-rico"
+      "texto-rico",
+      "spacer"
     ]
   },
   {
@@ -48,8 +50,7 @@
       "text",
       "image",
       "button",
-      "title",
-      "teaser"
+      "title"
     ]
   },
   {
