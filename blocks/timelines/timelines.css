@@ -149,6 +149,11 @@
   background-color: #b982ff;
   left: calc(50% - 10px);
 }
+@media (max-width: 575px) {
+  .timelines.deep-purple .timeline-right::before, .timelines.deep-purple .timeline-left::before {
+    display: none;
+  }
+}
 .timelines.deep-purple .timeline-item-content {
   background-color: #e5d7f7;
   padding: 20px;

@@ -1,5 +1,6 @@
 .controlador-das-abas .controlador-das-abas-wrapper ul {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   padding: 0px;
   margin: 0px;

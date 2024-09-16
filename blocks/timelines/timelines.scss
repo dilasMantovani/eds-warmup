@@ -167,6 +167,9 @@
                 border-radius: 100%;
                 background-color: #b982ff;
                 left: calc(50% - 10px);
+                @media (max-width: 575px){ //mobile breakpoint
+                    display: none;
+                }
             }
         }        
         &-item{
