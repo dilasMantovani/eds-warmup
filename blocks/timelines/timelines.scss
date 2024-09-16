@@ -26,7 +26,8 @@
     }
 }
 
-.timelines.default{
+//default theme
+.timelines{
     position: relative;
     &::before{
         content: "";

@@ -1,4 +1,5 @@
-.controlador-das-abas.default{
+//default theme
+.controlador-das-abas{
     .controlador-das-abas-wrapper{
         ul{
             display: flex;
@@ -31,26 +32,13 @@
 .controlador-das-abas.deep-purple{
     .controlador-das-abas-wrapper{
         ul{
-            display: flex;
-            list-style-type:none;
-            padding:0px;
-            margin:0px;
+
             li{
                 a{
-                    padding: 0.2rem 1.5rem;
-                    cursor: pointer;
-                    color: #0041a9;
-                    font-size: 18px;
-                    line-height: 1.88;
-                    text-decoration: none;
                     &:hover{
-                        color: #343a40;;
                     }
                     &.active{
                         background-color: #b982ff;
-                        color: #fff;
-                        border-radius: 0.25rem;
-    
                     }
                 }
             }

@@ -23,10 +23,10 @@
   }
 }
 
-.timelines.default {
+.timelines {
   position: relative;
 }
-.timelines.default::before {
+.timelines::before {
   content: "";
   height: 100%;
   width: 2px;
@@ -34,13 +34,13 @@
   position: absolute;
   left: 50%;
 }
-.timelines.default .timeline-right .timeline-item-title, .timelines.default .timeline-right .timeline-item-wrapper {
+.timelines .timeline-right .timeline-item-title, .timelines .timeline-right .timeline-item-wrapper {
   border-radius: 0px 10px 0px 0px;
 }
-.timelines.default .timeline-right .timeline-item-wrapper {
+.timelines .timeline-right .timeline-item-wrapper {
   margin-left: 20px;
 }
-.timelines.default .timeline-right::before {
+.timelines .timeline-right::before {
   content: "►";
   position: absolute;
   width: 20px;
@@ -48,13 +48,13 @@
   left: 50%;
   color: #00368c;
 }
-.timelines.default .timeline-left .timeline-item-title, .timelines.default .timeline-left .timeline-item-wrapper {
+.timelines .timeline-left .timeline-item-title, .timelines .timeline-left .timeline-item-wrapper {
   border-radius: 10px 0px 0px 0px;
 }
-.timelines.default .timeline-left .timeline-item-wrapper {
+.timelines .timeline-left .timeline-item-wrapper {
   margin-right: 20px;
 }
-.timelines.default .timeline-left::before {
+.timelines .timeline-left::before {
   content: "◄";
   position: absolute;
   width: 20px;
@@ -62,35 +62,35 @@
   left: calc(50% - 20px);
   color: #00368c;
 }
-.timelines.default .timeline-right, .timelines.default .timeline-left {
+.timelines .timeline-right, .timelines .timeline-left {
   transition-property: transform;
   transition-duration: 500ms;
   transition-delay: 500ms;
 }
-.timelines.default .timeline-right.visible, .timelines.default .timeline-left.visible {
+.timelines .timeline-right.visible, .timelines .timeline-left.visible {
   transform: rotatex(0deg);
 }
-.timelines.default .timeline-right.invisible, .timelines.default .timeline-left.invisible {
+.timelines .timeline-right.invisible, .timelines .timeline-left.invisible {
   transform: rotatex(90deg);
 }
-.timelines.default .timeline-item-wrapper {
+.timelines .timeline-item-wrapper {
   background-color: unset;
 }
-.timelines.default .timeline-item-title {
+.timelines .timeline-item-title {
   padding: 0px 20px;
   background-color: #00368c;
 }
-.timelines.default .timeline-item-title h1, .timelines.default .timeline-item-title h2, .timelines.default .timeline-item-title h3, .timelines.default .timeline-item-title h4, .timelines.default .timeline-item-title h5, .timelines.default .timeline-item-title h6 {
+.timelines .timeline-item-title h1, .timelines .timeline-item-title h2, .timelines .timeline-item-title h3, .timelines .timeline-item-title h4, .timelines .timeline-item-title h5, .timelines .timeline-item-title h6 {
   font-size: 1.5rem;
   line-height: 3rem;
   color: white;
   text-transform: uppercase;
 }
-.timelines.default .timeline-item-subtitle {
+.timelines .timeline-item-subtitle {
   color: #00368c;
   font-weight: bold;
 }
-.timelines.default .timeline-item-text {
+.timelines .timeline-item-text {
   color: #3a3a3a;
 }
 .timelines.deep-purple {
