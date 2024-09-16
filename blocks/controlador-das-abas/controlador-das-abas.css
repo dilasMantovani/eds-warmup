@@ -1,10 +1,10 @@
-.controlador-das-abas-wrapper ul {
+.controlador-das-abas.default .controlador-das-abas-wrapper ul {
   display: flex;
   list-style-type: none;
   padding: 0px;
   margin: 0px;
 }
-.controlador-das-abas-wrapper ul li a {
+.controlador-das-abas.default .controlador-das-abas-wrapper ul li a {
   padding: 0.2rem 1.5rem;
   cursor: pointer;
   color: #0041a9;
@@ -12,11 +12,34 @@
   line-height: 1.88;
   text-decoration: none;
 }
-.controlador-das-abas-wrapper ul li a:hover {
+.controlador-das-abas.default .controlador-das-abas-wrapper ul li a:hover {
   color: #343a40;
 }
-.controlador-das-abas-wrapper ul li a.active {
+.controlador-das-abas.default .controlador-das-abas-wrapper ul li a.active {
   background-color: #007ABF;
+  color: #fff;
+  border-radius: 0.25rem;
+}
+
+.controlador-das-abas.deep-purple .controlador-das-abas-wrapper ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+.controlador-das-abas.deep-purple .controlador-das-abas-wrapper ul li a {
+  padding: 0.2rem 1.5rem;
+  cursor: pointer;
+  color: #0041a9;
+  font-size: 18px;
+  line-height: 1.88;
+  text-decoration: none;
+}
+.controlador-das-abas.deep-purple .controlador-das-abas-wrapper ul li a:hover {
+  color: #343a40;
+}
+.controlador-das-abas.deep-purple .controlador-das-abas-wrapper ul li a.active {
+  background-color: #b982ff;
   color: #fff;
   border-radius: 0.25rem;
 }
