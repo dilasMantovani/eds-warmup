@@ -213,12 +213,12 @@ main img {
 
 /* sections */
 main .section {
-  padding: 64px 16px;
+  padding: 0 16px;
 }
 
 @media (width >= 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 0 32px;
   }
 }
 @media (width >= 900px) {
@@ -252,4 +252,8 @@ main .section.columns-three {
 }
 main .section.columns-three > * {
   margin: 0;
+}
+
+main .section.hidden {
+  display: none;
 }
