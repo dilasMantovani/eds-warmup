@@ -358,7 +358,8 @@
                 "template": {
                   "name": "Bloco de codigo",
                   "model": "code-block",
-                  "code": "System.out.println(\"Hello World\");"
+                  "code": "System.out.println(\"Hello World\");",
+                  "language": "java"
                 }
               }
             }

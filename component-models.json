@@ -616,6 +616,13 @@
         "name": "code",
         "label": "Código",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "language",
+        "label": "Linguagem",
+        "valueType": "string",
+        "description": "Ex: markup,html,xml,javascript... Consulte todas as possibilidades em https://prismjs.com/#supported-languages"
       }
     ]
   }
