@@ -342,8 +342,7 @@
                   "name": "Espacador",
                   "model": "spacer",
                   "height": "20",
-                  "heightMobile": "10",
-                  "hasDivider": false
+                  "heightMobile": "10"
                 }
               }
             }
