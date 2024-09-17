@@ -1,0 +1,18 @@
+ .bloco-de-codigo{
+    pre{
+        border-left: 15px solid #00368c; 
+        padding: 5px 45px;
+        code[class*=language-]{
+            font-size: 16px;
+            line-height: 1.45;
+            .line-numbers-rows{
+                border-right: 1px solid #CCC;
+                >span:before{
+                    color: #949494;
+                    font-size: 16px;
+                    line-height: 1.9;
+                }
+            }
+        }
+    }
+ }

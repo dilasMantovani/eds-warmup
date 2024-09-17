@@ -102,21 +102,21 @@ p,
 dl,
 ol,
 ul,
-pre,
+// pre,
 blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-code,
-pre {
-  font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-s);
-}
+// code,
+// pre {
+//   font-family: var(--fixed-font-family);
+//   font-size: var(--body-font-size-s);
+// }
 
-code {
-  padding: 0.125em;
-}
+// code {
+//   padding: 0.125em;
+// }
 
 pre {
   overflow: scroll;
@@ -125,7 +125,6 @@ pre {
 main pre {
   background-color: var(--light-color);
   padding: 1em;
-  border-radius: 0.25em;
   overflow-x: auto;
   white-space: pre;
 }
