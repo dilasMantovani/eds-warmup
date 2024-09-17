@@ -24,7 +24,8 @@
       "teaser",
       "texto-rico",
       "tab-controller",
-      "spacer"
+      "spacer",
+      "code-block"
     ]
   },
   {
@@ -41,7 +42,8 @@
       "timelines",
       "author-bio",
       "texto-rico",
-      "spacer"
+      "spacer",
+      "code-block"
     ]
   },
   {

@@ -607,5 +607,16 @@
         "label": "Altura do espaçador para mobile"
       }
     ]
+  },
+  {
+    "id": "code-block",
+    "fields": [
+      {
+        "component": "text-area",
+        "name": "code",
+        "label": "Código",
+        "valueType": "string"
+      }
+    ]
   }
 ]
