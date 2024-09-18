@@ -642,5 +642,48 @@
         ]
       }
     ]
+  },
+  {
+    "id": "image-compare",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imageBefore",
+        "label": "Imagem Antes",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "textBefore",
+        "label": "Texto Antes"
+      },
+      {
+        "component": "reference",
+        "name": "imageAfter",
+        "label": "Imagem Depois",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "textAfter",
+        "label": "Texto Depois"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      }
+    ]
   }
 ]

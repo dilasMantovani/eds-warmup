@@ -25,7 +25,8 @@
       "texto-rico",
       "tab-controller",
       "spacer",
-      "code-block"
+      "code-block",
+      "image-compare"
     ]
   },
   {
@@ -43,7 +44,8 @@
       "author-bio",
       "texto-rico",
       "spacer",
-      "code-block"
+      "code-block",
+      "image-compare"
     ]
   },
   {
