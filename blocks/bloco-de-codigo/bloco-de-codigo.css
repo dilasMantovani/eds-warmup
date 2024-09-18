@@ -1,16 +1,20 @@
 .bloco-de-codigo pre {
   border-left: 15px solid #00368c;
-  padding: 5px 45px;
+  padding: 5px 40px;
 }
 .bloco-de-codigo pre code[class*=language-] {
   font-size: 16px;
   line-height: 1.45;
+  left: 15px;
 }
 .bloco-de-codigo pre code[class*=language-] .line-numbers-rows {
   border-right: 1px solid #CCC;
+  top: -5px;
+  left: -4.8em;
+  line-height: 1.99;
+  width: 4em;
 }
 .bloco-de-codigo pre code[class*=language-] .line-numbers-rows > span:before {
   color: #949494;
   font-size: 16px;
-  line-height: 1.9;
 }
