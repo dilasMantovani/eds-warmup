@@ -358,7 +358,7 @@
                 "template": {
                   "name": "Bloco de codigo",
                   "model": "code-block",
-                  "code": "System.out.println(\"Hello World\");",
+                  "code": "<pre><code>System.out.println(\"Hello World\");</code></pre>",
                   "language": "java",
                   "classes": "default"
                 }
