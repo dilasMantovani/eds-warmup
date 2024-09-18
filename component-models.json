@@ -624,6 +624,22 @@
         "valueType": "string",
         "description": "Ex: markup,html,xml,javascript... Consulte todas as possibilidades em https://prismjs.com/#supported-languages",
         "required": true
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
       }
     ]
   }
