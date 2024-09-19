@@ -25,4 +25,3 @@ function highlightCodeBlock(){
 
 highlightCodeBlock();
 
-baSlider(".comparison-slider");
