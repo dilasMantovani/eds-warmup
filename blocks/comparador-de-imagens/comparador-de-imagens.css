@@ -65,3 +65,11 @@
   margin-top: -10px;
   background-color: #555;
 }
+
+.comparador-de-imagens.deep-purple .comparison-slider .divider:before {
+  background-color: #b982ff;
+}
+.comparador-de-imagens.deep-purple .comparison-slider .divider:after {
+  content: "";
+  background-color: #b982ff;
+}

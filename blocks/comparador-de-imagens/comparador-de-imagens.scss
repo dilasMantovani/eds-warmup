@@ -74,3 +74,17 @@
         }
     }
 }
+
+.comparador-de-imagens.deep-purple{
+    .comparison-slider{
+        .divider{
+            &:before{
+                background-color: #b982ff;
+            }
+            &:after{
+                content: "";
+                background-color: #b982ff;
+            }
+        }
+    }
+}
