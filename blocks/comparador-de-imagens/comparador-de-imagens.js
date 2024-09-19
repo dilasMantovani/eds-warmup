@@ -7,10 +7,10 @@ export default function decorate(block) {
     const htmlOutput = `
         <div class="comparison-slider-wrapper">
             <div class="comparison-slider">
-                <div class="overlay right"><div class="overlay-wrapper">${textAfter}</div></div>
+                <div class="overlay right" ${textAfter ? "": "style='display:none'"}><div class="overlay-wrapper">${textAfter}</div></div>
                 <img src="${imageAfter?.src}"/>
                 <div class="resize">
-                    <div class="overlay left"><div class="overlay-wrapper">${textBefore}</div></div>
+                    <div class="overlay left" ${textAfter ? "": "style='display:none'"}><div class="overlay-wrapper" >${textBefore}</div></div>
                     <img src="${imageBefore?.src}"/>
                 </div>
                 <div class="divider"></div>
