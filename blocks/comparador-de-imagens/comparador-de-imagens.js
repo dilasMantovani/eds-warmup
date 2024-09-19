@@ -10,7 +10,7 @@ export default function decorate(block) {
                 <div class="overlay right" ${textAfter ? "": "style='display:none'"}><div class="overlay-wrapper">${textAfter}</div></div>
                 <img src="${imageAfter?.src}"/>
                 <div class="resize">
-                    <div class="overlay left" ${textAfter ? "": "style='display:none'"}><div class="overlay-wrapper" >${textBefore}</div></div>
+                    <div class="overlay left" ${textBedore ? "": "style='display:none'"}><div class="overlay-wrapper" >${textBefore}</div></div>
                     <img src="${imageBefore?.src}"/>
                 </div>
                 <div class="divider"></div>
