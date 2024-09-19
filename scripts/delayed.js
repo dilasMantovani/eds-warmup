@@ -23,4 +23,6 @@ function highlightCodeBlock(){
       .catch((err) => console.error(err));
 }
 
-highlightCodeBlock()
+highlightCodeBlock();
+
+baSlider(".comparison-slider");

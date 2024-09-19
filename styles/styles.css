@@ -18,9 +18,9 @@
   --dark-color: #ccc;
   --text-color: black;
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
+  --body-font-family: "Open Sans", roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
+  --fixed-font-family: "Open Sans", "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
   /* body sizes */
   --body-font-size-m: 22px;
   --body-font-size-s: 18px;

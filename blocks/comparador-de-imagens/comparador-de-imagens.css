@@ -1,0 +1,67 @@
+.comparador-de-imagens {
+  user-select: none;
+}
+.comparador-de-imagens .comparison-slider {
+  position: relative;
+}
+.comparador-de-imagens .comparison-slider img {
+  max-width: unset;
+}
+.comparador-de-imagens .comparison-slider .overlay .overlay-wrapper {
+  position: absolute;
+  bottom: 20px;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  box-sizing: border-box;
+  color: #DDD;
+  user-select: all;
+}
+.comparador-de-imagens .comparison-slider .overlay.right .overlay-wrapper {
+  right: 20px;
+  text-align: right;
+}
+.comparador-de-imagens .comparison-slider .overlay.left .overlay-wrapper {
+  left: 20px;
+}
+.comparador-de-imagens .comparison-slider .divider {
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.comparador-de-imagens .comparison-slider .divider:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -9px;
+  top: 50%;
+  margin-top: -10px;
+  background-color: white;
+  transform: rotate(45deg);
+  transition: all 0.1s ease-in-out;
+  border-radius: unset;
+}
+.comparador-de-imagens .comparison-slider .divider:after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 3px;
+  top: 50%;
+  margin-top: -6px;
+  background-color: white;
+  transform: rotate(45deg);
+  transition: all 0.1s ease-in-out;
+}
+.comparador-de-imagens .comparison-slider .divider.draggable:before {
+  width: 30px;
+  height: 30px;
+  left: -14px;
+  margin-top: -15px;
+}
+.comparador-de-imagens .comparison-slider .divider.draggable:after {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  background-color: #555;
+}
