@@ -258,6 +258,20 @@
         "name": "image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageTitle",
+        "label": "Título da imagem",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageSource",
+        "label": "Fonte da imagem",
+        "multi": false
       }
     ]
   },
