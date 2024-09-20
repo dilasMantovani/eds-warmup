@@ -67,7 +67,12 @@ body.appear {
 }
 
 header {
+  display: none;
   height: var(--nav-height);
+}
+
+footer {
+  display: none;
 }
 
 h1,
