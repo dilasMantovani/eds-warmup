@@ -74,7 +74,6 @@
             // animation chunk
             transition-property: transform;
             transition-duration: 500ms;
-            transition-delay: 500ms;
             &.visible{
                 transform: rotatex(0deg);
             }
@@ -124,10 +123,9 @@
         &-right{
             transition-property: transform, opacity;
             transition-duration: 500ms;
-            transition-delay: 500ms;
             .timeline-item-wrapper{
                 margin-left: 20px;
-            }
+            } 
             &.visible{
                 opacity: 1;
                 transform: translateX(0%);
@@ -142,7 +140,6 @@
 
             transition-property: transform, opacity;
             transition-duration: 500ms;
-            transition-delay: 500ms;
 
             .timeline-item-wrapper{
                 margin-right: 20px;

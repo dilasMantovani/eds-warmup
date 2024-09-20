@@ -65,7 +65,6 @@
 .timelines .timeline-right, .timelines .timeline-left {
   transition-property: transform;
   transition-duration: 500ms;
-  transition-delay: 500ms;
 }
 .timelines .timeline-right.visible, .timelines .timeline-left.visible {
   transform: rotatex(0deg);
@@ -107,7 +106,6 @@
 .timelines.deep-purple .timeline-right {
   transition-property: transform, opacity;
   transition-duration: 500ms;
-  transition-delay: 500ms;
 }
 .timelines.deep-purple .timeline-right .timeline-item-wrapper {
   margin-left: 20px;
@@ -124,7 +122,6 @@
   text-align: left;
   transition-property: transform, opacity;
   transition-duration: 500ms;
-  transition-delay: 500ms;
 }
 .timelines.deep-purple .timeline-left .timeline-item-wrapper {
   margin-right: 20px;

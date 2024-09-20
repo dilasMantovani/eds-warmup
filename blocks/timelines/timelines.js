@@ -1,13 +1,15 @@
 var observer = new IntersectionObserver(function(entries) {
-    if(entries[0].isIntersecting === true){
-        entries[0]?.target?.classList?.remove("invisible");
-        entries[0]?.target?.classList?.add("visible");
-    }
-    if(entries[0].isIntersecting === false && window.scrollY < entries[0].target.getBoundingClientRect().bottom){
-        entries[0]?.target?.classList?.remove("visible");
-        entries[0]?.target?.classList?.add("invisible");
-    }
-    }, { threshold: [0] });
+    entries.forEach(entry=>{
+        if(entry.isIntersecting === true){
+            entry?.target?.classList?.remove("invisible");
+            entry?.target?.classList?.add("visible");
+        }
+        if(entry.isIntersecting === false && window.scrollY < entry.target.getBoundingClientRect().top){
+            entry?.target?.classList?.remove("visible");
+            entry?.target?.classList?.add("invisible");
+        }
+    })
+}, { threshold: [0.25] });
 
 export default function decorate(block) {
     //o primeiro elemento será sempre a propriedade startAt
