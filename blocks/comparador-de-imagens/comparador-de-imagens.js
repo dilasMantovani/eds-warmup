@@ -21,6 +21,8 @@ export default function decorate(block) {
     block.innerHTML = htmlOutput;
 
     $(document).ready(function () {
-        baSlider(".comparison-slider");
+        setTimeout(() => {
+            baSlider(".comparison-slider");
+        }, 1000);
     });
 }
