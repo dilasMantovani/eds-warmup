@@ -262,14 +262,14 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageTitle",
+        "name": "imgTitle",
         "label": "Título da imagem",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageSource",
+        "name": "imgSource",
         "label": "Fonte da imagem",
         "multi": false
       }
