@@ -19,10 +19,4 @@ export default function decorate(block) {
     `;
 
     block.innerHTML = htmlOutput;
-
-    $(document).ready(function () {
-        setTimeout(() => {
-            baSlider(".comparison-slider");
-        }, 1000);
-    });
 }
