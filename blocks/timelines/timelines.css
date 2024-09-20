@@ -34,7 +34,8 @@
   position: absolute;
   left: 50%;
 }
-.timelines .timeline-right .timeline-item-title, .timelines .timeline-right .timeline-item-wrapper {
+.timelines .timeline-right .timeline-item-title,
+.timelines .timeline-right .timeline-item-wrapper {
   border-radius: 0px 10px 0px 0px;
 }
 .timelines .timeline-right .timeline-item-wrapper {
@@ -48,7 +49,8 @@
   left: 50%;
   color: #00368c;
 }
-.timelines .timeline-left .timeline-item-title, .timelines .timeline-left .timeline-item-wrapper {
+.timelines .timeline-left .timeline-item-title,
+.timelines .timeline-left .timeline-item-wrapper {
   border-radius: 10px 0px 0px 0px;
 }
 .timelines .timeline-left .timeline-item-wrapper {
@@ -79,7 +81,12 @@
   padding: 0px 20px;
   background-color: #00368c;
 }
-.timelines .timeline-item-title h1, .timelines .timeline-item-title h2, .timelines .timeline-item-title h3, .timelines .timeline-item-title h4, .timelines .timeline-item-title h5, .timelines .timeline-item-title h6 {
+.timelines .timeline-item-title h1,
+.timelines .timeline-item-title h2,
+.timelines .timeline-item-title h3,
+.timelines .timeline-item-title h4,
+.timelines .timeline-item-title h5,
+.timelines .timeline-item-title h6 {
   font-size: 1.5rem;
   line-height: 3rem;
   color: white;
@@ -92,6 +99,19 @@
 .timelines .timeline-item-text {
   color: #3a3a3a;
 }
+.timelines .timeline-item-image-wrapper .timeline-item-image-title, .timelines .timeline-item-image-wrapper .timeline-item-image-source {
+  text-align: center;
+}
+.timelines .timeline-item-image-wrapper .timeline-item-image-title p, .timelines .timeline-item-image-wrapper .timeline-item-image-source p {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #6c757d;
+  font-size: 80%;
+}
+.timelines .timeline-item-image-wrapper .timeline-item-image-source {
+  margin-top: -9px;
+}
+
 .timelines.deep-purple {
   position: relative;
 }
@@ -161,7 +181,12 @@
   background-color: #b982ff;
   border-radius: 10px 10px 0px 0px;
 }
-.timelines.deep-purple .timeline-item-title h1, .timelines.deep-purple .timeline-item-title h2, .timelines.deep-purple .timeline-item-title h3, .timelines.deep-purple .timeline-item-title h4, .timelines.deep-purple .timeline-item-title h5, .timelines.deep-purple .timeline-item-title h6 {
+.timelines.deep-purple .timeline-item-title h1,
+.timelines.deep-purple .timeline-item-title h2,
+.timelines.deep-purple .timeline-item-title h3,
+.timelines.deep-purple .timeline-item-title h4,
+.timelines.deep-purple .timeline-item-title h5,
+.timelines.deep-purple .timeline-item-title h6 {
   font-family: "Orbitron-Regular";
   font-size: 1.5rem;
   line-height: 3rem;

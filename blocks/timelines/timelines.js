@@ -30,11 +30,15 @@ export default function decorate(block) {
         const subtitle = child?.children[1]
         const text = child?.children[2]
         const image = child?.children[3]
+        const imgTitle = child?.children[4]
+        const imgSource = child?.children[5]
 
         title.className = "timeline-item-title"
         subtitle.className = "timeline-item-subtitle"
         text.className = "timeline-item-text"
         image.className="timeline-item-image"
+        imgTitle.className="timeline-item-image-title"
+        imgSource.className="timeline-item-image-source"
         
         let timelineItemWrapper = document.createElement("div")
         timelineItemWrapper.className = "timeline-item-wrapper"
@@ -43,12 +47,20 @@ export default function decorate(block) {
         timelineItemHeader.className = "timeline-item-header"
         timelineItemHeader.appendChild(title)
 
+        let timelineItemImageWrapper = document.createElement("div")
+        timelineItemImageWrapper.className = "timeline-item-image-wrapper"
+        timelineItemImageWrapper.appendChild(imgTitle)
+        timelineItemImageWrapper.appendChild(image)
+        timelineItemImageWrapper.appendChild(imgSource)
+
 
         let timelineItemContent = document.createElement("div")
         timelineItemContent.className = "timeline-item-content"
         timelineItemContent.appendChild(subtitle)
         timelineItemContent.appendChild(text)
-        timelineItemContent.appendChild(image)
+
+        if(image.innerHTML)
+            timelineItemContent.appendChild(timelineItemImageWrapper);
 
         timelineItemWrapper.appendChild(timelineItemHeader)
         timelineItemWrapper.appendChild(timelineItemContent)
