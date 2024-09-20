@@ -12,6 +12,9 @@ export default function decorate(block) {
         allTabSections = document.querySelectorAll('[data-tab-id]');
     }
 
+    const id =block?.children[1]?.textContent?.trim();
+    console.log(id)
+
     const tabData = Array.from(allTabSections)?.map((tabElement) => {return {'tabId' : tabElement.getAttribute('data-tab-id'), 'tabTitle': tabElement.getAttribute('data-tab-title')}})
     let tabListItems = "";
     tabData.forEach(tab=>{
@@ -19,7 +22,7 @@ export default function decorate(block) {
     });
 
     const outputHtml = `
-        <div class="controlador-das-abas-wrapper">
+        <div class="controlador-das-abas-wrapper" id="${id}">
             <ul tab-group="${tabData?.map(tab=> {return tab?.tabId})?.join(",")}">
                 ${tabData?.map(tab=>{
                     return `<li>
