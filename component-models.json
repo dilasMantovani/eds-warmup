@@ -752,5 +752,68 @@
         "label": "size"
       }
     ]
+  },
+  {
+    "id": "titulo",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Título"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Tipo do título",
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "id",
+        "label": "Identificador",
+        "description": "Valor que pode ser usado em âncoras"
+      }
+    ]
   }
 ]
