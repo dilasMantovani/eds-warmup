@@ -724,6 +724,32 @@
             "value": "deep-purple"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "businessKey",
+        "label": "businessKey"
+      },
+      {
+        "component": "text",
+        "name": "mediastreamId",
+        "label": "mediastreamId"
+      },
+      {
+        "component": "text",
+        "name": "videoLink",
+        "label": "videoLink",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "captionLink",
+        "label": "captionLink"
+      },
+      {
+        "component": "text",
+        "name": "size",
+        "label": "size"
       }
     ]
   }
