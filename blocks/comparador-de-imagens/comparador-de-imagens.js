@@ -5,7 +5,7 @@ export default function decorate(block) {
     const textAfter = block.children[3]?.textContent?.trim();
 
     const htmlOutput = `
-        <div class="comparison-slider-wrapper">
+        <div class="comparison-slider-wrapper loadable">
             <div class="comparison-slider">
                 <div class="overlay right" ${textAfter ? "": "style='display:none;'"}><div class="overlay-wrapper">${textAfter}</div></div>
                 <img src="${imageAfter?.src}"/>
@@ -16,6 +16,7 @@ export default function decorate(block) {
                 <div class="divider"></div>
             </div>
         </div>
+        <div class="loader-15 loading"></div>
     `;
 
     block.innerHTML = htmlOutput;

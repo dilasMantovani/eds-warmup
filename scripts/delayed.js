@@ -27,4 +27,12 @@ highlightCodeBlock();
 
 baSlider(".comparison-slider");
 
+document.querySelectorAll(".loading").forEach(elem=>{
+  elem.classList.remove("loading")
+})
+
+document.querySelectorAll(".loadable").forEach(elem=>{
+  elem.classList.remove("loadable")
+})
+
 
