@@ -26,7 +26,8 @@
       "tab-controller",
       "spacer",
       "code-block",
-      "image-compare"
+      "image-compare",
+      "video"
     ]
   },
   {
@@ -45,7 +46,8 @@
       "texto-rico",
       "spacer",
       "code-block",
-      "image-compare"
+      "image-compare",
+      "video"
     ]
   },
   {
