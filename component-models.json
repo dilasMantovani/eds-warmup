@@ -757,14 +757,18 @@
     "id": "titulo",
     "fields": [
       {
-        "component": "select",
+        "component": "multiselect",
         "valueType": "string",
         "name": "classes",
-        "label": "Tema",
+        "label": "Tema / variações",
         "options": [
           {
             "name": "Default",
             "value": "default"
+          },
+          {
+            "name": "Background",
+            "value": "background"
           },
           {
             "name": "Deep purple",
