@@ -410,7 +410,8 @@
                   "model": "titulo",
                   "classes": "default",
                   "title": "Título",
-                  "titleType": "h2"
+                  "titleType": "h2",
+                  "iconVariant": "solid"
                 }
               }
             }
