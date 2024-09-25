@@ -874,12 +874,12 @@
       },
       {
         "component": "text",
-        "name": "imageTitle",
+        "name": "title",
         "label": "Título da imagem"
       },
       {
         "component": "text",
-        "name": "imageDescription",
+        "name": "description",
         "label": "Descrição da imagem",
         "description": "Fonte da imagem, por exemplo"
       },
@@ -898,7 +898,7 @@
         "valueType": "boolean",
         "name": "openModal",
         "label": "Invocar Modal",
-        "description": "Quando estiver checkado o efeito é aberto um modal com a imagem",
+        "description": "Quando estiver checkado é aberto um modal com a imagem quando clicada",
         "condition": {
           "!==": [{ "var": "zoomIn" }, true]
         }
