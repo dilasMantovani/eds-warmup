@@ -205,3 +205,7 @@ export async function fetchAuthorBio(anchor) {
 }
 
 loadPage();
+
+export function isInEditor(){
+  return window?.location?.hostname?.startsWith("author");
+}
