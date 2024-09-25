@@ -1,4 +1,5 @@
 export default function decorate(block) {
+
     const title = block?.children[0];
     const id = block?.children[1];
     const icon = block?.children[2];
@@ -20,20 +21,11 @@ export default function decorate(block) {
     headerElement.innerHTML = `<strong>${headerElement?.textContent?.trim()}</strong>`;
 
     if(iconText){
-        var iconElement = document.createElement('span');
-    
-        fetch(`/icons/fontawesome/svgs/${iconTypeText}/${iconText}.svg`)
-        .then(response => {
-            if (!response.ok) throw new Error("Not 2xx response", {cause: response});
-            return response.text()
-        })
-        .then(data => {
-            iconElement.innerHTML = data;
-            headerElement.insertBefore(iconElement, headerElement.firstChild);
-        })
-        .catch(()=>{
-            console.warn("SVG não encontrado")
-        });
+        var iconElement = document.createElement('i');
+        iconElement.classList.add("fas");
+        iconElement.classList.add(`fa-${iconText}`);
+        if(iconTypeText) iconElement.classList.add(`fa-${iconTypeText}`);
+        headerElement.insertBefore(iconElement, headerElement.firstChild);
     }
 
 }

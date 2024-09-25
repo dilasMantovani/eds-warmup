@@ -1,16 +1,10 @@
  .titulo{
     color: #00368c;
-    fill: #00368c;
     h1,h2,h3,h4,h5,h6{
         font-weight: 600;
         margin-bottom: 0.5rem;
-        span{
-            //vertical-align: middle;
+        i{
             margin-right: 5px ;
-            svg{
-                width: 0.8em;
-                height: 0.8em;
-            }
         }
     }
     &.background{
@@ -32,7 +26,6 @@
 
 .titulo.deep-purple{
     color: #3a3a3a;
-    fill: #3a3a3a;
     h1,h2,h3,h4,h5,h6{
         font-family: "Orbitron-Regular";
         color: #3a3a3a;
@@ -49,7 +42,6 @@
                line-height: 3rem;
                h1,h2,h3,h4,h5,h6{
                    color: #fff;
-                   fill: #fff;
                    font-style: oblique;
                }
            }
