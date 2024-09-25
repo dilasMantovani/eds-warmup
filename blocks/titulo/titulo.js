@@ -22,7 +22,6 @@ export default function decorate(block) {
 
     if(iconText){
         var iconElement = document.createElement('i');
-        iconElement.classList.add("fas");
         iconElement.classList.add(`fa-${iconText}`);
         if(iconTypeText) iconElement.classList.add(`fa-${iconTypeText}`);
         headerElement.insertBefore(iconElement, headerElement.firstChild);
