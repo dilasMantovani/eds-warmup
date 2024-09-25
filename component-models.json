@@ -841,5 +841,68 @@
         ]
       }
     ]
+  },
+  {
+    "id": "imagem",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Imagem",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Texto alternativo da imagem"
+      },
+      {
+        "component": "text",
+        "name": "imageTitle",
+        "label": "Título da imagem"
+      },
+      {
+        "component": "text",
+        "name": "imageDescription",
+        "label": "Descrição da imagem",
+        "description": "Fonte da imagem, por exemplo"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "zoomIn",
+        "label": "Zoom in",
+        "description": "Quando estiver checkado o efeito de hover é um zoom de 50%",
+        "condition": {
+          "===": [{ "var": "openModal" }, "false"]
+        }
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "openModal",
+        "label": "Invocar Modal",
+        "description": "Quando estiver checkado o efeito é aberto um modal com a imagem",
+        "condition": {
+          "===": [{ "var": "zoomIn" }, "false"]
+        }
+      }
+    ]
   }
 ]
