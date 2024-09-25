@@ -1,0 +1,49 @@
+.titulo {
+  color: #00368c;
+  fill: #00368c;
+}
+.titulo h1, .titulo h2, .titulo h3, .titulo h4, .titulo h5, .titulo h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.titulo h1 span, .titulo h2 span, .titulo h3 span, .titulo h4 span, .titulo h5 span, .titulo h6 span {
+  margin-right: 5px;
+}
+.titulo h1 span svg, .titulo h2 span svg, .titulo h3 span svg, .titulo h4 span svg, .titulo h5 span svg, .titulo h6 span svg {
+  width: 0.8em;
+  height: 0.8em;
+}
+.titulo.background div div {
+  width: fit-content;
+  background-color: #00368c;
+  padding: 0 10px;
+  line-height: 3em;
+}
+.titulo.background div div h1, .titulo.background div div h2, .titulo.background div div h3, .titulo.background div div h4, .titulo.background div div h5, .titulo.background div div h6 {
+  text-transform: uppercase;
+  color: #fff;
+  fill: #fff;
+}
+
+.titulo.deep-purple {
+  color: #3a3a3a;
+  fill: #3a3a3a;
+}
+.titulo.deep-purple h1, .titulo.deep-purple h2, .titulo.deep-purple h3, .titulo.deep-purple h4, .titulo.deep-purple h5, .titulo.deep-purple h6 {
+  font-family: "Orbitron-Regular";
+  color: #3a3a3a;
+  font-style: oblique;
+  letter-spacing: 5px;
+}
+.titulo.deep-purple.background div div {
+  width: fit-content;
+  background-color: #423188;
+  border-radius: 4px;
+  padding: 0 10px;
+  line-height: 3rem;
+}
+.titulo.deep-purple.background div div h1, .titulo.deep-purple.background div div h2, .titulo.deep-purple.background div div h3, .titulo.deep-purple.background div div h4, .titulo.deep-purple.background div div h5, .titulo.deep-purple.background div div h6 {
+  color: #fff;
+  fill: #fff;
+  font-style: oblique;
+}
