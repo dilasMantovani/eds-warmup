@@ -890,7 +890,7 @@
         "label": "Zoom in",
         "description": "Quando estiver checkado o efeito de hover é um zoom de 50%",
         "condition": {
-          "!==": [{ "var": "openModal" }, "false"]
+          "!==": [{ "var": "openModal" }, false]
         }
       },
       {
@@ -900,7 +900,7 @@
         "label": "Invocar Modal",
         "description": "Quando estiver checkado o efeito é aberto um modal com a imagem",
         "condition": {
-          "!==": [{ "var": "zoomIn" }, "false"]
+          "!==": [{ "var": "zoomIn" }, false]
         }
       }
     ]
