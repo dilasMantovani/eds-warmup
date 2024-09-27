@@ -52,7 +52,7 @@
   opacity: 0;
 }
 .imagem div div picture.open-modal:hover i {
-  opacity: 0.9;
+  opacity: 1;
 }
 .imagem div div picture.open-modal:hover:before {
   opacity: 1;
