@@ -904,5 +904,64 @@
         }
       }
     ]
+  },
+  {
+    "id": "button-modal",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "cta",
+        "label": "Texto do botão"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Titulo do modal"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Texto",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Imagem",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Texto alternativo da imagem"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Título da imagem"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Descrição da imagem",
+        "description": "Fonte da imagem, por exemplo"
+      }
+    ]
   }
 ]
