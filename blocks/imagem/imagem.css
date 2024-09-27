@@ -57,7 +57,7 @@
 .imagem div div picture.open-modal:hover:before {
   opacity: 1;
 }
-.imagem .modal {
+.imagem .img-modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -73,7 +73,7 @@
   z-index: 20;
   /* Modal Content */
 }
-.imagem .modal-content {
+.imagem .img-modal-content {
   background-color: #fefefe;
   border-radius: 3px;
   margin: auto;
@@ -87,37 +87,37 @@
   display: block;
   margin-top: 20px;
 }
-.imagem .modal-content picture {
+.imagem .img-modal-content picture {
   cursor: unset !important;
 }
-.imagem .modal-content picture i {
+.imagem .img-modal-content picture i {
   display: none !important;
 }
-.imagem .modal-content picture:before {
+.imagem .img-modal-content picture:before {
   display: none !important;
 }
-.imagem .modal-content picture img {
+.imagem .img-modal-content picture img {
   width: -webkit-fill-available;
   max-width: 1260px;
 }
-.imagem .modal-content-footer {
+.imagem .img-modal-content-footer {
   position: absolute;
   bottom: -30px;
   width: 100%;
 }
-.imagem .modal-content-footer-wrapper {
+.imagem .img-modal-content-footer-wrapper {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0 10px 0 0;
   color: #CCC;
 }
-.imagem .modal-content-footer-wrapper span {
+.imagem .img-modal-content-footer-wrapper span {
   font-size: 13px;
   font-weight: bold;
   line-height: 1em;
 }
-.imagem .modal-content-footer-wrapper i {
+.imagem .img-modal-content-footer-wrapper i {
   font-size: 25px;
   cursor: pointer;
 }

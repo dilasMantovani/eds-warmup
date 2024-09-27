@@ -70,11 +70,11 @@ export default function decorate(block) {
 
 
         const modalElement = htmlToElement(`
-            <div class="modal">
-                <div class="modal-content">
+            <div class="img-modal">
+                <div class="img-modal-content">
                     ${pictureElement.outerHTML}
-                    <div class="modal-content-footer">
-                        <div class="modal-content-footer-wrapper">
+                    <div class="img-modal-content-footer">
+                        <div class="img-modal-content-footer-wrapper">
                             <span>${titleText}</span>
                             <i class="fa-solid fa-xmark"></i>
                         </div>
