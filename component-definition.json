@@ -342,8 +342,7 @@
                 "template": {
                   "name": "Espacador",
                   "model": "spacer",
-                  "height": "20",
-                  "heightMobile": "10"
+                  "height": "20"
                 }
               }
             }

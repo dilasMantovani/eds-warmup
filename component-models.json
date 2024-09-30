@@ -619,12 +619,6 @@
         "valueType": "number",
         "name": "height",
         "label": "Altura do espaçador"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "heightMobile",
-        "label": "Altura do espaçador para mobile"
       }
     ]
   },
