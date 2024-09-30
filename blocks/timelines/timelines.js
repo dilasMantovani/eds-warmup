@@ -33,12 +33,28 @@ export default function decorate(block) {
         const imgTitle = child?.children[4]
         const imgSource = child?.children[5]
 
+        const text2 = child?.children[6]
+        const image2 = child?.children[7]
+        const imgTitle2 = child?.children[8]
+        const imgSource2 = child?.children[9]
+
+        console.log(text2)
+        console.log(image2)
+        console.log(imgTitle2)
+        console.log(imgSource2)
+
         title.className = "timeline-item-title"
         subtitle.className = "timeline-item-subtitle"
+
         text.className = "timeline-item-text"
         image.className="timeline-item-image"
         imgTitle.className="timeline-item-image-title"
         imgSource.className="timeline-item-image-source"
+
+        text2.className = "timeline-item-text"
+        image2.className="timeline-item-image"
+        imgTitle2.className="timeline-item-image-title"
+        imgSource2.className="timeline-item-image-source"
         
         let timelineItemWrapper = document.createElement("div")
         timelineItemWrapper.className = "timeline-item-wrapper"
@@ -53,6 +69,12 @@ export default function decorate(block) {
         timelineItemImageWrapper.appendChild(image)
         timelineItemImageWrapper.appendChild(imgSource)
 
+        let timelineItemImageWrapper2 = document.createElement("div")
+        timelineItemImageWrapper2.className = "timeline-item-image-wrapper"
+        timelineItemImageWrapper2.appendChild(imgTitle2)
+        timelineItemImageWrapper2.appendChild(image2)
+        timelineItemImageWrapper2.appendChild(imgSource2)
+
 
         let timelineItemContent = document.createElement("div")
         timelineItemContent.className = "timeline-item-content"
@@ -62,8 +84,15 @@ export default function decorate(block) {
         if(image.innerHTML)
             timelineItemContent.appendChild(timelineItemImageWrapper);
 
+
+        timelineItemContent.appendChild(text2)
+
+        if(image2.innerHTML)
+            timelineItemContent.appendChild(timelineItemImageWrapper2);
+
         timelineItemWrapper.appendChild(timelineItemHeader)
         timelineItemWrapper.appendChild(timelineItemContent)
+
 
 
 

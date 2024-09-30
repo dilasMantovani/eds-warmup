@@ -53,7 +53,7 @@
             }
 
             .timeline-item-wrapper {
-                margin-left: 20px;
+                margin-left: 40px;
             }
 
             &::before {
@@ -74,7 +74,7 @@
             }
 
             .timeline-item-wrapper {
-                margin-right: 20px;
+                margin-right: 40px;
             }
 
             &::before {
@@ -130,7 +130,8 @@
             }
 
             &-text {
-                color: #3a3a3a
+                color: #3a3a3a;
+                font-size: 18px;
             }
 
             &-image-wrapper {
@@ -141,7 +142,7 @@
                             margin-top: 0;
                             margin-bottom: 0;
                             color: #6c757d;
-                            font-size: 80%;                        
+                            font-size: 70%;                        
                         }
                     }
                     &-source{
