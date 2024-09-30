@@ -106,14 +106,6 @@
           {
             "name": "Highlight",
             "value": "highlight"
-          },
-          {
-            "name": "Duas colunas",
-            "value": "columns-two"
-          },
-          {
-            "name": "Três colunas",
-            "value": "columns-three"
           }
         ]
       }

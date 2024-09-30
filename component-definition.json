@@ -70,7 +70,9 @@
               "page": {
                 "resourceType": "core/franklin/components/section/v1/section",
                 "template": {
-                  "model": "section"
+                  "model": "section",
+                  "filter": "section"
+
                 }
               }
             }
@@ -435,7 +437,7 @@
         },
         {
           "title": "Imagem",
-          "id": "image",
+          "id": "imagem",
           "plugins": {
             "xwalk": {
               "page": {
