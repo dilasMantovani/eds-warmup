@@ -220,12 +220,12 @@
     "fields": [
       {"component": "text",
        "name": "title",
-       "label": "Title"
+       "label": "Titulo"
       },
       {
         "component": "select",
         "name": "titleType",
-        "label": "Title Type",
+        "label": "Tipo do título",
         "options": [
           {
             "name": "h1",
@@ -255,21 +255,25 @@
       },
       {"component": "text",
        "name": "subtitle",
-       "label": "Subtitle"
+       "label": "Subtítulo"
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Text",
+        "label": "Conteúdo 1",
         "valueType": "string"
       },
       {
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Imagem",
         "multi": false
+      },
+      { "component": "text",
+        "name": "imageAlt",
+        "label": "Texto alternativo da imagem"
       },
       {
         "component": "text",
@@ -283,6 +287,39 @@
         "valueType": "string",
         "name": "imgSource",
         "label": "Fonte da imagem",
+        "multi": false
+      },
+
+      {
+        "component": "richtext",
+        "name": "secondText",
+        "value": "",
+        "label": "Conteúdo 2",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "secondImage",
+        "label": "Imagem 2",
+        "multi": false
+      },
+      { "component": "text",
+        "name": "secondImageAlt",
+        "label": "Texto alternativo da imagem 2"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondImgTitle",
+        "label": "Título da imagem 2",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "secondImgSource",
+        "label": "Fonte da imagem 2",
         "multi": false
       }
     ]
