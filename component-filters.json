@@ -3,7 +3,8 @@
     "id": "main",
     "components": [
       "section",
-      "tab-section"
+      "tab-section",
+      "grid"
     ]
   },
   {
@@ -33,6 +34,16 @@
       "titulo",
       "imagem",
       "button-modal"
+    ]
+  },
+  {
+    "id": "grid",
+    "components": [
+      "texto-rico",
+      "code-block",
+      "image-compare",
+      "video",
+      "imagem"
     ]
   },
   {

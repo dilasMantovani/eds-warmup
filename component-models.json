@@ -148,6 +148,26 @@
     ]
   },
   {
+    "id": "grid",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Duas colunas",
+            "value": "columns-two"
+          },
+          {
+            "name": "Três colunas",
+            "value": "columns-three"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
