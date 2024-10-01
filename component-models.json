@@ -785,6 +785,16 @@
         "component": "text",
         "name": "size",
         "label": "size"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Título do vídeo"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Descrição do vídeo"
       }
     ]
   },
