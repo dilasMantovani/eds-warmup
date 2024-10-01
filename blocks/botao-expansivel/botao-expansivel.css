@@ -46,10 +46,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: block;
-  margin-top: 20px;
   width: 90%;
   max-width: 500px;
   transition: top 500ms ease;
+  max-height: 90%;
+  overflow-y: auto;
 }
 .botao-expansivel .modal-content.active {
   top: 50%;
@@ -97,4 +98,8 @@
 }
 .botao-expansivel .modal-content-footer {
   padding: 15px;
+}
+
+.botao-expansivel.deep-purple .btn-modal {
+  background-color: #b982ff;
 }

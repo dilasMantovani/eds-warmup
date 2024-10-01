@@ -8,10 +8,17 @@ export default function decorate(block) {
     const imgTitle = block.children[4];
     const description = block.children[5];
 
+    const text2 = block.children[6];
+    const image2 = block.children[7];
+    const imgTitle2 = block.children[8];
+    const description2 = block.children[9];
+
     const ctaText = cta?.textContent?.trim();
     const titleText = title?.textContent?.trim();
     const imgTitleText = imgTitle?.textContent?.trim();
     const descriptionText = description?.textContent?.trim();
+    const imgTitleText2 = imgTitle2?.textContent?.trim();
+    const descriptionText2 = description2?.textContent?.trim();
 
     const button = htmlToElement(`<a class="btn-modal" href="#">${ctaText}</a>`);
     block.textContent="";
@@ -32,6 +39,16 @@ export default function decorate(block) {
                             <p>${imgTitleText}</p>
                             ${image.innerHTML}
                             <p>${descriptionText}</p>
+                        </div>
+                        `
+                     : ""}
+                    ${text2?.innerHTML}
+                    ${image2?.querySelector("img") ?
+                        `
+                        <div class="modal-content-body-img-wrapper">
+                            <p>${imgTitleText2}</p>
+                            ${image2.innerHTML}
+                            <p>${descriptionText2}</p>
                         </div>
                         `
                      : ""}
