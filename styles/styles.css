@@ -341,3 +341,7 @@ main .section.hidden {
 .error-notice .oaerror.success strong {
   color: #2b542c;
 }
+
+.video-wrapper {
+  max-height: 1000px;
+}

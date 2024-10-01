@@ -603,6 +603,10 @@
           {
             "name": "Default",
             "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
           }
         ]
       },
@@ -611,19 +615,7 @@
         "name": "text",
         "value": "",
         "label": "Texto",
-        "valueType": "string",
-        "options": {
-          "toolbar": [
-            "bold", 
-            "italic", 
-            "underline", 
-            "strikethrough", 
-            "bulletList", 
-            "numberList"
-          ],
-          "placeholder": "Enter your text here...",
-          "maxLength": 500
-        }
+        "valueType": "string"
       }
     ]
   },
