@@ -1004,6 +1004,34 @@
         "name": "description",
         "label": "Descrição da imagem",
         "description": "Fonte da imagem, por exemplo"
+      },
+      {
+        "component": "richtext",
+        "name": "secondText",
+        "label": "Texto 2",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "secondImage",
+        "label": "Imagem 2",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "secondImageAlt",
+        "label": "Texto alternativo da imagem 2"
+      },
+      {
+        "component": "text",
+        "name": "secondImgTitle",
+        "label": "Título da imagem 2"
+      },
+      {
+        "component": "text",
+        "name": "secondDescription",
+        "label": "Descrição da imagem 2",
+        "description": "Fonte da imagem, por exemplo"
       }
     ]
   }
