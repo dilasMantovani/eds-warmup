@@ -12,3 +12,6 @@
     height: 45vh;
   }
 }
+.video iframe {
+  max-height: 700px;
+}
