@@ -1,6 +1,5 @@
 .video{
     width: 100%;
-    height: 60vh;
     max-height: 700px;
     @media (max-width: 768px) {
         height: 50vh;
@@ -9,6 +8,18 @@
         height: 45vh;
     }
     iframe{
+        height: 60vh;
         max-height: 700px;
     }
+    p{
+        text-align: center;
+        font-size: 80%;
+        color: #6c757d;
+        margin: 10px 0;
+        line-height: 1;
+    }
+}
+
+.video.deep-purple{
+    font-family: "Orbitron-Regular";
 }
