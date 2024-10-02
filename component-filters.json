@@ -20,7 +20,8 @@
       "titulo",
       "imagem",
       "button-modal",
-      "quote"
+      "quote",
+      "accordion"
     ]
   },
   {
@@ -35,7 +36,8 @@
       "titulo",
       "imagem",
       "button-modal",
-      "quote"
+      "quote",
+      "accordion"
     ]
   },
   {
@@ -68,14 +70,5 @@
     "components": [
       "accordion-item"
     ]
-  },
-  {
-    "id": "accordion-item",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"    ]
   }
-
 ]
