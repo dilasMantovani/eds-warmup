@@ -1036,5 +1036,42 @@
         "description": "Fonte da imagem, por exemplo"
       }
     ]
+  },
+  {
+    "id": "quote",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "type",
+        "label": "Tipo:",
+        "options": [
+          {
+            "name": "Citação com autor(a)",
+            "value": "quote"
+          },
+          {
+            "name": "Citação sem autor(a)",
+            "value": "phrase"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "icon",
+        "label": "Ícone",
+        "description": "Icone do font awesome. Ex: circle-play,location-dot... Consulte todas as possibilidades em: https://fontawesome.com/search?o=r&m=free"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Texto da Citação"
+      },
+      {
+        "component": "text",
+        "name": "author",
+        "label": "Autor(a) da Citação"
+      }
+    ]
   }
 ]

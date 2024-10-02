@@ -19,7 +19,8 @@
       "video",
       "titulo",
       "imagem",
-      "button-modal"
+      "button-modal",
+      "quote"
     ]
   },
   {
@@ -33,7 +34,8 @@
       "video",
       "titulo",
       "imagem",
-      "button-modal"
+      "button-modal",
+      "quote"
     ]
   },
   {
