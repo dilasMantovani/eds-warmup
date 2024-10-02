@@ -19,7 +19,8 @@
       "video",
       "titulo",
       "imagem",
-      "button-modal"
+      "button-modal",
+      "accordion"
     ]
   },
   {
@@ -33,7 +34,8 @@
       "video",
       "titulo",
       "imagem",
-      "button-modal"
+      "button-modal",
+      "accordion"
     ]
   },
   {
@@ -66,14 +68,5 @@
     "components": [
       "accordion-item"
     ]
-  },
-  {
-    "id": "accordion-item",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"    ]
   }
-
 ]

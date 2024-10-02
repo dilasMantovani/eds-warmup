@@ -450,62 +450,6 @@
     ]
   },
   {
-    "id": "accordion",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "titleType",
-        "label": "Title Type",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "accordion-item",
-    "fields": [
-      {
-        "component": "text",
-        "name": "headerText",
-        "label": "Texto do header"
-      },
-      {
-        "component": "text",
-        "name": "accordionItemId",
-        "label": "ID do item de accordeão"
-      }
-    ]
-  },
-  {
     "id": "teaser",
     "fields": [
       {
@@ -1035,6 +979,145 @@
         "label": "Descrição da imagem 2",
         "description": "Fonte da imagem, por exemplo"
       }
+    ]
+  },
+  {
+    "id": "accordion",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "openAll",
+        "label": "Abertura total",
+        "description": "Ao abrir um item o anterior continua aberto. Caso não seja selecionado, ao abrir um item o anterior é fechado."
+      },
+      {
+        "component": "text",
+        "name": "iconOpen",
+        "label": "Ícone aberto",
+        "description": "Icone do font awesome. Ex: circle-play,location-dot... Consulte todas as possibilidades em: https://fontawesome.com/search?o=r&m=free"
+      },
+      {
+        "component": "select",
+        "name": "iconOpenVariant",
+        "label": "Tipo do ícone aberto",
+        "description": "Cuidado, Na versão free, nem todos os ícones possuem a variação 'Regular'",
+        "options": [
+          {
+            "name": "Solid",
+            "value": "solid"
+          },
+          {
+            "name": "Regular",
+            "value": "regular"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "iconClosed",
+        "label": "Ícone fechado",
+        "description": "Icone do font awesome. Ex: circle-play,location-dot... Consulte todas as possibilidades em: https://fontawesome.com/search?o=r&m=free"
+      },
+      {
+        "component": "select",
+        "name": "iconClosedVariant",
+        "label": "Tipo do ícone fechado",
+        "description": "Cuidado, Na versão free, nem todos os ícones possuem a variação 'Regular'",
+        "options": [
+          {
+            "name": "Solid",
+            "value": "solid"
+          },
+          {
+            "name": "Regular",
+            "value": "regular"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "accordion-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "headerText",
+        "label": "Texto do header"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Texto",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Imagem",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Texto alternativo da imagem"
+      },
+      {
+        "component": "text",
+        "name": "imgTitle",
+        "label": "Título da imagem"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Descrição da imagem",
+        "description": "Fonte da imagem, por exemplo"
+      },
+      {
+        "component": "richtext",
+        "name": "secondText",
+        "label": "Texto 2",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "secondImage",
+        "label": "Imagem 2",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "secondImageAlt",
+        "label": "Texto alternativo da imagem 2"
+      },
+      {
+        "component": "text",
+        "name": "secondImgTitle",
+        "label": "Título da imagem 2"
+      },
+      {
+        "component": "text",
+        "name": "secondDescription",
+        "label": "Descrição da imagem 2",
+        "description": "Fonte da imagem, por exemplo"
+      }
+      
     ]
   }
 ]
