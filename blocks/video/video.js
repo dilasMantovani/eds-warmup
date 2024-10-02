@@ -1,11 +1,11 @@
 export default function decorate(block) {
-    const businessKey = block?.children[0].textContent?.trim();
-    const mediastreamId = block?.children[1].textContent?.trim();
-    const videoLink = block?.children[2].textContent?.trim();
-    const captionLink = block?.children[3].textContent?.trim();
-    const size = block?.children[4].textContent?.trim();
-    const title = block?.children[5].textContent?.trim();
-    const description = block?.children[6].textContent?.trim();
+    const businessKey = block?.children[0]?.textContent?.trim();
+    const mediastreamId = block?.children[1]?.textContent?.trim();
+    const videoLink = block?.children[2]?.textContent?.trim();
+    const captionLink = block?.children[3]?.textContent?.trim();
+    const size = block?.children[4]?.textContent?.trim();
+    const title = block?.children[5]?.textContent?.trim();
+    const description = block?.children[6]?.textContent?.trim();
 
     block.textContent = "";
     block.innerHTML = `
