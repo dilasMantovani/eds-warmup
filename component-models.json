@@ -1153,7 +1153,26 @@
       {
         "component": "text",
         "name": "author",
-        "label": "Autor(a) da Citação"
+        "label": "Autor(a) da Citação",
+        "condition": {
+          "!==": [{ "var": "type" }, "quote"]
+        }
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
       }
     ]
   }
