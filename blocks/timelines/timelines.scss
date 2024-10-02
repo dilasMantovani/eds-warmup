@@ -1,5 +1,5 @@
 .timelines-wrapper {
-    overflow: hidden;
+    //overflow: hidden;
 
     .timeline {
         &-right {
@@ -152,11 +152,23 @@
             }
         }
     }
+    @media (max-width: 575px) {
+        .timeline-item{
+            padding-top: 20px;
+            &::before {
+                content: "►";
+                left: 0;
+                top: 0;
+            }
+        }
+        &::before {
+            left: -16px;
+            width: 3px;
+        }
+    }
 }
 
 .timelines.deep-purple {
-    position: relative;
-
     &::before {
         content: "";
         height: 100%;
@@ -166,108 +178,4 @@
         left: 50%;
     }
 
-    .timeline {
-        &-right {
-            transition-property: transform, opacity;
-            transition-duration: 500ms;
-
-            .timeline-item-wrapper {
-                margin-left: 20px;
-            }
-
-            &.visible {
-                opacity: 1;
-                transform: translateX(0%);
-            }
-
-            &.invisible {
-                opacity: 0;
-                transform: translateX(-50%);
-            }
-        }
-
-        &-left {
-            text-align: left;
-
-            transition-property: transform, opacity;
-            transition-duration: 500ms;
-
-            .timeline-item-wrapper {
-                margin-right: 20px;
-            }
-
-            &.visible {
-                opacity: 1;
-                transform: translateX(0%);
-            }
-
-            &.invisible {
-                opacity: 0;
-                transform: translateX(50%);
-
-            }
-        }
-
-        &-right,
-        &-left {
-            position: relative;
-
-            &::before {
-                content: "";
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                border-radius: 100%;
-                background-color: #b982ff;
-                left: calc(50% - 10px);
-
-                @media (max-width: 575px) {
-                    //mobile breakpoint
-                    display: none;
-                }
-            }
-        }
-
-        &-item {
-            &-content {
-                background-color: #e5d7f7;
-                padding: 20px;
-                border-radius: 0 0 10px 10px;
-            }
-
-            &-title {
-                padding: 0 20px;
-                background-color: #b982ff;
-                border-radius: 10px 10px 0px 0px;
-
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6 {
-                    font-family: "Orbitron-Regular";
-                    font-size: 1.5rem;
-                    line-height: 3rem;
-                    color: white;
-                    text-transform: uppercase;
-                    margin-bottom: 0;
-                }
-            }
-
-            &-subtitle {
-                color: #00368c;
-                font-weight: bold;
-            }
-
-            &-text {
-                color: #3a3a3a;
-
-                p {
-                    margin-top: 0;
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
 }

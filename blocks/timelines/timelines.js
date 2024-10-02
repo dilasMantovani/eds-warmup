@@ -22,9 +22,9 @@ export default function decorate(block) {
 
     for (const child of block?.children) {
         if(i % 2 === 0)
-            child.className = 'timeline-right invisible'
+            child.className = 'timeline-item timeline-right invisible'
         else
-            child.className = 'timeline-left invisible'
+            child.className = 'timeline-item timeline-left invisible'
 
         const title = child?.children[0]
         const subtitle = child?.children[1]
@@ -37,11 +37,6 @@ export default function decorate(block) {
         const image2 = child?.children[7]
         const imgTitle2 = child?.children[8]
         const imgSource2 = child?.children[9]
-
-        console.log(text2)
-        console.log(image2)
-        console.log(imgTitle2)
-        console.log(imgSource2)
 
         title.className = "timeline-item-title"
         subtitle.className = "timeline-item-subtitle"
