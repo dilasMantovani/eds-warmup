@@ -1155,7 +1155,7 @@
         "name": "author",
         "label": "Autor(a) da Citação",
         "condition": {
-          "!==": [{ "var": "type" }, "quote"]
+          "!==": [{ "var": "type" }, "phrase"]
         }
       },
       {
