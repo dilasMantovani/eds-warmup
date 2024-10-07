@@ -476,7 +476,7 @@
                   "model": "quote",
                   "classes": "default",
                   "type": "quote",
-                  "icon": "quote-left",
+                  "quoteImage": "/blocks/quote/quote.png",
                   "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>",
                   "author": "John Doe"
                 }
