@@ -1,0 +1,64 @@
+ .sanfona{
+    .accordion-item{
+        background-color: #dbe3ec;
+        &-header{
+            padding: 0.75rem 1.25rem;
+            h5{
+                margin: 0;
+                text-transform: uppercase;
+                font-size: 1.25rem;
+                font-weight: 500;
+                a{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    cursor: pointer;
+                    text-decoration: none;
+                    &:hover{
+                        color: var(--text-color);
+                        span{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        &-body{
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), padding 0.5s ease;
+            background-color: red;
+            border: solid 2px #dbe3ec;
+            border-radius: 3px;
+            background-color: #fff;
+            padding: 0 1.25rem;
+
+            &-text{
+                font-size: 18px;
+            }
+            &-image{
+                p{
+                    text-align: center;
+                    font-size: 80%;
+                    color: #6c757d;
+                    margin: 10px 0;
+                    line-height: 1;
+                }
+                picture{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+        }
+        &.active{
+            .accordion-item-body{
+                max-height: 200vw;
+                transition: max-height 0.5s ease-in-out;
+                padding: 0.75rem 1.25rem;
+
+            }
+        }
+    }
+ }

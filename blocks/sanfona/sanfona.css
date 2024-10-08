@@ -1,0 +1,55 @@
+.sanfona .accordion-item {
+  background-color: #dbe3ec;
+}
+.sanfona .accordion-item-header {
+  padding: 0.75rem 1.25rem;
+}
+.sanfona .accordion-item-header h5 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.sanfona .accordion-item-header h5 a {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sanfona .accordion-item-header h5 a:hover {
+  color: var(--text-color);
+}
+.sanfona .accordion-item-header h5 a:hover span {
+  text-decoration: underline;
+}
+.sanfona .accordion-item-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), padding 0.5s ease;
+  background-color: red;
+  border: solid 2px #dbe3ec;
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 0 1.25rem;
+}
+.sanfona .accordion-item-body-text {
+  font-size: 18px;
+}
+.sanfona .accordion-item-body-image p {
+  text-align: center;
+  font-size: 80%;
+  color: #6c757d;
+  margin: 10px 0;
+  line-height: 1;
+}
+.sanfona .accordion-item-body-image picture {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.sanfona .accordion-item.active .accordion-item-body {
+  max-height: 200vw;
+  transition: max-height 0.5s ease-in-out;
+  padding: 0.75rem 1.25rem;
+}
