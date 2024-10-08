@@ -5,7 +5,6 @@
 .quote section {
   display: flex;
   align-items: flex-start;
-  padding: 20px 35px;
 }
 @media (max-width: 575px) {
   .quote section {
@@ -15,7 +14,7 @@
 .quote-author {
   background-color: #dbe3ec;
   border-radius: 10px;
-  padding: 20px;
+  padding: 20px 35px;
 }
 .quote-author img {
   width: 80px;
@@ -57,5 +56,35 @@
   margin-left: 2px;
 }
 .quote-phrase {
-  background-color: blue;
+  flex-direction: column;
+}
+.quote-phrase i {
+  font-size: 30px;
+  color: #00368c;
+}
+.quote-phrase blockquote {
+  margin: 0;
+  line-height: 1.88;
+}
+.quote-phrase blockquote p {
+  color: #00368c;
+  font-size: 21px;
+  font-style: italic;
+  margin: 8px 0 0;
+}
+@media (max-width: 575px) {
+  .quote-phrase blockquote p {
+    font-size: 19px;
+  }
+}
+.quote-phrase blockquote cite {
+  display: none;
+}
+.quote-phrase blockquote:after {
+  content: "";
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: solid 3px #00368c;
+  width: 50px;
 }

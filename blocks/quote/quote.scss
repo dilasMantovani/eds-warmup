@@ -3,7 +3,6 @@
     section {
         display: flex;
         align-items: flex-start;
-        padding: 20px 35px;
         
         @media (max-width: 575px) {
             flex-direction: column;
@@ -13,7 +12,7 @@
     &-author { 
         background-color: #dbe3ec;
         border-radius: 10px;
-        padding: 20px;
+        padding: 20px 35px;
 
         img {
             width: 80px;
@@ -61,6 +60,40 @@
     }
     
     &-phrase {
-        background-color: blue;
+        flex-direction: column;
+
+        i {
+            font-size: 30px;
+            color: #00368c;
+        }
+
+        blockquote {
+            margin: 0;
+            line-height: 1.88;
+
+            p {
+                color: #00368c;
+                font-size: 21px;
+                font-style: italic;
+                margin: 8px 0 0;
+
+                @media (max-width: 575px) {
+                    font-size: 19px;
+                }
+            }
+
+            cite {
+                display: none;
+            }
+
+            &:after {
+                content: "";
+                display: flex;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border-bottom: solid 3px #00368c;
+                width: 50px;
+            }
+        }
     }
 }
