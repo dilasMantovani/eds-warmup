@@ -20,6 +20,7 @@
       "titulo",
       "imagem",
       "button-modal",
+      "quote",
       "accordion"
     ]
   },
@@ -35,6 +36,7 @@
       "titulo",
       "imagem",
       "button-modal",
+      "quote",
       "accordion"
     ]
   },
