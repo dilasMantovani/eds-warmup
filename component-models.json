@@ -1159,6 +1159,15 @@
         }
       },
       {
+        "component": "text",
+        "name": "quoteIcon",
+        "label": "Ícone",
+        "description": "Icone do font awesome. Ex: circle-play, location-dot... Consulte todas as possibilidades em: https://fontawesome.com/search?o=r&m=free",
+        "condition": {
+          "!==": [{ "var": "type" }, "phrase"]
+        }
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "classes",
