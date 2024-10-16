@@ -19,7 +19,6 @@ export default function decorate(block) {
                 </section>
             `);
         } else {
-            console.log("BATATA")
             return(`
                 <section class="quote-phrase">
                     <i class="fa fa-${quoteIcon || 'coffee'}"></i>
