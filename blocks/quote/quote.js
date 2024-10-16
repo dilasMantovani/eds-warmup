@@ -9,7 +9,7 @@ export default function decorate(block) {
         if(quoteType === "quote") {
             return(`
                 <section class="quote-author">
-                    <img src="${quoteImage || 'quote.png'}" />
+                    <img src="${quoteImage}" />
                     <blockquote>
                         <p>${quoteText}</p>
                         <footer>
@@ -21,7 +21,7 @@ export default function decorate(block) {
         } else {
             return(`
                 <section class="quote-phrase">
-                    <i class="fa fa-${quoteIcon || 'coffee'}"></i>
+                    <i class="fa fa-${quoteIcon}"></i>
                     <blockquote>
                         <p>${quoteText}</p>
                     </blockquote>
