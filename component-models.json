@@ -1143,7 +1143,10 @@
         "component": "reference",
         "name": "quoteImage",
         "label": "Imagem",
-        "multi": false
+        "multi": false,
+        "condition": {
+          "!==": [{ "var": "type" }, "phrase"]
+        }
       },
       {
         "component": "richtext",
