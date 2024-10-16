@@ -5,11 +5,13 @@ export default function decorate(block) {
     const quoteAuthor = block.children[3]?.textContent?.trim();
     const quoteIcon = block.children[4]?.textContent?.trim();
 
+    const image = quoteImage?.src ? `<img src="${quoteImage?.src}"/>` : "";
+
     const quote = () => {
         if(quoteType === "quote") {
             return(`
                 <section class="quote-author">
-                    <img src="${quoteImage?.src}"/>
+                    ${image}
                     <blockquote>
                         <p>${quoteText}</p>
                         <footer>
