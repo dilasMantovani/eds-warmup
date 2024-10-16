@@ -6,6 +6,7 @@ export default function decorate(block) {
     const quoteIcon = block.children[4]?.textContent?.trim();
 
     const image = quoteImage?.src ? `<img src="${quoteImage?.src}"/>` : "";
+    const author = quoteAuthor ? `<footer><cite>${quoteAuthor}</cite></footer>` : "";
 
     const quote = () => {
         if(quoteType === "quote") {
@@ -14,9 +15,7 @@ export default function decorate(block) {
                     ${image}
                     <blockquote>
                         <p>${quoteText}</p>
-                        <footer>
-                            <cite>${quoteAuthor}</cite>
-                        </footer>
+                        ${author}
                     </blockquote>
                 </section>
             `);
