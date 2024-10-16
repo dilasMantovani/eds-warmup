@@ -21,7 +21,7 @@ export default function decorate(block) {
         } else {
             return(`
                 <section class="quote-phrase">
-                    <i class="fa fa-${quoteIcon}"></i>
+                    <i class="fa ${quoteIcon}"></i>
                     <blockquote>
                         <p>${quoteText}</p>
                     </blockquote>
