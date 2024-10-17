@@ -3,7 +3,7 @@ import { isInEditor } from "../../scripts/scripts.js";
 export default function decorate(block) {
     const language = block?.children[1]?.textContent?.trim();
 
-    block?.children[0].querySelector("pre").innerHTML = `<code>${block?.children[0].querySelector("pre").innerHTML}</code>`
+    // block?.children[0].querySelector("pre").innerHTML = `<code>${block?.children[0].querySelector("pre").innerHTML}</code>`
     // block?.children[1]?.remove()
 
     window.block = block;
