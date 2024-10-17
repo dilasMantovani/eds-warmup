@@ -19,6 +19,7 @@ function highlightCodeBlock(){
         // run prism in async mode; uses webworker.
         setTimeout(() => {
           window.Prism.highlightAll();
+          console.log("Carregou?!")
         }, 2000);
       })
       // eslint-disable-next-line no-console
