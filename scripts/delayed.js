@@ -17,7 +17,9 @@ function highlightCodeBlock(){
     import('./prism.js')
       .then(() => {
         // run prism in async mode; uses webworker.
-        window.Prism.highlightAll();
+        setTimeout(() => {
+          window.Prism.highlightAll();
+        }, 2000);
       })
       // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
