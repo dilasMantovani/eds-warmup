@@ -8,6 +8,15 @@ export default function decorate(block) {
     block?.children[1]?.remove();
     block?.children[1]?.remove();
 
+    let codeElement = block.querySelector('pre > code');
+    if (!codeElement) {
+        const preElement = block.querySelector('pre');
+        codeElement = document.createElement('code');
+        codeElement.textContent = preElement.textContent; 
+        preElement.innerHTML = ''; 
+        preElement.appendChild(codeElement); 
+    }
+
     block?.classList?.add("line-numbers");
     block?.querySelector("pre").setAttribute("data-start", lineNumber);
     block?.querySelector('code')?.classList?.add(`language-${language}`);
