@@ -372,6 +372,7 @@
                   "model": "code-block",
                   "code": "<pre><code>System.out.println(\"Hello World\");</code></pre>",
                   "language": "java",
+                  "lineNumber": 1,
                   "classes": "default"
                 }
               }

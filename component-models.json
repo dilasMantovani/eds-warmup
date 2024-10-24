@@ -625,6 +625,12 @@
         "required": true
       },
       {
+        "component": "number",
+        "name": "lineNumber",
+        "label": "Número da Linha Inicial",
+        "valueType": "number"
+      },
+      {
         "component": "select",
         "valueType": "string",
         "name": "classes",
