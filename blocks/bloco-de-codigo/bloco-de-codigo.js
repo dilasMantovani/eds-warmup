@@ -1,3 +1,4 @@
+import highlightCodeBlock from "../../scripts/delayed.js";
 import { isInEditor } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
@@ -5,6 +6,7 @@ export default function decorate(block) {
     const lineNumber = parseInt(block?.children[2]?.textContent?.trim() || 1);
 
     block?.children[1]?.remove()
+    block?.children[2]?.remove()
 
     block?.classList?.add("line-numbers");
     block?.querySelector("pre").setAttribute("data-start", lineNumber);
@@ -26,4 +28,5 @@ export default function decorate(block) {
         block.insertBefore(msgElement, block.firstChild);
     }
 
+    highlightCodeBlock();
 }
