@@ -17,6 +17,11 @@ export default function highlightCodeBlock(){
     import('./prism.js')
       .then(() => {
         // run prism in async mode; uses webworker.
+
+        Prism.hooks.add("before-highlight", (env) => {
+          env.code = env.element.innerText; // Preserva a formatação original
+        });
+        
         window.Prism.highlightAll();
       })
       // eslint-disable-next-line no-console
