@@ -5,8 +5,8 @@ export default function decorate(block) {
     const language = block?.children[1]?.textContent?.trim();
     const lineNumber = parseInt(block?.children[2]?.textContent?.trim() || 1);
 
-    block?.children[1]?.remove()
-    block?.children[2]?.remove()
+    block?.children[1]?.remove();
+    block?.children[1]?.remove();
 
     block?.classList?.add("line-numbers");
     block?.querySelector("pre").setAttribute("data-start", lineNumber);
