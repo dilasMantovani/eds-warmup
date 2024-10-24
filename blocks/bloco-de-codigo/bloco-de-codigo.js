@@ -12,9 +12,9 @@ export default function decorate(block) {
     if (!codeElement) {
         const preElement = block.querySelector('pre');
         codeElement = document.createElement('code');
-        codeElement.textContent = preElement.textContent; 
+        codeElement.innerHTML = preElement.innerHTML; 
         preElement.innerHTML = ''; 
-        preElement.appendChild(codeElement); 
+        preElement.appendChild(codeElement);
     }
 
     block?.classList?.add("line-numbers");
