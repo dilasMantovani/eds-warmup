@@ -68,6 +68,8 @@ export default function decorate(block) {
         accordionItem.querySelector("a").addEventListener('click', () => {
             if(accordionItem.className.includes("active")){
                 accordionItem.classList.remove("active")
+                accordionItem.querySelector("i")?.classList?.add("fa-plus-circle");
+                accordionItem.querySelector("i")?.classList?.remove("fa-minus-circle");
                 return;
             }
             if(openAllText === "false"){
@@ -77,6 +79,8 @@ export default function decorate(block) {
             }
 
             accordionItem.classList.add("active")
+            accordionItem.querySelector("i")?.classList?.add("fa-minus-circle");
+            accordionItem.querySelector("i")?.classList?.remove("fa-plus-circle");
         });
     });
 
