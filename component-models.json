@@ -614,7 +614,8 @@
         "component": "text-area",
         "name": "code",
         "label": "Código",
-        "valueType": "string"
+        "valueType": "string",
+        "description": "IMPORTANTE: O bloco de código só carregará o layout se estiver selecionado o texto com o estilo 'preformatted'."
       },
       {
         "component": "text",
