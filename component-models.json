@@ -1199,7 +1199,7 @@
     "id": "embed",
     "fields": [
       {
-        "component": "text",
+        "component": "text-area",
         "name": "code",
         "label": "Embed"
       },
