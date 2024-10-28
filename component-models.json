@@ -1194,5 +1194,31 @@
         ]
       }
     ]
+  },
+  {
+    "id": "embed",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "code",
+        "label": "Código para o Embed:"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      }
+    ]
   }
 ]
