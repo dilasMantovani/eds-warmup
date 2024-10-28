@@ -1199,7 +1199,7 @@
     "id": "embed",
     "fields": [
       {
-        "component": "richtext",
+        "component": "text",
         "name": "code",
         "label": "Código para o Embed:"
       },
