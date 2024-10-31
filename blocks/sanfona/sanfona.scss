@@ -61,4 +61,10 @@
             }
         }
     }
+
+    &.deep-purple {
+        .accordion-item {
+            background-color: #b982ff;;
+        }
+    }
  }

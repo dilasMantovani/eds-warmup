@@ -88,3 +88,15 @@
   border-bottom: solid 3px #00368c;
   width: 50px;
 }
+.quote.deep-purple .quote-author {
+  background-color: #b982ff;
+}
+.quote.deep-purple .quote-phrase blockquote p {
+  color: #b982ff;
+}
+.quote.deep-purple .quote-phrase blockquote::after {
+  border-color: #b982ff;
+}
+.quote.deep-purple .quote-phrase i::before {
+  color: #b982ff;
+}

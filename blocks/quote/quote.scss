@@ -96,4 +96,24 @@
             }
         }
     }
+
+    &.deep-purple { 
+        .quote-author { 
+            background-color: #b982ff;
+        }
+        
+        .quote-phrase { 
+            blockquote {
+                p {
+                    color: #b982ff;
+                }
+                &::after {
+                    border-color: #b982ff;
+                }
+            }
+            i::before {
+                color: #b982ff;
+            }
+        }
+    }
 }
