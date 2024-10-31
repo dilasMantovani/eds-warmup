@@ -3,21 +3,15 @@ import { htmlToElement } from "../../scripts/scripts.js";
 export default function decorate(block) {
     const openAll = block?.children[0];
     const iconOpen = block?.children[1];
-    const iconOpenVariant = block?.children[2];
-    const iconClosed = block?.children[3];
-    const iconClosedVariant = block?.children[4];
+    const iconClosed = block?.children[2];
 
     const openAllText = openAll?.textContent?.trim();
     const iconOpenText = iconOpen?.textContent?.trim();
-    const iconOpenVariantText = iconOpenVariant?.textContent?.trim();
     const iconClosedText = iconClosed?.textContent?.trim();
-    const iconClosedVariantText = iconClosedVariant?.textContent?.trim();
 
     openAll?.remove();
     iconOpen?.remove();
-    iconOpenVariant?.remove();
     iconClosed?.remove();
-    iconClosedVariant?.remove();
 
     const accordionItems = Array.from(block?.children)?.map(element => {
         const headerText = element?.children[0]?.textContent?.trim();
@@ -33,7 +27,7 @@ export default function decorate(block) {
         const accordionItemElement = htmlToElement(`
         <div class="accordion-item">
             <div class="accordion-item-header">
-                <h5><a><span>${headerText}</span><i class="fa fa-plus-circle"></i></a></h5>
+                <h5><a><span>${headerText}</span><i class="fa fa-${iconClosedText || 'plus-circle'}"></i></a></h5>
             </div>
             <div class="accordion-item-body">
                 <div class="accordion-item-body-text">
@@ -68,8 +62,8 @@ export default function decorate(block) {
         accordionItem.querySelector("a").addEventListener('click', () => {
             if(accordionItem.className.includes("active")){
                 accordionItem.classList.remove("active")
-                accordionItem.querySelector("i")?.classList?.add("fa-plus-circle");
-                accordionItem.querySelector("i")?.classList?.remove("fa-minus-circle");
+                accordionItem.querySelector("i")?.classList?.add(`fa-${iconClosedText || 'plus-circle'}`);
+                accordionItem.querySelector("i")?.classList?.remove(`fa-${iconClosedText || 'plus-minus'}`);
                 return;
             }
             if(openAllText === "false"){
@@ -79,8 +73,8 @@ export default function decorate(block) {
             }
 
             accordionItem.classList.add("active")
-            accordionItem.querySelector("i")?.classList?.add("fa-minus-circle");
-            accordionItem.querySelector("i")?.classList?.remove("fa-plus-circle");
+            accordionItem.querySelector("i")?.classList?.add(`fa-${iconClosedText || 'plus-minus'}`);
+            accordionItem.querySelector("i")?.classList?.remove(`fa-${iconClosedText || 'plus-circle'}`);
         });
     });
 

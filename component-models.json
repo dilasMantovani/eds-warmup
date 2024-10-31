@@ -1021,42 +1021,10 @@
         "description": "Icone do font awesome. Ex: circle-play,location-dot... Consulte todas as possibilidades em: https://fontawesome.com/search?o=r&m=free"
       },
       {
-        "component": "select",
-        "name": "iconOpenVariant",
-        "label": "Tipo do ícone aberto",
-        "description": "Cuidado, Na versão free, nem todos os ícones possuem a variação 'Regular'",
-        "options": [
-          {
-            "name": "Solid",
-            "value": "solid"
-          },
-          {
-            "name": "Regular",
-            "value": "regular"
-          }
-        ]
-      },
-      {
         "component": "text",
         "name": "iconClosed",
         "label": "Ícone fechado",
         "description": "Icone do font awesome. Ex: circle-play,location-dot... Consulte todas as possibilidades em: https://fontawesome.com/search?o=r&m=free"
-      },
-      {
-        "component": "select",
-        "name": "iconClosedVariant",
-        "label": "Tipo do ícone fechado",
-        "description": "Cuidado, Na versão free, nem todos os ícones possuem a variação 'Regular'",
-        "options": [
-          {
-            "name": "Solid",
-            "value": "solid"
-          },
-          {
-            "name": "Regular",
-            "value": "regular"
-          }
-        ]
       }
     ]
   },
