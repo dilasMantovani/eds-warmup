@@ -31,20 +31,20 @@ export default function decorate(block) {
             </div>
             <div class="accordion-item-body">
                 <div class="accordion-item-body-text">
-                    ${text.innerHTML}
+                    ${text?.innerHTML}
                 </div>
                 <div class="accordion-item-body-image">
                     <p>${imgTitle}</p>
-                    ${image.innerHTML}
+                    ${image?.innerHTML}
                     <p>${description}</p>
                 </div>
 
                 <div class="accordion-item-body-text">
-                    ${secondText.innerHTML}
+                    ${secondText?.innerHTML}
                 </div>
                 <div class="accordion-item-body-image">
                     <p>${secondImgTitle}</p>
-                    ${secondImage.innerHTML}
+                    ${secondImage?.innerHTML}
                     <p>${secondDescription}</p>
                 </div>
             </div>
@@ -63,7 +63,7 @@ export default function decorate(block) {
             if(accordionItem.className.includes("active")){
                 accordionItem.classList.remove("active")
                 accordionItem.querySelector("i")?.classList?.add(`fa-${iconClosedText || 'plus-circle'}`);
-                accordionItem.querySelector("i")?.classList?.remove(`fa-${iconClosedText || 'plus-minus'}`);
+                accordionItem.querySelector("i")?.classList?.remove(`fa-${iconOpenText || 'circle-minus'}`);
                 return;
             }
             if(openAllText === "false"){
@@ -73,7 +73,7 @@ export default function decorate(block) {
             }
 
             accordionItem.classList.add("active")
-            accordionItem.querySelector("i")?.classList?.add(`fa-${iconClosedText || 'plus-minus'}`);
+            accordionItem.querySelector("i")?.classList?.add(`fa-${iconOpenText || 'circle-minus'}`);
             accordionItem.querySelector("i")?.classList?.remove(`fa-${iconClosedText || 'plus-circle'}`);
         });
     });
