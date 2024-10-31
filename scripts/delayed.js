@@ -6,7 +6,7 @@ sampleRUM('cwv');
 
 // add more delayed functionality here
 
-export default function highlightCodeBlock(){
+function highlightCodeBlock(){
     const highlightable = document.querySelector(
         'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code',
       );
@@ -27,6 +27,8 @@ export default function highlightCodeBlock(){
       // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
 }
+
+highlightCodeBlock();
 
 baSlider(".comparison-slider");
 

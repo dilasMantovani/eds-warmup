@@ -1,4 +1,4 @@
-import highlightCodeBlock from "../../scripts/delayed.js";
+// import { highlightCodeBlock } from "../../scripts/delayed.js";
 import { isInEditor } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
@@ -37,5 +37,5 @@ export default function decorate(block) {
         block.insertBefore(msgElement, block.firstChild);
     }
 
-    highlightCodeBlock();
+    // highlightCodeBlock();
 }
