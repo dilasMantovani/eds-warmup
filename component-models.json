@@ -1188,5 +1188,31 @@
         ]
       }
     ]
+  },
+  {
+    "id": "mindmap",
+    "fields": [
+      {
+        "component": "text-area",
+        "name": "mindmap",
+        "label": "Mind Map"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      }
+    ]
   }
 ]
