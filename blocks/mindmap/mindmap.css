@@ -1,0 +1,6 @@
+.mindmap pre {
+  background-color: transparent;
+}
+.mindmap.deep-purple pre {
+  background-color: #b982ff;
+}
