@@ -206,6 +206,8 @@ export async function fetchAuthorBio(anchor) {
 
 loadPage();
 
+mermaid.initialize({ startOnLoad: true });
+
 export function isInEditor(){
   return window?.location?.hostname?.startsWith("author");
 }

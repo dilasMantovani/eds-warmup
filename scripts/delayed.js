@@ -32,7 +32,6 @@ highlightCodeBlock();
 
 baSlider(".comparison-slider");
 
-mermaid.initialize({ startOnLoad: true });
 mermaid.init();
 
 document.querySelectorAll(".loading").forEach(elem=>{
