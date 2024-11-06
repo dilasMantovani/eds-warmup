@@ -1,5 +1,7 @@
 .mindmap pre {
   background-color: transparent;
+  overflow: auto;
+  padding: 0;
 }
 .mindmap.deep-purple pre {
   background-color: #b982ff;
