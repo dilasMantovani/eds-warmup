@@ -1193,7 +1193,7 @@
     "id": "mindmap",
     "fields": [
       {
-        "component": "text-area",
+        "component": "text",
         "name": "mindmap",
         "label": "Mind Map"
       },
