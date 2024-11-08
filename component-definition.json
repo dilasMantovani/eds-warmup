@@ -264,12 +264,7 @@
                   "name": "Sanfona",
                   "model": "sanfona",
                   "filter":"sanfona",
-                  "classes":"default",
-                  "item0":{
-                    "name": "SanfonaItem",
-                    "model": "sanfonaItem",
-                    "headerText":"Header da seção"
-                  }
+                  "classes":"default"
                 }
               }
             }
