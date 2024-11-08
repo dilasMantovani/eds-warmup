@@ -268,8 +268,7 @@
                   "item0":{
                     "name": "Sanfona Item",
                     "model": "sanfona-item",
-                    "headerText":"Header da seção",
-                    "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+                    "headerText":"Header da seção"
                   }
                 }
               }
@@ -286,8 +285,7 @@
                 "template": {
                   "name": "Sanfona Item",
                   "model": "sanfona-item",
-                  "headerText":"Header da seção",
-                  "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+                  "headerText":"Header da seção"
                 }
               }
             }
