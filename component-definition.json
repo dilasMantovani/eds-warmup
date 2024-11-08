@@ -264,7 +264,13 @@
                   "name": "Sanfona",
                   "model": "accordion",
                   "filter":"accordion",
-                  "classes":"default"
+                  "classes":"default",
+                  "item0":{
+                    "name": "Accordion Item",
+                    "model": "accordion-item",
+                    "headerText":"Header da seção",
+                    "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+                  }
                 }
               }
             }
