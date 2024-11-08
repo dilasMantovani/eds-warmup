@@ -22,7 +22,7 @@
       "button-modal",
       "quote",
       "embed",
-      "accordion",
+      "sanfona",
       "mindmap"
     ]
   },
@@ -40,7 +40,7 @@
       "button-modal",
       "quote",
       "embed",
-      "accordion",
+      "sanfona",
       "mindmap"
     ]
   },
@@ -70,9 +70,9 @@
     ]
   },
   {
-    "id": "accordion",
+    "id": "sanfona",
     "components": [
-      "accordion-item"
+      "sanfona-item"
     ]
   }
 ]

@@ -989,7 +989,7 @@
     ]
   },
   {
-    "id": "accordion",
+    "id": "sanfona",
     "fields": [
       {
         "component": "select",
@@ -1029,7 +1029,7 @@
     ]
   },
   {
-    "id": "accordion-item",
+    "id": "sanfona-item",
     "fields": [
       {
         "component": "text",
