@@ -1029,7 +1029,7 @@
     ]
   },
   {
-    "id": "sanfona-item",
+    "id": "sanfonaItem",
     "fields": [
       {
         "component": "text",
