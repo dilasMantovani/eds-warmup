@@ -55,7 +55,7 @@ export default function decorate(block) {
         return accordionItemElement;
     });
 
-    block.textContent = "";
+    //block.textContent = "";
     accordionItems?.forEach(accordionItem => {
         block.append(accordionItem)        
 
