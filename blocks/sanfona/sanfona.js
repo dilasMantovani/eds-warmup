@@ -14,16 +14,32 @@ export default function decorate(block) {
     iconClosed?.remove();
 
     const accordionItems = Array.from(block?.children)?.map(element => {
-        const headerText = element?.children[0]?.textContent?.trim();
+        const headerTextElement = element?.children[0];
+        const imgTitleElement = element?.children[3];
+        const descriptionElement = element?.children[4];
+        const secondImgTitleElement = element?.children[7];
+        const secondDescriptionElement = element?.children[8];
+
+        const headerText = headerTextElement?.textContent?.trim();
         const text = element?.children[1];
         const image = element?.children[2];
-        const imgTitle = element?.children[3]?.textContent?.trim();
-        const description = element?.children[4]?.textContent?.trim();
+        const imgTitle = imgTitleElement?.textContent?.trim();
+        const description = descriptionElement?.textContent?.trim();
         const secondText = element?.children[5];
         const secondImage = element?.children[6];
-        const secondImgTitle = element?.children[7]?.textContent?.trim();
-        const secondDescription = element?.children[8]?.textContent?.trim();
+        const secondImgTitle = secondImgTitleElement?.textContent?.trim();
+        const secondDescription = secondDescriptionElement?.textContent?.trim();
 
+        headerTextElement.remove();
+        imgTitleElement.remove();
+        descriptionElement.remove();
+        secondImgTitleElement.remove();
+        secondDescriptionElement.remove();
+        text.remove();
+        image.remove();
+        secondText.remove();
+        secondImage.remove();
+        
         const accordionItemElement = htmlToElement(`
         <div class="accordion-item">
             <div class="accordion-item-header">
