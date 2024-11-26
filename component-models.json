@@ -659,24 +659,24 @@
       {
         "component": "reference",
         "name": "imageBefore",
-        "label": "Texto da imagem à esquerda",
+        "label": "Imagem à esquerda",
         "multi": false
       },
       {
         "component": "text",
         "name": "textBefore",
-        "label": "Texto da imagem à direita"
+        "label": "Texto da imagem a esquerda"
       },
       {
         "component": "reference",
         "name": "imageAfter",
-        "label": "Imagem Depois",
+        "label": "Imagem a direita",
         "multi": false
       },
       {
         "component": "text",
         "name": "textAfter",
-        "label": "Texto Depois"
+        "label": "Texto da imagem a direita"
       },
       {
         "component": "select",
