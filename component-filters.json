@@ -13,7 +13,6 @@
       "timelines",
       "texto-rico",
       "tab-controller",
-      "spacer",
       "code-block",
       "image-compare",
       "video",
@@ -31,7 +30,6 @@
     "components": [
       "timelines",
       "texto-rico",
-      "spacer",
       "code-block",
       "image-compare",
       "video",

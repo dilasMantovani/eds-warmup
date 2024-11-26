@@ -85,6 +85,8 @@ export default function decorate(block) {
             if(openAllText === "false"){
                 Array.from(block.querySelectorAll(".accordion-item")).forEach(item => {
                     item.classList.remove("active");
+                    item.querySelector("i")?.classList?.add(`fa-${iconClosedText || 'plus-circle'}`);
+                    item.querySelector("i")?.classList?.remove(`fa-${iconOpenText || 'circle-minus'}`)
                 });
             }
 
