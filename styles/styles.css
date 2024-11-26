@@ -223,6 +223,10 @@ main .section.highlight {
   background-color: var(--light-color);
 }
 
+main .section.deep-purple {
+  background-color: #b982ff;
+}
+
 main .section.columns-two {
   display: grid;
   gap: 10px;

@@ -122,6 +122,10 @@
           {
             "name": "Default",
             "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
           }
         ]
       },
@@ -613,7 +617,7 @@
       {
         "component": "text-area",
         "name": "code",
-        "label": "Código",
+        "label": "Conteúdo",
         "valueType": "string",
         "description": "IMPORTANTE: O bloco de código só carregará o layout se estiver selecionado o texto com o estilo 'preformatted'."
       },
@@ -655,13 +659,13 @@
       {
         "component": "reference",
         "name": "imageBefore",
-        "label": "Imagem Antes",
+        "label": "Texto da imagem à esquerda",
         "multi": false
       },
       {
         "component": "text",
         "name": "textBefore",
-        "label": "Texto Antes"
+        "label": "Texto da imagem à direita"
       },
       {
         "component": "reference",
