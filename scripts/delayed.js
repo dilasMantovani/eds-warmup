@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import { sampleRUM } from './aem.js';
-import { isInEditor } from './scripts.js';
+import { handleMathJax } from './scripts.js';
 
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
@@ -43,24 +43,6 @@ document.querySelectorAll(".loadable").forEach(elem=>{
   elem.classList.remove("loadable")
 })
 
-//mathjax
-console.log(isInEditor())
-if(!isInEditor()){
-  console.log(isInEditor())
-
-  var body = document.body.textContent;
-    if (body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) {
-      if (!window.MathJax) {
-        window.MathJax = {
-          tex: {
-            inlineMath: {'[+]': [['$', '$']]}
-          }
-        };
-      }
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
-      document.head.appendChild(script);
-    }
-}
+handleMathJax();
 
 
