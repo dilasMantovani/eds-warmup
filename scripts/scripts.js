@@ -209,8 +209,7 @@ loadPage();
 mermaid.initialize({ startOnLoad: true });
 
 export function isInEditor(){
-  console.log(window?.location?.href)
-  return window?.location?.href?.includes("universal-editor");
+  return window?.location?.hostname?.startsWith("author");
 }
 
 export function generateUUID() {
@@ -222,7 +221,6 @@ export function generateUUID() {
 }
 
 export function handleMathJax(){
-  if(isInEditor()) return;
   var body = document.body.textContent;
   if (body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) {
     if (!window.MathJax) {
