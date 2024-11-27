@@ -44,7 +44,10 @@ document.querySelectorAll(".loadable").forEach(elem=>{
 })
 
 //mathjax
+console.log(isInEditor())
 if(!isInEditor()){
+  console.log(isInEditor())
+
   var body = document.body.textContent;
     if (body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) {
       if (!window.MathJax) {
