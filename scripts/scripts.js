@@ -209,6 +209,7 @@ loadPage();
 mermaid.initialize({ startOnLoad: true });
 
 export function isInEditor(){
+  console.log(window?.location?.href)
   return window?.location?.href?.includes("universal-editor");
 }
 
