@@ -209,8 +209,7 @@ loadPage();
 mermaid.initialize({ startOnLoad: true });
 
 export function isInEditor(){
-  console.log(document.querySelectorAll('.adobe-ue-edit'))
-  return window?.location?.hostname?.startsWith("author");
+  return document.querySelectorAll('.adobe-ue-edit')?.length > 0;
 }
 
 export function generateUUID() {
