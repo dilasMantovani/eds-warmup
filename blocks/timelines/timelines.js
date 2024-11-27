@@ -33,6 +33,8 @@ export default function decorate(block) {
         const imgTitle = child?.children[4]
         const imgSource = child?.children[5]
 
+        text.innerHTML+="<p>ola mundo $ x=\\frac{-b\\pm\\sqrt{b^2-4.a.c}}{2.a} $ vamos aprender</p>"
+
         const text2 = child?.children[6]
         const image2 = child?.children[7]
         const imgTitle2 = child?.children[8]
