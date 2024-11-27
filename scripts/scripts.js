@@ -209,7 +209,7 @@ loadPage();
 mermaid.initialize({ startOnLoad: true });
 
 export function isInEditor(){
-  return window?.location?.hostname?.includes("universal-editor");
+  return window?.location?.href?.includes("universal-editor");
 }
 
 export function generateUUID() {
