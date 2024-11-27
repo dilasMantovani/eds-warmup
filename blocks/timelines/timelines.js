@@ -74,7 +74,7 @@ export default function decorate(block) {
         let timelineItemContent = document.createElement("div")
         timelineItemContent.className = "timeline-item-content"
         timelineItemContent.appendChild(subtitle)
-        timelineItemContent.appendChild(text.outerHTML)
+        timelineItemContent.appendChild(text)
 
         if(image.innerHTML)
             timelineItemContent.appendChild(timelineItemImageWrapper);
