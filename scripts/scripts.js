@@ -247,22 +247,23 @@ export function removeDataAueAttributesWhenThereIsFormula(element) {
       return;
   }
 
-  if(!isInEditor) return;
+  //if(!isInEditor) return;
 
   //Se não houver fórmula, morre aqui
   const body = element.textContent;
-  if(!body.includes("##") || !body.includes("$$")) return;
+  if(body?.includes("##") || body?.includes("$$")) {
+    // Seleciona todos os elementos filhos do elemento fornecido
+    const children = element.querySelectorAll("*");
+  
+    children.forEach(child => {
+        // Itera sobre os atributos do elemento filho
+        Array.from(child.attributes).forEach(attr => {
+            // Verifica se o nome do atributo começa com "data-aue"
+            if (attr.name.startsWith("data-aue")) {
+                child.removeAttribute(attr.name); // Remove o atributo
+            }
+        });
+    });
+  }
 
-  // Seleciona todos os elementos filhos do elemento fornecido
-  const children = element.querySelectorAll("*");
-
-  children.forEach(child => {
-      // Itera sobre os atributos do elemento filho
-      Array.from(child.attributes).forEach(attr => {
-          // Verifica se o nome do atributo começa com "data-aue"
-          if (attr.name.startsWith("data-aue")) {
-              child.removeAttribute(attr.name); // Remove o atributo
-          }
-      });
-  });
 }
