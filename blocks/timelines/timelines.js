@@ -1,3 +1,5 @@
+import { removeDataAueAttributesWhenThereIsFormula } from "../../scripts/scripts.js";
+
 export default function decorate(block) {
 
     var observer = new IntersectionObserver(function(entries) {
@@ -37,6 +39,16 @@ export default function decorate(block) {
         const image2 = child?.children[7]
         const imgTitle2 = child?.children[8]
         const imgSource2 = child?.children[9]
+
+        //handling inline edition prevention when there is a formula
+        removeDataAueAttributesWhenThereIsFormula(title); 
+        removeDataAueAttributesWhenThereIsFormula(subtitle); 
+        removeDataAueAttributesWhenThereIsFormula(text); 
+        removeDataAueAttributesWhenThereIsFormula(imgTitle); 
+        removeDataAueAttributesWhenThereIsFormula(imgSource); 
+        removeDataAueAttributesWhenThereIsFormula(text2); 
+        removeDataAueAttributesWhenThereIsFormula(imgTitle2); 
+        removeDataAueAttributesWhenThereIsFormula(imgSource2); 
 
         title.className = "timeline-item-title"
         subtitle.className = "timeline-item-subtitle"
