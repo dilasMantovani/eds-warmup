@@ -1,4 +1,4 @@
-import { htmlToElement } from "../../scripts/scripts.js";
+import { htmlToElement, removeDataAueAttributesWhenThereIsFormula } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
     const openAll = block?.children[0];
@@ -39,7 +39,10 @@ export default function decorate(block) {
         image.remove();
         secondText.remove();
         secondImage.remove();
-        
+
+        removeDataAueAttributesWhenThereIsFormula(text);
+        removeDataAueAttributesWhenThereIsFormula(secondText);
+                
         const accordionItemElement = htmlToElement(`
         <div class="accordion-item">
             <div class="accordion-item-header">
