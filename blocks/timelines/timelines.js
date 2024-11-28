@@ -31,6 +31,7 @@ export default function decorate(block) {
         const title = child?.children[0]
         const subtitle = child?.children[1]
         const text = child?.children[2]
+
         const image = child?.children[3]
         const imgTitle = child?.children[4]
         const imgSource = child?.children[5]
