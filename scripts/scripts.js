@@ -251,7 +251,8 @@ export function removeDataAueAttributesWhenThereIsFormula(element) {
 
   //Se não houver fórmula, morre aqui
   const body = element.textContent;
-  if(body?.includes("##") || body?.includes("$$")) {
+  if(body?.includes("##") || body?.includes("$$") || body.querySelectorAll("mjx-container").length > 0) {
+    console.log(body)
     // Seleciona todos os elementos filhos do elemento fornecido
     const children = element.querySelectorAll("*");
   
