@@ -12,7 +12,7 @@ export default function decorate(block) {
                 entry?.target?.classList?.add("invisible");
             }
         })
-    }, { threshold: [0.50] });
+    }, { threshold: [0.40] });
 
     //o primeiro elemento será sempre a propriedade startAt
     const startAtElement = block?.children[0]

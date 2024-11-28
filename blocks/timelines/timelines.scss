@@ -171,7 +171,7 @@
             &::before {
                 content: "►";
                 left: 0;
-                top: 0;
+                transform: translateY(-15px);
             }
         }
         &::before {
