@@ -20,7 +20,7 @@ export default function decorate(block) {
     const imgTitleText2 = imgTitle2?.textContent?.trim();
     const descriptionText2 = description2?.textContent?.trim();
 
-    const button = htmlToElement(`<a class="btn-modal" href="javascript:void()">${ctaText}</a>`);
+    const button = htmlToElement(`<a class="btn-modal">${ctaText}</a>`);
     block.textContent="";
     block.append(button);
 

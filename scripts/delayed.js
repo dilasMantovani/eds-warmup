@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/no-cycle
 import { sampleRUM } from './aem.js';
-import { handleMathJax } from './scripts.js';
 
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
