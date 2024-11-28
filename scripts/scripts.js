@@ -220,7 +220,9 @@ export function generateUUID() {
   });
 }
 
-export function handleMathJax(){
+function handleMathJax(){
+  if (window.MathJax) return;
+
   var body = document.body.textContent;
   if (body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) {
     if (!window.MathJax) {
@@ -234,4 +236,7 @@ export function handleMathJax(){
     script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
     document.head.appendChild(script);
   }
+}
+window.onload = ()=>{
+  handleMathJax();
 }

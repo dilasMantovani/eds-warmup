@@ -1,5 +1,3 @@
-
-
 export default function decorate(block) {
 
     var observer = new IntersectionObserver(function(entries) {
