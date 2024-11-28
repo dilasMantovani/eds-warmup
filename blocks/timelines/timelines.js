@@ -1,18 +1,19 @@
-var observer = new IntersectionObserver(function(entries) {
-    console.log(entries)
-    entries.forEach(entry=>{
-        if(entry.isIntersecting === true){
-            entry?.target?.classList?.remove("invisible");
-            entry?.target?.classList?.add("visible");
-        }
-        if(entry.isIntersecting === false && window.scrollY < entry.target.getBoundingClientRect().top){
-            entry?.target?.classList?.remove("visible");
-            entry?.target?.classList?.add("invisible");
-        }
-    })
-}, { threshold: [0.25] });
+
 
 export default function decorate(block) {
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry=>{
+            if(entry.isIntersecting === true){
+                entry?.target?.classList?.remove("invisible");
+                entry?.target?.classList?.add("visible");
+            }else if(entry.isIntersecting === false && window.scrollY < entry.target.getBoundingClientRect().top + window.scrollY){
+                entry?.target?.classList?.remove("visible");
+                entry?.target?.classList?.add("invisible");
+            }
+        })
+    }, { threshold: [0.50] });
+
     //o primeiro elemento será sempre a propriedade startAt
     const startAtElement = block?.children[0]
     const startAtValue = startAtElement.firstElementChild.firstElementChild.innerHTML
