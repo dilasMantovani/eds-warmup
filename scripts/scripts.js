@@ -241,6 +241,9 @@ window.onload = ()=>{
   handleMathJax();
 }
 
+const latexPattern = "/\\(?:begin\{.*?\}|end\{.*?\}|\[|\]|\(|\)|[a-zA-Z]+|[^a-zA-Z0-9])/";
+
+
 export function removeDataAueAttributesWhenThereIsFormula(element) {
   if (!element || !(element instanceof HTMLElement)) {
       console.error("O argumento fornecido não é um elemento HTML válido.");
@@ -250,8 +253,8 @@ export function removeDataAueAttributesWhenThereIsFormula(element) {
   if(!isInEditor) return;
 
   //Se não houver fórmula, morre aqui
-  //const body = element.textContent;
-  //if(!body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) return;
+  const body = element.textContent;
+  if(!body.match(latexPattern)) return;
 
   // Seleciona todos os elementos filhos do elemento fornecido
   const children = element.querySelectorAll("*");
