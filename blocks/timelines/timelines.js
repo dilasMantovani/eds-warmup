@@ -1,4 +1,5 @@
 var observer = new IntersectionObserver(function(entries) {
+    console.log(entries)
     entries.forEach(entry=>{
         if(entry.isIntersecting === true){
             entry?.target?.classList?.remove("invisible");

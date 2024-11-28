@@ -209,7 +209,6 @@ loadPage();
 mermaid.initialize({ startOnLoad: true });
 
 export function isInEditor(){
-  console.log(document.querySelectorAll('.adobe-ue-edit'))
   return window?.location?.hostname?.startsWith("author");
 }
 
@@ -222,7 +221,6 @@ export function generateUUID() {
 }
 
 export function handleMathJax(){
-  if(isInEditor()) return
   var body = document.body.textContent;
   if (body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) {
     if (!window.MathJax) {

@@ -41,10 +41,7 @@
 .timelines .timeline-right::before {
   content: "►";
   position: absolute;
-  width: 20px;
-  height: 20px;
   left: 50%;
-  color: #00368c;
 }
 .timelines .timeline-left .timeline-item-title,
 .timelines .timeline-left .timeline-item-wrapper {
@@ -56,20 +53,31 @@
 .timelines .timeline-left::before {
   content: "◄";
   position: absolute;
-  width: 20px;
-  height: 20px;
   left: calc(50% - 20px);
-  color: #00368c;
 }
-.timelines .timeline-right, .timelines .timeline-left {
+.timelines .timeline-right .timeline-item-wrapper, .timelines .timeline-left .timeline-item-wrapper {
   transition-property: transform;
   transition-duration: 500ms;
 }
-.timelines .timeline-right.visible, .timelines .timeline-left.visible {
-  transform: rotatex(0deg);
+.timelines .timeline-right::before, .timelines .timeline-left::before {
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  color: #00368c;
+  transition-property: opacity;
+  transition-duration: 500ms;
 }
-.timelines .timeline-right.invisible, .timelines .timeline-left.invisible {
-  transform: rotatex(90deg);
+.timelines .timeline-right.visible .timeline-item-wrapper, .timelines .timeline-left.visible .timeline-item-wrapper {
+  transform: perspective(2500px) rotatex(0deg);
+}
+.timelines .timeline-right.visible::before, .timelines .timeline-left.visible::before {
+  opacity: 1;
+}
+.timelines .timeline-right.invisible .timeline-item-wrapper, .timelines .timeline-left.invisible .timeline-item-wrapper {
+  transform: perspective(2500px) rotatex(-90deg);
+}
+.timelines .timeline-right.invisible::before, .timelines .timeline-left.invisible::before {
+  opacity: 0;
 }
 .timelines .timeline-item-wrapper {
   background-color: unset;

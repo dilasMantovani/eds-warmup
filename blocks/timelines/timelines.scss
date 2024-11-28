@@ -59,10 +59,7 @@
             &::before {
                 content: "►";
                 position: absolute;
-                width: 20px;
-                height: 20px;
                 left: calc(50%);
-                color: #00368c;
             }
         }
 
@@ -80,25 +77,41 @@
             &::before {
                 content: "◄";
                 position: absolute;
-                width: 20px;
-                height: 20px;
                 left: calc(50% - 20px);
-                color: #00368c;
             }
         }
 
         &-right,
         &-left {
             // animation chunk
-            transition-property: transform;
-            transition-duration: 500ms;
-
+            .timeline-item-wrapper{
+                transition-property: transform;
+                transition-duration: 500ms;
+            }
+            &::before {
+                opacity: 0;
+                width: 20px;
+                height: 20px;
+                color: #00368c;
+                transition-property: opacity;
+                transition-duration: 500ms;
+            }
             &.visible {
-                transform: rotatex(0deg);
+                .timeline-item-wrapper{
+                    transform: perspective(2500px) rotatex(0deg);
+                }
+                &::before {
+                    opacity: 1;
+                }
             }
 
             &.invisible {
-                transform: rotatex(90deg);
+                .timeline-item-wrapper{
+                    transform: perspective(2500px) rotatex(-90deg);
+                }
+                &::before {
+                    opacity: 0;
+                }
             }
         }
 
