@@ -562,7 +562,12 @@
                   "name": "Galeria",
                   "model": "galeria",
                   "classes": "default",
-                  "variant": "text-and-image-1-1"
+                  "variant": "text-only",
+                  "item0":{
+                    "name": "Texto da galeria",
+                    "model": "galeriaItemTxt",
+                    "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor.</p>"
+                  }
                 }
               }
             }
