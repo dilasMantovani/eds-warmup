@@ -1272,6 +1272,15 @@
     "id": "galeriaItemImg",
     "fields": [
       {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "img",
+        "condition": {
+          "===": [false, true]
+        }
+      },
+      {
         "component": "reference",
         "name": "image",
         "label": "Imagem",
@@ -1292,12 +1301,21 @@
         "name": "description",
         "label": "Descrição da imagem",
         "description": "Fonte da imagem, por exemplo"
-      }
+      }      
     ]
   },
   {
     "id": "galeriaItemTxt",
     "fields": [
+      {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "txt",
+        "condition": {
+          "===": [false, true]
+        }
+      },
       {
         "component": "richtext",
         "name": "text",
