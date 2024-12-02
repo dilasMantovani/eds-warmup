@@ -1218,5 +1218,92 @@
         ]
       }
     ]
+  },
+  {
+    "id": "galeria",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "variant",
+        "label": "Variação",
+        "options": [
+          {
+            "name": "Galeria de Imagem",
+            "value": "image-only"
+          },
+          {
+            "name": "Galeria de Texto",
+            "value": "text-only"
+          },
+          {
+            "name": "Galeria de Imagem & Texto",
+            "value": "text-and-image-1-1"
+          },
+          {
+            "name": "Galeria de Vários Textos e uma Imagem",
+            "value": "one-image-many-texts"
+          },
+          {
+            "name": "Galeria de Várias Imagens e um Texto",
+            "value": "one-text-many-images"
+          }
+        ]
+      },
+      {
+        "id": "galeriaItemImg",
+        "fields": [
+          {
+            "component": "reference",
+            "name": "image",
+            "label": "Imagem",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "name": "imageAlt",
+            "label": "Texto alternativo da imagem"
+          },
+          {
+            "component": "text",
+            "name": "imgTitle",
+            "label": "Título da imagem"
+          },
+          {
+            "component": "text",
+            "name": "description",
+            "label": "Descrição da imagem",
+            "description": "Fonte da imagem, por exemplo"
+          }
+        ]
+      },
+      {
+        "id": "galeriaItemTxt",
+        "fields": [
+          {
+            "component": "richtext",
+            "name": "text",
+            "label": "Texto",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
   }
 ]

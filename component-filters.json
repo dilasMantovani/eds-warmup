@@ -22,7 +22,8 @@
       "quote",
       "embed",
       "sanfona",
-      "mindmap"
+      "mindmap",
+      "galeria"
     ]
   },
   {
@@ -39,7 +40,8 @@
       "quote",
       "embed",
       "sanfona",
-      "mindmap"
+      "mindmap",
+      "galeria"
     ]
   },
   {
@@ -71,6 +73,13 @@
     "id": "sanfona",
     "components": [
       "sanfonaItem"
+    ]
+  },
+  {
+    "id": "galeria",
+    "components": [
+      "galeriaItemImg",
+      "galeriaItemTxt"
     ]
   }
 ]

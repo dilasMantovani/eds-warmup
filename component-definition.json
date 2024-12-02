@@ -517,6 +517,23 @@
               }
             }
           }
+        },
+        {
+          "title": "Galeria",
+          "id": "galeria",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Galeria",
+                  "model": "galeria",
+                  "classes": "default",
+                  "variant": "text-and-image-1-1"
+                }
+              }
+            }
+          }
         }
       ]
     }
