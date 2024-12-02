@@ -78,7 +78,6 @@
   {
     "id": "galeria",
     "components": [
-      "galeriaItemImg",
       "galeriaItemTxt"
     ]
   }
