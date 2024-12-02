@@ -1265,44 +1265,44 @@
             "value": "one-text-many-images"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "galeriaItemImg",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Imagem",
+        "multi": false
       },
       {
-        "id": "galeriaItemImg",
-        "fields": [
-          {
-            "component": "reference",
-            "name": "image",
-            "label": "Imagem",
-            "multi": false
-          },
-          {
-            "component": "text",
-            "name": "imageAlt",
-            "label": "Texto alternativo da imagem"
-          },
-          {
-            "component": "text",
-            "name": "imgTitle",
-            "label": "Título da imagem"
-          },
-          {
-            "component": "text",
-            "name": "description",
-            "label": "Descrição da imagem",
-            "description": "Fonte da imagem, por exemplo"
-          }
-        ]
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Texto alternativo da imagem"
       },
       {
-        "id": "galeriaItemTxt",
-        "fields": [
-          {
-            "component": "richtext",
-            "name": "text",
-            "label": "Texto",
-            "valueType": "string"
-          }
-        ]
+        "component": "text",
+        "name": "imgTitle",
+        "label": "Título da imagem"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Descrição da imagem",
+        "description": "Fonte da imagem, por exemplo"
+      }
+    ]
+  },
+  {
+    "id": "galeriaItemTxt",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Texto",
+        "valueType": "string"
       }
     ]
   }
