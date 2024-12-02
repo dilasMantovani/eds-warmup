@@ -537,7 +537,7 @@
           }
         },
         {
-          "title": "Texto da galeria",
+          "title": "GaleriaItemTxt",
           "id": "galeriaItemTxt",
           "plugins": {
             "xwalk": {
