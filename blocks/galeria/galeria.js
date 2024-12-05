@@ -172,6 +172,8 @@ function handleImage(imageElement){
   const desc = imageElement?.children[2].textContent.trim();
 
   const pictureElement = img.querySelector("picture");
+  if(!pictureElement) return '<div></div>';
+  
   const imgHeader = document.createElement("figcaption");
   const imgFooter = document.createElement("figcaption");
   

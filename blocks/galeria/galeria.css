@@ -150,3 +150,7 @@
 .galeria.image-only .splide__arrow:hover i {
   color: #343a40;
 }
+
+.galeria.deep-purple {
+  border: 1px solid #b982ff;
+}
