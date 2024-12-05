@@ -1,6 +1,9 @@
 .galeria {
   margin-top: 40px;
 }
+.galeria h1, .galeria h2, .galeria h3, .galeria h4, .galeria h5, .galeria h6 {
+  margin: 15px 0;
+}
 .galeria:not(.image-only) {
   border: 1px solid #dee2e6;
   padding: 15px;
@@ -118,6 +121,7 @@
   position: relative;
   height: 100%;
   display: block;
+  text-align: center;
 }
 .galeria.image-only .splide__slide__container picture .img-footer {
   position: absolute;
