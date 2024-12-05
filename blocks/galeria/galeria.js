@@ -18,7 +18,6 @@ export default function decorate(block) {
     if (typeText === "txt") texts.push(element)
     if (typeText === "img") images.push(element)
 
-    element.remove();
   });
 
   //validando se a relação de imagens realmente está 1/1
@@ -26,7 +25,7 @@ export default function decorate(block) {
     if(!isInEditor) return;
     const imageAndTextAmountDontMatchErrorHTML = `
             <div class="oaerror error">
-                <strong>Atenção</strong> - Nesta variação da galeria a quantidade de imagens e textos deve ser o mesmo.
+                <strong>Atenção</strong> - Nesta variação da galeria a quantidade de imagens e textos deve ser a mesma.
             </div>
         `;
     
@@ -36,6 +35,10 @@ export default function decorate(block) {
         block.insertBefore(msgElement, block.firstChild);
     return;
   }
+
+  Array.from(block?.children).forEach(element => {
+    element.remove();
+  });
 
   const arrowsHTML =`
           <div class="splide__arrows">
