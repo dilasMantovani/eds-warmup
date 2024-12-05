@@ -168,23 +168,28 @@ export default function decorate(block) {
 
 function handleImage(imageElement){
   const img = imageElement?.children[0];
-  const title = imageElement?.children[1].textContent.trim();
-  const desc = imageElement?.children[2].textContent.trim();
+  const title = imageElement?.children[1];
+  const desc  = imageElement?.children[2];
+  const titleText = title?.textContent.trim();
+  const descText  = desc?.textContent.trim();
+
+  title.remove();
+  desc.remove();
 
   const pictureElement = img.querySelector("picture");
-  if(!pictureElement) return '<div></div>';
+  if(!pictureElement)   return imageElement?.outerHTML;
   
   const imgHeader = document.createElement("figcaption");
   const imgFooter = document.createElement("figcaption");
   
-  imgHeader.textContent = title;
+  imgHeader.textContent = titleText;
   imgHeader.classList.add("img-header")
   pictureElement.insertBefore(imgHeader, pictureElement.firstChild)
   
-  imgFooter.textContent = desc;
+  imgFooter.textContent = descText;
   imgFooter.classList.add("img-footer")
   pictureElement.appendChild(imgFooter)
   
 
-  return pictureElement?.outerHTML;
+  return imageElement?.outerHTML;
 }
