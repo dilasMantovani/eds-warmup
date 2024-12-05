@@ -84,7 +84,7 @@
     ]
   },
   {
-    "id": "text",
+    "id": "texto-rico",
     "rte": {
       "format": ["bold", "italic", "underline"],
       "alignment": ["alignleft", "aligncenter", "alignright"],
