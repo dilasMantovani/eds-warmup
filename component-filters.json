@@ -23,7 +23,8 @@
       "embed",
       "sanfona",
       "mindmap",
-      "galeria"
+      "galeria",
+      "text"
     ]
   },
   {
@@ -81,5 +82,19 @@
       "galeriaItemImg",
       "galeriaItemTxt"
     ]
+  },
+  {
+    "id": "text",
+    "rte": {
+      "format": ["bold", "italic", "underline"],
+      "alignment": ["alignleft", "aligncenter", "alignright"],
+      "indentation": [],
+      "sr_script": ["superscript", "subscript"],
+      "list": ["bullist", "numlist"],
+      "insert": ["link"],
+      "advanced": [],
+      "extensions": [],
+      "editor": ["removeformat"]
+    }
   }
 ]
