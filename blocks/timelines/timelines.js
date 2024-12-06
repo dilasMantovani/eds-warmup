@@ -1,17 +1,19 @@
-var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry=>{
-        if(entry.isIntersecting === true){
-            entry?.target?.classList?.remove("invisible");
-            entry?.target?.classList?.add("visible");
-        }
-        if(entry.isIntersecting === false && window.scrollY < entry.target.getBoundingClientRect().top){
-            entry?.target?.classList?.remove("visible");
-            entry?.target?.classList?.add("invisible");
-        }
-    })
-}, { threshold: [0.25] });
+import { removeDataAueAttributesWhenThereIsFormula } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry=>{
+            if(entry.isIntersecting === true){
+                entry?.target?.classList?.remove("invisible");
+                entry?.target?.classList?.add("visible");
+            }else if(entry.isIntersecting === false && window.scrollY < entry.target.getBoundingClientRect().top + window.scrollY){
+                entry?.target?.classList?.remove("visible");
+                entry?.target?.classList?.add("invisible");
+            }
+        })
+    }, { threshold: [0.40] });
+
     //o primeiro elemento será sempre a propriedade startAt
     const startAtElement = block?.children[0]
     const startAtValue = startAtElement.firstElementChild.firstElementChild.innerHTML
@@ -29,6 +31,7 @@ export default function decorate(block) {
         const title = child?.children[0]
         const subtitle = child?.children[1]
         const text = child?.children[2]
+
         const image = child?.children[3]
         const imgTitle = child?.children[4]
         const imgSource = child?.children[5]
@@ -37,6 +40,16 @@ export default function decorate(block) {
         const image2 = child?.children[7]
         const imgTitle2 = child?.children[8]
         const imgSource2 = child?.children[9]
+
+        //handling inline edition prevention when there is a formula
+        removeDataAueAttributesWhenThereIsFormula(title); 
+        removeDataAueAttributesWhenThereIsFormula(subtitle); 
+        removeDataAueAttributesWhenThereIsFormula(text); 
+        removeDataAueAttributesWhenThereIsFormula(imgTitle); 
+        removeDataAueAttributesWhenThereIsFormula(imgSource); 
+        removeDataAueAttributesWhenThereIsFormula(text2); 
+        removeDataAueAttributesWhenThereIsFormula(imgTitle2); 
+        removeDataAueAttributesWhenThereIsFormula(imgSource2); 
 
         title.className = "timeline-item-title"
         subtitle.className = "timeline-item-subtitle"
