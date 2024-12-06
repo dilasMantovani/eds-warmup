@@ -1197,9 +1197,9 @@
     "id": "mindmap",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "name": "mindmap",
-        "label": "Mind Map"
+        "label": "Mind Map, Organograma ou fluxograma"
       },
       {
         "component": "select",
