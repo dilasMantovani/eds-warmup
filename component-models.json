@@ -1220,6 +1220,32 @@
     ]
   },
   {
+    "id": "mindmapOrganogramFluxogram",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Conteúdo"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "galeria",
     "fields": [
       {

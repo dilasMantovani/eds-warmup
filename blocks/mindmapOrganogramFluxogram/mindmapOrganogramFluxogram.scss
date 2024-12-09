@@ -1,0 +1,13 @@
+.mindmap {
+  pre {
+      background-color: transparent;
+      overflow: auto;
+      padding: 0;
+  }
+
+  &.deep-purple {
+      pre {
+          background-color: #b982ff;
+      }
+  }
+}
