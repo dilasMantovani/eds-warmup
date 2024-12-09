@@ -17,5 +17,5 @@ export default function decorate(block) {
 function decodeHtml(html) {
     var txt = document.createElement("textarea");
     txt.innerHTML = html;
-    return txt.value;
-}
+    return txt.value.replaceAll("<br>","\n");
+  }
