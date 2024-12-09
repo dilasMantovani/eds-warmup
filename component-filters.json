@@ -13,7 +13,6 @@
       "timelines",
       "texto-rico",
       "tab-controller",
-      "spacer",
       "code-block",
       "image-compare",
       "video",
@@ -22,8 +21,10 @@
       "button-modal",
       "quote",
       "embed",
-      "accordion",
-      "mindmap"
+      "sanfona",
+      "mindmap",
+      "galeria",
+      "mindmapOrganogramFluxogram"
     ]
   },
   {
@@ -31,7 +32,6 @@
     "components": [
       "timelines",
       "texto-rico",
-      "spacer",
       "code-block",
       "image-compare",
       "video",
@@ -40,8 +40,9 @@
       "button-modal",
       "quote",
       "embed",
-      "accordion",
-      "mindmap"
+      "sanfona",
+      "mindmap",
+      "galeria"
     ]
   },
   {
@@ -70,9 +71,16 @@
     ]
   },
   {
-    "id": "accordion",
+    "id": "sanfona",
     "components": [
-      "accordion-item"
+      "sanfonaItem"
+    ]
+  },
+  {
+    "id": "galeria",
+    "components": [
+      "galeriaItemImg",
+      "galeriaItemTxt"
     ]
   }
 ]
