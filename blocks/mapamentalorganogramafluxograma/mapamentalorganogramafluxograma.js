@@ -4,7 +4,7 @@ export default function decorate(block) {
   let content = block.children[0]?.textContent?.trim();
   console.log(isInEditor())
   if(isInEditor()){
-    content = block.children[0]?.querySelector(pre)?.innerHTML
+    content = block.children[0]?.querySelector('pre')?.innerHTML
     if(content){
       content = decodeHtml(content);
     }
