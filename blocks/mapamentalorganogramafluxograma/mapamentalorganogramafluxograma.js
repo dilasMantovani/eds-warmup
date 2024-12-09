@@ -6,7 +6,7 @@ export default function decorate(block) {
   if(isInEditor()){
     content = block.children[0]?.querySelector('pre')?.innerHTML
     if(content){
-      content = decodeHtml(content);
+      content = decodeHtml(content); 
     }
   }
 
