@@ -58,6 +58,10 @@
         padding: 0 30px;
       }
       &__slide{
+        height: 0;
+        &.is-active{
+          height: fit-content;
+        }
         &__container{
           padding: 0 8% 40px 8%;
           &.text-and-image-1-1{
@@ -106,6 +110,14 @@
             }
           }
         }
+        &__arrow{
+          &--prev{
+            left: 0.5em;
+          }
+          &--next{
+            right: 0.5em;
+          }
+        }
       }
     }
   }
@@ -129,6 +141,10 @@
         padding: 0 30px;
       }
       &__slide{
+        height: 0;
+        &.is-active{
+          height: fit-content;
+        }
         &__container{
           picture{
             position: relative;

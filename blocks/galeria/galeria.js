@@ -161,11 +161,15 @@ export default function decorate(block) {
   var elms = block.getElementsByClassName('splide');
 
   for (var i = 0; i < elms.length; i++) {
-    new Splide(elms[i], {
+    const splide = new Splide(elms[i], {
       rewind: true,
       rewindSpeed: 1000,
       pagination: true
     }).mount();
+
+    splide.on( 'ready', function () {
+      console.log("blabla")
+    } );
   }
 }
 
