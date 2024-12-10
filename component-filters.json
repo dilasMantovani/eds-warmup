@@ -22,7 +22,6 @@
       "quote",
       "embed",
       "sanfona",
-      "mindmap",
       "galeria",
       "mindmapOrganogramFluxogram"
     ]
@@ -41,7 +40,6 @@
       "quote",
       "embed",
       "sanfona",
-      "mindmap",
       "galeria"
     ]
   },
@@ -82,19 +80,5 @@
       "galeriaItemImg",
       "galeriaItemTxt"
     ]
-  },
-  {
-    "id":"texto-rico",
-    "rte": {
-      "format": ["bold", "italic", "underline"],
-      "alignment": ["alignleft", "aligncenter", "alignright"],
-      "indentation": [],
-      "sr_script": ["superscript", "subscript"],
-      "list": ["bullist", "numlist"],
-      "insert": ["link"],
-      "advanced": [],
-      "extensions": [],
-      "editor": ["removeformat"]
-    }
   }
 ]

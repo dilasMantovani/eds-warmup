@@ -166,10 +166,6 @@ export default function decorate(block) {
       rewindSpeed: 1000,
       pagination: true
     }).mount();
-
-    splide.on( 'ready', function () {
-      console.log("blabla")
-    } );
   }
 }
 

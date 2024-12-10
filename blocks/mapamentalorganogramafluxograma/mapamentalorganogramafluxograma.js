@@ -2,7 +2,6 @@ import { isInEditor } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
   let content = block.children[0]?.textContent?.trim();
-  console.log(isInEditor())
   if(isInEditor()){
     content = block.children[0]?.querySelector('pre')?.innerHTML
     if(content){
@@ -10,7 +9,6 @@ export default function decorate(block) {
     }
   }
 
-  console.log(content)
   block.innerHTML = `<pre class="mermaid">${content}</pre>`; 
 }
 
