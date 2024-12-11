@@ -1,5 +1,7 @@
 export default function decorate(block) {
 
+  const content = block.children[0];
+
   let editor = document.createElement('div');
   editor.innerHTML = `<p>Core build with no theme, formatting, non-essential modules</p>`
 
@@ -9,7 +11,10 @@ export default function decorate(block) {
     theme: 'snow'
   });
 
+  let codeblock = document.createElement('pre')
+  content.appendChild(codeblock)
+
   quill.on('text-change', (delta, oldDelta, source) => {
-    block.children[0].textContent = quill.getSemanticHTML();
+    content.querySelector("pre").textContent = `${quill.getSemanticHTML()}`;
   });
 }
