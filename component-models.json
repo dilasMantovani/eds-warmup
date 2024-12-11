@@ -1349,5 +1349,33 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "tabela",
+    "fields":[
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "content",
+        "value": "",
+        "label": "Texto",
+        "valueType": "string"
+      }
+    ]
   }
 ]
