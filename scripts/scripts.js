@@ -219,3 +219,52 @@ export function generateUUID() {
     return v.toString(16);
   });
 }
+
+function handleMathJax(){
+  if (window.MathJax) return;
+
+  var body = document.body.textContent;
+  if (body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: {'[+]': [['##', '##']]}
+        }
+      };
+    }
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
+    document.head.appendChild(script);
+  }
+}
+window.onload = ()=>{
+  handleMathJax();
+}
+
+export function removeDataAueAttributesWhenThereIsFormula(element) {
+  if (!element || !(element instanceof HTMLElement)) {
+      console.error("O argumento fornecido não é um elemento HTML válido.");
+      return;
+  }
+
+  if(!isInEditor) return;
+
+  //Se não houver fórmula, morre aqui
+  const body = element.textContent;
+  if(body?.includes("##") || body?.includes("$$") || element.querySelectorAll("mjx-container").length > 0) {
+
+    // Seleciona todos os elementos filhos do elemento fornecido
+    const children = element.querySelectorAll("*");
+  
+    children.forEach(child => {
+        // Itera sobre os atributos do elemento filho
+        Array.from(child.attributes).forEach(attr => {
+            // Verifica se o nome do atributo começa com "data-aue"
+            if (attr.name.startsWith("data-aue")) {
+                child.removeAttribute(attr.name); // Remove o atributo
+            }
+        });
+    });
+  }
+
+}

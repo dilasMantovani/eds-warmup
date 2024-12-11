@@ -1,3 +1,6 @@
+.imagem {
+  margin-top: 40px;
+}
 .imagem > * {
   line-height: 0;
 }

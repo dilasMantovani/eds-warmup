@@ -41,5 +41,3 @@ document.querySelectorAll(".loading").forEach(elem=>{
 document.querySelectorAll(".loadable").forEach(elem=>{
   elem.classList.remove("loadable")
 })
-
-

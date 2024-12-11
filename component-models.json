@@ -122,6 +122,10 @@
           {
             "name": "Default",
             "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
           }
         ]
       },
@@ -613,7 +617,7 @@
       {
         "component": "text-area",
         "name": "code",
-        "label": "Código",
+        "label": "Conteúdo",
         "valueType": "string",
         "description": "IMPORTANTE: O bloco de código só carregará o layout se estiver selecionado o texto com o estilo 'preformatted'."
       },
@@ -655,24 +659,24 @@
       {
         "component": "reference",
         "name": "imageBefore",
-        "label": "Imagem Antes",
+        "label": "Imagem à esquerda",
         "multi": false
       },
       {
         "component": "text",
         "name": "textBefore",
-        "label": "Texto Antes"
+        "label": "Texto da imagem a esquerda"
       },
       {
         "component": "reference",
         "name": "imageAfter",
-        "label": "Imagem Depois",
+        "label": "Imagem a direita",
         "multi": false
       },
       {
         "component": "text",
         "name": "textAfter",
-        "label": "Texto Depois"
+        "label": "Texto da imagem a direita"
       },
       {
         "component": "select",
@@ -989,7 +993,7 @@
     ]
   },
   {
-    "id": "accordion",
+    "id": "sanfona",
     "fields": [
       {
         "component": "select",
@@ -1029,7 +1033,7 @@
     ]
   },
   {
-    "id": "accordion-item",
+    "id": "sanfonaItem",
     "fields": [
       {
         "component": "text",
@@ -1193,7 +1197,7 @@
     "id": "mindmap",
     "fields": [
       {
-        "component": "text-area",
+        "component": "text",
         "name": "mindmap",
         "label": "Mind Map"
       },
@@ -1212,6 +1216,165 @@
             "value": "deep-purple"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "mindmapOrganogramFluxogram",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Conteúdo"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "galeria",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "variant",
+        "label": "Variação",
+        "options": [
+          {
+            "name": "Galeria de Imagem",
+            "value": "image-only"
+          },
+          {
+            "name": "Galeria de Texto",
+            "value": "text-only"
+          },
+          {
+            "name": "Galeria de Imagem & Texto",
+            "value": "text-and-image-1-1"
+          },
+          {
+            "name": "Galeria de Vários Textos e uma Imagem",
+            "value": "one-image-many-texts"
+          },
+          {
+            "name": "Galeria de Várias Imagens e um Texto",
+            "value": "one-text-many-images"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "galeriaItemImg",
+    "fields": [
+      {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "img",
+        "condition": {
+          "===": [false, true]
+        }
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Imagem",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Texto alternativo da imagem"
+      },
+      {
+        "component": "text",
+        "name": "imgTitle",
+        "label": "Título da imagem"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Descrição da imagem",
+        "description": "Fonte da imagem, por exemplo"
+      }      
+    ]
+  },
+  {
+    "id": "galeriaItemTxt",
+    "fields": [
+      {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "txt",
+        "condition": {
+          "===": [false, true]
+        }
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Texto",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "tabela",
+    "fields":[
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Texto",
+        "valueType": "string"
       }
     ]
   }
