@@ -10,6 +10,6 @@ export default function decorate(block) {
   });
 
   quill.on('text-change', (delta, oldDelta, source) => {
-    console.log(quill.getSemanticHTML());
+    block.children[0].textContent = quill.getSemanticHTML();
   });
 }
