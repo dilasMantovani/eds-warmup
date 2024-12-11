@@ -11,9 +11,6 @@ export default function decorate(block) {
     theme: 'snow'
   });
 
-  let codeblock = document.createElement('pre')
-  content.appendChild(codeblock)
-
   quill.on('text-change', (delta, oldDelta, source) => {
     content.querySelector("pre").textContent = `${quill.getSemanticHTML()}`;
   });

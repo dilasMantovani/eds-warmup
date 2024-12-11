@@ -596,7 +596,7 @@
                   "name": "Tabela",
                   "model": "tabela",
                   "classes": "default",
-                  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                  "content": "<pre>initial</pre>"
                 }
               }
             }
