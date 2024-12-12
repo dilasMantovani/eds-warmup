@@ -7,9 +7,13 @@ export default function decorate(block) {
 
   block.appendChild(editor)
 
-  const jodit = Jodit.make(editor);
-  jodit.e.on('blur', param => {
-    content.querySelector("pre").textContent = `${jodit.value}`;
+  const jodit = Jodit.make(editor, {
+    "buttons": "table"
   });
+  setTimeout(() => {
+    jodit.e.on('blur', param => {
+      content.querySelector("pre").textContent = `${jodit.value}`;
+    });
+  }, 1000);
   
 }
