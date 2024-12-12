@@ -2,16 +2,14 @@ export default function decorate(block) {
 
   const content = block.children[0];
 
-  let editor = document.createElement('div');
-  editor.innerHTML = `<p>Core build with no theme, formatting, non-essential modules</p>`
+  let editor = document.createElement('textarea');
+  editor.innerHTML = `${content.querySelector("pre").textContent}`
 
   block.appendChild(editor)
 
-  const quill = new Quill(editor, {
-    theme: 'snow'
+  const jodit = Jodit.make(editor);
+  jodit.e.on('blur', param => {
+    content.querySelector("pre").textContent = `${jodit.value}`;
   });
-
-  quill.on('text-change', (delta, oldDelta, source) => {
-    content.querySelector("pre").textContent = `${quill.getSemanticHTML()}`;
-  });
+  
 }
