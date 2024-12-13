@@ -1,15 +1,14 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
 
   const content = block.children[0];
 
+  content.classList.add("hide")
+
   let editor = document.createElement('textarea');
   editor.innerHTML = `${content.querySelector("pre").textContent}`
 
   block.appendChild(editor)
-
-  moveInstrumentation(content, editor)
 
   const jodit = Jodit.make(editor, {
     "buttons": "table"
