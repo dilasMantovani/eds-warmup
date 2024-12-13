@@ -1,3 +1,5 @@
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 export default function decorate(block) {
 
   const content = block.children[0];
@@ -6,6 +8,8 @@ export default function decorate(block) {
   editor.innerHTML = `${content.querySelector("pre").textContent}`
 
   block.appendChild(editor)
+
+  moveInstrumentation(content, editor)
 
   const jodit = Jodit.make(editor, {
     "buttons": "table"
