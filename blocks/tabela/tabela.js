@@ -15,8 +15,18 @@ export default function decorate(block) {
   });
   setTimeout(() => {
     jodit.e.on('blur', param => {
-      content.querySelector("pre").textContent = `${jodit.value}`;
+      content.querySelector("pre").textContent = `${jodit.value.replaceAll("border-collapse:", "border-collapse: ")}`;
     });
   }, 1000);
+
+
+  let tableContainer = document.createElement('div');
+  tableContainer.innerHTML = content.querySelector("pre").textContent;
+
+  let isolatedTable = tableContainer.querySelector('table');
+
+  block.appendChild(isolatedTable);
+
+
   
 }

@@ -1,5 +1,4 @@
 .tabela .hide {
-  max-height: 20px;
+  max-height: 0px;
   overflow-y: hidden;
-  border: 1px dashed red;
 }
