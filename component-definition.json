@@ -596,7 +596,7 @@
                   "name": "Tabela",
                   "model": "tabela",
                   "classes": "default",
-                  "content": "<pre><table style='border-collapse: collapse;width: 100%;'><tbody><tr><td style='width: 50%;'><br></td><td style='width: 50%;'><br></td></tr><tr><td style='width: 50%;'><br></td><td style='width: 50%;'><br></td></tr><tr><td style='width: 50%;'><br></td><td style='width: 50%;'><br></td></tr></tbody></table></pre>"
+                  "content": "<pre></pre>"
                 }
               }
             }
