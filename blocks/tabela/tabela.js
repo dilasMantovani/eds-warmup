@@ -19,7 +19,7 @@ export default function decorate(block) {
   editor.innerHTML = `${content.querySelector("pre").textContent}`
 
 
-  window.onload = function () {
+  setTimeout(() => {
     if (enhancedIsInEditor()) {
       block.appendChild(editor)
 
@@ -30,9 +30,8 @@ export default function decorate(block) {
       jodit.e.on('blur', param => {
         content.querySelector("pre").textContent = `${jodit.value.replaceAll("border-collapse:", "border-collapse: ")}`;
       });
-    }
-  };
-
+    };
+  }, 1000);
 
 
 }
