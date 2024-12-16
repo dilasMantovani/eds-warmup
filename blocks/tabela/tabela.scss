@@ -1,4 +1,5 @@
 .tabela{
+  margin-top: 40px;
   .hide{
     max-height: 0px;
     overflow-y: hidden; 
@@ -8,10 +9,18 @@
     border-spacing: 0px;
     border-collapse: collapse;
     font-size: 18px;
-    tr:first-child{
-      background-color: #dbe3ec;
-      font-weight: bold;
+    thead{
+      tr{
+        background-color: #dbe3ec;
+        font-weight: bold;  
+      }
     }
+    &:not(:has(thead)){
+      tr:first-child{
+        background-color: #dbe3ec;
+        font-weight: bold;
+      }
+    } 
 
     td{
       border: 1px solid #939393;

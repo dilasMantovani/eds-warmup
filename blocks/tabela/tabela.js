@@ -1,3 +1,4 @@
+import { enhancedIsInEditor } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
 
@@ -8,16 +9,18 @@ export default function decorate(block) {
   let editor = document.createElement('textarea');
   editor.innerHTML = `${content.querySelector("pre").textContent}`
 
-  block.appendChild(editor)
-
-  const jodit = Jodit.make(editor, {
-    "toolbarAdaptive": false,
-    "buttons": "bold,italic,fontsize,superscript,subscript,table"  });
-  setTimeout(() => {
-    jodit.e.on('blur', param => {
-      content.querySelector("pre").textContent = `${jodit.value.replaceAll("border-collapse:", "border-collapse: ")}`;
-    });
-  }, 1000);
+  if(enhancedIsInEditor()){
+    block.appendChild(editor)
+  
+    const jodit = Jodit.make(editor, {
+      "toolbarAdaptive": false,
+      "buttons": "bold,italic,fontsize,superscript,subscript,table"  });
+    setTimeout(() => {
+      jodit.e.on('blur', param => {
+        content.querySelector("pre").textContent = `${jodit.value.replaceAll("border-collapse:", "border-collapse: ")}`;
+      });
+    }, 1000);
+  }
 
 
   let tableContainer = document.createElement('div');

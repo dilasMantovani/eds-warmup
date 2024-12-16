@@ -1,3 +1,6 @@
+.tabela {
+  margin-top: 40px;
+}
 .tabela .hide {
   max-height: 0px;
   overflow-y: hidden;
@@ -8,7 +11,11 @@
   border-collapse: collapse;
   font-size: 18px;
 }
-.tabela table tr:first-child {
+.tabela table thead tr {
+  background-color: #dbe3ec;
+  font-weight: bold;
+}
+.tabela table:not(:has(thead)) tr:first-child {
   background-color: #dbe3ec;
   font-weight: bold;
 }
