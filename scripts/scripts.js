@@ -214,6 +214,7 @@ export function isInEditor(){
 
 //a diferença é que este ignora tbm a tela de preview do AEM
 export function enhancedIsInEditor(){
+  console.log(document.querySelectorAll('.adobe-ue-edit'))
   return document.querySelectorAll('.adobe-ue-edit')?.length > 0;
 }
 
