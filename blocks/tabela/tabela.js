@@ -6,31 +6,33 @@ export default function decorate(block) {
 
   content.classList.add("hide")
 
-  let editor = document.createElement('textarea');
-  editor.innerHTML = `${content.querySelector("pre").textContent}`
-
-  if(enhancedIsInEditor()){
-    block.appendChild(editor)
-  
-    const jodit = Jodit.make(editor, {
-      "toolbarAdaptive": false,
-      "buttons": "bold,italic,fontsize,superscript,subscript,table"  });
-    setTimeout(() => {
-      jodit.e.on('blur', param => {
-        content.querySelector("pre").textContent = `${jodit.value.replaceAll("border-collapse:", "border-collapse: ")}`;
-      });
-    }, 1000);
-  }
-
-
   let tableContainer = document.createElement('div');
   tableContainer.innerHTML = content.querySelector("pre").textContent;
 
   let isolatedTable = tableContainer.querySelector('table');
 
-  if(isolatedTable)
+  if (isolatedTable)
     block.appendChild(isolatedTable);
 
 
-  
+  let editor = document.createElement('textarea');
+  editor.innerHTML = `${content.querySelector("pre").textContent}`
+
+
+  window.onload = function () {
+    if (enhancedIsInEditor()) {
+      block.appendChild(editor)
+
+      const jodit = Jodit.make(editor, {
+        "toolbarAdaptive": false,
+        "buttons": "bold,italic,fontsize,superscript,subscript,table"
+      });
+      jodit.e.on('blur', param => {
+        content.querySelector("pre").textContent = `${jodit.value.replaceAll("border-collapse:", "border-collapse: ")}`;
+      });
+    }
+  };
+
+
+
 }
