@@ -212,6 +212,11 @@ export function isInEditor(){
   return window?.location?.hostname?.startsWith("author");
 }
 
+//a diferença é que este ignora tbm a tela de preview do AEM
+export function enhancedIsInEditor(){
+  return document.querySelectorAll('.adobe-ue-edit')?.length > 0;
+}
+
 export function generateUUID() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
     const r = Math.random() * 16 | 0;

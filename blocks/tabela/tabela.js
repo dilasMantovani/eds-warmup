@@ -11,8 +11,8 @@ export default function decorate(block) {
   block.appendChild(editor)
 
   const jodit = Jodit.make(editor, {
-    "buttons": "table"
-  });
+    "toolbarAdaptive": false,
+    "buttons": "bold,italic,fontsize,superscript,subscript,table"  });
   setTimeout(() => {
     jodit.e.on('blur', param => {
       content.querySelector("pre").textContent = `${jodit.value.replaceAll("border-collapse:", "border-collapse: ")}`;
@@ -25,7 +25,8 @@ export default function decorate(block) {
 
   let isolatedTable = tableContainer.querySelector('table');
 
-  block.appendChild(isolatedTable);
+  if(isolatedTable)
+    block.appendChild(isolatedTable);
 
 
   

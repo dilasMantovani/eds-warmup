@@ -2,3 +2,18 @@
   max-height: 0px;
   overflow-y: hidden;
 }
+.tabela table {
+  width: 100%;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+.tabela table tr:first-child {
+  background-color: #dbe3ec;
+  font-weight: bold;
+}
+.tabela table td {
+  border: 1px solid #939393;
+  padding: 0.75rem;
+  vertical-align: top;
+}
