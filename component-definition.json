@@ -671,7 +671,8 @@
                   "name": "Disclaimer",
                   "model": "disclaimer",
                   "titulo": "Título",
-                  "disclaimer": "Texto disclaimer"
+                  "disclaimer": "Texto disclaimer",
+                  "type": "disclaimer"
                 }
               }
             }

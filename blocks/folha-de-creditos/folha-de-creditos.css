@@ -1,0 +1,51 @@
+.folha-de-creditos .capa {
+  background-image: url(https://cm-kls-content.s3.amazonaws.com/DESEN_WEBAULA/BOOTSTRAP/pattern-ld.png), linear-gradient(45deg, #007ABF, #0055A5), linear-gradient(180deg, #fff, #fff);
+  overflow: hidden;
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background-attachment: fixed;
+  padding-bottom: 100px;
+  padding-top: 80px;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+@media (max-width: 380px) {
+  .folha-de-creditos .capa {
+    width: 125vw;
+  }
+}
+.folha-de-creditos .capa__title {
+  padding: 0 16px;
+  max-width: 1200px;
+  margin: auto;
+}
+.folha-de-creditos .capa__title h1 {
+  font-size: 4rem;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+@media (max-width: 767px) {
+  .folha-de-creditos .capa__title h1 {
+    font-size: 2rem;
+  }
+}
+@media (width >= 600px) {
+  .folha-de-creditos .capa__title {
+    padding: 0 32px;
+  }
+}
+.folha-de-creditos .folha {
+  min-height: 200px;
+  box-shadow: 0 30px 50px 0 rgba(1, 1, 1, 0.15);
+  transform: translateY(-100px);
+  z-index: 100;
+  background-color: #ffffff;
+  padding: 90px;
+}

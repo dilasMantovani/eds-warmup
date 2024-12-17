@@ -1420,13 +1420,6 @@
     "id": "direitosReservados",
     "fields":[
       {
-        "component": "richtext",
-        "name": "direitosReservados",
-        "value": "",
-        "label": "Informações de direitos reservados",
-        "valueType": "string"
-      },
-      {
         "component": "text",
         "name": "type",
         "label": "tipo",
@@ -1434,19 +1427,20 @@
         "condition": {
           "===": [false, true]
         }
+      },
+      {
+        "component": "richtext",
+        "name": "direitosReservados",
+        "value": "",
+        "label": "Informações de direitos reservados",
+        "valueType": "string"
       }
     ]
   },
   {
     "id": "informacoesDosResponsaveis",
     "fields":[
-      {
-        "component": "richtext",
-        "name": "informacoesDosResponsaveis",
-        "value": "",
-        "label": "Informação de todos os responsáveis",
-        "valueType": "string"
-      },
+      
       {
         "component": "text",
         "name": "type",
@@ -1455,12 +1449,28 @@
         "condition": {
           "===": [false, true]
         }
+      },
+      {
+        "component": "richtext",
+        "name": "informacoesDosResponsaveis",
+        "value": "",
+        "label": "Informação de todos os responsáveis",
+        "valueType": "string"
       }
     ]
   },
   {
     "id": "disclaimer",
     "fields":[
+      {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "disclaimer",
+        "condition": {
+          "===": [false, true]
+        }
+      },
       {
         "component": "text",
         "name": "titulo",
@@ -1474,21 +1484,21 @@
         "value": "",
         "label": "Isenção de responsabilidade",
         "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "type",
-        "label": "tipo",
-        "value": "disclaimer",
-        "condition": {
-          "===": [false, true]
-        }
       }
     ]
   },
   {
     "id": "fichaCatalografica",
     "fields":[
+      {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "fichaCatalografica",
+        "condition": {
+          "===": [false, true]
+        }
+      },
       {
         "component": "text",
         "name": "titulo",
@@ -1509,15 +1519,6 @@
         "value": "",
         "label": "CDD",
         "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "type",
-        "label": "tipo",
-        "value": "fichaCatalografica",
-        "condition": {
-          "===": [false, true]
-        }
       }
     ]
   },
@@ -1525,20 +1526,20 @@
     "id": "rodapeFolhaDeCreditos",
     "fields":[
       {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "rodapeFolhaDeCreditos",
+        "condition": {
+          "===": [false, true]
+        }
+      },
+      {
         "component": "richtext",
         "name": "rodape",
         "value": "",
         "label": "Informações do rodapé",
         "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "type",
-        "label": "tipo",
-        "value": "direitosReservados",
-        "condition": {
-          "===": [false, true]
-        }
       }
     ]
   }
