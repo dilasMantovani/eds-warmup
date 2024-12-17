@@ -614,11 +614,28 @@
                   "model": "folhaDeCreditos",
                   "classes": "default",
                   "tituloDaAula":"Titulo da aula",
+                  "filter": "folhaDeCreditos",
                   "item0":{
                     "name": "Direitos Reservados",
                     "model": "direitosReservados",
                     "direitosReservados": "<p><strong>© 2021 por Editora e Distribuidora Educacional S.A.</strong><br>Todos os direitos reservados. Nenhuma parte desta publicação poderá ser reproduzida ou transmitida de qualquer modo ou por qualquer outro meio, eletrônico ou mecânico, incluindo fotocópia, gravação ou qualquer outro tipo de sistema de armazenamento e transmissão de informação, sem prévia autorização, por escrito, da Editora e Distribuidora Educacional S.A.<br></p>"
                   }
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Direitos Reservados",
+          "id": "direitosReservados",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Direitos Reservados",
+                  "model": "direitosReservados",
+                  "direitosReservados": "<p><strong>© 2021 por Editora e Distribuidora Educacional S.A.</strong><br>Todos os direitos reservados. Nenhuma parte desta publicação poderá ser reproduzida ou transmitida de qualquer modo ou por qualquer outro meio, eletrônico ou mecânico, incluindo fotocópia, gravação ou qualquer outro tipo de sistema de armazenamento e transmissão de informação, sem prévia autorização, por escrito, da Editora e Distribuidora Educacional S.A.<br></p>"
                 }
               }
             }
