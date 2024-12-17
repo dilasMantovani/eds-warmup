@@ -1381,5 +1381,165 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "folhaDeCreditos",
+    "fields":[
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "tituloDaAula",
+        "value": "",
+        "label": "Título da aula",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Imagem de fundo da capa",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "direitosReservados",
+    "fields":[
+      {
+        "component": "richtext",
+        "name": "direitosReservados",
+        "value": "",
+        "label": "Informações de direitos reservados",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "direitosReservados",
+        "condition": {
+          "===": [false, true]
+        }
+      }
+    ]
+  },
+  {
+    "id": "informacoesDosResponsaveis",
+    "fields":[
+      {
+        "component": "richtext",
+        "name": "informacoesDosResponsaveis",
+        "value": "",
+        "label": "Informação de todos os responsáveis",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "informacoesDosResponsaveis",
+        "condition": {
+          "===": [false, true]
+        }
+      }
+    ]
+  },
+  {
+    "id": "disclaimer",
+    "fields":[
+      {
+        "component": "text",
+        "name": "titulo",
+        "value": "",
+        "label": "Título",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "disclaimer",
+        "value": "",
+        "label": "Isenção de responsabilidade",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "disclaimer",
+        "condition": {
+          "===": [false, true]
+        }
+      }
+    ]
+  },
+  {
+    "id": "fichaCatalografica",
+    "fields":[
+      {
+        "component": "text",
+        "name": "titulo",
+        "value": "Dados Internacionais de Catalogação na Publicação (CIP)",
+        "label": "Título",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "fichaCatalografica",
+        "value": "",
+        "label": "Dados da ficha catalográfica",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "CDD",
+        "value": "",
+        "label": "CDD",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "fichaCatalografica",
+        "condition": {
+          "===": [false, true]
+        }
+      }
+    ]
+  },
+  {
+    "id": "rodapeFolhaDeCreditos",
+    "fields":[
+      {
+        "component": "richtext",
+        "name": "rodapé",
+        "value": "",
+        "label": "Informações do rodapé",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "type",
+        "label": "tipo",
+        "value": "direitosReservados",
+        "condition": {
+          "===": [false, true]
+        }
+      }
+    ]
   }
 ]

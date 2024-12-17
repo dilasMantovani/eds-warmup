@@ -24,7 +24,8 @@
       "sanfona",
       "galeria",
       "mindmapOrganogramFluxogram",
-      "tabela"
+      "tabela",
+      "folhaDeCreditos"
     ]
   },
   {
@@ -73,6 +74,16 @@
     "id": "sanfona",
     "components": [
       "sanfonaItem"
+    ]
+  },
+  {
+    "id": "folhaDeCreditos",
+    "components": [
+      "direitosReservados",
+      "informacoesDosResponsaveis",
+      "disclaimer",
+      "fichaCatalografica",
+      "rodapeFolhaDeCreditos"
     ]
   },
   {
