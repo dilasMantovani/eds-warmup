@@ -1526,7 +1526,7 @@
     "fields":[
       {
         "component": "richtext",
-        "name": "rodapé",
+        "name": "rodape",
         "value": "",
         "label": "Informações do rodapé",
         "valueType": "string"
