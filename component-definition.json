@@ -624,7 +624,7 @@
                   "item1":{
                     "name": "Informacoes Dos Responsaveis",
                     "model": "informacoesDosResponsaveis",
-                    "direitosReservados": "<p><strong>Presidência</strong><br>John Doe<br></p>",
+                    "informacoesDosResponsaveis": "<p><strong>Presidência</strong><br>John Doe<br></p>",
                     "type": "informacoesDosResponsaveis"
                   },
                   "item3":{
