@@ -7,12 +7,6 @@ export default function decorate(block) {
 
   const capa = document.createElement("div");
   capa.classList.add("capa");
-  setTimeout(() => {
-    console.log(enhancedIsInEditor())
-    if(enhancedIsInEditor()){
-      capa.classList.add("isInEditor");
-    }
-  }, 1000);
   capa.innerHTML = `<div class="capa__title"><h1>${tituloText}</h1></div>`;
 
   const folha = document.createElement("div");
@@ -47,5 +41,11 @@ export default function decorate(block) {
   })
   block.append(capa);
   block.append(folha)
+
+  setTimeout(() => {
+    if(enhancedIsInEditor()){
+      capa.classList.add("isInEditor");
+    }
+  }, 3000);
 
 }
