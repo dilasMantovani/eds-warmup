@@ -8,6 +8,7 @@ export default function decorate(block) {
   const capa = document.createElement("div");
   capa.classList.add("capa");
   setTimeout(() => {
+    console.log(enhancedIsInEditor())
     if(enhancedIsInEditor()){
       capa.classList.add("isInEditor");
     }
