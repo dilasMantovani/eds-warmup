@@ -19,6 +19,9 @@
     width: 125vw;
   }
 }
+.folha-de-creditos .capa.isInEditor {
+  min-height: unset;
+}
 .folha-de-creditos .capa__title {
   padding: 0 16px;
   max-width: 1200px;
@@ -48,4 +51,28 @@
   z-index: 100;
   background-color: #ffffff;
   padding: 90px;
+  font-size: 18px;
+}
+.folha-de-creditos .folha .direitosReservados, .folha-de-creditos .folha .informacoesDosResponsaveis, .folha-de-creditos .folha .rodapeFolhaDeCreditos {
+  text-align: center;
+}
+.folha-de-creditos .folha .disclaimer__title {
+  padding-left: 10px;
+  border-left: solid 6px #007ABF;
+}
+.folha-de-creditos .folha .disclaimer__title p {
+  font-size: 1.25rem;
+  font-weight: bolder;
+}
+.folha-de-creditos .folha .fichaCatalografica__title {
+  font-weight: bolder;
+}
+.folha-de-creditos .folha .fichaCatalografica__content {
+  border-top: 1px solid #4C4C4C;
+  padding: 0 1.5rem;
+  line-height: 1.88;
+}
+.folha-de-creditos .folha .fichaCatalografica__cdd {
+  text-align: right;
+  border-bottom: 1px solid #4C4C4C;
 }

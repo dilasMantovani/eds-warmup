@@ -17,6 +17,9 @@
     @media (max-width: 380px) {
       width: 125vw;
     }
+    &.isInEditor{
+      min-height: unset; 
+    }
     
     &__title{
       padding: 0 16px;
@@ -45,5 +48,33 @@
     z-index: 100;
     background-color: #ffffff;
     padding: 90px;
+    font-size: 18px;;
+    .direitosReservados,.informacoesDosResponsaveis,.rodapeFolhaDeCreditos{
+      text-align: center;
+    }
+    .disclaimer{
+      &__title{
+        padding-left: 10px;
+        border-left: solid 6px #007ABF;
+        p{
+          font-size: 1.25rem;
+          font-weight: bolder;
+        }
+      }
+    }
+    .fichaCatalografica{
+      &__title{
+        font-weight: bolder;
+      }
+      &__content{
+        border-top: 1px solid #4C4C4C;
+        padding: 0 1.5rem;
+        line-height: 1.88;
+      }
+      &__cdd{
+        text-align: right;
+        border-bottom: 1px solid #4C4C4C;
+      }
+    }
   }
 } 
