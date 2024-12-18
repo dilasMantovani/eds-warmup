@@ -13,7 +13,6 @@
       "timelines",
       "texto-rico",
       "tab-controller",
-      "spacer",
       "code-block",
       "image-compare",
       "video",
@@ -22,8 +21,11 @@
       "button-modal",
       "quote",
       "embed",
-      "accordion",
-      "mindmap"
+      "sanfona",
+      "galeria",
+      "mindmapOrganogramFluxogram",
+      "tabela",
+      "folhaDeCreditos"
     ]
   },
   {
@@ -31,7 +33,6 @@
     "components": [
       "timelines",
       "texto-rico",
-      "spacer",
       "code-block",
       "image-compare",
       "video",
@@ -40,8 +41,8 @@
       "button-modal",
       "quote",
       "embed",
-      "accordion",
-      "mindmap"
+      "sanfona",
+      "galeria"
     ]
   },
   {
@@ -70,9 +71,26 @@
     ]
   },
   {
-    "id": "accordion",
+    "id": "sanfona",
     "components": [
-      "accordion-item"
+      "sanfonaItem"
+    ]
+  },
+  {
+    "id": "folhaDeCreditos",
+    "components": [
+      "direitosReservados",
+      "informacoesDosResponsaveis",
+      "disclaimer",
+      "fichaCatalografica",
+      "rodapeFolhaDeCreditos"
+    ]
+  },
+  {
+    "id": "galeria",
+    "components": [
+      "galeriaItemImg",
+      "galeriaItemTxt"
     ]
   }
 ]
