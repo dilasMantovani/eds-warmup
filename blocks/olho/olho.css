@@ -1,0 +1,91 @@
+.olho {
+  margin-top: 40px;
+}
+.olho-with-title {
+  display: grid;
+  grid-template-columns: 25% calc(75% - 30px);
+  gap: 30px;
+}
+.olho-with-title h4 {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin: 0;
+  align-items: end;
+  display: flex;
+  flex-direction: column;
+}
+.olho-with-title h4:after {
+  content: "";
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: solid 3px #00368c;
+  width: 50px;
+}
+.olho-with-title blockquote {
+  font-size: 18px;
+  margin: 0;
+}
+.olho-with-title blockquote p {
+  margin: 8px 0;
+}
+@media (max-width: 992px) {
+  .olho-with-title {
+    grid-template-columns: 40% calc(60% - 30px);
+  }
+}
+@media (max-width: 767px) {
+  .olho-with-title {
+    grid-template-columns: 100%;
+    gap: 0;
+  }
+  .olho-with-title h4 {
+    align-items: start;
+  }
+}
+.olho-no-title {
+  flex-direction: column;
+}
+.olho-no-title i {
+  font-size: 30px;
+  color: #00368c;
+}
+.olho-no-title blockquote {
+  margin: 0;
+  line-height: 1.88;
+}
+.olho-no-title blockquote p {
+  color: #00368c;
+  font-size: 21px;
+  font-style: italic;
+  margin: 8px 0 0;
+}
+@media (max-width: 575px) {
+  .olho-no-title blockquote p {
+    font-size: 19px;
+  }
+}
+.olho-no-title blockquote cite {
+  display: none;
+}
+.olho-no-title blockquote:after {
+  content: "";
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: solid 3px #00368c;
+  width: 50px;
+}
+.olho.deep-purple .olho-with-title {
+  background-color: #b982ff;
+}
+.olho.deep-purple .olho-no-title blockquote p {
+  color: #b982ff;
+}
+.olho.deep-purple .olho-no-title blockquote::after {
+  border-color: #b982ff;
+}
+.olho.deep-purple .olho-no-title i::before {
+  color: #b982ff;
+}

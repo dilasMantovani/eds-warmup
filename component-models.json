@@ -1120,7 +1120,10 @@
             "name": "Citação sem autor(a)",
             "value": "phrase"
           }
-        ]
+        ],
+        "condition": {
+          "===": [false, true]
+        }
       },
       {
         "component": "reference",
