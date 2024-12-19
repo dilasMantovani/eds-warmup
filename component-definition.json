@@ -677,6 +677,25 @@
               }
             }
           }
+        },
+        {
+          "title": "Olho",
+          "id": "olho",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Olho",
+                  "model": "olho",
+                  "variant":"with-title",
+                  "title":"Título e texto lateral",
+                  "content":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec arcu lorem, volutpat at bibendum vel, iaculis et felis. Donec sem ante, bibendum sed leo ut, tincidunt volutpat nisi. Aenean facilisis metus nec commodo varius. Praesent vulputate varius ex. Integer iaculis fringilla metus, sed efficitur mi aliquet sit amet.</p>",
+                  "icon":"coffee"
+                }
+              }
+            }
+          }
         }
       ]
     }

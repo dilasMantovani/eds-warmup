@@ -1542,5 +1542,65 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "olho",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "variant",
+        "label": "Variação",
+        "options": [
+          {
+            "name": "Com título na lateral",
+            "value": "with-title"
+          },
+          {
+            "name": "Sem título na lateral",
+            "value": "no-title"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Título",
+        "condition": {
+          "===": [{ "var": "variant" }, "with-title"]
+        }
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Conteúdo"
+      },
+      {
+        "component": "text",
+        "name": "icon",
+        "label": "Ícone",
+        "description": "Icone do font awesome. Ex: circle-play,location-dot... Consulte todas as possibilidades em: https://fontawesome.com/search?o=r&m=free",
+        "condition": {
+          "===": [{ "var": "variant" }, "no-title"]
+        }
+      }
+      
+    ]
   }
 ]

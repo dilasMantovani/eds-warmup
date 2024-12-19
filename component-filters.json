@@ -25,7 +25,8 @@
       "galeria",
       "mindmapOrganogramFluxogram",
       "tabela",
-      "folhaDeCreditos"
+      "folhaDeCreditos",
+      "olho"
     ]
   },
   {
@@ -42,7 +43,8 @@
       "quote",
       "embed",
       "sanfona",
-      "galeria"
+      "galeria",
+      "olho"
     ]
   },
   {
@@ -52,7 +54,8 @@
       "code-block",
       "image-compare",
       "video",
-      "imagem"
+      "imagem",
+      "olho"
     ]
   },
   {
