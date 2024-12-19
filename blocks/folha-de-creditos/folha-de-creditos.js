@@ -7,6 +7,11 @@ export default function decorate(block) {
 
   const capa = document.createElement("div");
   capa.classList.add("capa");
+
+  if(imagemCapa.querySelector("img")){
+    capa.style.backgroundImage = `url(${imagemCapa.querySelector("img").getAttribute('src')}), linear-gradient(45deg, #007ABF, #0055A5), linear-gradient(180deg, #fff, #fff)`
+  }
+
   capa.innerHTML = `<div class="capa__title"><h1>${tituloText}</h1></div>`;
 
   const folha = document.createElement("div");
@@ -46,6 +51,6 @@ export default function decorate(block) {
     if(enhancedIsInEditor()){
       capa.classList.add("isInEditor");
     }
-  }, 3000);
+  }, 1500);
 
 }
