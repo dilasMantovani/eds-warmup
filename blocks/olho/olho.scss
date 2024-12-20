@@ -83,26 +83,26 @@
       }
     }
   }
+}
 
-  &.deep-purple {
-    .olho-with-title {
-      background-color: #b982ff;
-    }
+.olho.deep-purple {
+  .olho-with-title {
+    background-color: #b982ff;
+  }
 
-    .olho-no-title {
-      blockquote {
-        p {
-          color: #b982ff;
-        }
-
-        &::after {
-          border-color: #b982ff;
-        }
-      }
-
-      i::before {
+  .olho-no-title{
+    blockquote {
+      p {
         color: #b982ff;
       }
+
+      &::after {
+        border-color: #b982ff;
+      }
+    }
+
+    i::before {
+      color: #b982ff;
     }
   }
 }
