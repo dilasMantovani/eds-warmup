@@ -26,7 +26,7 @@ export default function decorate(block) {
     } else {
         return(`
             <section class="olho-no-title">
-                <i class="fa fa-${iconText}"></i>
+                ${iconText ? `<i class="fa fa-${iconText}"></i>` : ""}
                 <blockquote>
                     <p>${contentText}</p>
                 </blockquote>
