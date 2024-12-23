@@ -25,7 +25,8 @@
       "galeria",
       "mindmapOrganogramFluxogram",
       "folhaDeCreditos",
-      "olho"
+      "olho",
+      "abas"
     ]
   },
   {
@@ -93,6 +94,12 @@
     "components": [
       "galeriaItemImg",
       "galeriaItemTxt"
+    ]
+  },
+  {
+    "id": "abas",
+    "components": [
+      "abaItem"
     ]
   }
 ]
