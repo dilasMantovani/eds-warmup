@@ -264,7 +264,19 @@
                   "name": "Sanfona",
                   "model": "sanfona",
                   "filter":"sanfona",
-                  "classes":"default"
+                  "classes":"default",
+                  "item0":{
+                    "name": "sanfonaItem",
+                    "model": "sanfonaItem",
+                    "headerText":"Header da seção 1 ",
+                    "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
+                  },
+                  "item1":{
+                    "name": "sanfonaItem",
+                    "model": "sanfonaItem",
+                    "headerText":"Header da seção 2",
+                    "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
+                  }
                 }
               }
             }
@@ -708,7 +720,19 @@
                   "name": "Abas",
                   "model": "abas",
                   "filter":"abas",
-                  "classes":"default"
+                  "classes":"default",
+                  "item0":{
+                    "name": "abaItem",
+                    "model": "abaItem",
+                    "headerText": "Título da aba 2",
+                    "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
+                  },
+                  "item2":{
+                    "name": "abaItem",
+                    "model": "abaItem",
+                    "headerText": "Título da aba 2",
+                    "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
+                  }
                 }
               }
             }
@@ -724,7 +748,8 @@
                 "template": {
                   "name": "AbaItem",
                   "model": "abaItem",
-                  "headerText":"Header da seção"
+                  "headerText":"Título da aba",
+                  "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
                 }
               }
             }
