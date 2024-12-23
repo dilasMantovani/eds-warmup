@@ -31,3 +31,20 @@
     display: none;
   }
 }
+
+.abas.deep-purple{
+  .abas-header{
+      ul{
+
+          li{
+              a{
+                  &:hover{
+                  }
+                  &.active{
+                      background-color: #b982ff;
+                  }
+              }
+          }
+      }
+  }
+}

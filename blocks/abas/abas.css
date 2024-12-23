@@ -24,3 +24,7 @@
 .abas .hidden {
   display: none;
 }
+
+.abas.deep-purple .abas-header ul li a.active {
+  background-color: #b982ff;
+}
