@@ -906,6 +906,12 @@
         "condition": {
           "!==": [{ "var": "zoomIn" }, true]
         }
+      },
+      {
+        "component": "text-area",
+        "name": "uniqueStyle",
+        "label": "Estilo único",
+        "description": "O código CSS inserido neste campo será aplicado unicamente neste componente"
       }
     ]
   },
