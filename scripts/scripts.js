@@ -226,7 +226,7 @@ export function generateUUID() {
 }
 
 export function randomString(len) {
-  charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   var randomString = '';
   for (var i = 0; i < len; i++) {
       var randomPoz = Math.floor(Math.random() * charSet.length);
