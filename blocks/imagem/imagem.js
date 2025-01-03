@@ -115,9 +115,7 @@ export default function decorate(block) {
         #${id}{
             ${uniquecssText}
         }`;
-        setTimeout(() => {
-            block.append(styleTag)
-        }, 1000);
+        block.append(styleTag)
     }
 
 }
