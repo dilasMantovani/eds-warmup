@@ -108,11 +108,11 @@ export default function decorate(block) {
     }
 
     if (uniquecssText) {
-        const uuid = generateUUID();
-        block.setAttribute("id", uuid)
+        const id = Math.random().toString(36).slice(2, 7);
+        block.setAttribute("id", id)
         const styleTag = document.createElement("style");
         styleTag.textContent = `
-        #${uuid}{
+        #${id}{
             ${uniquecssText}
         }`;
         setTimeout(() => {
