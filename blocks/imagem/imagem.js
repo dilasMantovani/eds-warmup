@@ -1,4 +1,4 @@
-import { generateUUID, htmlToElement } from "../../scripts/scripts.js";
+import { randomString, htmlToElement } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
     const image = block.children[0];
@@ -108,7 +108,7 @@ export default function decorate(block) {
     }
 
     if (uniquecssText) {
-        const id = Math.random().toString(36).slice(2, 7);
+        const id = randomString(6);
         block.setAttribute("id", id)
         const styleTag = document.createElement("style");
         styleTag.textContent = `
