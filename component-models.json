@@ -1706,6 +1706,11 @@
         "component": "aem-content-fragment",
         "name": "cf",
         "label": "Content fragment tabela"
+      },
+      {
+        "component": "aem-experience-fragment",
+        "name": "xf",
+        "label": "Experience fragment tabela"
       }
     ]
   }
