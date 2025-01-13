@@ -1698,5 +1698,15 @@
         "description": "Fonte da imagem, por exemplo"
       }
     ]
+  },
+  {
+    "id": "playground",
+    "fields": [
+      {
+        "component": "aem-content-fragment",
+        "name": "cf",
+        "label": "Content fragment tabela"
+      }
+    ]
   }
 ]
