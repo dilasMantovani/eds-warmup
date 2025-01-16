@@ -1713,5 +1713,16 @@
         "label": "Experience fragment tabela"
       }
     ]
+  },
+  {
+    "id": "podcast",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "audioFile",
+        "label": "Arquivo de audio",
+        "multi": false
+      }
+    ]
   }
 ]
