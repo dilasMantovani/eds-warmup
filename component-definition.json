@@ -781,6 +781,7 @@
                   "name": "Podcast",
                   "model": "podcast",
                   "title": "Titulo do episódio",
+                  "titleType": "h3",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam turpis lectus, aliquam et feugiat eget, mollis non arcu. Sed sodales suscipit pellentesque. Duis ac magna efficitur, fringilla arcu eu, commodo neque. Donec lectus ligula, lacinia quis lacinia sed, vehicula in elit. Sed in condimentum lacus, eu auctor erat. Morbi vel sapien mi. Curabitur elit tellus, tempus eget commodo eget, mollis sagittis erat. Proin condimentum lorem sed dignissim placerat. Sed finibus suscipit nunc vel aliquet. Duis gravida condimentum dapibus."
                 }
               }
