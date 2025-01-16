@@ -1763,6 +1763,22 @@
         "component": "richtext",
         "name": "description",
         "label": "Descrição do episódio"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
       }
     ]
   }
