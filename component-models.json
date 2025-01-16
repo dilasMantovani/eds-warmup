@@ -1722,6 +1722,16 @@
         "name": "audioFile",
         "label": "Arquivo de audio",
         "multi": false
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Titulo do episódio"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Descrição do episódio"
       }
     ]
   }
