@@ -9,6 +9,7 @@
   {
     "id": "section",
     "components": [
+      "text",
       "timelines",
       "texto-rico",
       "code-block",
