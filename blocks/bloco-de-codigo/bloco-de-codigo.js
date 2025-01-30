@@ -37,5 +37,14 @@ export default function decorate(block) {
         block.insertBefore(msgElement, block.firstChild);
     }
 
+    if(isInEditor()){
+        setInterval(() => {
+            if(window.Prism){
+                window.Prism.highlightAll();
+                console.log("highlighted code block")
+            }
+        }, 1500);
+    }
+
     // highlightCodeBlock();
 }

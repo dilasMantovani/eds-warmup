@@ -5,9 +5,12 @@ export default function decorate(block) {
     const iconOpen = block?.children[1];
     const iconClosed = block?.children[2];
 
-    const openAllText = openAll?.textContent?.trim();
+    console.log(openAll)
+
+    const openAllText = openAll?.textContent?.trim() ? openAll?.textContent?.trim() : "false";
     const iconOpenText = iconOpen?.textContent?.trim();
     const iconClosedText = iconClosed?.textContent?.trim();
+
 
     openAll?.remove();
     iconOpen?.remove();
