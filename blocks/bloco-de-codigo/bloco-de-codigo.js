@@ -38,9 +38,10 @@ export default function decorate(block) {
     }
 
     if(isInEditor()){
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             if(window.Prism){
                 window.Prism.highlightAll();
+                clearInterval(intervalId)
                 console.log("highlighted code block")
             }
         }, 1500);
