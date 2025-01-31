@@ -24,7 +24,17 @@ export default function decorate(block) {
         if(correspondingItems.length === 0){
             securityCheckPassed = false;
         }
-
+    }else{
+        Array.from(element.children).forEach(child => {
+            if(child.tagName === "IFRAME"){
+                const iframeSrc = child.src
+                console.log("iframeSrc", iframeSrc)
+                const correspondingItems = allowedHostsForIframe.filter(host => iframeSrc.includes(host));
+                if(correspondingItems.length === 0){
+                    securityCheckPassed = false;
+                }
+            }
+        });
     }
 
 
