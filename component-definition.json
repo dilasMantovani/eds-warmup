@@ -339,6 +339,23 @@
           }
         },
         {
+          "title": "Texto Ricov2",
+          "id": "texto-ricov2",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Texto Ricov2",
+                  "model": "texto-ricov2",
+                  "classes": "default",
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Controlador das Abas",
           "id": "tab-controller",
           "plugins": {
