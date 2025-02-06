@@ -19,6 +19,9 @@ export default function decorate(block) {
       });
   }, 1000);
 
-  block.append(htmlToElement(atob(content.textContent)))
+  console.log(content.textContent.trim())
+  const mainContent = document.createElement("div") 
+  mainContent.innerHTML = atob(content.textContent.trim())
+  block.append(mainContent)
 
 }
