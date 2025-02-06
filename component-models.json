@@ -1802,11 +1802,18 @@
         ]
       },
       {
-        "component": "text",
+        "component": "hidden",
         "name": "text",
         "value": "",
         "label": "Texto",
         "valueType": "string"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "apply",
+        "label": "Aplicar alterações",
+        "description": "a ativação e desativação deste campo persiste as alterações feitas no richtext avançado"
       }
     ]
   }
