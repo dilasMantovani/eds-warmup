@@ -14,7 +14,7 @@ export default function decorate(block) {
       const jodit = Jodit.make(editor, {
         "toolbarAdaptive": false      });
       jodit.e.on('blur', param => {
-        content.textContent = `${btoa(jodit.value.replaceAll("border-collapse:", "border-collapse: "))}`;
+        content.innerHTML = `${btoa(jodit.value.replaceAll("border-collapse:", "border-collapse: "))}`;
       });
   }, 1000);
 
