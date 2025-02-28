@@ -284,6 +284,12 @@ export function removeDataAueAttributesWhenThereIsFormula(element) {
 
 }
 
+function resize() {
+  var height = document.getElementsByTagName("html")[0].scrollHeight;
+  window.parent.postMessage(["setHeight", height], "*"); 
+}
+setInterval(resize, 1000);
+
 export const DAM_URL = "https://publish-p136102-e1378103.adobeaemcloud.com";// HEADS UP - do not overwrite this variable unless you know what you're doing
 
 
