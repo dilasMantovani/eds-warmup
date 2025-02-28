@@ -286,7 +286,7 @@ export function removeDataAueAttributesWhenThereIsFormula(element) {
 
 function resize() {
   var height = document.getElementsByTagName("html")[0].getBoundingClientRect().height;
-  window.parent.postMessage(["setHeight", height], "*"); 
+  window.parent.postMessage(["setHeight", height + 10], "*"); 
 }
 setInterval(resize, 1000);
 
