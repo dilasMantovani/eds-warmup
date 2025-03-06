@@ -51,7 +51,6 @@ export default function decorate(block) {
 
     setTimeout(() => {
       if (enhancedIsInEditor()) {
-        content.style.display = "block";
         block.append(editButton)
       }else{
         content.remove();
