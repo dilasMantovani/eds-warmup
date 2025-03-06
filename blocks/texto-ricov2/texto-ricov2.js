@@ -2,7 +2,7 @@ import { enhancedIsInEditor } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
   const content = block.children[0];
-  console.log(content)
+  content.style.display = "none";
 
   let editMode = false;
 
@@ -33,7 +33,6 @@ export default function decorate(block) {
   
     const editButton = document.createElement("button")
     editButton.textContent = "editar com texto rico avançado"
-    block.append(editButton)
     editButton?.addEventListener('click', (e) => {
       editMode = !editMode
       if (editMode) {
@@ -50,7 +49,10 @@ export default function decorate(block) {
     })
 
     setTimeout(() => {
-      if (!enhancedIsInEditor()) {
+      if (enhancedIsInEditor()) {
+        content.style.display = "block";
+        block.append(editButton)
+      }else{
         content.remove();
         editButton.remove();
       }
