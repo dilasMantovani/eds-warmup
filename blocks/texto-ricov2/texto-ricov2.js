@@ -30,31 +30,36 @@ export default function decorate(block) {
   mainContent.innerHTML = atob(content.querySelector("pre").textContent.trim())
   block.append(mainContent)
 
-  
-    const editButton = document.createElement("button")
-    editButton.textContent = "editar com texto rico avançado"
-    editButton?.addEventListener('click', (e) => {
-      editMode = !editMode
-      if (editMode) {
-        mainContent.style.display = "none"
-        block.querySelector(".jodit-container").style.display = "block"
-        editButton.textContent = "parar de editar"
-  
-      } else {
-        mainContent.style.display = "block"
-        block.querySelector(".jodit-container").style.display = "none"
-        editButton.textContent = "editar com texto rico avançado"
-  
-      }
-    })
 
-    setTimeout(() => {
-      if (enhancedIsInEditor()) {
-        content.style.display = "block";
-        block.append(editButton)
-      }else{
-        content.remove();
-        editButton.remove();
-      }
-    }, 1500);
+  const editButton = document.createElement("button")
+  editButton.textContent = "editar com texto rico avançado"
+  editButton?.addEventListener('click', (e) => {
+    editMode = !editMode
+    if (editMode) {
+      mainContent.style.display = "none"
+      block.querySelector(".jodit-container").style.display = "block"
+      editButton.textContent = "parar de editar"
+
+    } else {
+      mainContent.style.display = "block"
+      block.querySelector(".jodit-container").style.display = "none"
+      editButton.textContent = "editar com texto rico avançado"
+
+    }
+  })
+
+  let counter = 0;
+  const intervalId = setInterval(() => {
+    if (enhancedIsInEditor()) {
+      content.style.display = "block";
+      block.append(editButton)
+    } else {
+      content.remove();
+    }
+    counter++;
+    console.log(counter)
+
+    if (counter === 4) { clearInterval(intervalId) }
+
+  }, 1500);
 }
