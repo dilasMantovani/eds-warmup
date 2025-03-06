@@ -1802,7 +1802,7 @@
         ]
       },
       {
-        "component": "text",
+        "component": "richtext",
         "name": "text",
         "value": "",
         "label": "Texto",

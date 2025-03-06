@@ -349,7 +349,7 @@
                   "name": "Texto Ricov2",
                   "model": "texto-ricov2",
                   "classes": "default",
-                  "text": "PHA+TG9yZW0gSXBzdW08L3A+"
+                  "text": "<pre>PHA+TG9yZW0gSXBzdW08L3A+</pre>"
                 }
               }
             }
