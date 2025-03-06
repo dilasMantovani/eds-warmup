@@ -39,11 +39,12 @@ export default function decorate(block) {
         mainContent.style.display = "none"
         block.querySelector(".jodit-container").style.display = "block"
         editButton.textContent = "parar de editar"
-  
+        content.style.display = "block";
       } else {
         mainContent.style.display = "block"
         block.querySelector(".jodit-container").style.display = "none"
         editButton.textContent = "editar com texto rico avançado"
+        content.style.display = "none";
   
       }
     })
