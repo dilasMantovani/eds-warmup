@@ -31,7 +31,6 @@ export default function decorate(block) {
   block.append(mainContent)
 
   
-  if (enhancedIsInEditor()) {
     const editButton = document.createElement("button")
     editButton.textContent = "editar com texto rico avançado"
     block.append(editButton)
@@ -49,9 +48,11 @@ export default function decorate(block) {
   
       }
     })
-  }
 
-  if (!enhancedIsInEditor()) {
-    content.remove();
-  }
+    setTimeout(() => {
+      if (!enhancedIsInEditor()) {
+        content.remove();
+        editButton.remove();
+      }
+    }, 1500);
 }
