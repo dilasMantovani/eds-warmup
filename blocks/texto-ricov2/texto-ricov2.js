@@ -22,7 +22,12 @@ export default function decorate(block) {
     jodit.e.on('blur', param => {
       content.querySelector("pre").textContent = `${btoa(jodit?.value?.replaceAll("border-collapse:", "border-collapse: "))}`;
     });
+
+    window.wrs_int_init(jodit?.places[0]?.editor, jodit?.places[0]?.container?.querySelector(".jodit-toolbar__box") /*, mathTypeParameters*/);
+
     block.querySelector(".jodit-container").style.display = "none"
+
+    console.log(jodit)
 
   }, 1000);
 
@@ -32,25 +37,26 @@ export default function decorate(block) {
 
   
     const editButton = document.createElement("button")
-    editButton.textContent = "editar com texto rico avançado"
+    editButton.classList.add("btn-edit")
+    editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>'
     editButton?.addEventListener('click', (e) => {
       editMode = !editMode
       if (editMode) {
         mainContent.style.display = "none"
         block.querySelector(".jodit-container").style.display = "block"
-        editButton.textContent = "parar de editar"
+        editButton.innerHTML = '<i class="fa-solid fa-xmark"></i>'
         content.style.display = "block";
       } else {
         mainContent.style.display = "block"
         block.querySelector(".jodit-container").style.display = "none"
-        editButton.textContent = "editar com texto rico avançado"
+        editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>'
         content.style.display = "none";
   
       }
     })
 
     setTimeout(() => {
-      if (enhancedIsInEditor()) {
+      if (!enhancedIsInEditor()) {
         block.append(editButton)
       }else{
         content.remove();
