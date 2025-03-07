@@ -1,4 +1,4 @@
-.texto-rico .btn-edit {
+.texto-ricov2 .btn-edit {
   color: #fff;
   background-color: #007ABF;
   border-color: #007ABF;
@@ -14,12 +14,31 @@
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.texto-rico .btn-edit:hover {
+.texto-ricov2 .btn-edit:hover {
   background-color: #006299;
   border-color: #00598c;
 }
-.texto-rico .btn-edit:focus {
+.texto-ricov2 .btn-edit:focus {
   box-shadow: 0 0 0 0.2rem rgba(38, 142, 201, 0.5);
+}
+.texto-ricov2 table {
+  width: 100%;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+.texto-ricov2 table thead tr {
+  background-color: #dbe3ec;
+  font-weight: bold;
+}
+.texto-ricov2 table:not(:has(thead)) tr:first-child {
+  background-color: #dbe3ec;
+  font-weight: bold;
+}
+.texto-ricov2 table td {
+  border: 1px solid #939393;
+  padding: 0.75rem;
+  vertical-align: top;
 }
 
 .texto-rico.deep-purple {
