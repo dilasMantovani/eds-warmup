@@ -144,6 +144,10 @@ a:hover {
   color: var(--link-hover-color);
 }
 
+a{
+  overflow-wrap: break-word;
+}
+
 main img {
   max-width: 100%;
   width: auto;
