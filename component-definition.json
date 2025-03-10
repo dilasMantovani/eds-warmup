@@ -424,7 +424,7 @@
           }
         },
         {
-          "title": "Video / Podcast",
+          "title": "Video",
           "id": "video",
           "plugins": {
             "xwalk": {
