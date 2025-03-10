@@ -21,6 +21,7 @@
 }
 
 .timelines {
+  margin-top: 40px;
   position: relative;
 }
 .timelines::before {

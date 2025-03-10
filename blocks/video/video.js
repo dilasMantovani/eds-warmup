@@ -1,4 +1,11 @@
+import { htmlToElement, randomString } from "../../scripts/scripts.js";
+
 export default function decorate(block) {
+    var script = document.createElement('script');
+    script.src = 'https://player.cdn.mdstrm.com/lightning_player/api.js';
+    document.head.appendChild(script);
+
+
     const businessKey = block?.children[0]?.textContent?.trim();
     const mediastreamId = block?.children[1]?.textContent?.trim();
     const videoLink = block?.children[2]?.textContent?.trim();
@@ -8,23 +15,31 @@ export default function decorate(block) {
     const description = block?.children[6]?.textContent?.trim();
 
     block.textContent = "";
-    block.innerHTML = `
-    ${title ? `<p>${title}</p>` : ""}
-    <iframe 
-        data-business-key="${businessKey}" 
-        data-media-stream-id="${mediastreamId}" 
-        data-caption-link="${captionLink}" 
-        data-size="${size}" 
-        allowfullscreen
-        webkitallowfullscreen
-        mozallowfullscreen
-        width="100%"
-        height="100%"
-        src="${videoLink}"
-        scrolling="no"
-        frameborder="0"
-        allow="geolocation;microphone;camera;encrypted-media;midi"
-        autostart="0"></iframe>  
-    ${description ? `<p>${description}</p>` : ""}  
-    `
+
+    const randomElementID = randomString(10);
+
+    if (title) {
+        block.append(htmlToElement(`<p>${title}</p>`))
+    }
+
+    if (mediastreamId) {
+        const playerDiv = document.createElement("div")
+        playerDiv.setAttribute("id", randomElementID);
+        block.append(playerDiv)
+        const intervalId = setInterval(() => {
+            if(loadMSPlayer){
+                loadMSPlayer(randomElementID, {
+                    type: 'media',
+                    id: mediastreamId,
+                    appName: 'appName'
+                }).then(player => {
+                    clearInterval(intervalId)
+                }).catch()
+            }
+        }, 300);
+    }
+
+    if (description) {
+        block.append(htmlToElement(`<p>${description}</p>`))
+    }
 }
