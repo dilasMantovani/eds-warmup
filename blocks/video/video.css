@@ -19,6 +19,9 @@
   margin: 10px 0;
   line-height: 1;
 }
+.video .plyr_ms {
+  position: relative !important;
+}
 
 .video.deep-purple {
   font-family: "Orbitron-Regular";
