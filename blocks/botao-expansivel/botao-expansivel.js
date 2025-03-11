@@ -66,6 +66,7 @@ export default function decorate(block) {
     button.addEventListener('click', () => {
 
         modalElement.style.display = "block";
+        modalElement.style.visibility = "visible";
         setTimeout(() => {
             modalElement.style.opacity = 1;
             contentSectionElement.classList.add("active")
@@ -78,6 +79,7 @@ export default function decorate(block) {
             contentSectionElement.classList.remove("active")
             setTimeout(() => {
                 modalElement.style.display = "none";
+                modalElement.style.visibility = "hidden";
 
             }, 500);
         }
