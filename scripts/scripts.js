@@ -284,11 +284,18 @@ export function removeDataAueAttributesWhenThereIsFormula(element) {
 
 }
 
+let lastHeight = 0;
 function resize() {
   var height = document.getElementsByTagName("html")[0].getBoundingClientRect().height;
-  window.parent.postMessage(["setHeight", height + 10], "*"); 
+  if(lastHeight !== height){
+    lastHeight = height
+    window.parent.postMessage(["setHeight", height + 10], "*"); 
+  }
 }
-setInterval(resize, 1000);
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  setInterval(resize, 1000);
+});
 
 export const DAM_URL = "https://publish-p136102-e1378103.adobeaemcloud.com";// HEADS UP - do not overwrite this variable unless you know what you're doing
 
