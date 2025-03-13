@@ -1,0 +1,30 @@
+.abas .abas-header ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+.abas .abas-header ul li a {
+  padding: 0.2rem 1.5rem;
+  cursor: pointer;
+  color: #0041a9;
+  font-size: 18px;
+  line-height: 1.88;
+  text-decoration: none;
+}
+.abas .abas-header ul li a:hover {
+  color: #343a40;
+}
+.abas .abas-header ul li a.active {
+  background-color: #007ABF;
+  color: #fff;
+  border-radius: 0.25rem;
+}
+.abas .hidden {
+  display: none;
+}
+
+.abas.deep-purple .abas-header ul li a.active {
+  background-color: #b982ff;
+}

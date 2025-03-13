@@ -2,16 +2,6 @@
   margin-top: 40px;
   width: 100%;
 }
-@media (max-width: 768px) {
-  .video {
-    height: 50vh;
-  }
-}
-@media (max-width: 575px) {
-  .video {
-    height: 45vh;
-  }
-}
 .video p {
   text-align: center;
   font-size: 80%;
