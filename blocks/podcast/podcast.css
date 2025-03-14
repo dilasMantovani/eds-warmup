@@ -1,3 +1,18 @@
+.podcast {
+  margin-top: 40px;
+  width: 100%;
+}
+.podcast p {
+  text-align: center;
+  font-size: 80%;
+  color: #6c757d;
+  margin: 10px 0;
+  line-height: 1;
+}
+.podcast .plyr_ms {
+  position: relative !important;
+}
+
 .podcast.deep-purple {
   font-family: "Orbitron-Regular";
 }
