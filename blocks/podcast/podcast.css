@@ -11,6 +11,7 @@
 }
 .podcast .plyr_ms {
   position: relative !important;
+  z-index: 0 !important;
 }
 
 .podcast.deep-purple {

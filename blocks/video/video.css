@@ -11,6 +11,7 @@
 }
 .video .plyr_ms {
   position: relative !important;
+  z-index: 0 !important;
 }
 
 .video.deep-purple {

@@ -10,9 +10,10 @@
         margin: 10px 0;
         line-height: 1;
     }
-    .plyr_ms{
+    .plyr_ms {
         position: relative !important;
-    }
+        z-index: 0 !important;
+      }
 }
 
 .video.deep-purple{
