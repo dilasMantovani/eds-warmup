@@ -297,6 +297,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
   setInterval(resize, 1000);
 });
 
-export const DAM_URL = "https://publish-p136102-e1378103.adobeaemcloud.com";// HEADS UP - do not overwrite this variable unless you know what you're doing
 
 

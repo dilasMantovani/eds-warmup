@@ -64,7 +64,7 @@ export default function decorate(block) {
 
     const contentSectionElement = modalElement.querySelector(".modal-content");
     button.addEventListener('click', () => {
-
+        modalElement.querySelectorAll(".modal-content")[0].style.top = button.getBoundingClientRect().top + "px";
         modalElement.style.display = "block";
         modalElement.style.visibility = "visible";
         setTimeout(() => {
