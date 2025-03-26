@@ -1,7 +1,11 @@
 import { enhancedIsInEditor } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
-  const content = block.children[0];
+  handleCustomRTE(block, block.children[0])
+}
+
+function handleCustomRTE(block, rteField){
+  const content = rteField;
   content.style.display = "none";
 
   let editMode = false;
@@ -14,7 +18,8 @@ export default function decorate(block) {
 
 
   setTimeout(() => {
-    block.appendChild(editor)
+    // block.appendChild(editor)
+    content.after(editor)
 
     const jodit = Jodit.make(editor, {
       "toolbarAdaptive": false
@@ -25,7 +30,7 @@ export default function decorate(block) {
 
     window.wrs_int_init(jodit?.places[0]?.editor, jodit?.places[0]?.container?.querySelector(".jodit-toolbar__box") /*, mathTypeParameters*/);
 
-    block.querySelector(".jodit-container").style.display = "none"
+    block.querySelector(".jodit-container").style.display = "none"; //TODO fix for components with multi RTE
 
     console.log(jodit)
 
@@ -33,7 +38,7 @@ export default function decorate(block) {
 
   const mainContent = document.createElement("div")
   mainContent.innerHTML = atob(content.querySelector("pre").textContent.trim())
-  block.append(mainContent)
+  content.after(mainContent)
 
   
     const editButton = document.createElement("button")
@@ -57,7 +62,7 @@ export default function decorate(block) {
 
     setTimeout(() => {
       if (enhancedIsInEditor()) {
-        block.append(editButton)
+        content.after(editButton)
       }else{
         content.remove();
         editButton.remove();
