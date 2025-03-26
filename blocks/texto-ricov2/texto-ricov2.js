@@ -16,7 +16,7 @@ function handleCustomRTE(block, rteField){
   editor.innerHTML = `${atob(content?.querySelector("pre")?.textContent)}`
   editor.style.display = "none";
 
-
+  let joditContainer;
   setTimeout(() => {
     // block.appendChild(editor)
     content.after(editor)
@@ -30,7 +30,9 @@ function handleCustomRTE(block, rteField){
 
     window.wrs_int_init(jodit?.places[0]?.editor, jodit?.places[0]?.container?.querySelector(".jodit-toolbar__box") /*, mathTypeParameters*/);
 
-    block.querySelector(".jodit-container").style.display = "none"; //TODO fix for components with multi RTE
+    // block.querySelector(".jodit-container").style.display = "none"; //TODO fix for components with multi RTE
+    joditContainer = jodit.currentPlace.container;
+    joditContainer.style.display = "none";
 
     console.log(jodit)
 
@@ -48,12 +50,12 @@ function handleCustomRTE(block, rteField){
       editMode = !editMode
       if (editMode) {
         mainContent.style.display = "none"
-        block.querySelector(".jodit-container").style.display = "block"
+        joditContainer.style.display = "block"
         editButton.innerHTML = '<i class="fa-solid fa-xmark"></i>'
         content.style.display = "block";
       } else {
         mainContent.style.display = "block"
-        block.querySelector(".jodit-container").style.display = "none"
+        joditContainer.style.display = "none"
         editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>'
         content.style.display = "none";
   
