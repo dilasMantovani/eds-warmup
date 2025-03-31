@@ -184,7 +184,7 @@
   },
   {
     "id": "timelines",
-    "fields":[
+    "fields": [
       {
         "component": "select",
         "valueType": "string",
@@ -222,9 +222,10 @@
   {
     "id": "timelineItem",
     "fields": [
-      {"component": "text",
-       "name": "title",
-       "label": "Titulo"
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Titulo"
       },
       {
         "component": "select",
@@ -257,9 +258,10 @@
           }
         ]
       },
-      {"component": "text",
-       "name": "subtitle",
-       "label": "Subtítulo"
+      {
+        "component": "text",
+        "name": "subtitle",
+        "label": "Subtítulo"
       },
       {
         "component": "richtext",
@@ -275,7 +277,8 @@
         "label": "Imagem",
         "multi": false
       },
-      { "component": "text",
+      {
+        "component": "text",
         "name": "imageAlt",
         "label": "Texto alternativo da imagem"
       },
@@ -293,7 +296,6 @@
         "label": "Fonte da imagem",
         "multi": false
       },
-
       {
         "component": "richtext",
         "name": "secondText",
@@ -308,7 +310,8 @@
         "label": "Imagem 2",
         "multi": false
       },
-      { "component": "text",
+      {
+        "component": "text",
         "name": "secondImageAlt",
         "label": "Texto alternativo da imagem 2"
       },
@@ -541,7 +544,7 @@
   },
   {
     "id": "texto-rico",
-    "fields":[
+    "fields": [
       {
         "component": "select",
         "valueType": "string",
@@ -894,7 +897,12 @@
         "label": "Zoom in",
         "description": "Quando estiver checkado o efeito de hover é um zoom de 50%",
         "condition": {
-          "!==": [{ "var": "openModal" }, true]
+          "!==": [
+            {
+              "var": "openModal"
+            },
+            true
+          ]
         }
       },
       {
@@ -904,7 +912,12 @@
         "label": "Invocar Modal",
         "description": "Quando estiver checkado é aberto um modal com a imagem quando clicada",
         "condition": {
-          "!==": [{ "var": "zoomIn" }, true]
+          "!==": [
+            {
+              "var": "zoomIn"
+            },
+            true
+          ]
         }
       },
       {
@@ -1106,7 +1119,6 @@
         "label": "Descrição da imagem 2",
         "description": "Fonte da imagem, por exemplo"
       }
-      
     ]
   },
   {
@@ -1128,7 +1140,10 @@
           }
         ],
         "condition": {
-          "===": [false, true]
+          "===": [
+            false,
+            true
+          ]
         }
       },
       {
@@ -1137,7 +1152,12 @@
         "label": "Imagem",
         "multi": false,
         "condition": {
-          "!==": [{ "var": "type" }, "phrase"]
+          "!==": [
+            {
+              "var": "type"
+            },
+            "phrase"
+          ]
         }
       },
       {
@@ -1150,7 +1170,12 @@
         "name": "author",
         "label": "Autor(a) da Citação",
         "condition": {
-          "!==": [{ "var": "type" }, "phrase"]
+          "!==": [
+            {
+              "var": "type"
+            },
+            "phrase"
+          ]
         }
       },
       {
@@ -1159,7 +1184,12 @@
         "label": "Ícone",
         "description": "Icone do font awesome. Ex: circle-play, location-dot... Consulte todas as possibilidades em: https://fontawesome.com/search?o=r&m=free",
         "condition": {
-          "!==": [{ "var": "type" }, "quote"]
+          "!==": [
+            {
+              "var": "type"
+            },
+            "quote"
+          ]
         }
       },
       {
@@ -1316,7 +1346,10 @@
         "label": "tipo",
         "value": "img",
         "condition": {
-          "===": [false, true]
+          "===": [
+            false,
+            true
+          ]
         }
       },
       {
@@ -1340,7 +1373,7 @@
         "name": "description",
         "label": "Descrição da imagem",
         "description": "Fonte da imagem, por exemplo"
-      }      
+      }
     ]
   },
   {
@@ -1352,7 +1385,10 @@
         "label": "tipo",
         "value": "txt",
         "condition": {
-          "===": [false, true]
+          "===": [
+            false,
+            true
+          ]
         }
       },
       {
@@ -1365,7 +1401,7 @@
   },
   {
     "id": "tabela",
-    "fields":[
+    "fields": [
       {
         "component": "select",
         "valueType": "string",
@@ -1393,7 +1429,7 @@
   },
   {
     "id": "folhaDeCreditos",
-    "fields":[
+    "fields": [
       {
         "component": "select",
         "valueType": "string",
@@ -1427,14 +1463,17 @@
   },
   {
     "id": "direitosReservados",
-    "fields":[
+    "fields": [
       {
         "component": "text",
         "name": "type",
         "label": "tipo",
         "value": "direitosReservados",
         "condition": {
-          "===": [false, true]
+          "===": [
+            false,
+            true
+          ]
         }
       },
       {
@@ -1448,15 +1487,17 @@
   },
   {
     "id": "informacoesDosResponsaveis",
-    "fields":[
-      
+    "fields": [
       {
         "component": "text",
         "name": "type",
         "label": "tipo",
         "value": "informacoesDosResponsaveis",
         "condition": {
-          "===": [false, true]
+          "===": [
+            false,
+            true
+          ]
         }
       },
       {
@@ -1470,14 +1511,17 @@
   },
   {
     "id": "disclaimer",
-    "fields":[
+    "fields": [
       {
         "component": "text",
         "name": "type",
         "label": "tipo",
         "value": "disclaimer",
         "condition": {
-          "===": [false, true]
+          "===": [
+            false,
+            true
+          ]
         }
       },
       {
@@ -1498,14 +1542,17 @@
   },
   {
     "id": "fichaCatalografica",
-    "fields":[
+    "fields": [
       {
         "component": "text",
         "name": "type",
         "label": "tipo",
         "value": "fichaCatalografica",
         "condition": {
-          "===": [false, true]
+          "===": [
+            false,
+            true
+          ]
         }
       },
       {
@@ -1533,14 +1580,17 @@
   },
   {
     "id": "rodapeFolhaDeCreditos",
-    "fields":[
+    "fields": [
       {
         "component": "text",
         "name": "type",
         "label": "tipo",
         "value": "rodapeFolhaDeCreditos",
         "condition": {
-          "===": [false, true]
+          "===": [
+            false,
+            true
+          ]
         }
       },
       {
@@ -1592,7 +1642,12 @@
         "name": "title",
         "label": "Título",
         "condition": {
-          "===": [{ "var": "variant" }, "with-title"]
+          "===": [
+            {
+              "var": "variant"
+            },
+            "with-title"
+          ]
         }
       },
       {
@@ -1606,10 +1661,14 @@
         "label": "Ícone",
         "description": "Icone do font awesome. Ex: circle-play,location-dot... Consulte todas as possibilidades em: https://fontawesome.com/search?o=r&m=free",
         "condition": {
-          "===": [{ "var": "variant" }, "no-title"]
+          "===": [
+            {
+              "var": "variant"
+            },
+            "no-title"
+          ]
         }
       }
-      
     ]
   },
   {
@@ -1773,7 +1832,7 @@
   },
   {
     "id": "texto-ricov2",
-    "fields":[
+    "fields": [
       {
         "component": "select",
         "valueType": "string",
@@ -1795,6 +1854,93 @@
         "name": "text",
         "value": "",
         "label": "Texto",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "indice",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
+      },
+      {
+        "component": "Text",
+        "name": "title",
+        "label": "Título",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Tipo do título",
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Imagem de fundo da capa",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Imagem da capa",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "indiceItem",
+    "fields": [
+      {
+        "component": "Text",
+        "name": "title",
+        "label": "Título",
+        "valueType": "string"
+      },
+      {
+        "component": "Text",
+        "name": "linkTo",
+        "label": "Id da ancora",
         "valueType": "string"
       }
     ]

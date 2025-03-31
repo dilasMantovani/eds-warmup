@@ -9,7 +9,6 @@
   {
     "id": "section",
     "components": [
-      "text",
       "timelines",
       "texto-rico",
       "code-block",
@@ -28,7 +27,8 @@
       "abas",
       "playground",
       "podcast",
-      "texto-ricov2"
+      "texto-ricov2",
+      "indice"
     ]
   },
   {
@@ -135,5 +135,11 @@
         "removeformat"
       ]
     }
+  },
+  {
+    "id": "indice",
+    "components": [
+      "indiceItem"
+    ]
   }
 ]
