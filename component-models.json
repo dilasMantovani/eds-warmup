@@ -1933,7 +1933,7 @@
     "fields": [
       {
         "component": "Text",
-        "name": "title",
+        "name": "indexTitle",
         "label": "Título",
         "valueType": "string"
       },
