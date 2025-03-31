@@ -1878,7 +1878,7 @@
         ]
       },
       {
-        "component": "Text",
+        "component": "text",
         "name": "title",
         "label": "Título",
         "valueType": "string"
@@ -1932,13 +1932,13 @@
     "id": "indiceItem",
     "fields": [
       {
-        "component": "Text",
+        "component": "text",
         "name": "titulo",
         "label": "Título",
         "valueType": "string"
       },
       {
-        "component": "Text",
+        "component": "text",
         "name": "linkTo",
         "label": "Id da ancora",
         "valueType": "string"
