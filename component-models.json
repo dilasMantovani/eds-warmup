@@ -1916,7 +1916,7 @@
       },
       {
         "component": "reference",
-        "name": "image",
+        "name": "bg",
         "label": "Imagem de fundo da capa",
         "multi": false
       },
