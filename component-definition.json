@@ -820,12 +820,12 @@
                   "item0":{
                     "name": "indiceItem",
                     "model": "indiceItem",
-                    "title": "PlaceHolder"
+                    "indexTitle": "PlaceHolder"
                   },
                   "item1":{
                     "name": "indiceItem",
                     "model": "indiceItem",
-                    "title": "PlaceHolder2"
+                    "indexTitle": "PlaceHolder2"
                   }
                 }
               }
