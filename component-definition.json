@@ -833,17 +833,16 @@
           }
         },
         {
-          "title": "AbaItem",
-          "id": "abaItem",
+          "title": "indiceItem",
+          "id": "indiceItem",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "AbaItem",
-                  "model": "abaItem",
-                  "headerText":"Título da aba",
-                  "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
+                  "name": "indiceItem",
+                  "model": "indiceItem",
+                  "titulo":"Placeholder"
                 }
               }
             }
