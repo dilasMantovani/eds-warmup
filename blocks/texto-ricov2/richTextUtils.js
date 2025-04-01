@@ -1,12 +1,8 @@
-import { handleCustomRTE } from "./richTextUtils.js";
+import { enhancedIsInEditor } from "../../scripts/scripts.js";
 
-export default function decorate(block) {
-  if (!block?.children?.[0]) return;
-  console.log(block)
-  handleCustomRTE(block, block.children[0]);
-}
-
-function handleCustomRTE(block, rteField) {
+export function handleCustomRTE(block, rteField) {
+  if (!rteField) return;
+  
   const content = rteField;
   content.style.display = "none";
   const editor = createEditor(content);
@@ -19,7 +15,7 @@ function handleCustomRTE(block, rteField) {
   });
 }
 
-function createEditor(content) {
+export function createEditor(content) {
   const editor = document.createElement('textarea');
   editor.innerHTML = decodeContent(content);
   editor.style.display = "none";
@@ -27,20 +23,20 @@ function createEditor(content) {
   return editor;
 }
 
-function createMainContent(content) {
+export function createMainContent(content) {
   const mainContent = document.createElement("div");
   mainContent.innerHTML = decodeContent(content);
   content.after(mainContent);
   return mainContent;
 }
 
-function decodeContent(content) {
+export function decodeContent(content) {
   const preElement = content?.querySelector("pre");
   if (!preElement?.textContent) return '';
   return atob(preElement.textContent.trim());
 }
 
-function initializeJoditEditor(content, editor, onContainerReady) {
+export function initializeJoditEditor(content, editor, onContainerReady) {
   setTimeout(() => {
     try {
       const jodit = Jodit.make(editor, {
@@ -54,14 +50,13 @@ function initializeJoditEditor(content, editor, onContainerReady) {
       container.style.display = "none";
     
       onContainerReady(container);
-      console.log(jodit)
     } catch (error) {
       console.error('Jodit error:', error);
     }
   }, 1000);
 }
 
-function setupJoditEvents(jodit, content) {
+export function setupJoditEvents(jodit, content) {
   jodit.e.on('blur', () => {
     const preElement = content.querySelector("pre");
     if (preElement) {
@@ -70,7 +65,7 @@ function setupJoditEvents(jodit, content) {
   });
 }
 
-function initializeMathType(jodit) {
+export function initializeMathType(jodit) {
   if (window.wrs_int_init && jodit?.places?.[0]) {
     window.wrs_int_init(
       jodit.places[0].editor,
@@ -79,7 +74,7 @@ function initializeMathType(jodit) {
   }
 }
 
-function setupEditButton(content, mainContent, joditContainer) {
+export function setupEditButton(content, mainContent, joditContainer) {
   setTimeout(() => {
     if (!enhancedIsInEditor()) {
       content.remove();
@@ -97,25 +92,40 @@ function setupEditButton(content, mainContent, joditContainer) {
   }, 1500);
 }
 
-function createEditButton() {
+export function createEditButton() {
   const editButton = document.createElement("button");
   editButton.classList.add("btn-edit");
   editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
   return editButton;
 }
 
-function toggleEditMode(editMode, mainContent, joditContainer, editButton, content) {
+export function toggleEditMode(editMode, mainContent, joditContainer, editButton, content) {
   if (editMode) {
-    console.log("editMode")
     mainContent.style.display = "none";
     joditContainer.style.display = "block";
     editButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     content.style.display = "block";
   } else {
-    console.log("not editMode")
     mainContent.style.display = "block";
     joditContainer.style.display = "none";
     editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
     content.style.display = "none";
   }
 }
+
+export function prepareRichTextContent(contentElement) {
+  if (contentElement.querySelector('pre')) {
+    return contentElement;
+  }
+  
+  const container = document.createElement('div');
+  container.classList.add('rich-text-container');
+  container.appendChild(createRichTextContent(contentElement.textContent.trim()));
+  return container;
+}
+
+export function createRichTextContent(textContent) {
+  const pre = document.createElement('pre');
+  pre.textContent = btoa(`<p>${textContent}</p>`);
+  return pre;
+} 
