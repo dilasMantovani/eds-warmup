@@ -1925,6 +1925,11 @@
         "name": "image",
         "label": "Imagem da capa",
         "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Texto alternativo da imagem"
       }
     ]
   },

@@ -1,0 +1,140 @@
+ .indice {
+   .capa {
+     background-image: url(https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png);
+     background-color: #b5d4ed;
+     overflow: hidden;
+     position: relative;
+     min-height: 60vh;
+     display: flex;
+     align-items: center;
+     background-attachment: fixed;
+     padding-bottom: 100px;
+     padding-top: 80px;
+     width: 100vw;
+     left: 50%;
+     right: 50%;
+     margin-left: -50vw;
+     margin-right: -50vw;
+
+     &.isInEditor {
+       min-height: unset;
+     }
+
+     &__box {
+       background-color: #fff;
+       width: 70%;
+      //  min-height: 60vh;
+       max-width: 1200px;
+       height: auto;
+       margin-top: 60px !important;
+       margin-bottom: 60px !important;
+       border-radius: 10px;
+       box-shadow: 1px 2px 18px 12px rgba(60, 88, 112, 0.21);
+       padding: 1rem;
+       margin: 0 auto;
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 2rem;
+       align-items: center;
+
+       &__content {
+
+         h1,
+         h2,
+         h3,
+         h4,
+         h5,
+         h6 {
+           margin: 0;
+           text-transform: uppercase;
+         }
+
+         &__anchor-list {
+           display: flex;
+           flex-direction: column;
+           gap: 15px;
+
+           a {
+             line-height: 1.3;
+             color: #3a3a3a;
+             font-size: 16px;
+             text-decoration: none;
+
+             background-color: #e3e3e3;
+             padding: 4px 8px;
+             border-radius: 5px;
+             display: flex;
+             gap: 3px;
+
+             p {
+               margin: 0;
+             }
+
+             i {
+               font-size: 12px;
+               transform: translateY(4px);
+             }
+
+             &:hover {
+               background-color: #c9c9c9;
+
+             }
+           }
+         }
+       }
+
+     }
+   }
+
+   @media (max-width: 992px) {
+     .capa {
+       padding-top: 0;
+       padding-bottom: 0;
+
+       &__box {
+         grid-template-columns: 1fr;
+         padding: 1rem 30px;
+
+
+         &__image {
+           picture {
+             display: flex;
+             width: 100%;
+             justify-content: center;
+
+             img {
+               max-width: 83%;
+             }
+           }
+         }
+
+         &__content {
+           &__title {
+             display: flex;
+             justify-content: center;
+
+           }
+         }
+       }
+     }
+   }
+
+   @media (max-width: 767px) {
+     .capa {
+       &__box {
+         &__content {
+           &__title {
+             h1,
+             h2,
+             h3,
+             h4,
+             h5,
+             h6 {
+               font-size: 1.2rem;
+             }
+           }
+         }
+       }
+     }
+   }
+ }

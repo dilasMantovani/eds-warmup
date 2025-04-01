@@ -58,7 +58,10 @@
     --heading-font-size-xs: 22px;
   }
 }
-
+html{
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
 body {
   font-size: var(--body-font-size-m);
   margin: 0;

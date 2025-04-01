@@ -816,7 +816,7 @@
                   "filter":"indice",
                   "classes":"default",
                   "title":"Título",
-                  "titleType": "h2",
+                  "titleType": "h4",
                   "item0":{
                     "name": "indiceItem",
                     "model": "indiceItem",
