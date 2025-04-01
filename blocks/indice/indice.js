@@ -12,7 +12,7 @@ export default function decorate(block) {
   const indiceItemList = [];
   Array.from(block?.children).forEach(element => {
     indiceItemList.push(element);
-    element.remove();
+    //element.remove();
   });
 
 
