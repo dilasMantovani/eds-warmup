@@ -1949,5 +1949,22 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "banner",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "conteúdo",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "bg",
+        "label": "Imagem de fundo da capa",
+        "multi": false
+      }
+    ]
   }
 ]
