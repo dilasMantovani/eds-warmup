@@ -31,8 +31,8 @@ function createOlhoStructure(block, variantText, titleText, iconText) {
         <div>
           <h4><strong>${titleText}</strong></h4>
         </div>
-        <div class="olho-content">
-          <blockquote></blockquote>
+        <div>
+          <blockquote class="olho-content"></blockquote>
         </div>
       </section>
     `;
@@ -40,8 +40,8 @@ function createOlhoStructure(block, variantText, titleText, iconText) {
     block.innerHTML = `
       <section class="olho-no-title">
         ${iconText ? `<i class="fa fa-${iconText}"></i>` : ""}
-        <div class="olho-content">
-          <blockquote></blockquote>
+        <div>
+          <blockquote class="olho-content"></blockquote>
         </div>
       </section>
     `;
