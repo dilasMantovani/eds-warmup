@@ -71,17 +71,6 @@ export default function decorate(block) {
         </div>
         `
         );
-
-        
-        const textSections = accordionItemElement.querySelectorAll('.accordion-item-body-text');
-        textSections.forEach(section => {
-            const content = document.createElement('div');
-            content.innerHTML = section.innerHTML;
-            section.innerHTML = '';
-            section.appendChild(content);
-            handleCustomRTE(section, content);
-        });
-
         return accordionItemElement;
     });
 
