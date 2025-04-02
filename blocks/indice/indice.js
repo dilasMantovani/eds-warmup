@@ -9,10 +9,11 @@ export default function decorate(block) {
   bg.remove();
   image.remove();
 
-  const indiceItemList = [];
-  Array.from(block?.children).forEach(element => {
-    indiceItemList.push(element);
-    //element.remove();
+  const indiceItemList = Array.from(block?.children)?.map(element => {
+    const title = element?.children[0]?.textContent;
+    const linkTo = element?.children[1]?.textContent;
+    element.style.display = "none";
+    return {"title":title, "linkTo":linkTo};
   });
 
 
@@ -58,15 +59,13 @@ export default function decorate(block) {
 }
 
 function handleIndiceItem(indiceItem){
-  const title = indiceItem.children[0];
-  const linkTo = indiceItem.children[1];
-
   const anchor = document.createElement("a");
 
-  anchor.setAttribute("href", `#${linkTo?.textContent}`);
+  anchor.setAttribute("href", `#${indiceItem?.linkTo}`);
   anchor.setAttribute("target", "_self");
 
   const iconElement = htmlToElement('<i class="fa-solid fa-angle-right"></i>');
+  const title = htmlToElement(`<div><p>${indiceItem?.title}</p></div>`)
   anchor.append(iconElement)
   anchor.append(title);
 
