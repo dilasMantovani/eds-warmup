@@ -31,6 +31,8 @@
   padding: 1rem;
   margin: 0 auto;
   align-items: center;
+}
+.banner .capa__box:not(.jodit-container) {
   color: #FFF;
 }
 .banner:after {
