@@ -1,7 +1,10 @@
+import { handleCustomRTE, prepareRichTextContent } from "../texto-ricov2/richTextUtils.js";
+
 export default function decorate(block) {
     const quoteType = block.children[0]?.textContent?.trim();
     const quoteImage = block.children[1].querySelector("img");
-    const quoteText = block.children[2]?.textContent?.trim();
+    const quoteTextBlock = block.children[2].cloneNode(true)
+    const originalQuoteTextElement = block.children[2]?.textContent?.trim()
     const quoteAuthor = block.children[3]?.textContent?.trim();
     const quoteIcon = block.children[4]?.textContent?.trim();
 
@@ -14,7 +17,6 @@ export default function decorate(block) {
                 <section class="quote-author">
                     ${image}
                     <blockquote>
-                        <p>${quoteText}</p>
                         ${author}
                     </blockquote>
                 </section>
@@ -24,7 +26,6 @@ export default function decorate(block) {
                 <section class="quote-phrase">
                     <i class="fa ${quoteIcon}"></i>
                     <blockquote>
-                        <p>${quoteText}</p>
                     </blockquote>
                 </section>
             `)
@@ -33,4 +34,11 @@ export default function decorate(block) {
     }
     
     block.innerHTML = quote();
+
+    const blockquote = block.querySelector('blockquote');
+    if (blockquote && quoteTextBlock) {
+        const richTextContainer = prepareRichTextContent(quoteTextBlock);
+        blockquote.prepend(richTextContainer);
+        handleCustomRTE(blockquote, richTextContainer);
+    }
 }
