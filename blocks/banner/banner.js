@@ -29,6 +29,10 @@ export default function decorate(block) {
   box.appendChild(richTextContainer);
   handleCustomRTE(null, richTextContainer);
 
-  block.querySelectorAll(".jodit-container")[0].classList.add("jodit_theme_dark");
+  setTimeout(() => {
+    const joditContainer = block.querySelectorAll(".jodit-container")[0];
+    if(joditContainer)
+      joditContainer.classList.add("jodit_theme_dark");
+  }, 3000);
 
 }
