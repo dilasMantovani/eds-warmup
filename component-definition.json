@@ -719,7 +719,7 @@
                   "model": "olho",
                   "variant":"with-title",
                   "title":"Título e texto lateral",
-                  "content":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec arcu lorem, volutpat at bibendum vel, iaculis et felis. Donec sem ante, bibendum sed leo ut, tincidunt volutpat nisi. Aenean facilisis metus nec commodo varius. Praesent vulputate varius ex. Integer iaculis fringilla metus, sed efficitur mi aliquet sit amet.</p>",
+                  "content":"<pre>PHA+TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gRG9uZWMgYXJjdSBsb3JlbSwgdm9sdXRwYXQgYXQgYmliZW5kdW0gdmVsLCBpYWN1bGlzIGV0IGZlbGlzLiBEb25lYyBzZW0gYW50ZSwgYmliZW5kdW0gc2VkIGxlbyB1dCwgdGluY2lkdW50IHZvbHV0cGF0IG5pc2kuIEFlbmVhbiBmYWNpbGlzaXMgbWV0dXMgbmVjIGNvbW1vZG8gdmFyaXVzLiBQcmFlc2VudCB2dWxwdXRhdGUgdmFyaXVzIGV4LiBJbnRlZ2VyIGlhY3VsaXMgZnJpbmdpbGxhIG1ldHVzLCBzZWQgZWZmaWNpdHVyIG1pIGFsaXF1ZXQgc2l0IGFtZXQuPC9wPg==</pre>",
                   "icon":"coffee"
                 }
               }
