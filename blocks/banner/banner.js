@@ -1,3 +1,5 @@
+import { prepareRichTextContent } from "../texto-ricov2/richTextUtils.js";
+
 export default function decorate(block) {
   const content = block.children[0];
   const bg = block.children[1];
@@ -20,9 +22,12 @@ export default function decorate(block) {
   box.classList.add("capa__box");
   capa.append(box)
 
-  box.append(content)
-
   box.classList.add("capa__box");
+
+
+  const richTextContainer = prepareRichTextContent(content)
+  box.appendChild(richTextContainer);
+  handleCustomRTE(null, richTextContainer);
 
 }
 
