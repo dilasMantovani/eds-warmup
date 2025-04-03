@@ -1,3 +1,4 @@
+import { enhancedIsInEditor } from "../../scripts/scripts.js";
 import { prepareRichTextContent } from "../texto-ricov2/richTextUtils.js";
 
 export default function decorate(block) {
@@ -25,7 +26,7 @@ export default function decorate(block) {
   box.classList.add("capa__box");
 
 
-  const richTextContainer = prepareRichTextContent(content)
+  const richTextContainer = prepareRichTextContent(content);
   box.appendChild(richTextContainer);
   handleCustomRTE(null, richTextContainer);
 
