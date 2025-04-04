@@ -15,7 +15,7 @@ export default function decorate(block) {
 
     const computedStyle = window.getComputedStyle(capa);
     const backgroundImage = computedStyle.backgroundImage;
-    capa.style.background = backgroundImage.replace(/url\([^\)]+\)/g, `url(${bg.querySelector("img").getAttribute('src')})`);
+    capa.style.backgroundImage = backgroundImage.replace(/url\([^\)]+\)/g, `url(${bg.querySelector("img").getAttribute('src')})`);
   }
 
   const box = document.createElement("div");

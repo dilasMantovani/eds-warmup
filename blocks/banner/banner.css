@@ -13,6 +13,7 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  background-size: cover;
 }
 .banner .capa h1,
 .banner .capa h2,
@@ -26,8 +27,8 @@
 .banner .capa__box {
   max-width: 1200px;
   height: auto;
-  margin-top: 60px !important;
-  margin-bottom: 60px !important;
+  margin-top: 60px;
+  margin-bottom: 60px;
   padding: 1rem;
   margin: 0 auto;
   align-items: center;
@@ -47,4 +48,21 @@
   transform: translateY(-70px);
   background-size: 100vw;
   background-repeat: round;
+}
+@media (max-width: 992px) {
+  .banner .capa {
+    padding-top: 0;
+    padding-bottom: 80px;
+    min-height: 0;
+  }
+  .banner .capa__box {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 575px) {
+  .banner:after {
+    height: 40px;
+    transform: translateY(-40px);
+  }
 }

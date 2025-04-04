@@ -853,7 +853,7 @@
                 "template": {
                   "name": "Banner",
                   "model": "banner",
-                  "content": "<pre>PGgxIHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxOHB4OyI+QXVsYSAjPC9zcGFuPjwvaDE+PGgyIHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAzMnB4OyI+VO10dWxvIGF1bGEgIzwvc3Bhbj48L2gyPjxwIHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48ZW0+TmVzdGUgdHJlY2hvLCBlbnRyYSB1bWEgZnJhc2UgY2hhbWF0aXZhIGUgZW5nYWphZG9yYSBzb2JyZSBvIGNvbnRl+mRvIGEgc2VyIGVzdHVkYWRvLjwvZW0+PC9wPg==</pre>"
+                  "content": "<pre>PGgxIHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXI7Ij48c3BhbiBzdHlsZT0iY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgZm9udC1zaXplOiAxOHB4OyI+QXVsYSAjPC9zcGFuPjwvaDE+CjxoMiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMjU1LCAyNTUsIDI1NSk7IGZvbnQtc2l6ZTogMzJweDsiPlTtdHVsbyBhdWxhICM8L3NwYW4+PC9oMj4KPHAgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPjxlbSBzdHlsZT0iY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsiPk5lc3RlIHRyZWNobywgZW50cmEgdW1hIGZyYXNlIGNoYW1hdGl2YSBlIGVuZ2FqYWRvcmEgc29icmUgbyBjb250ZfpkbyBhIHNlciBlc3R1ZGFkby48L2VtPjwvcD4=</pre>"
                 }
               }
             }
