@@ -15,6 +15,9 @@
   margin-right: -50vw;
   background-size: cover;
 }
+.banner .capa.isInEditor {
+  min-height: unset;
+}
 .banner .capa h1,
 .banner .capa h2,
 .banner .capa h3,
