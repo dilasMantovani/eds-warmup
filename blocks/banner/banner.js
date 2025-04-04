@@ -1,3 +1,4 @@
+import { enhancedIsInEditor } from "../../scripts/scripts.js";
 import { handleCustomRTE, prepareRichTextContent } from "../texto-ricov2/richTextUtils.js";
 
 export default function decorate(block) {
@@ -31,8 +32,14 @@ export default function decorate(block) {
 
   setTimeout(() => {
     const joditContainer = block.querySelectorAll(".jodit-container")[0];
-    if(joditContainer)
+    if (joditContainer)
       joditContainer.classList.add("jodit_theme_dark");
   }, 3000);
+
+  setTimeout(() => {
+    if (enhancedIsInEditor()) {
+      capa.classList.add("isInEditor");
+    }
+  }, 1500);
 
 }

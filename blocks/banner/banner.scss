@@ -15,6 +15,9 @@
     margin-left: -50vw;
     margin-right: -50vw;
     background-size: cover;
+    &.isInEditor {
+      min-height: unset;
+    }
 
     h1,
     h2,
