@@ -297,5 +297,109 @@ document.addEventListener("DOMContentLoaded", function(event) {
   setInterval(resize, 1000);
 });
 
+// Fullscreen Iframe Logic
+// ================================================
 
+let activeFullscreenIframe = null;
+const originalStyles = new Map();
+
+function applyFullscreen(iframeElement) {
+    if (!iframeElement) return;
+
+    if (!originalStyles.has(iframeElement)) {
+        originalStyles.set(iframeElement, iframeElement.getAttribute('style') || '');
+    }
+    iframeElement.classList.add('fullscreen-iframe');
+
+    activeFullscreenIframe = iframeElement;
+    console.log('Applied fullscreen to iframe:', iframeElement);
+}
+
+function removeFullscreen(iframeElement) {
+    if (!iframeElement) return;
+
+    iframeElement.classList.remove('fullscreen-iframe');
+
+    if (originalStyles.has(iframeElement)) {
+        iframeElement.setAttribute('style', originalStyles.get(iframeElement));
+        originalStyles.delete(iframeElement); // Clean up map
+    }
+
+    if (activeFullscreenIframe === iframeElement) {
+        activeFullscreenIframe = null;
+    }
+    console.log('Removed fullscreen from iframe:', iframeElement);
+}
+
+function handleExtensionMessage(event) {
+    const data = event.data;
+
+    if (!data || typeof data !== 'object' || !data.type || !data.extensionId) {
+        return;
+    }
+
+    console.log('Received message from extension:', data);
+
+    let iframeElement = null;
+    const iframes = document.querySelectorAll('iframe');
+    for (let i = 0; i < iframes.length; i++) {
+        if (iframes[i].contentWindow === event.source) {
+            iframeElement = iframes[i];
+            break;
+        }
+    }
+
+    if (!iframeElement) {
+        console.warn('Could not associate message with a known iframe for extension:', data.extensionId);
+        return;
+    }
+
+    switch (data.type) {
+        case 'startEdit':
+            if (activeFullscreenIframe && activeFullscreenIframe !== iframeElement) {
+                removeFullscreen(activeFullscreenIframe);
+            }
+            if (activeFullscreenIframe !== iframeElement) {
+              applyFullscreen(iframeElement);
+            }
+            break;
+        case 'saveEdit':
+        case 'cancelEdit':
+            if (activeFullscreenIframe === iframeElement) {
+                removeFullscreen(iframeElement);
+            } else {
+                console.log('Received save/cancel for an iframe that is not currently marked as fullscreen:', iframeElement);
+                removeFullscreen(iframeElement);
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+
+window.addEventListener('message', handleExtensionMessage);
+console.log('Fullscreen iframe message listener initialized.');
+
+
+
+const fullscreenStyle = document.createElement('style');
+fullscreenStyle.textContent = `
+  .fullscreen-iframe {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important; /* Use viewport width */
+    height: 100vh !important; /* Use viewport height */
+    z-index: 9999 !important; /* Ensure it's on top */
+    border: none !important;
+    background-color: white !important; /* Optional: Ensure a background */
+    /* Reset potential transform/margin issues */
+    transform: none !important;
+    margin: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+`;
+document.head.appendChild(fullscreenStyle);
 
