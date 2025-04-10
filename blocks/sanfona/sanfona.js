@@ -1,5 +1,4 @@
 import { htmlToElement, removeDataAueAttributesWhenThereIsFormula } from "../../scripts/scripts.js";
-import { handleCustomRTE } from "../texto-ricov2/richTextUtils.js";
 
 export default function decorate(block) {
     const openAll = block?.children[0];
@@ -9,6 +8,7 @@ export default function decorate(block) {
     const openAllText = openAll?.textContent?.trim() ? openAll?.textContent?.trim() : "false";
     const iconOpenText = iconOpen?.textContent?.trim();
     const iconClosedText = iconClosed?.textContent?.trim();
+
 
     openAll?.remove();
     iconOpen?.remove();
@@ -70,7 +70,8 @@ export default function decorate(block) {
             </div>
         </div>
         `
-        );
+        )
+
         return accordionItemElement;
     });
 
