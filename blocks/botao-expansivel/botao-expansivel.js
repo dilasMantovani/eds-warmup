@@ -19,6 +19,46 @@ export default function decorate(block) {
     const descriptionText = description?.textContent?.trim();
     const imgTitleText2 = imgTitle2?.textContent?.trim();
     const descriptionText2 = description2?.textContent?.trim();
+        
+
+    let textContent = '';
+    if (text) {
+        const textParagraph = text.querySelector('p');
+        if (textParagraph) {
+            const richtextDiv = text.querySelector('div[data-aue-type="richtext"]');
+            if (richtextDiv) {
+                textContent = richtextDiv.innerHTML;
+            } else if (textParagraph.textContent && textParagraph.textContent.trim()) {
+                try {
+                    textContent = atob(textParagraph.textContent.trim());
+                } catch (e) {
+                    textContent = text.innerHTML;
+                }
+            }
+        } else {
+            textContent = text.innerHTML;
+        }
+    }
+    
+
+    let text2Content = '';
+    if (text2) {
+        const text2Paragraph = text2.querySelector('p');
+        if (text2Paragraph) {
+            const richtext2Div = text2.querySelector('div[data-aue-type="richtext"]');
+            if (richtext2Div) {
+                text2Content = richtext2Div.innerHTML;
+            } else if (text2Paragraph.textContent && text2Paragraph.textContent.trim()) {
+                try {
+                    text2Content = atob(text2Paragraph.textContent.trim());
+                } catch (e) {
+                    text2Content = text2.innerHTML;
+                }
+            }
+        } else {
+            text2Content = text2?.innerHTML || '';
+        }
+    }
 
     const button = htmlToElement(`<a class="btn-modal">${ctaText}</a>`);
     block.textContent="";
@@ -32,7 +72,7 @@ export default function decorate(block) {
                     <i class="fa-solid fa-xmark"></i>
                 </div>
                 <div class="modal-content-body">
-                    ${text?.innerHTML}
+                    ${textContent}
                     ${image?.querySelector("img") ?
                         `
                         <div class="modal-content-body-img-wrapper">
@@ -42,7 +82,7 @@ export default function decorate(block) {
                         </div>
                         `
                      : ""}
-                    ${text2?.innerHTML}
+                    ${text2Content}
                     ${image2?.querySelector("img") ?
                         `
                         <div class="modal-content-body-img-wrapper">
