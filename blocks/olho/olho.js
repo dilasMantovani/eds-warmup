@@ -6,10 +6,26 @@ export default function decorate(block) {
 
   const variantText = variant?.textContent?.trim();
   const titleText = title?.textContent?.trim();
-  const contentText = content?.textContent?.trim();
+  let contentText = '';
   const iconText = icon?.textContent?.trim();
 
   block.classList.add('olho');
+
+  if (content) {
+    const contentParagraph = content.querySelector('p');
+    if (contentParagraph) {
+      const richtextDiv = content.querySelector('div[data-aue-type="richtext"]');
+      if (richtextDiv) {
+        contentText = richtextDiv.innerHTML;
+      } else if (contentParagraph.textContent && contentParagraph.textContent.trim()) {
+        try {
+          contentText = atob(contentParagraph.textContent.trim());
+        } catch (e) {
+          contentText = content.innerHTML;
+        }
+      }
+    }
+  }
 
   const olho = () => {
     if(variantText === "with-title") {
@@ -20,7 +36,7 @@ export default function decorate(block) {
                 </div>
                 <div>
                   <blockquote>
-                    <p>${contentText}</p>
+                    ${contentText}
                   </blockquote>
                 </div>
             </section>
@@ -30,14 +46,12 @@ export default function decorate(block) {
             <section class="olho-no-title">
                 ${iconText ? `<i class="fa fa-${iconText}"></i>` : ""}
                 <blockquote>
-                    <p>${contentText}</p>
+                    ${contentText}
                 </blockquote>
             </section>
         `)
-
     }
-}
+  }
 
   block.innerHTML = olho();
-
 }
