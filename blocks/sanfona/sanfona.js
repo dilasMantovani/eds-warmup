@@ -43,6 +43,9 @@ export default function decorate(block) {
 
         removeDataAueAttributesWhenThereIsFormula(text);
         removeDataAueAttributesWhenThereIsFormula(secondText);
+        
+        const textContent = text?.querySelector('p')?.textContent?.trim();
+        const secondTextContent = secondText?.querySelector('p')?.textContent?.trim();
                 
         const accordionItemElement = htmlToElement(`
         <div class="accordion-item">
@@ -51,7 +54,7 @@ export default function decorate(block) {
             </div>
             <div class="accordion-item-body">
                 <div class="accordion-item-body-text">
-                    ${text?.innerHTML}
+                    ${textContent ? atob(textContent) : ''}
                 </div>
                 <div class="accordion-item-body-image">
                     <p>${imgTitle}</p>
@@ -60,7 +63,7 @@ export default function decorate(block) {
                 </div>
 
                 <div class="accordion-item-body-text">
-                    ${secondText?.innerHTML}
+                    ${secondTextContent ? atob(secondTextContent) : ''}
                 </div>
                 <div class="accordion-item-body-image">
                     <p>${secondImgTitle}</p>
