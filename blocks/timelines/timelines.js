@@ -14,6 +14,24 @@ export default function decorate(block) {
         })
     }, { threshold: [0.40] });
 
+
+    function processRichTextContent(element) {
+        const paragraphs = element.querySelectorAll('p');
+        paragraphs.forEach(paragraph => {
+            if (paragraph.textContent && paragraph.textContent.trim()) {
+                const richtextDiv = paragraph.closest('div[data-aue-type="richtext"]');
+                if (richtextDiv) {
+                } else {
+                    try {
+                        const decodedContent = atob(paragraph.textContent.trim());
+                        paragraph.outerHTML = decodedContent;
+                    } catch (e) {
+                    }
+                }
+            }
+        });
+    }
+
     //o primeiro elemento será sempre a propriedade startAt
     const startAtElement = block?.children[0]
     const startAtValue = startAtElement.firstElementChild.firstElementChild.innerHTML
@@ -50,6 +68,9 @@ export default function decorate(block) {
         removeDataAueAttributesWhenThereIsFormula(text2); 
         removeDataAueAttributesWhenThereIsFormula(imgTitle2); 
         removeDataAueAttributesWhenThereIsFormula(imgSource2); 
+
+        processRichTextContent(text);
+        processRichTextContent(text2);
 
         title.className = "timeline-item-title"
         subtitle.className = "timeline-item-subtitle"
@@ -100,9 +121,6 @@ export default function decorate(block) {
 
         timelineItemWrapper.appendChild(timelineItemHeader)
         timelineItemWrapper.appendChild(timelineItemContent)
-
-
-
 
         child.appendChild(timelineItemWrapper);
 
