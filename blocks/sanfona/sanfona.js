@@ -48,13 +48,31 @@ export default function decorate(block) {
         let secondTextContent = '';
         
         const textParagraph = text?.querySelector('p');
-        if (textParagraph && textParagraph.textContent) {
-            textContent = atob(textParagraph.textContent.trim());
+        if (textParagraph) {
+            const richtextDiv = text?.querySelector('div[data-aue-type="richtext"]');
+            if (richtextDiv) {
+                textContent = richtextDiv.innerHTML;
+            } else if (textParagraph.textContent && textParagraph.textContent.trim()) {
+                try {
+                    textContent = atob(textParagraph.textContent.trim());
+                } catch (e) {
+                    textContent = text.innerHTML;
+                }
+            }
         }
         
         const secondTextParagraph = secondText?.querySelector('p');
-        if (secondTextParagraph && secondTextParagraph.textContent) {
-            secondTextContent = atob(secondTextParagraph.textContent.trim());
+        if (secondTextParagraph) {
+            const secondRichtextDiv = secondText?.querySelector('div[data-aue-type="richtext"]');
+            if (secondRichtextDiv) {
+                secondTextContent = secondRichtextDiv.innerHTML;
+            } else if (secondTextParagraph.textContent && secondTextParagraph.textContent.trim()) {
+                try {
+                    secondTextContent = atob(secondTextParagraph.textContent.trim());
+                } catch (e) {
+                    secondTextContent = secondText.innerHTML;
+                }
+            }
         }
                 
         const accordionItemElement = htmlToElement(`
