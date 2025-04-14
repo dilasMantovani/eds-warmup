@@ -9,6 +9,8 @@ export default function decorate(block) {
   const contentText = content?.textContent?.trim();
   const iconText = icon?.textContent?.trim();
 
+  block.classList.add('olho');
+
   const olho = () => {
     if(variantText === "with-title") {
         return(`
