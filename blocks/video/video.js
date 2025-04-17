@@ -25,15 +25,39 @@ export default function decorate(block) {
         script.setAttribute("data-type", "media")
         script.setAttribute("data-id", mediastreamId)
         script.setAttribute("data-app-name", "appName")
-        script.setAttribute("id", randomElementID+"-player")
-        script.setAttribute("data-loaded", "playerLoaded")
-    
+        script.setAttribute("id", randomElementID + "-player")
+        //script.setAttribute("data-loaded", "playerLoaded")
+
         document.head.appendChild(script);
 
-        const playerDiv = document.createElement("div")
+        const playerDiv = document.createElement("div");
         playerDiv.setAttribute("id", randomElementID);
-        block.append(playerDiv)
+        block.append(playerDiv);
 
+        let mdstrmPlayer = null;
+
+        script.addEventListener('playerloaded', ({ detail: player }) => {
+            mdstrmPlayer = player;
+        })
+
+        let isThefirstError = true; // esse booleano é pq da um erro 'fake', então esse não precisa ser enviado
+        const intervalId = setInterval(() => {
+            if (mdstrmPlayer) {
+                // console.log({ currentTime: mdstrmPlayer?.currentTime, duration: mdstrmPlayer?.duration, mediastreamId: mediastreamId  })
+                window.parent.postMessage(["onPlayerReady", { mediastreamId: mediastreamId }], "*");
+                mdstrmPlayer.on('seeked', () => { window.parent.postMessage(["onSeeked", { mediastreamId: mediastreamId, time: mdstrmPlayer?.currentTime }], "*"); });
+                mdstrmPlayer.on('timeupdate', (time) => { window.parent.postMessage(["onTimeUpdate", { mediastreamId: mediastreamId, time: time }], "*"); });
+                mdstrmPlayer.on('error', (error) => { 
+                    if(isThefirstError){ 
+                        isThefirstError = false;
+                        return;
+                    } 
+                    window.parent.postMessage(["onError", { mediastreamId: mediastreamId, error: error }], "*"); 
+                });
+
+                clearInterval(intervalId)
+            }
+        }, 1500)
     }
 
     if (description) {
