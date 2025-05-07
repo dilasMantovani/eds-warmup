@@ -871,18 +871,19 @@
                   "model": "quadro-box",
                   "filter": "quadro-box",
                   "numcolumns": "3",
-                  "itemsbackgroundcolor": "#003366",
                   "item0": {
                     "name": "Quadro Box Item",
                     "model": "quadro-box-item",
                     "heading": "Item Sample Heading 1",
-                    "contenttext": "<p>Sample content for item 1.</p>"
+                    "contenttext": "<p>Sample content for item 1.</p>",
+                    "itembackgroundcolor": "#004488"
                   },
                   "item1": {
                     "name": "Quadro Box Item",
                     "model": "quadro-box-item",
                     "heading": "Item Sample Heading 2",
-                    "contenttext": "<p>Sample content for item 2.</p>"
+                    "contenttext": "<p>Sample content for item 2.</p>",
+                    "itembackgroundcolor": "#0055A3"
                   }
                 }
               }
@@ -900,7 +901,8 @@
                   "name": "Quadro Box Item",
                   "model": "quadro-box-item",
                   "heading": "Item Sample Heading",
-                  "contenttext": "<p>Sample content for item.</p>"
+                  "contenttext": "<p>Sample content for item.</p>",
+                  "itembackgroundcolor": "#003366"
                 }
               }
             }

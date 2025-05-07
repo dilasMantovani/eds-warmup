@@ -2,12 +2,8 @@ export default async function decorate(block) {
     const originalBlockChildren = Array.from(block.children);
 
     const numColumnsRow = originalBlockChildren[0];
-    const itemsBackgroundColorRow = originalBlockChildren[1];
-
     const numCols = parseInt(numColumnsRow?.children[1]?.textContent.trim() || '3', 10);
-    const itemsBgColor = itemsBackgroundColorRow?.children[1]?.textContent.trim() || '#003366';
-
-    const itemRowElements = originalBlockChildren.slice(2);
+    const itemRowElements = originalBlockChildren.slice(1);
 
     block.innerHTML = '';
 
@@ -18,15 +14,22 @@ export default async function decorate(block) {
         itemRowElements.slice(0, numCols).forEach(itemRowDOM => {
             const itemDiv = document.createElement('div');
             itemDiv.className = 'quadro-box-item';
-            itemDiv.style.backgroundColor = itemsBgColor;
 
-            const cells = Array.from(itemRowDOM.children);
-            const imageCell = cells[0];
-            const imageAltText = cells[1]?.textContent.trim();
-            const headingCell = cells[2];
-            const contentTextCell = cells[3];
-            
-            // Heading cell
+            const fields = Array.from(itemRowDOM.children);
+
+            const imageFieldRow = fields[0];
+            const imageAltFieldRow = fields[1];
+            const headingFieldRow = fields[2];
+            const contentTextFieldRow = fields[3];
+            const itemBackgroundColorFieldRow = fields[4];
+
+            const imageCell = imageFieldRow?.children[1];
+            const imageAltText = imageAltFieldRow?.children[1]?.textContent.trim();
+            const headingCell = headingFieldRow?.children[1];
+            const contentTextCell = contentTextFieldRow?.children[1];
+            const itemSpecificBgColor = itemBackgroundColorFieldRow?.children[1]?.textContent.trim() || '#003366';
+
+            itemDiv.style.backgroundColor = itemSpecificBgColor;
             if (headingCell && headingCell.innerHTML.trim()) {
                 let finalHeadingElement = headingCell.querySelector('h1,h2,h3,h4,h5,h6');
                 if (finalHeadingElement) {
@@ -39,7 +42,6 @@ export default async function decorate(block) {
                 itemDiv.append(finalHeadingElement);
             }
 
-            // Content text cell    
             if (contentTextCell && contentTextCell.innerHTML.trim()) {
                 const textWrapper = document.createElement('div');
                 textWrapper.className = 'quadro-box-item-content';
@@ -47,7 +49,6 @@ export default async function decorate(block) {
                 itemDiv.append(textWrapper);
             }
             
-            // Imagte cell
             if (imageCell) {
                 const imageWrapper = document.createElement('div');
                 imageWrapper.className = 'quadro-box-item-image';
@@ -62,7 +63,7 @@ export default async function decorate(block) {
                         clonedImg.alt = imageAltText;
                     }
                     imageWrapper.append(clonedImg);
-                } else if (imageCell.textContent.trim()) {
+                } else if (imageCell.textContent && imageCell.textContent.trim()) {
                     const img = document.createElement('img');
                     img.src = imageCell.textContent.trim();
                     if (imageAltText) {

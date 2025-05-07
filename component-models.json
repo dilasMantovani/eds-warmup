@@ -1988,11 +1988,6 @@
             "value": "3"
           }
         ]
-      },
-      {
-        "component": "text",
-        "name": "itemsbackgroundcolor",
-        "label": "Items Background Color"
       }
     ]
   },
@@ -2020,6 +2015,11 @@
         "name": "contenttext",
         "label": "Content Text",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "itembackgroundcolor",
+        "label": "Item Background Color"
       }
     ]
   }
