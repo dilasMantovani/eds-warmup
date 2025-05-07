@@ -874,14 +874,12 @@
                   "item0": {
                     "name": "quadro-box-item",
                     "model": "quadro-box-item",
-                    "heading": "Item Sample Heading 1",
                     "contenttext": "<p>Sample content for item 1.</p>",
                     "itembackgroundcolor": "#004488"
                   },
                   "item1": {
                     "name": "quadro-box-item",
                     "model": "quadro-box-item",
-                    "heading": "Item Sample Heading 2",
                     "contenttext": "<p>Sample content for item 2.</p>",
                     "itembackgroundcolor": "#0066aa"
                   }
@@ -900,7 +898,6 @@
                 "template": {
                   "name": "Quadro Box Item",
                   "model": "quadro-box-item",
-                  "heading": "Item Sample Heading",
                   "contenttext": "<p>Sample content for item.</p>",
                   "itembackgroundcolor": "#003366"
                 }

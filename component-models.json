@@ -2006,11 +2006,6 @@
         "label": "Image Alt Text"
       },
       {
-        "component": "text",
-        "name": "heading",
-        "label": "Heading"
-      },
-      {
         "component": "richtext",
         "name": "contenttext",
         "label": "Content Text",

@@ -27,26 +27,13 @@ export default async function decorate(block) {
         
         const imageAuthoredCell = cells[0];
         const imageAltAuthoredCell = cells[1];
-        const headingAuthoredCell = cells[2];
-        const contentTextAuthoredCell = cells[3];
-        const itemBackgroundColorAuthoredCell = cells[4];
+        const contentTextAuthoredCell = cells[2];
+        const itemBackgroundColorAuthoredCell = cells[3];
 
         const imageAltText = imageAltAuthoredCell?.textContent.trim();
         const itemSpecificBgColor = itemBackgroundColorAuthoredCell?.textContent.trim() || '#003366';
 
         itemDiv.style.backgroundColor = itemSpecificBgColor;
-
-        if (headingAuthoredCell && headingAuthoredCell.innerHTML.trim()) {
-            let finalHeadingElement = headingAuthoredCell.querySelector('h1,h2,h3,h4,h5,h6');
-            if (finalHeadingElement) {
-                finalHeadingElement = finalHeadingElement.cloneNode(true);
-            } else {
-                finalHeadingElement = document.createElement('h3');
-                finalHeadingElement.innerHTML = headingAuthoredCell.innerHTML;
-            }
-            finalHeadingElement.classList.add('quadro-box-item-heading');
-            itemDiv.append(finalHeadingElement);
-        }
 
         if (contentTextAuthoredCell && contentTextAuthoredCell.innerHTML.trim()) {
             const textWrapper = document.createElement('div');
