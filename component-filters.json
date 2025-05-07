@@ -29,7 +29,8 @@
       "podcast",
       "texto-ricov2",
       "indice",
-      "banner"
+      "banner",
+      "quadro-box"
     ]
   },
   {
@@ -80,6 +81,12 @@
     "id": "sanfona",
     "components": [
       "sanfonaItem"
+    ]
+  },
+  {
+    "id": "quadro-box",
+    "components": [
+      "quadro-box-item"
     ]
   },
   {
