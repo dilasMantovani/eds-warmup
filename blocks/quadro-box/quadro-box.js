@@ -3,6 +3,7 @@ export default async function decorate(block) {
 
     const numColumnsRow = originalBlockChildren[0];
     const numCols = parseInt(numColumnsRow?.children[1]?.textContent.trim() || '3', 10);
+
     const itemRowElements = originalBlockChildren.slice(1);
 
     block.innerHTML = '';
@@ -15,45 +16,43 @@ export default async function decorate(block) {
             const itemDiv = document.createElement('div');
             itemDiv.className = 'quadro-box-item';
 
-            const fields = Array.from(itemRowDOM.children);
+            const cells = Array.from(itemRowDOM.children);
 
-            const imageFieldRow = fields[0];
-            const imageAltFieldRow = fields[1];
-            const headingFieldRow = fields[2];
-            const contentTextFieldRow = fields[3];
-            const itemBackgroundColorFieldRow = fields[4];
+            const imageAuthoredCell = cells[0];
+            const imageAltAuthoredCell = cells[1];
+            const headingAuthoredCell = cells[2];
+            const contentTextAuthoredCell = cells[3];
+            const itemBackgroundColorAuthoredCell = cells[4];
 
-            const imageCell = imageFieldRow?.children[1];
-            const imageAltText = imageAltFieldRow?.children[1]?.textContent.trim();
-            const headingCell = headingFieldRow?.children[1];
-            const contentTextCell = contentTextFieldRow?.children[1];
-            const itemSpecificBgColor = itemBackgroundColorFieldRow?.children[1]?.textContent.trim() || '#003366';
+            const imageAltText = imageAltAuthoredCell?.textContent.trim();
+            const itemSpecificBgColor = itemBackgroundColorAuthoredCell?.textContent.trim() || '#003366';
 
             itemDiv.style.backgroundColor = itemSpecificBgColor;
-            if (headingCell && headingCell.innerHTML.trim()) {
-                let finalHeadingElement = headingCell.querySelector('h1,h2,h3,h4,h5,h6');
+
+            if (headingAuthoredCell && headingAuthoredCell.innerHTML.trim()) {
+                let finalHeadingElement = headingAuthoredCell.querySelector('h1,h2,h3,h4,h5,h6');
                 if (finalHeadingElement) {
                     finalHeadingElement = finalHeadingElement.cloneNode(true);
                 } else {
                     finalHeadingElement = document.createElement('h3');
-                    finalHeadingElement.innerHTML = headingCell.innerHTML;
+                    finalHeadingElement.innerHTML = headingAuthoredCell.innerHTML;
                 }
                 finalHeadingElement.classList.add('quadro-box-item-heading');
                 itemDiv.append(finalHeadingElement);
             }
 
-            if (contentTextCell && contentTextCell.innerHTML.trim()) {
+            if (contentTextAuthoredCell && contentTextAuthoredCell.innerHTML.trim()) {
                 const textWrapper = document.createElement('div');
                 textWrapper.className = 'quadro-box-item-content';
-                textWrapper.innerHTML = contentTextCell.innerHTML;
+                textWrapper.innerHTML = contentTextAuthoredCell.innerHTML;
                 itemDiv.append(textWrapper);
             }
             
-            if (imageCell) {
+            if (imageAuthoredCell) {
                 const imageWrapper = document.createElement('div');
                 imageWrapper.className = 'quadro-box-item-image';
-                const pictureElement = imageCell.querySelector('picture');
-                const imgElement = imageCell.querySelector('img');
+                const pictureElement = imageAuthoredCell.querySelector('picture');
+                const imgElement = imageAuthoredCell.querySelector('img');
 
                 if (pictureElement) {
                     imageWrapper.append(pictureElement.cloneNode(true));
@@ -63,9 +62,9 @@ export default async function decorate(block) {
                         clonedImg.alt = imageAltText;
                     }
                     imageWrapper.append(clonedImg);
-                } else if (imageCell.textContent && imageCell.textContent.trim()) {
+                } else if (imageAuthoredCell.textContent && imageAuthoredCell.textContent.trim()) { 
                     const img = document.createElement('img');
-                    img.src = imageCell.textContent.trim();
+                    img.src = imageAuthoredCell.textContent.trim();
                     if (imageAltText) {
                         img.alt = imageAltText;
                     }
