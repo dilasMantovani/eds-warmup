@@ -137,7 +137,6 @@
     object-fit: contain;
 }
 
-/* Responsive adjustments */
 @media (max-width: 900px) {
     .quadro-box-main-section {
         flex-direction: column;
