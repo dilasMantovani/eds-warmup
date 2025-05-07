@@ -1966,5 +1966,56 @@
         "multi": false
       }
     ]
+  },
+  {
+    "id": "quadro-box",
+    "fields": [
+      {
+        "component": "select",
+        "name": "numcolumns",
+        "label": "Number of Columns",
+        "options": [
+          {
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "3",
+            "value": "3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "quadro-box-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imagealt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "contenttext",
+        "label": "Content Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "itembackgroundcolor",
+        "label": "Item Background Color"
+      }
+    ]
   }
 ]
