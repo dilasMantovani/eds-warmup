@@ -35,11 +35,27 @@ export default async function decorate(block) {
 
         itemDiv.style.backgroundColor = itemSpecificBgColor;
 
-        if (contentTextAuthoredCell && contentTextAuthoredCell.innerHTML.trim()) {
+        if (contentTextAuthoredCell) {
             const textWrapper = document.createElement('div');
             textWrapper.className = 'quadro-box-item-content';
-            textWrapper.innerHTML = contentTextAuthoredCell.innerHTML;
-            itemDiv.append(textWrapper);
+            const contentParagraph = contentTextAuthoredCell.querySelector('p');
+            const richtextDiv = contentTextAuthoredCell.querySelector('div[data-aue-type="richtext"]');
+            
+            if (richtextDiv) {
+                textWrapper.innerHTML = richtextDiv.innerHTML;
+            } else if (contentParagraph && contentParagraph.textContent && contentParagraph.textContent.trim()) {
+                try {
+                    textWrapper.innerHTML = atob(contentParagraph.textContent.trim());
+                } catch (e) {
+                    textWrapper.innerHTML = contentTextAuthoredCell.innerHTML;
+                }
+            } else {
+                textWrapper.innerHTML = contentTextAuthoredCell.innerHTML;
+            }
+            
+            if (textWrapper.innerHTML.trim()) {
+                itemDiv.append(textWrapper);
+            }
         }
         
         if (imageAuthoredCell) {
