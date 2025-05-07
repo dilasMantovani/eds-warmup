@@ -875,13 +875,13 @@
                     "name": "quadro-box-item",
                     "model": "quadro-box-item",
                     "contenttext": "<p>Sample content for item 1.</p>",
-                    "itembackgroundcolor": "#004488"
+                    "itembackgroundcolor": "#dbe3ec"
                   },
                   "item1": {
                     "name": "quadro-box-item",
                     "model": "quadro-box-item",
                     "contenttext": "<p>Sample content for item 2.</p>",
-                    "itembackgroundcolor": "#0066aa"
+                    "itembackgroundcolor": "#dbe3ec"
                   }
                 }
               }
