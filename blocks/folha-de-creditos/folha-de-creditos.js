@@ -1,56 +1,55 @@
-import { enhancedIsInEditor } from "../../scripts/scripts.js";
+import { enhancedIsInEditor } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const titulo = block.children[0];
   const tituloText = block.children[0].textContent;
   const imagemCapa = block.children[1];
 
-  const capa = document.createElement("div");
-  capa.classList.add("capa");
+  const capa = document.createElement('div');
+  capa.classList.add('capa');
 
-  if(imagemCapa.querySelector("img")){
-    capa.style.backgroundImage = `url(${imagemCapa.querySelector("img").getAttribute('src')}), linear-gradient(45deg, #007ABF, #0055A5), linear-gradient(180deg, #fff, #fff)`
+  if (imagemCapa.querySelector('img')) {
+    capa.style.backgroundImage = `url(${imagemCapa.querySelector('img').getAttribute('src')}), linear-gradient(45deg, #007ABF, #0055A5), linear-gradient(180deg, #fff, #fff)`;
   }
 
   capa.innerHTML = `<div class="capa__title"><h1>${tituloText}</h1></div>`;
 
-  const folha = document.createElement("div");
-  folha.classList.add("folha")
+  const folha = document.createElement('div');
+  folha.classList.add('folha');
 
   titulo.remove();
   imagemCapa.remove();
 
-  Array.from(block.children).forEach(child => {
+  Array.from(block.children).forEach((child) => {
     const type = child.children[0];
     const typeText = type.textContent;
     type.remove();
-    child.classList.add(typeText)
+    child.classList.add(typeText);
     switch (typeText) {
       case 'disclaimer':
-        child.children[0].classList.add('disclaimer__title')
-        child.children[1].classList.add('disclaimer__content')
+        child.children[0].classList.add('disclaimer__title');
+        child.children[1].classList.add('disclaimer__content');
         break;
       case 'fichaCatalografica':
-        child.children[0].classList.add('fichaCatalografica__title')
-        child.children[1].classList.add('fichaCatalografica__content')
+        child.children[0].classList.add('fichaCatalografica__title');
+        child.children[1].classList.add('fichaCatalografica__content');
 
         const cdd = child.children[2];
-        cdd.classList.add('fichaCatalografica__cdd')
-        cdd.querySelector('p').textContent = "CDD " + cdd.textContent;
-        break
+        cdd.classList.add('fichaCatalografica__cdd');
+        cdd.querySelector('p').textContent = `CDD ${cdd.textContent}`;
+        break;
 
       default:
         break;
     }
-    folha.append(child)
-  })
+    folha.append(child);
+  });
   block.append(capa);
-  block.append(folha)
+  block.append(folha);
 
   setTimeout(() => {
-    if(enhancedIsInEditor()){
-      capa.classList.add("isInEditor");
+    if (enhancedIsInEditor()) {
+      capa.classList.add('isInEditor');
     }
   }, 1500);
-
 }

@@ -1,66 +1,65 @@
-import { htmlToElement, randomString } from "../../scripts/scripts.js";
+import { htmlToElement, randomString } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-    const randomElementID = randomString(10);
+  const randomElementID = randomString(10);
 
-    const businessKey = block?.children[0]?.textContent?.trim();
-    const mediastreamId = block?.children[1]?.textContent?.trim();
-    const videoLink = block?.children[2]?.textContent?.trim();
-    const captionLink = block?.children[3]?.textContent?.trim();
-    const size = block?.children[4]?.textContent?.trim();
-    const title = block?.children[5]?.textContent?.trim();
-    const description = block?.children[6]?.textContent?.trim();
+  const businessKey = block?.children[0]?.textContent?.trim();
+  const mediastreamId = block?.children[1]?.textContent?.trim();
+  const videoLink = block?.children[2]?.textContent?.trim();
+  const captionLink = block?.children[3]?.textContent?.trim();
+  const size = block?.children[4]?.textContent?.trim();
+  const title = block?.children[5]?.textContent?.trim();
+  const description = block?.children[6]?.textContent?.trim();
 
-    block.textContent = "";
+  block.textContent = '';
 
+  if (title) {
+    block.append(htmlToElement(`<p>${title}</p>`));
+  }
 
-    if (title) {
-        block.append(htmlToElement(`<p>${title}</p>`))
-    }
+  if (mediastreamId) {
+    const script = document.createElement('script');
+    script.src = 'https://player.cdn.mdstrm.com/lightning_player/api.js';
+    script.setAttribute('data-container', randomElementID);
+    script.setAttribute('data-type', 'media');
+    script.setAttribute('data-id', mediastreamId);
+    script.setAttribute('data-app-name', 'appName');
+    script.setAttribute('id', `${randomElementID}-player`);
+    // script.setAttribute("data-loaded", "playerLoaded")
 
-    if (mediastreamId) {
-        var script = document.createElement('script');
-        script.src = 'https://player.cdn.mdstrm.com/lightning_player/api.js';
-        script.setAttribute("data-container", randomElementID)
-        script.setAttribute("data-type", "media")
-        script.setAttribute("data-id", mediastreamId)
-        script.setAttribute("data-app-name", "appName")
-        script.setAttribute("id", randomElementID + "-player")
-        //script.setAttribute("data-loaded", "playerLoaded")
+    document.head.appendChild(script);
 
-        document.head.appendChild(script);
+    const playerDiv = document.createElement('div');
+    playerDiv.setAttribute('id', randomElementID);
+    block.append(playerDiv);
 
-        const playerDiv = document.createElement("div");
-        playerDiv.setAttribute("id", randomElementID);
-        block.append(playerDiv);
+    let mdstrmPlayer = null;
 
-        let mdstrmPlayer = null;
+    script.addEventListener('playerloaded', ({ detail: player }) => {
+      mdstrmPlayer = player;
+    });
 
-        script.addEventListener('playerloaded', ({ detail: player }) => {
-            mdstrmPlayer = player;
-        })
+    let isThefirstError = true; // esse booleano é pq da um erro 'fake', então esse não precisa ser enviado
+    const intervalId = setInterval(() => {
+      if (mdstrmPlayer) {
+        // console.log({ currentTime: mdstrmPlayer?.currentTime, duration: mdstrmPlayer?.duration, mediastreamId: mediastreamId  })
+        window.parent.postMessage(['onPlayerReady', { mediastreamId }], '*');
+        mdstrmPlayer.on('seeked', () => { window.parent.postMessage(['onSeeked', { mediastreamId, time: mdstrmPlayer?.currentTime }], '*'); });
+        mdstrmPlayer.on('timeupdate', (time) => { window.parent.postMessage(['onTimeUpdate', { mediastreamId, time }], '*'); });
+        mdstrmPlayer.on('error', (error) => {
+          if (isThefirstError) {
+            isThefirstError = false;
+            return;
+          }
+          window.parent.postMessage(['onError', { mediastreamId, error }], '*');
+        });
 
-        let isThefirstError = true; // esse booleano é pq da um erro 'fake', então esse não precisa ser enviado
-        const intervalId = setInterval(() => {
-            if (mdstrmPlayer) {
-                // console.log({ currentTime: mdstrmPlayer?.currentTime, duration: mdstrmPlayer?.duration, mediastreamId: mediastreamId  })
-                window.parent.postMessage(["onPlayerReady", { mediastreamId: mediastreamId }], "*");
-                mdstrmPlayer.on('seeked', () => { window.parent.postMessage(["onSeeked", { mediastreamId: mediastreamId, time: mdstrmPlayer?.currentTime }], "*"); });
-                mdstrmPlayer.on('timeupdate', (time) => { window.parent.postMessage(["onTimeUpdate", { mediastreamId: mediastreamId, time: time }], "*"); });
-                mdstrmPlayer.on('error', (error) => { 
-                    if(isThefirstError){ 
-                        isThefirstError = false;
-                        return;
-                    } 
-                    window.parent.postMessage(["onError", { mediastreamId: mediastreamId, error: error }], "*"); 
-                });
+        clearInterval(intervalId);
+      }
+    }, 1500);
+  }
 
-                clearInterval(intervalId)
-            }
-        }, 1500)
-    }
-
-    if (description) {
-        block.append(htmlToElement(`<p>${description}</p>`))
-    }
+  if (description) {
+    block.append(htmlToElement(`<p>${description}</p>`));
+  }
 }

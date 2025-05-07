@@ -1,1 +1,3 @@
 helix-importer-ui
+*.min.js
+*.min.css

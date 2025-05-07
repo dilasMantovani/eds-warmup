@@ -1,4 +1,4 @@
-import { enhancedIsInEditor } from "../../scripts/scripts.js";
+import { enhancedIsInEditor } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const content = block.children[0];
@@ -7,17 +7,17 @@ export default function decorate(block) {
   content.remove();
   bg.remove();
 
-  const capa = document.createElement("div");
-  capa.classList.add("capa");
+  const capa = document.createElement('div');
+  capa.classList.add('capa');
   block.append(capa);
-  if (bg?.querySelector("img")) {
+  if (bg?.querySelector('img')) {
     const computedStyle = window.getComputedStyle(capa);
-    const backgroundImage = computedStyle.backgroundImage;
-    capa.style.backgroundImage = backgroundImage.replace(/url\([^\)]+\)/g, `url(${bg.querySelector("img").getAttribute('src')})`);
+    const { backgroundImage } = computedStyle;
+    capa.style.backgroundImage = backgroundImage.replace(/url\([^\)]+\)/g, `url(${bg.querySelector('img').getAttribute('src')})`);
   }
 
-  const box = document.createElement("div");
-  box.classList.add("capa__box");
+  const box = document.createElement('div');
+  box.classList.add('capa__box');
   capa.append(box);
 
   let contentText = '';
@@ -36,12 +36,12 @@ export default function decorate(block) {
       }
     }
   }
-  
+
   box.innerHTML = contentText;
 
   setTimeout(() => {
     if (enhancedIsInEditor()) {
-      capa.classList.add("isInEditor");
+      capa.classList.add('isInEditor');
     }
   }, 1500);
 }

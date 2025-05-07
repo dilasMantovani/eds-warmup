@@ -28,8 +28,8 @@ export default function decorate(block) {
   }
 
   const olho = () => {
-    if(variantText === "with-title") {
-        return(`
+    if (variantText === 'with-title') {
+      return (`
             <section class="olho-with-title">
                 <div>
                   <h4><strong>${titleText}</strong></h4>
@@ -41,17 +41,16 @@ export default function decorate(block) {
                 </div>
             </section>
         `);
-    } else {
-        return(`
+    }
+    return (`
             <section class="olho-no-title">
-                ${iconText ? `<i class="fa fa-${iconText}"></i>` : ""}
+                ${iconText ? `<i class="fa fa-${iconText}"></i>` : ''}
                 <blockquote>
                     ${contentText}
                 </blockquote>
             </section>
-        `)
-    }
-  }
+        `);
+  };
 
   block.innerHTML = olho();
 }

@@ -60,7 +60,6 @@ async function loadFonts() {
   }
 }
 
-
 /**
  * creates an element from html string
  * @param {string} html
@@ -208,17 +207,17 @@ loadPage();
 
 mermaid.initialize({ startOnLoad: true });
 
-export function isInEditor(){
-  return window?.location?.hostname?.startsWith("author");
+export function isInEditor() {
+  return window?.location?.hostname?.startsWith('author');
 }
 
-//a diferença é que este ignora tbm a tela de preview do AEM
-export function enhancedIsInEditor(){
+// a diferença é que este ignora tbm a tela de preview do AEM
+export function enhancedIsInEditor() {
   return document.querySelectorAll('.adobe-ue-edit')?.length > 0;
 }
 
 export function generateUUID() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     const r = Math.random() * 16 | 0;
     const v = c === 'x' ? r : (r & 0x3 | 0x8);
     return v.toString(16);
@@ -227,75 +226,70 @@ export function generateUUID() {
 
 export function randomString(len) {
   const charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-  var randomString = '';
-  for (var i = 0; i < len; i++) {
-      var randomPoz = Math.floor(Math.random() * charSet.length);
-      randomString += charSet.substring(randomPoz,randomPoz+1);
+  let randomString = '';
+  for (let i = 0; i < len; i++) {
+    const randomPoz = Math.floor(Math.random() * charSet.length);
+    randomString += charSet.substring(randomPoz, randomPoz + 1);
   }
   return randomString;
 }
 
-function handleMathJax(){
+function handleMathJax() {
   if (window.MathJax) return;
 
-  var body = document.body.textContent;
+  const body = document.body.textContent;
   if (body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) {
     if (!window.MathJax) {
       window.MathJax = {
         tex: {
-          inlineMath: {'[+]': [['##', '##']]}
-        }
+          inlineMath: { '[+]': [['##', '##']] },
+        },
       };
     }
-    var script = document.createElement('script');
+    const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
     document.head.appendChild(script);
   }
 }
-window.onload = ()=>{
+window.onload = () => {
   handleMathJax();
-}
+};
 
 export function removeDataAueAttributesWhenThereIsFormula(element) {
   if (!element || !(element instanceof HTMLElement)) {
-      console.error("O argumento fornecido não é um elemento HTML válido.");
-      return;
+    console.error('O argumento fornecido não é um elemento HTML válido.');
+    return;
   }
 
-  if(!isInEditor) return;
+  if (!isInEditor) return;
 
-  //Se não houver fórmula, morre aqui
+  // Se não houver fórmula, morre aqui
   const body = element.textContent;
-  if(body?.includes("##") || body?.includes("$$") || element.querySelectorAll("mjx-container").length > 0) {
-
+  if (body?.includes('##') || body?.includes('$$') || element.querySelectorAll('mjx-container').length > 0) {
     // Seleciona todos os elementos filhos do elemento fornecido
-    const children = element.querySelectorAll("*");
-  
-    children.forEach(child => {
-        // Itera sobre os atributos do elemento filho
-        Array.from(child.attributes).forEach(attr => {
-            // Verifica se o nome do atributo começa com "data-aue"
-            if (attr.name.startsWith("data-aue")) {
-                child.removeAttribute(attr.name); // Remove o atributo
-            }
-        });
+    const children = element.querySelectorAll('*');
+
+    children.forEach((child) => {
+      // Itera sobre os atributos do elemento filho
+      Array.from(child.attributes).forEach((attr) => {
+        // Verifica se o nome do atributo começa com "data-aue"
+        if (attr.name.startsWith('data-aue')) {
+          child.removeAttribute(attr.name); // Remove o atributo
+        }
+      });
     });
   }
-
 }
 
 let lastHeight = 0;
 function resize() {
-  var height = document.getElementsByTagName("html")[0].getBoundingClientRect().height;
-  if(lastHeight !== height){
-    lastHeight = height
-    window.parent.postMessage(["setHeight", height + 10], "*"); 
+  const { height } = document.getElementsByTagName('html')[0].getBoundingClientRect();
+  if (lastHeight !== height) {
+    lastHeight = height;
+    window.parent.postMessage(['setHeight', height + 10], '*');
   }
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener('DOMContentLoaded', (event) => {
   setInterval(resize, 1000);
 });
-
-
-
