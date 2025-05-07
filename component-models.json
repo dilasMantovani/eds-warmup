@@ -1971,28 +1971,6 @@
     "id": "quadro-box",
     "fields": [
       {
-        "component": "text",
-        "name": "mainheading",
-        "label": "Main Heading"
-      },
-      {
-        "component": "reference",
-        "name": "mainimage",
-        "label": "Main Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "mainimagealt",
-        "label": "Main Image Alt Text"
-      },
-      {
-        "component": "richtext",
-        "name": "maintext",
-        "label": "Main Text",
-        "valueType": "string"
-      },
-      {
         "component": "select",
         "name": "numcolumns",
         "label": "Number of Columns",
