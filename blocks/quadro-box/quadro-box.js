@@ -7,10 +7,10 @@ export default async function decorate(block) {
     const numCols = parseInt(numColumnsRow?.children[1]?.textContent.trim() || '3', 10);
     const itemsBgColor = itemsBackgroundColorRow?.children[1]?.textContent.trim() || '#003366';
 
-
     const itemRowElements = originalBlockChildren.slice(2);
 
     block.innerHTML = '';
+
     if (itemRowElements.length > 0) {
         const itemsContainer = document.createElement('div');
         itemsContainer.className = `quadro-box-items columns-${numCols}`;
@@ -21,12 +21,33 @@ export default async function decorate(block) {
             itemDiv.className = 'quadro-box-item';
 
             const cells = Array.from(itemRowDOM.children);
-
             const imageCell = cells[0];
             const imageAltText = cells[1]?.textContent.trim();
             const headingCell = cells[2];
             const contentTextCell = cells[3];
+            
+            // Heading cell
+            if (headingCell && headingCell.innerHTML.trim()) {
+                let finalHeadingElement = headingCell.querySelector('h1,h2,h3,h4,h5,h6');
+                if (finalHeadingElement) {
+                    finalHeadingElement = finalHeadingElement.cloneNode(true);
+                } else {
+                    finalHeadingElement = document.createElement('h3');
+                    finalHeadingElement.innerHTML = headingCell.innerHTML;
+                }
+                finalHeadingElement.classList.add('quadro-box-item-heading');
+                itemDiv.append(finalHeadingElement);
+            }
 
+            // Content text cell    
+            if (contentTextCell && contentTextCell.innerHTML.trim()) {
+                const textWrapper = document.createElement('div');
+                textWrapper.className = 'quadro-box-item-content';
+                textWrapper.innerHTML = contentTextCell.innerHTML;
+                itemDiv.append(textWrapper);
+            }
+            
+            // Imagte cell
             if (imageCell) {
                 const imageWrapper = document.createElement('div');
                 imageWrapper.className = 'quadro-box-item-image';
@@ -53,25 +74,6 @@ export default async function decorate(block) {
                 if (imageWrapper.hasChildNodes()) {
                     itemDiv.append(imageWrapper);
                 }
-            }
-
-            if (headingCell && headingCell.innerHTML.trim()) {
-                let finalHeadingElement = headingCell.querySelector('h1,h2,h3,h4,h5,h6');
-                if (finalHeadingElement) {
-                    finalHeadingElement = finalHeadingElement.cloneNode(true);
-                } else {
-                    finalHeadingElement = document.createElement('h3');
-                    finalHeadingElement.innerHTML = headingCell.innerHTML;
-                }
-                finalHeadingElement.classList.add('quadro-box-item-heading');
-                itemDiv.append(finalHeadingElement);
-            }
-
-            if (contentTextCell && contentTextCell.innerHTML.trim()) {
-                const textWrapper = document.createElement('div');
-                textWrapper.className = 'quadro-box-item-content';
-                textWrapper.innerHTML = contentTextCell.innerHTML;
-                itemDiv.append(textWrapper);
             }
 
             if (itemDiv.hasChildNodes()) {
