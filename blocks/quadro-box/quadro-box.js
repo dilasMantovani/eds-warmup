@@ -14,11 +14,11 @@ export default async function decorate(block) {
     if (itemRowElements.length > 0) {
         const itemsContainer = document.createElement('div');
         itemsContainer.className = `quadro-box-items columns-${numCols}`;
-        itemsContainer.style.backgroundColor = itemsBgColor;
 
         itemRowElements.slice(0, numCols).forEach(itemRowDOM => {
             const itemDiv = document.createElement('div');
             itemDiv.className = 'quadro-box-item';
+            itemDiv.style.backgroundColor = itemsBgColor;
 
             const cells = Array.from(itemRowDOM.children);
             const imageCell = cells[0];
