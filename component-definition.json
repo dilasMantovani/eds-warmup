@@ -870,7 +870,6 @@
                   "name": "Quadro Box",
                   "model": "quadro-box",
                   "filter": "quadro-box",
-                  "mainheading": "Main Title Sample",
                   "numcolumns": "3",
                   "itemsbackgroundcolor": "#003366",
                   "item0": {
