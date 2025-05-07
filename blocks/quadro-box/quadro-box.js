@@ -9,80 +9,85 @@ export default async function decorate(block) {
     block.innerHTML = '';
 
     if (itemRowElements.length > 0) {
-        const itemsContainer = document.createElement('div');
-        itemsContainer.className = `quadro-box-items columns-${numCols}`;
+        const itemsToDisplay = itemRowElements.slice(0, numCols);
+        const countOfItemsToDisplay = itemsToDisplay.length;
 
-        itemRowElements.slice(0, numCols).forEach(itemRowDOM => {
-            const itemDiv = document.createElement('div');
-            itemDiv.className = 'quadro-box-item';
+        if (countOfItemsToDisplay > 0) {
+            const itemsContainer = document.createElement('div');
+            itemsContainer.className = `quadro-box-items columns-${countOfItemsToDisplay}`;
 
-            const cells = Array.from(itemRowDOM.children);
+            itemsToDisplay.forEach(itemRowDOM => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'quadro-box-item';
 
-            const imageAuthoredCell = cells[0];
-            const imageAltAuthoredCell = cells[1];
-            const headingAuthoredCell = cells[2];
-            const contentTextAuthoredCell = cells[3];
-            const itemBackgroundColorAuthoredCell = cells[4];
+                const cells = Array.from(itemRowDOM.children);
 
-            const imageAltText = imageAltAuthoredCell?.textContent.trim();
-            const itemSpecificBgColor = itemBackgroundColorAuthoredCell?.textContent.trim() || '#003366';
+                const imageAuthoredCell = cells[0];
+                const imageAltAuthoredCell = cells[1];
+                const headingAuthoredCell = cells[2];
+                const contentTextAuthoredCell = cells[3];
+                const itemBackgroundColorAuthoredCell = cells[4];
 
-            itemDiv.style.backgroundColor = itemSpecificBgColor;
+                const imageAltText = imageAltAuthoredCell?.textContent.trim();
+                const itemSpecificBgColor = itemBackgroundColorAuthoredCell?.textContent.trim() || '#003366';
 
-            if (headingAuthoredCell && headingAuthoredCell.innerHTML.trim()) {
-                let finalHeadingElement = headingAuthoredCell.querySelector('h1,h2,h3,h4,h5,h6');
-                if (finalHeadingElement) {
-                    finalHeadingElement = finalHeadingElement.cloneNode(true);
-                } else {
-                    finalHeadingElement = document.createElement('h3');
-                    finalHeadingElement.innerHTML = headingAuthoredCell.innerHTML;
+                itemDiv.style.backgroundColor = itemSpecificBgColor;
+
+                if (headingAuthoredCell && headingAuthoredCell.innerHTML.trim()) {
+                    let finalHeadingElement = headingAuthoredCell.querySelector('h1,h2,h3,h4,h5,h6');
+                    if (finalHeadingElement) {
+                        finalHeadingElement = finalHeadingElement.cloneNode(true);
+                    } else {
+                        finalHeadingElement = document.createElement('h3');
+                        finalHeadingElement.innerHTML = headingAuthoredCell.innerHTML;
+                    }
+                    finalHeadingElement.classList.add('quadro-box-item-heading');
+                    itemDiv.append(finalHeadingElement);
                 }
-                finalHeadingElement.classList.add('quadro-box-item-heading');
-                itemDiv.append(finalHeadingElement);
-            }
 
-            if (contentTextAuthoredCell && contentTextAuthoredCell.innerHTML.trim()) {
-                const textWrapper = document.createElement('div');
-                textWrapper.className = 'quadro-box-item-content';
-                textWrapper.innerHTML = contentTextAuthoredCell.innerHTML;
-                itemDiv.append(textWrapper);
-            }
-            
-            if (imageAuthoredCell) {
-                const imageWrapper = document.createElement('div');
-                imageWrapper.className = 'quadro-box-item-image';
-                const pictureElement = imageAuthoredCell.querySelector('picture');
-                const imgElement = imageAuthoredCell.querySelector('img');
-
-                if (pictureElement) {
-                    imageWrapper.append(pictureElement.cloneNode(true));
-                } else if (imgElement) {
-                    const clonedImg = imgElement.cloneNode(true);
-                    if (imageAltText && !clonedImg.alt) {
-                        clonedImg.alt = imageAltText;
-                    }
-                    imageWrapper.append(clonedImg);
-                } else if (imageAuthoredCell.textContent && imageAuthoredCell.textContent.trim()) { 
-                    const img = document.createElement('img');
-                    img.src = imageAuthoredCell.textContent.trim();
-                    if (imageAltText) {
-                        img.alt = imageAltText;
-                    }
-                    imageWrapper.append(img);
+                if (contentTextAuthoredCell && contentTextAuthoredCell.innerHTML.trim()) {
+                    const textWrapper = document.createElement('div');
+                    textWrapper.className = 'quadro-box-item-content';
+                    textWrapper.innerHTML = contentTextAuthoredCell.innerHTML;
+                    itemDiv.append(textWrapper);
                 }
                 
-                if (imageWrapper.hasChildNodes()) {
-                    itemDiv.append(imageWrapper);
+                if (imageAuthoredCell) {
+                    const imageWrapper = document.createElement('div');
+                    imageWrapper.className = 'quadro-box-item-image';
+                    const pictureElement = imageAuthoredCell.querySelector('picture');
+                    const imgElement = imageAuthoredCell.querySelector('img');
+
+                    if (pictureElement) {
+                        imageWrapper.append(pictureElement.cloneNode(true));
+                    } else if (imgElement) {
+                        const clonedImg = imgElement.cloneNode(true);
+                        if (imageAltText && !clonedImg.alt) {
+                            clonedImg.alt = imageAltText;
+                        }
+                        imageWrapper.append(clonedImg);
+                    } else if (imageAuthoredCell.textContent && imageAuthoredCell.textContent.trim()) { 
+                        const img = document.createElement('img');
+                        img.src = imageAuthoredCell.textContent.trim();
+                        if (imageAltText) {
+                            img.alt = imageAltText;
+                        }
+                        imageWrapper.append(img);
+                    }
+                    
+                    if (imageWrapper.hasChildNodes()) {
+                        itemDiv.append(imageWrapper);
+                    }
                 }
-            }
 
-            if (itemDiv.hasChildNodes()) {
-                itemsContainer.append(itemDiv);
-            }
-        });
+                if (itemDiv.hasChildNodes()) {
+                    itemsContainer.append(itemDiv);
+                }
+            });
 
-        if (itemsContainer.hasChildNodes()) {
-            block.append(itemsContainer);
+            if (itemsContainer.hasChildNodes()) {
+                block.append(itemsContainer);
+            }
         }
     }
 } 
