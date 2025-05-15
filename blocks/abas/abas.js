@@ -1,4 +1,4 @@
-import { htmlToElement } from '../../scripts/scripts.js';
+import { decodeBase64, htmlToElement } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const tabs = [];
@@ -15,7 +15,7 @@ export default function decorate(block) {
         if (richtextDiv) {
         } else {
           try {
-            const decodedContent = atob(paragraph.textContent.trim());
+            const decodedContent = decodeBase64(paragraph.textContent.trim());
             paragraph.outerHTML = decodedContent;
           } catch (e) {
           }

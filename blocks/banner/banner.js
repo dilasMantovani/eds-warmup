@@ -1,4 +1,4 @@
-import { enhancedIsInEditor } from '../../scripts/scripts.js';
+import { decodeBase64, enhancedIsInEditor } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const content = block.children[0];
@@ -29,7 +29,7 @@ export default function decorate(block) {
         contentText = richtextDiv.innerHTML;
       } else if (contentParagraph.textContent && contentParagraph.textContent.trim()) {
         try {
-          contentText = atob(contentParagraph.textContent.trim());
+          contentText = decodeBase64(contentParagraph.textContent.trim());
         } catch (e) {
           contentText = content.innerHTML;
         }
