@@ -1,4 +1,4 @@
-import { decodeBase64, isInEditor } from '../../scripts/scripts.js';
+import { isInEditor } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const variant = block?.children[0];
@@ -14,8 +14,6 @@ export default function decorate(block) {
     const type = element?.children[0];
     const typeText = type?.textContent?.trim();
     type.remove();
-
-    console.log(element)
 
     if (typeText === 'txt') texts.push(element);
     if (typeText === 'img') images.push(element);
@@ -64,7 +62,7 @@ export default function decorate(block) {
                             ${handleImage(img)}
                           </div>
                         </li>`)?.join('')
-        }
+}
             </ul>
           </div>
         </div>
@@ -78,10 +76,10 @@ export default function decorate(block) {
             <ul class="splide__list">
               ${texts?.map((text) => `<li class="splide__slide">
                           <div class="splide__slide__container">
-                            ${decodeBase64(text.textContent)}
+                            ${text.outerHTML}
                           </div>
                         </li>`)?.join('')
-        }
+}
             </ul>
           </div>
         </div>
@@ -95,11 +93,11 @@ export default function decorate(block) {
             <ul class="splide__list">
               ${texts?.map((text, index) => `<li class="splide__slide">
                           <div class="splide__slide__container text-and-image-1-1">
-                            <div>${decodeBase64(text.textContent)}</div>
+                            ${text.outerHTML}
                             ${handleImage(images[index])}
                           </div>
                         </li>`)?.join('')
-        }
+}
             </ul>
           </div>
         </div>
@@ -113,10 +111,10 @@ export default function decorate(block) {
             <ul class="splide__list">
               ${texts?.map((text) => `<li class="splide__slide">
                           <div class="splide__slide__container">
-                            ${decodeBase64(text.textContent)}
+                            ${text.outerHTML}
                           </div>
                         </li>`)?.join('')
-        }
+}
             </ul>
           </div>
         </div>
@@ -128,7 +126,7 @@ export default function decorate(block) {
     case 'one-text-many-images':
       block.innerHTML += `
         <div class="text__container">
-            ${decodeBase64(texts[0].textContent)}
+            ${texts[0]?.outerHTML}
         </div>
         <div class="splide" role="group">
           ${arrowsHTML}
@@ -139,7 +137,7 @@ export default function decorate(block) {
                             ${handleImage(img)}
                           </div>
                         </li>`)?.join('')
-        }
+}
             </ul>
           </div>
         </div>
