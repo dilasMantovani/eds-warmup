@@ -205,8 +205,6 @@ export async function fetchAuthorBio(anchor) {
 
 loadPage();
 
-mermaid.initialize({ startOnLoad: true });
-
 export function isInEditor() {
   return window?.location?.hostname?.startsWith('author');
 }
@@ -234,53 +232,6 @@ export function randomString(len) {
   return randomString;
 }
 
-function handleMathJax() {
-  if (window.MathJax) return;
-
-  const body = document.body.textContent;
-  if (body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) {
-    if (!window.MathJax) {
-      window.MathJax = {
-        tex: {
-          inlineMath: { '[+]': [['##', '##']] },
-        },
-      };
-    }
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
-    document.head.appendChild(script);
-  }
-}
-window.onload = () => {
-  handleMathJax();
-};
-
-export function removeDataAueAttributesWhenThereIsFormula(element) {
-  if (!element || !(element instanceof HTMLElement)) {
-    console.error('O argumento fornecido não é um elemento HTML válido.');
-    return;
-  }
-
-  if (!isInEditor) return;
-
-  // Se não houver fórmula, morre aqui
-  const body = element.textContent;
-  if (body?.includes('##') || body?.includes('$$') || element.querySelectorAll('mjx-container').length > 0) {
-    // Seleciona todos os elementos filhos do elemento fornecido
-    const children = element.querySelectorAll('*');
-
-    children.forEach((child) => {
-      // Itera sobre os atributos do elemento filho
-      Array.from(child.attributes).forEach((attr) => {
-        // Verifica se o nome do atributo começa com "data-aue"
-        if (attr.name.startsWith('data-aue')) {
-          child.removeAttribute(attr.name); // Remove o atributo
-        }
-      });
-    });
-  }
-}
-
 let lastHeight = 0;
 function resize() {
   const { height } = document.getElementsByTagName('html')[0].getBoundingClientRect();
@@ -293,3 +244,14 @@ function resize() {
 document.addEventListener('DOMContentLoaded', (event) => {
   setInterval(resize, 1000);
 });
+
+export function decodeBase64(base64) {
+    const text = atob(base64);
+    const length = text.length;
+    const bytes = new Uint8Array(length);
+    for (let i = 0; i < length; i++) {
+        bytes[i] = text.charCodeAt(i);
+    }
+    const decoder = new TextDecoder(); // default is utf-8
+    return decoder.decode(bytes);
+}

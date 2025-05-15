@@ -1,4 +1,4 @@
-import { htmlToElement } from '../../scripts/scripts.js';
+import { decodeBase64, htmlToElement } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const cta = block.children[0];
@@ -29,7 +29,7 @@ export default function decorate(block) {
         textContent = richtextDiv.innerHTML;
       } else if (textParagraph.textContent && textParagraph.textContent.trim()) {
         try {
-          textContent = atob(textParagraph.textContent.trim());
+          textContent = decodeBase64(textParagraph.textContent.trim());
         } catch (e) {
           textContent = text.innerHTML;
         }
@@ -48,7 +48,7 @@ export default function decorate(block) {
         text2Content = richtext2Div.innerHTML;
       } else if (text2Paragraph.textContent && text2Paragraph.textContent.trim()) {
         try {
-          text2Content = atob(text2Paragraph.textContent.trim());
+          text2Content = decodeBase64(text2Paragraph.textContent.trim());
         } catch (e) {
           text2Content = text2.innerHTML;
         }

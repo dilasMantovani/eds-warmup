@@ -32,7 +32,6 @@ highlightCodeBlock();
 
 baSlider('.comparison-slider');
 
-mermaid.init();
 
 document.querySelectorAll('.loading').forEach((elem) => {
   elem.classList.remove('loading');

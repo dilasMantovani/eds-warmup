@@ -1,3 +1,5 @@
+import { decodeBase64 } from "../../scripts/scripts.js";
+
 export default async function decorate(block) {
   const originalBlockChildren = Array.from(block.children);
 
@@ -45,7 +47,7 @@ export default async function decorate(block) {
         textWrapper.innerHTML = richtextDiv.innerHTML;
       } else if (contentParagraph && contentParagraph.textContent && contentParagraph.textContent.trim()) {
         try {
-          textWrapper.innerHTML = atob(contentParagraph.textContent.trim());
+          textWrapper.innerHTML = decodeBase64(contentParagraph.textContent.trim());
         } catch (e) {
           textWrapper.innerHTML = contentTextAuthoredCell.innerHTML;
         }
