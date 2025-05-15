@@ -21,10 +21,13 @@
       "embed",
       "sanfona",
       "galeria",
+      "mindmapOrganogramFluxogram",
       "folhaDeCreditos",
       "olho",
       "abas",
+      "playground",
       "podcast",
+      "texto-ricov2",
       "indice",
       "banner",
       "quadro-box"
@@ -108,6 +111,38 @@
     "components": [
       "abaItem"
     ]
+  },
+  {
+    "id": "text",
+    "rte": {
+      "format": [
+        "bold",
+        "italic",
+        "underline"
+      ],
+      "alignment": [
+        "alignleft",
+        "aligncenter",
+        "alignright"
+      ],
+      "indentation": [],
+      "sr_script": [
+        "superscript",
+        "subscript"
+      ],
+      "list": [
+        "bullist",
+        "numlist"
+      ],
+      "insert": [
+        "link"
+      ],
+      "advanced": [],
+      "extensions": [],
+      "editor": [
+        "removeformat"
+      ]
+    }
   },
   {
     "id": "indice",

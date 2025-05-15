@@ -1,5 +1,3 @@
-import { decodeBase64 } from "../../scripts/scripts.js";
-
 export default function decorate(block) {
   const quoteType = block.children[0]?.textContent?.trim();
   const quoteImage = block.children[1].querySelector('img');
@@ -16,7 +14,7 @@ export default function decorate(block) {
         quoteText = richtextDiv.innerHTML;
       } else if (contentParagraph.textContent && contentParagraph.textContent.trim()) {
         try {
-          quoteText = decodeBase64(contentParagraph.textContent.trim());
+          quoteText = atob(contentParagraph.textContent.trim());
         } catch (e) {
           quoteText = content.innerHTML;
         }

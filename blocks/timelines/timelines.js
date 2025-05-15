@@ -1,4 +1,4 @@
-import { decodeBase64 } from "../../scripts/scripts.js";
+import { removeDataAueAttributesWhenThereIsFormula } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const observer = new IntersectionObserver(((entries) => {
@@ -21,7 +21,7 @@ export default function decorate(block) {
         if (richtextDiv) {
         } else {
           try {
-            const decodedContent = decodeBase64(paragraph.textContent.trim());
+            const decodedContent = atob(paragraph.textContent.trim());
             paragraph.outerHTML = decodedContent;
           } catch (e) {
           }
@@ -53,6 +53,16 @@ export default function decorate(block) {
     const image2 = child?.children[7];
     const imgTitle2 = child?.children[8];
     const imgSource2 = child?.children[9];
+
+    // handling inline edition prevention when there is a formula
+    removeDataAueAttributesWhenThereIsFormula(title);
+    removeDataAueAttributesWhenThereIsFormula(subtitle);
+    removeDataAueAttributesWhenThereIsFormula(text);
+    removeDataAueAttributesWhenThereIsFormula(imgTitle);
+    removeDataAueAttributesWhenThereIsFormula(imgSource);
+    removeDataAueAttributesWhenThereIsFormula(text2);
+    removeDataAueAttributesWhenThereIsFormula(imgTitle2);
+    removeDataAueAttributesWhenThereIsFormula(imgSource2);
 
     processRichTextContent(text);
     processRichTextContent(text2);

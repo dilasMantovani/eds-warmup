@@ -1,4 +1,4 @@
-import { decodeBase64, htmlToElement } from '../../scripts/scripts.js';
+import { htmlToElement, removeDataAueAttributesWhenThereIsFormula } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const openAll = block?.children[0];
@@ -40,6 +40,9 @@ export default function decorate(block) {
     secondText.remove();
     secondImage.remove();
 
+    removeDataAueAttributesWhenThereIsFormula(text);
+    removeDataAueAttributesWhenThereIsFormula(secondText);
+
     let textContent = '';
     let secondTextContent = '';
 
@@ -50,7 +53,7 @@ export default function decorate(block) {
         textContent = richtextDiv.innerHTML;
       } else if (textParagraph.textContent && textParagraph.textContent.trim()) {
         try {
-          textContent = decodeBase64(textParagraph.textContent.trim());
+          textContent = atob(textParagraph.textContent.trim());
         } catch (e) {
           textContent = text.innerHTML;
         }
@@ -64,7 +67,7 @@ export default function decorate(block) {
         secondTextContent = secondRichtextDiv.innerHTML;
       } else if (secondTextParagraph.textContent && secondTextParagraph.textContent.trim()) {
         try {
-          secondTextContent = decodeBase64(secondTextParagraph.textContent.trim());
+          secondTextContent = atob(secondTextParagraph.textContent.trim());
         } catch (e) {
           secondTextContent = secondText.innerHTML;
         }
