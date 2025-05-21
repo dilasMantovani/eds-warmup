@@ -93,7 +93,7 @@ export default function decorate(block) {
             <ul class="splide__list">
               ${texts?.map((text, index) => `<li class="splide__slide">
                           <div class="splide__slide__container text-and-image-1-1">
-                            <div>${decodeBase64(text.textContent)}</div>
+                            ${handleText(text)}
                             ${handleImage(images[index])}
                           </div>
                         </li>`)?.join('')
@@ -111,7 +111,7 @@ export default function decorate(block) {
             <ul class="splide__list">
               ${texts?.map((text) => `<li class="splide__slide">
                           <div class="splide__slide__container">
-                            ${decodeBase64(text.textContent)}
+                            ${handleText(text)}
                           </div>
                         </li>`)?.join('')
         }
@@ -126,7 +126,7 @@ export default function decorate(block) {
     case 'one-text-many-images':
       block.innerHTML += `
         <div class="text__container">
-            ${decodeBase64(texts[0].textContent)}
+            ${handleText(texts[0])}
         </div>
         <div class="splide" role="group">
           ${arrowsHTML}
