@@ -786,7 +786,7 @@
       {
         "component": "text",
         "name": "title",
-        "label": "Título"
+        "label": "Título."
       },
       {
         "component": "select",
