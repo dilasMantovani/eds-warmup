@@ -261,3 +261,9 @@ export function decodeBase64(base64) {
   const decoder = new TextDecoder(); // default is utf-8
   return decoder.decode(bytes);
 }
+
+export function handleRichTextElement(textElement) {
+  const elementToInjectHTML = textElement?.querySelector("div:last-child");
+  elementToInjectHTML.innerHTML = decodeBase64(textElement?.textContent)
+  return textElement?.outerHTML;
+}

@@ -1,10 +1,12 @@
  .titulo{
     color: #00368c;
     h1,h2,h3,h4,h5,h6{
-        font-weight: 600;
         margin-bottom: 0.5rem;
         i{
             margin-right: 5px ;
+        }
+        strong{
+            font-weight: 600; 
         }
     }
     &.background{
