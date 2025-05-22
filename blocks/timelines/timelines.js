@@ -54,11 +54,14 @@ export default function decorate(block) {
     const imgTitle2 = child?.children[8];
     const imgSource2 = child?.children[9];
 
+
     processRichTextContent(text);
     processRichTextContent(text2);
 
     title.className = 'timeline-item-title';
     subtitle.className = 'timeline-item-subtitle';
+    title.innerHTML = decodeBase64(title?.textContent)
+    subtitle.innerHTML = decodeBase64(subtitle?.textContent)
 
     text.className = 'timeline-item-text';
     image.className = 'timeline-item-image';
