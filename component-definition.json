@@ -72,7 +72,6 @@
                 "template": {
                   "model": "section",
                   "filter": "section"
-
                 }
               }
             }
@@ -204,12 +203,12 @@
                   "classes": "default",
                   "startAt": "right",
                   "filter": "timelines",
-                  "item0":{
+                  "item0": {
                     "name": "TimelineItem",
                     "model": "timelineItem",
-                    "title": "Linha do tempo",
-                    "titleType":"h2",
-                    "subtitle": "Lorem",
+                    "title": "PGgzIGNsYXNzPSJqb2RpdC1wYXJhZ3JhcGgiPkxpbmhhIGRvIHRlbXBvPC9oMz4=",
+                    "titleType": "h2",
+                    "subtitle": "PHAgY2xhc3M9ImpvZGl0LXBhcmFncmFwaCI+PC9wPjxwIGNsYXNzPSJqb2RpdC1wYXJhZ3JhcGgiPkxvcmVtPC9wPg==",
                     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam turpis lectus, aliquam et feugiat eget, mollis non arcu. Sed sodales suscipit pellentesque. Duis ac magna efficitur, fringilla arcu eu, commodo neque. Donec lectus ligula, lacinia quis lacinia sed, vehicula in elit. Sed in condimentum lacus, eu auctor erat. Morbi vel sapien mi. Curabitur elit tellus, tempus eget commodo eget, mollis sagittis erat. Proin condimentum lorem sed dignissim placerat. Sed finibus suscipit nunc vel aliquet. Duis gravida condimentum dapibus.",
                     "key-value": true
                   }
@@ -228,9 +227,9 @@
                 "template": {
                   "name": "TimelineItem",
                   "model": "timelineItem",
-                  "title": "Linha do tempo",
-                  "titleType":"h2",
-                  "subtitle": "Lorem",
+                  "titleType": "h2",
+                  "title": "PGgzIGNsYXNzPSJqb2RpdC1wYXJhZ3JhcGgiPkxpbmhhIGRvIHRlbXBvPC9oMz4=",
+                  "subtitle": "PHAgY2xhc3M9ImpvZGl0LXBhcmFncmFwaCI+PC9wPjxwIGNsYXNzPSJqb2RpdC1wYXJhZ3JhcGgiPkxvcmVtPC9wPg==",
                   "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam turpis lectus, aliquam et feugiat eget, mollis non arcu. Sed sodales suscipit pellentesque. Duis ac magna efficitur, fringilla arcu eu, commodo neque. Donec lectus ligula, lacinia quis lacinia sed, vehicula in elit. Sed in condimentum lacus, eu auctor erat. Morbi vel sapien mi. Curabitur elit tellus, tempus eget commodo eget, mollis sagittis erat. Proin condimentum lorem sed dignissim placerat. Sed finibus suscipit nunc vel aliquet. Duis gravida condimentum dapibus.",
                   "key-value": true
                 }
@@ -263,19 +262,19 @@
                 "template": {
                   "name": "Sanfona",
                   "model": "sanfona",
-                  "filter":"sanfona",
-                  "classes":"default",
-                  "item0":{
+                  "filter": "sanfona",
+                  "classes": "default",
+                  "item0": {
                     "name": "sanfonaItem",
                     "model": "sanfonaItem",
-                    "headerText":"Header da seção 1 ",
-                    "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
+                    "headerText": "Header da seção 1 ",
+                    "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
                   },
-                  "item1":{
+                  "item1": {
                     "name": "sanfonaItem",
                     "model": "sanfonaItem",
-                    "headerText":"Header da seção 2",
-                    "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
+                    "headerText": "Header da seção 2",
+                    "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
                   }
                 }
               }
@@ -292,7 +291,7 @@
                 "template": {
                   "name": "SanfonaItem",
                   "model": "sanfonaItem",
-                  "headerText":"Header da seção"
+                  "headerText": "Header da seção"
                 }
               }
             }
@@ -573,7 +572,7 @@
                 "template": {
                   "name": "Galeria",
                   "model": "galeria",
-                  "filter":"galeria",
+                  "filter": "galeria",
                   "classes": "default",
                   "variant": "text-only"
                 }
@@ -592,7 +591,7 @@
                   "name": "Texto da galeria",
                   "model": "galeriaItemTxt",
                   "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor.</p>",
-                  "type":"txt"
+                  "type": "txt"
                 }
               }
             }
@@ -608,7 +607,7 @@
                 "template": {
                   "name": "Imagem da galeria",
                   "model": "galeriaItemImg",
-                  "type":"img"
+                  "type": "img"
                 }
               }
             }
@@ -642,35 +641,35 @@
                   "name": "Folha De Creditos",
                   "model": "folhaDeCreditos",
                   "classes": "default",
-                  "tituloDaAula":"Titulo da aula",
+                  "tituloDaAula": "Titulo da aula",
                   "filter": "folhaDeCreditos",
-                  "item0":{
+                  "item0": {
                     "name": "Direitos Reservados",
                     "model": "direitosReservados",
                     "direitosReservados": "<p><strong>© 2025 por Editora e Distribuidora Educacional S.A.</strong><br>Todos os direitos reservados. Nenhuma parte desta publicação poderá ser reproduzida ou transmitida de qualquer modo ou por qualquer outro meio, eletrônico ou mecânico, incluindo fotocópia, gravação ou qualquer outro tipo de sistema de armazenamento e transmissão de informação, sem prévia autorização, por escrito, da Editora e Distribuidora Educacional S.A.<br></p>",
                     "type": "direitosReservados"
                   },
-                  "item1":{
+                  "item1": {
                     "name": "Informacoes Dos Responsaveis",
                     "model": "informacoesDosResponsaveis",
                     "informacoesDosResponsaveis": "<p><strong>Presidência</strong><br>John Doe<br></p>",
                     "type": "informacoesDosResponsaveis"
                   },
-                  "item3":{
+                  "item3": {
                     "name": "Disclaimer",
                     "model": "disclaimer",
                     "titulo": "Imagens",
                     "disclaimer": "<p>Adaptadas de Shutterstock e iStock.<br>Todos os esforços foram empregados para localizar os detentores dos direitos autorais das imagens reproduzidas neste livro; qualquer eventual omissão será corrigida em futuras edições.<br></p>",
                     "type": "disclaimer"
                   },
-                  "item4":{
+                  "item4": {
                     "name": "Disclaimer",
                     "model": "disclaimer",
                     "titulo": "Conteúdo em websites",
                     "disclaimer": "<p>Os endereços de websites listados neste livro podem ser alterados ou desativados a qualquer momento pelos seus mantenedores. Sendo assim, a Editora não se responsabiliza pelo conteúdo de terceiros.</p>",
                     "type": "disclaimer"
                   },
-                  "item5":{
+                  "item5": {
                     "name": "Ficha Catalografica",
                     "model": "fichaCatalografica",
                     "titulo": "Dados Internacionais de Catalogação na Publicação (CIP)",
@@ -678,7 +677,7 @@
                     "CDD": "381.32",
                     "type": "fichaCatalografica"
                   },
-                  "item6":{
+                  "item6": {
                     "name": "Rodape Folha De Creditos",
                     "model": "rodapeFolhaDeCreditos",
                     "rodape": "<p>2025<br>Editora e Distribuidora Educacional S.A.<br>Avenida Paris, 675 – Parque Residencial João Piza<br>CEP: 86041-100 — Londrina — PR<br>e-mail: editora.educacional@kroton.com.br<br>Homepage: http://www.kroton.com.br/<br></p>",
@@ -717,10 +716,10 @@
                 "template": {
                   "name": "Olho",
                   "model": "olho",
-                  "variant":"with-title",
-                  "title":"Título e texto lateral",
-                  "content":"PHA+TG9yZW0gSXBzdW08L3A+",
-                  "icon":"coffee"
+                  "variant": "with-title",
+                  "title": "Título e texto lateral",
+                  "content": "PHA+TG9yZW0gSXBzdW08L3A+",
+                  "icon": "coffee"
                 }
               }
             }
@@ -736,19 +735,19 @@
                 "template": {
                   "name": "Abas",
                   "model": "abas",
-                  "filter":"abas",
-                  "classes":"default",
-                  "item0":{
+                  "filter": "abas",
+                  "classes": "default",
+                  "item0": {
                     "name": "abaItem",
                     "model": "abaItem",
                     "headerText": "Título da aba 1",
-                    "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
+                    "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
                   },
-                  "item2":{
+                  "item2": {
                     "name": "abaItem",
                     "model": "abaItem",
                     "headerText": "Título da aba 2",
-                    "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
+                    "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
                   }
                 }
               }
@@ -765,8 +764,8 @@
                 "template": {
                   "name": "AbaItem",
                   "model": "abaItem",
-                  "headerText":"Título da aba",
-                  "text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
+                  "headerText": "Título da aba",
+                  "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis velit a diam blandit euismod a laoreet dolor. Ut iaculis est non odio maximus, vel commodo eros molestie. Mauris tincidunt erat a arcu sodales, ut pharetra dui sodales.</p>"
                 }
               }
             }
@@ -813,11 +812,11 @@
                 "template": {
                   "name": "Indice",
                   "model": "indice",
-                  "filter":"indice",
-                  "classes":"default",
-                  "title":"Título",
+                  "filter": "indice",
+                  "classes": "default",
+                  "title": "Título",
                   "titleType": "h4",
-                  "item0":{
+                  "item0": {
                     "name": "indiceItem",
                     "model": "indiceItem",
                     "titulo": "PlaceHolder"
@@ -837,7 +836,7 @@
                 "template": {
                   "name": "indiceItem",
                   "model": "indiceItem",
-                  "titulo":"Placeholder"
+                  "titulo": "Placeholder"
                 }
               }
             }
