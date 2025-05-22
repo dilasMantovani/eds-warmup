@@ -223,7 +223,7 @@
     "id": "timelineItem",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "name": "title",
         "label": "Titulo"
       },
@@ -256,10 +256,16 @@
             "name": "h6",
             "value": "h6"
           }
-        ]
+        ],
+        "condition": {
+          "===": [
+            false,
+            true
+          ]
+        }
       },
       {
-        "component": "text",
+        "component": "richtext",
         "name": "subtitle",
         "label": "Subtítulo"
       },
