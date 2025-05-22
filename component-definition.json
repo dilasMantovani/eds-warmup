@@ -450,7 +450,8 @@
                   "name": "Titulo",
                   "model": "titulo",
                   "classes": "default",
-                  "title": "PGgxIGNsYXNzPSJqb2RpdC1wYXJhZ3JhcGgiPlTDrXR1bG88L2gxPg==",
+                  "title": "Título",
+                  "titleType": "h2",
                   "iconVariant": "solid"
                 }
               }
