@@ -40,12 +40,18 @@ export default function decorate(block) {
     });
 
     let isThefirstError = true; // esse booleano é pq da um erro 'fake', então esse não precisa ser enviado
+    let isThefirstTimeShowingDuration = true; // esse booleano é pq da um erro 'fake', então esse não precisa ser enviado
     const intervalId = setInterval(() => {
       if (mdstrmPlayer) {
-        // console.log({ currentTime: mdstrmPlayer?.currentTime, duration: mdstrmPlayer?.duration, mediastreamId: mediastreamId  })
         window.parent.postMessage(['onPlayerReady', { mediastreamId }], '*');
         mdstrmPlayer.on('seeked', () => { window.parent.postMessage(['onSeeked', { mediastreamId, time: mdstrmPlayer?.currentTime }], '*'); });
-        mdstrmPlayer.on('timeupdate', (time) => { window.parent.postMessage(['onTimeUpdate', { mediastreamId, time }], '*'); });
+        mdstrmPlayer.on('timeupdate', (time) => {
+          window.parent.postMessage(['onTimeUpdate', { mediastreamId, time }], '*');
+          if (isThefirstTimeShowingDuration) {
+            window.parent.postMessage(['videoDuration', { mediastreamId: mediastreamId, duration: mdstrmPlayer?.duration }], '*');
+            isThefirstTimeShowingDuration = false;
+          }
+        },);
         mdstrmPlayer.on('error', (error) => {
           if (isThefirstError) {
             isThefirstError = false;
