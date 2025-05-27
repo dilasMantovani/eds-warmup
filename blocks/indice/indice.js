@@ -1,4 +1,5 @@
 import { enhancedIsInEditor, htmlToElement } from '../../scripts/scripts.js';
+import { decodeBase64, handleRichTextElement } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
   const title = block.children[0];
@@ -10,7 +11,7 @@ export default function decorate(block) {
   image.remove();
 
   const indiceItemList = Array.from(block?.children)?.map((element) => {
-    const title = element?.children[0]?.textContent;
+    const title = decodeBase64(element?.children[0]?.textContent);
     const linkTo = element?.children[1]?.textContent;
     element.style.display = 'none';
     return { title, linkTo };

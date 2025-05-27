@@ -1890,7 +1890,7 @@
         ]
       },
       {
-        "component": "text",
+        "component": "richtext",
         "name": "title",
         "label": "Título",
         "valueType": "string"
