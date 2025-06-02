@@ -1,6 +1,23 @@
 import { decodeBase64 } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
+
+  // o primeiro elemento será sempre a propriedade startAt
+  const startAtElement = block?.children[0];
+  const id = block?.children[1];
+  const startAtValue = startAtElement.firstElementChild.firstElementChild.innerHTML;
+
+  // removendo do DOM pois é apenas uma propriedade,
+  startAtElement.remove();
+  
+  console.log(id?.querySelectorAll("div")?.length)
+
+  if (id?.querySelectorAll("div")?.length < 3) {
+    id.remove();
+    block.setAttribute("id", id?.textContent)
+  }
+
+
   const observer = new IntersectionObserver(((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting === true) {
@@ -30,12 +47,6 @@ export default function decorate(block) {
     });
   }
 
-  // o primeiro elemento será sempre a propriedade startAt
-  const startAtElement = block?.children[0];
-  const startAtValue = startAtElement.firstElementChild.firstElementChild.innerHTML;
-
-  // removendo do DOM pois é apenas uma propriedade,
-  startAtElement.remove();
   let i = startAtValue === 'right' ? 0 : 1;
 
   for (const child of block?.children) {
