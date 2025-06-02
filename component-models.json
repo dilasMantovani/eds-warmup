@@ -727,7 +727,8 @@
       {
         "component": "text",
         "name": "businessKey",
-        "label": "businessKey"
+        "label": "Identificador do componente",
+        "description": "Valor que pode ser usado em âncoras"
       },
       {
         "component": "text",
@@ -1807,7 +1808,8 @@
       {
         "component": "text",
         "name": "businessKey",
-        "label": "businessKey"
+        "label": "Identificador do componente",
+        "description": "Valor que pode ser usado em âncoras"
       },
       {
         "component": "text",
