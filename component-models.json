@@ -1949,7 +1949,7 @@
     "id": "indiceItem",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "name": "titulo",
         "label": "Título",
         "valueType": "string"
