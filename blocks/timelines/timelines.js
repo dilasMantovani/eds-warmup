@@ -10,8 +10,6 @@ export default function decorate(block) {
   // removendo do DOM pois é apenas uma propriedade,
   startAtElement.remove();
   
-  console.log(id?.querySelectorAll("div")?.length)
-
   if (id?.querySelectorAll("div")?.length < 3) {
     id.remove();
     block.setAttribute("id", id?.textContent)

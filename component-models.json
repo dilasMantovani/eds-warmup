@@ -1071,6 +1071,12 @@
         "name": "iconClosed",
         "label": "Ícone fechado",
         "description": "Icone do font awesome. Ex: circle-play,location-dot... Consulte todas as possibilidades em: https://fontawesome.com/search?o=r&m=free"
+      },
+      {
+        "component": "text",
+        "name": "id",
+        "label": "Identificador do componente",
+        "description": "Valor que pode ser usado em âncoras"
       }
     ]
   },
