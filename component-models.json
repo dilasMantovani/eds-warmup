@@ -1924,7 +1924,13 @@
             "name": "h6",
             "value": "h6"
           }
-        ]
+        ],
+        "condition": {
+          "===": [
+            false,
+            true
+          ]
+        }
       },
       {
         "component": "reference",

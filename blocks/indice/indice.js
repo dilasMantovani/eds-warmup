@@ -38,6 +38,7 @@ export default function decorate(block) {
   const contentContainer = document.createElement('div');
   contentContainer.classList.add('capa__box__content');
   title.classList.add('capa__box__content__title');
+  title.innerHTML = decodeBase64(title.textContent)
   contentContainer.append(title);
 
   const anchorList = document.createElement('div');

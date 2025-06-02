@@ -814,12 +814,12 @@
                   "model": "indice",
                   "filter": "indice",
                   "classes": "default",
-                  "title": "Título",
+                  "title": "PGg0PlTDrXR1bG88L2g0Pg==",
                   "titleType": "h4",
                   "item0": {
                     "name": "indiceItem",
                     "model": "indiceItem",
-                    "titulo": "PlaceHolder"
+                    "titulo": "PHA+UGxhY2Vob2xkZXIyPC9wPg=="
                   }
                 }
               }
@@ -836,7 +836,7 @@
                 "template": {
                   "name": "indiceItem",
                   "model": "indiceItem",
-                  "titulo": "Placeholder"
+                  "titulo": "PHA+UGxhY2Vob2xkZXIyPC9wPg=="
                 }
               }
             }
