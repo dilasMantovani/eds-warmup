@@ -8,7 +8,7 @@ export default function decorate(block) {
 
   if (id?.querySelectorAll("div")?.length < 3) {
     id.remove();
-    block.setAttribute("id", id?.textContent)
+    block.setAttribute("id", id?.textContent?.trim())
   }
   const openAllText = openAll?.textContent?.trim() ? openAll?.textContent?.trim() : 'false';
   const iconOpenText = iconOpen?.textContent?.trim();

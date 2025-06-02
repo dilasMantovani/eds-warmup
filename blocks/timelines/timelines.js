@@ -12,7 +12,7 @@ export default function decorate(block) {
   
   if (id?.querySelectorAll("div")?.length < 3) {
     id.remove();
-    block.setAttribute("id", id?.textContent)
+    block.setAttribute("id", id?.textContent?.trim())
   }
 
 
