@@ -12,6 +12,11 @@ export default function decorate(block) {
   const image2 = block.children[7];
   const imgTitle2 = block.children[8];
   const description2 = block.children[9];
+  const id = block.children[9];
+  if (id) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
 
   const ctaText = cta?.textContent?.trim();
   const titleText = title?.textContent?.trim();
@@ -72,24 +77,24 @@ export default function decorate(block) {
                 <div class="modal-content-body">
                     ${textContent}
                     ${image?.querySelector('img')
-    ? `
+      ? `
                         <div class="modal-content-body-img-wrapper">
                             <p>${imgTitleText}</p>
                             ${image.innerHTML}
                             <p>${descriptionText}</p>
                         </div>
                         `
-    : ''}
+      : ''}
                     ${text2Content}
                     ${image2?.querySelector('img')
-    ? `
+      ? `
                         <div class="modal-content-body-img-wrapper">
                             <p>${imgTitleText2}</p>
                             ${image2.innerHTML}
                             <p>${descriptionText2}</p>
                         </div>
                         `
-    : ''}
+      : ''}
                 </div>
                 <div class="modal-content-footer">
                 
