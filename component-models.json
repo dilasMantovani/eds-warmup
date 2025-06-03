@@ -1903,7 +1903,13 @@
       {
         "component": "text",
         "name": "captionLink",
-        "label": "captionLink"
+        "label": "captionLink",
+        "condition": {
+          "===": [
+            false,
+            true
+          ]
+        }
       },
       {
         "component": "text",
@@ -1911,12 +1917,12 @@
         "label": "size"
       },
       {
-        "component": "text",
+        "component": "richtext",
         "name": "title",
         "label": "Título do vídeo"
       },
       {
-        "component": "text",
+        "component": "richtext",
         "name": "description",
         "label": "Descrição do vídeo"
       }
