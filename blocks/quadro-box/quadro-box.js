@@ -1,6 +1,12 @@
 import { decodeBase64 } from "../../scripts/scripts.js";
 
 export default async function decorate(block) {
+  const id = block.children[1];
+  if (id && id?.querySelectorAll("div")?.length < 3) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
+
   const originalBlockChildren = Array.from(block.children);
 
   const numColumnsRow = originalBlockChildren[0];
