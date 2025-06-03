@@ -2,6 +2,12 @@ import { decodeBase64, isInEditor } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const variant = block?.children[0];
+  const id = block?.children[1];
+  if (id && id?.querySelectorAll("div")?.length < 3) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
+
   const variantText = variant?.textContent?.trim();
   variant.remove();
 
