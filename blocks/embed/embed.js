@@ -2,6 +2,11 @@ import { htmlToElement, isInEditor } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const code = block.children[0]?.textContent?.replace(/(\s|&nbsp;)+/g, ' ').trim();
+  const id = block.children[1];
+  if (id) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
   let securityCheckPassed = true;
   const forbiddenTags = ['SCRIPT', 'STYLE'];
   const allowedHostsForIframe = ['youtube', 'google', 'canva', 'genially', 'mdstrm', 'vimeo', 'twitter', 'instagram', 'facebook', 'giphy'];
