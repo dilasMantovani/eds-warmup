@@ -962,6 +962,12 @@
         "name": "uniqueStyle",
         "label": "Estilo único",
         "description": "O código CSS inserido neste campo será aplicado unicamente neste componente"
+      },
+      {
+        "component": "text",
+        "name": "id",
+        "label": "Identificador do componente",
+        "description": "Valor que pode ser usado em âncoras"
       }
     ]
   },

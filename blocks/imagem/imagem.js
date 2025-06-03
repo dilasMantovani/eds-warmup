@@ -7,6 +7,11 @@ export default function decorate(block) {
   const zoomIn = block.children[3];
   const openModal = block.children[4];
   const uniquecss = block.children[5];
+  const id = block.children[6];
+  if (id) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
 
   const titleText = title?.textContent.trim();
   const descriptionText = description?.textContent.trim();
