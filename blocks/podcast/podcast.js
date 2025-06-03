@@ -17,7 +17,7 @@ export default function decorate(block) {
     block.setAttribute("id", businessKey)
   }
 
-  if (title) {
+  if (title && title.textContent.trim()) {
     block.append(htmlToElement(`${decodeBase64(title?.querySelector('p')?.innerHTML)}`));
   }
 
@@ -63,7 +63,7 @@ export default function decorate(block) {
     }, 1500);
   }
 
-  if (description) {
+  if (description && description.textContent.trim()) {
     block.append(htmlToElement(`${decodeBase64(description?.querySelector('p')?.innerHTML)}`));
   }
 }
