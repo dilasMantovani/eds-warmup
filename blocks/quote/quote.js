@@ -6,6 +6,11 @@ export default function decorate(block) {
   let quoteText = '';
   const quoteAuthor = block.children[3]?.textContent?.trim();
   const quoteIcon = block.children[4]?.textContent?.trim();
+  const id = block.children[5];
+  if (id) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
 
   const content = block.children[2];
   if (content) {
