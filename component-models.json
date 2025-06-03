@@ -1774,6 +1774,12 @@
             "value": "deep-purple"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "id",
+        "label": "Identificador do componente",
+        "description": "Valor que pode ser usado em âncoras"
       }
     ]
   },

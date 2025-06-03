@@ -1,6 +1,12 @@
 import { decodeBase64, htmlToElement } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
+  const id = block?.children[0];
+  if (id && id?.querySelectorAll("div")?.length < 3) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
+
   const tabs = [];
 
   Array.from(block?.children).forEach((element, index) => {
