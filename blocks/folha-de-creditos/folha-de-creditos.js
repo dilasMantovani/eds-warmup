@@ -1,4 +1,4 @@
-import { enhancedIsInEditor } from '../../scripts/scripts.js';
+import { enhancedIsInEditor, inIFrame } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const titulo = block.children[0];
@@ -53,7 +53,7 @@ export default function decorate(block) {
   block.append(folha);
 
   setTimeout(() => {
-    if (enhancedIsInEditor()) {
+    if (enhancedIsInEditor() || inIFrame()) {
       capa.classList.add('isInEditor');
     }
   }, 1500);

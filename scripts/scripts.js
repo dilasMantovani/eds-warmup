@@ -267,3 +267,7 @@ export function handleRichTextElement(textElement) {
   elementToInjectHTML.innerHTML = decodeBase64(textElement?.textContent)
   return textElement?.outerHTML;
 }
+
+export function inIFrame() {
+    return window.location !== window.parent.location
+}

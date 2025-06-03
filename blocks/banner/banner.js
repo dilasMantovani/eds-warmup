@@ -1,4 +1,4 @@
-import { decodeBase64, enhancedIsInEditor } from '../../scripts/scripts.js';
+import { decodeBase64, enhancedIsInEditor, inIFrame } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const content = block.children[0];
@@ -45,7 +45,8 @@ export default function decorate(block) {
   box.innerHTML = contentText;
 
   setTimeout(() => {
-    if (enhancedIsInEditor()) {
+    inIFrame();
+    if (enhancedIsInEditor() || inIFrame()) {
       capa.classList.add('isInEditor');
     }
   }, 1500);
