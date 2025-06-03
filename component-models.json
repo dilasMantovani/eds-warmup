@@ -2062,6 +2062,12 @@
         "name": "bg",
         "label": "Imagem de fundo da capa",
         "multi": false
+      },
+      {
+        "component": "text",
+        "name": "id",
+        "label": "Identificador do componente",
+        "description": "Valor que pode ser usado em âncoras"
       }
     ]
   },

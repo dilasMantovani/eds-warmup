@@ -3,6 +3,11 @@ import { decodeBase64, enhancedIsInEditor } from '../../scripts/scripts.js';
 export default function decorate(block) {
   const content = block.children[0];
   const bg = block.children[1];
+  const id = block.children[2];
+  if (id) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
 
   content.remove();
   bg.remove();
