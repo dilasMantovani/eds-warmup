@@ -12,7 +12,7 @@ export default function decorate(block) {
   const image2 = block.children[7];
   const imgTitle2 = block.children[8];
   const description2 = block.children[9];
-  const id = block.children[9];
+  const id = block.children[10];
   if (id) {
     id.remove();
     block.setAttribute("id", id?.textContent?.trim())
