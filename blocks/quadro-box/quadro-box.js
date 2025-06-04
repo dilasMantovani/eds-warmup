@@ -37,9 +37,11 @@ export default async function decorate(block) {
     const imageAltAuthoredCell = cells[1];
     const contentTextAuthoredCell = cells[2];
     const itemBackgroundColorAuthoredCell = cells[3];
+    const imgTitle = cells[4];
+    const imgDescription = cells[5];
 
     const imageAltText = imageAltAuthoredCell?.textContent.trim();
-    const itemSpecificBgColor = itemBackgroundColorAuthoredCell?.textContent.trim() || '#003366';
+    const itemSpecificBgColor = itemBackgroundColorAuthoredCell?.textContent.trim() || 'rgba(0,0,0,0)';
 
     itemDiv.style.backgroundColor = itemSpecificBgColor;
 

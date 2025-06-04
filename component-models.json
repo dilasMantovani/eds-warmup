@@ -2074,6 +2074,22 @@
         "name": "id",
         "label": "Identificador do componente",
         "description": "Valor que pode ser usado em âncoras"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
       }
     ]
   },
@@ -2104,6 +2120,22 @@
         "name": "id",
         "label": "Identificador do componente",
         "description": "Valor que pode ser usado em âncoras"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Deep purple",
+            "value": "deep-purple"
+          }
+        ]
       }
     ]
   },
@@ -2131,6 +2163,17 @@
         "component": "text",
         "name": "itembackgroundcolor",
         "label": "Item Background Color"
+      },
+      {
+        "component": "text",
+        "name": "imgTitle",
+        "label": "Título da imagem"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Descrição da imagem",
+        "description": "Fonte da imagem, por exemplo"
       }
     ]
   }
