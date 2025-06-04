@@ -136,11 +136,18 @@
 
     .quadro-box-item-image {
       margin-top: 15px;
+
       img,
       picture img {
         width: 100%;
-        height: 100%;
         object-fit: contain;
+      }
+      p {
+        text-align: center;
+        font-size: 80%;
+        color: #6c757d;
+        margin: 10px 0;
+        line-height: 1;
       }
     }
 

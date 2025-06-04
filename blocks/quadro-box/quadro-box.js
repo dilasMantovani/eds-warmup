@@ -1,4 +1,4 @@
-import { decodeBase64 } from "../../scripts/scripts.js";
+import { decodeBase64, htmlToElement } from "../../scripts/scripts.js";
 
 export default async function decorate(block) {
   const id = block.children[1];
@@ -40,6 +40,7 @@ export default async function decorate(block) {
     const imgTitle = cells[4];
     const imgDescription = cells[5];
 
+
     const imageAltText = imageAltAuthoredCell?.textContent.trim();
     const itemSpecificBgColor = itemBackgroundColorAuthoredCell?.textContent.trim() || 'rgba(0,0,0,0)';
 
@@ -74,6 +75,9 @@ export default async function decorate(block) {
       const pictureElement = imageAuthoredCell.querySelector('picture');
       const imgElement = imageAuthoredCell.querySelector('img');
 
+      if(imgTitle){
+        imageWrapper.append(htmlToElement(`<p class="quadro-box-item-image-title">${imgTitle.textContent}</p>`))
+      }
       if (pictureElement) {
         imageWrapper.append(pictureElement.cloneNode(true));
       } else if (imgElement) {
@@ -89,6 +93,9 @@ export default async function decorate(block) {
           img.alt = imageAltText;
         }
         imageWrapper.append(img);
+      }
+      if(imgDescription){
+        imageWrapper.append(htmlToElement(`<p class="quadro-box-item-image-description">${imgDescription.textContent}</p>`))
       }
 
       if (imageWrapper.hasChildNodes()) {
