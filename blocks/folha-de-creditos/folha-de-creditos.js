@@ -1,9 +1,14 @@
-import { enhancedIsInEditor } from '../../scripts/scripts.js';
+import { enhancedIsInEditor, inIFrame } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const titulo = block.children[0];
   const tituloText = block.children[0].textContent;
   const imagemCapa = block.children[1];
+  const id = block.children[2];
+  if (id && id?.querySelectorAll("div")?.length < 3) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
 
   const capa = document.createElement('div');
   capa.classList.add('capa');
@@ -48,7 +53,7 @@ export default function decorate(block) {
   block.append(folha);
 
   setTimeout(() => {
-    if (enhancedIsInEditor()) {
+    if (enhancedIsInEditor() || inIFrame()) {
       capa.classList.add('isInEditor');
     }
   }, 1500);

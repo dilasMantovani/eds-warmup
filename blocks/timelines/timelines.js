@@ -1,6 +1,21 @@
 import { decodeBase64 } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
+
+  // o primeiro elemento será sempre a propriedade startAt
+  const startAtElement = block?.children[0];
+  const id = block?.children[1];
+  const startAtValue = startAtElement.firstElementChild.firstElementChild.innerHTML;
+
+  // removendo do DOM pois é apenas uma propriedade,
+  startAtElement.remove();
+  
+  if (id?.querySelectorAll("div")?.length < 3) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
+
+
   const observer = new IntersectionObserver(((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting === true) {
@@ -30,12 +45,6 @@ export default function decorate(block) {
     });
   }
 
-  // o primeiro elemento será sempre a propriedade startAt
-  const startAtElement = block?.children[0];
-  const startAtValue = startAtElement.firstElementChild.firstElementChild.innerHTML;
-
-  // removendo do DOM pois é apenas uma propriedade,
-  startAtElement.remove();
   let i = startAtValue === 'right' ? 0 : 1;
 
   for (const child of block?.children) {
@@ -54,11 +63,14 @@ export default function decorate(block) {
     const imgTitle2 = child?.children[8];
     const imgSource2 = child?.children[9];
 
+
     processRichTextContent(text);
     processRichTextContent(text2);
 
     title.className = 'timeline-item-title';
     subtitle.className = 'timeline-item-subtitle';
+    title.innerHTML = decodeBase64(title?.textContent)
+    subtitle.innerHTML = decodeBase64(subtitle?.textContent)
 
     text.className = 'timeline-item-text';
     image.className = 'timeline-item-image';

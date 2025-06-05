@@ -1,4 +1,5 @@
-import { enhancedIsInEditor, htmlToElement } from '../../scripts/scripts.js';
+import { enhancedIsInEditor, htmlToElement, inIFrame } from '../../scripts/scripts.js';
+import { decodeBase64, handleRichTextElement } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
   const title = block.children[0];
@@ -10,7 +11,7 @@ export default function decorate(block) {
   image.remove();
 
   const indiceItemList = Array.from(block?.children)?.map((element) => {
-    const title = element?.children[0]?.textContent;
+    const title = decodeBase64(element?.children[0]?.textContent);
     const linkTo = element?.children[1]?.textContent;
     element.style.display = 'none';
     return { title, linkTo };
@@ -37,6 +38,7 @@ export default function decorate(block) {
   const contentContainer = document.createElement('div');
   contentContainer.classList.add('capa__box__content');
   title.classList.add('capa__box__content__title');
+  title.innerHTML = decodeBase64(title.textContent)
   contentContainer.append(title);
 
   const anchorList = document.createElement('div');
@@ -49,7 +51,7 @@ export default function decorate(block) {
   box.append(contentContainer);
 
   setTimeout(() => {
-    if (enhancedIsInEditor()) {
+    if (enhancedIsInEditor() || inIFrame()) {
       capa.classList.add('isInEditor');
     }
   }, 1500);

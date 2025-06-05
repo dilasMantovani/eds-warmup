@@ -1,8 +1,13 @@
-import { decodeBase64, enhancedIsInEditor } from '../../scripts/scripts.js';
+import { decodeBase64, enhancedIsInEditor, inIFrame } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const content = block.children[0];
   const bg = block.children[1];
+  const id = block.children[2];
+  if (id) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
 
   content.remove();
   bg.remove();
@@ -40,7 +45,8 @@ export default function decorate(block) {
   box.innerHTML = contentText;
 
   setTimeout(() => {
-    if (enhancedIsInEditor()) {
+    inIFrame();
+    if (enhancedIsInEditor() || inIFrame()) {
       capa.classList.add('isInEditor');
     }
   }, 1500);

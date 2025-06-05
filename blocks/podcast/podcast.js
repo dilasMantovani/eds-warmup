@@ -1,4 +1,4 @@
-import { htmlToElement, randomString } from '../../scripts/scripts.js';
+import { decodeBase64, htmlToElement, randomString } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const randomElementID = randomString(10);
@@ -8,13 +8,17 @@ export default function decorate(block) {
   const videoLink = block?.children[2]?.textContent?.trim();
   const captionLink = block?.children[3]?.textContent?.trim();
   const size = block?.children[4]?.textContent?.trim();
-  const title = block?.children[5]?.textContent?.trim();
-  const description = block?.children[6]?.textContent?.trim();
+  const title = block?.children[5];
+  const description = block?.children[6]
 
   block.textContent = '';
 
-  if (title) {
-    block.append(htmlToElement(`<p>${title}</p>`));
+  if(businessKey){
+    block.setAttribute("id", businessKey)
+  }
+
+  if (title && title.textContent.trim()) {
+    block.append(htmlToElement(`${decodeBase64(title?.querySelector('p')?.innerHTML)}`));
   }
 
   if (mediastreamId) {
@@ -65,7 +69,7 @@ export default function decorate(block) {
     }, 1500);
   }
 
-  if (description) {
-    block.append(htmlToElement(`<p>${description}</p>`));
+  if (description && description.textContent.trim()) {
+    block.append(htmlToElement(`${decodeBase64(description?.querySelector('p')?.innerHTML)}`));
   }
 }

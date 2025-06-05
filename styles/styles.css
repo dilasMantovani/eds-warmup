@@ -87,7 +87,7 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: unset;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 

@@ -5,6 +5,11 @@ export default function decorate(block) {
   const title = block?.children[1];
   const content = block?.children[2];
   const icon = block?.children[3];
+  const id = block?.children[4];
+  if (id) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
 
   const variantText = variant?.textContent?.trim();
   const titleText = title?.textContent?.trim();

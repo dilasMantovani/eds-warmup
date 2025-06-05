@@ -83,6 +83,14 @@
 .timelines .timeline-item-wrapper {
   background-color: unset;
 }
+.timelines .timeline-item h1,
+.timelines .timeline-item h2,
+.timelines .timeline-item h3,
+.timelines .timeline-item h4,
+.timelines .timeline-item h5,
+.timelines .timeline-item h6 {
+  margin: 0;
+}
 .timelines .timeline-item-title {
   padding: 0px 20px;
   background-color: #00368c;
@@ -93,7 +101,6 @@
 .timelines .timeline-item-title h4,
 .timelines .timeline-item-title h5,
 .timelines .timeline-item-title h6 {
-  font-size: 1.5rem;
   line-height: 3rem;
   color: white;
   text-transform: uppercase;

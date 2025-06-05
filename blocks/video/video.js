@@ -13,6 +13,10 @@ export default function decorate(block) {
 
   block.textContent = '';
 
+  if(businessKey){
+    block.setAttribute("id", businessKey)
+  }
+
   if (title) {
     block.append(htmlToElement(`<p>${title}</p>`));
   }

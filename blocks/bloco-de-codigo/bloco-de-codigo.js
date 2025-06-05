@@ -4,6 +4,11 @@ import { isInEditor } from '../../scripts/scripts.js';
 export default function decorate(block) {
   const language = block?.children[1]?.textContent?.trim();
   const lineNumber = parseInt(block?.children[2]?.textContent?.trim() || 1);
+  const id = block?.children[3];
+  if (id) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
 
   block?.children[1]?.remove();
   block?.children[1]?.remove();

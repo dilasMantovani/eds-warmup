@@ -1,6 +1,12 @@
-import { decodeBase64 } from "../../scripts/scripts.js";
+import { decodeBase64, htmlToElement } from "../../scripts/scripts.js";
 
 export default async function decorate(block) {
+  const id = block.children[1];
+  if (id && id?.querySelectorAll("div")?.length < 3) {
+    id.remove();
+    block.setAttribute("id", id?.textContent?.trim())
+  }
+
   const originalBlockChildren = Array.from(block.children);
 
   const numColumnsRow = originalBlockChildren[0];
@@ -31,9 +37,12 @@ export default async function decorate(block) {
     const imageAltAuthoredCell = cells[1];
     const contentTextAuthoredCell = cells[2];
     const itemBackgroundColorAuthoredCell = cells[3];
+    const imgTitle = cells[4];
+    const imgDescription = cells[5];
+
 
     const imageAltText = imageAltAuthoredCell?.textContent.trim();
-    const itemSpecificBgColor = itemBackgroundColorAuthoredCell?.textContent.trim() || '#003366';
+    const itemSpecificBgColor = itemBackgroundColorAuthoredCell?.textContent.trim() || 'rgba(0,0,0,0)';
 
     itemDiv.style.backgroundColor = itemSpecificBgColor;
 
@@ -66,6 +75,9 @@ export default async function decorate(block) {
       const pictureElement = imageAuthoredCell.querySelector('picture');
       const imgElement = imageAuthoredCell.querySelector('img');
 
+      if(imgTitle){
+        imageWrapper.append(htmlToElement(`<p class="quadro-box-item-image-title">${imgTitle.textContent}</p>`))
+      }
       if (pictureElement) {
         imageWrapper.append(pictureElement.cloneNode(true));
       } else if (imgElement) {
@@ -81,6 +93,9 @@ export default async function decorate(block) {
           img.alt = imageAltText;
         }
         imageWrapper.append(img);
+      }
+      if(imgDescription){
+        imageWrapper.append(htmlToElement(`<p class="quadro-box-item-image-description">${imgDescription.textContent}</p>`))
       }
 
       if (imageWrapper.hasChildNodes()) {

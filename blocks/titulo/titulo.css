@@ -2,11 +2,13 @@
   color: #00368c;
 }
 .titulo h1, .titulo h2, .titulo h3, .titulo h4, .titulo h5, .titulo h6 {
-  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 .titulo h1 i, .titulo h2 i, .titulo h3 i, .titulo h4 i, .titulo h5 i, .titulo h6 i {
   margin-right: 5px;
+}
+.titulo h1 strong, .titulo h2 strong, .titulo h3 strong, .titulo h4 strong, .titulo h5 strong, .titulo h6 strong {
+  font-weight: 600;
 }
 .titulo.background div div {
   width: fit-content;
