@@ -1861,6 +1861,12 @@
         "component": "aem-experience-fragment",
         "name": "xf",
         "label": "Experience fragment tabela"
+      },
+      {
+        "component": "reference",
+        "label": "Reference",
+        "name": "reference",
+        "valueType": "string"
       }
     ]
   },
