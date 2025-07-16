@@ -3,18 +3,17 @@
     background-image: url("https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png"), linear-gradient(45deg, #001f50 30%, #00368c 100%);
     overflow: hidden;
     position: relative;
-    min-height: 60vh;
     display: flex;
     align-items: center;
     background-attachment: fixed;
     padding-bottom: 100px;
     padding-top: 80px;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
     background-size: cover;
+    margin: 0 -16px;
+    @media (width >= 600px) {
+      margin: 0 -32px;
+    }
+
     &.isInEditor {
       min-height: unset;
     }
