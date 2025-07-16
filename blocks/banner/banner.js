@@ -6,7 +6,7 @@ export default function decorate(block) {
   const id = block.children[2];
   if (id) {
     id.remove();
-    block.setAttribute("id", id?.textContent?.trim())
+    block.setAttribute('id', id?.textContent?.trim());
   }
 
   content.remove();
@@ -18,7 +18,7 @@ export default function decorate(block) {
   if (bg?.querySelector('img')) {
     const computedStyle = window.getComputedStyle(capa);
     const { backgroundImage } = computedStyle;
-    capa.style.backgroundImage = backgroundImage.replace(/url\([^\)]+\)/g, `url(${bg.querySelector('img').getAttribute('src')})`);
+    capa.style.backgroundImage = backgroundImage.replace(/url\([^)]+\)/g, `url(${bg.querySelector('img').getAttribute('src')})`);
   }
 
   const box = document.createElement('div');

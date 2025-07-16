@@ -1,5 +1,20 @@
-import { enhancedIsInEditor, htmlToElement, inIFrame } from '../../scripts/scripts.js';
-import { decodeBase64, handleRichTextElement } from "../../scripts/scripts.js";
+import {
+  enhancedIsInEditor, htmlToElement, inIFrame, decodeBase64,
+} from '../../scripts/scripts.js';
+
+function handleIndiceItem(indiceItem) {
+  const anchor = document.createElement('a');
+
+  anchor.setAttribute('href', `#${indiceItem?.linkTo}`);
+  anchor.setAttribute('target', '_self');
+
+  const iconElement = htmlToElement('<i class="fa-solid fa-angle-right"></i>');
+  const title = htmlToElement(`<div><p>${indiceItem?.title}</p></div>`);
+  anchor.append(iconElement);
+  anchor.append(title);
+
+  return anchor;
+}
 
 export default function decorate(block) {
   const title = block.children[0];
@@ -11,10 +26,9 @@ export default function decorate(block) {
   image.remove();
 
   const indiceItemList = Array.from(block?.children)?.map((element) => {
-    const title = decodeBase64(element?.children[0]?.textContent);
     const linkTo = element?.children[1]?.textContent;
     element.style.display = 'none';
-    return { title, linkTo };
+    return { title: decodeBase64(element?.children[0]?.textContent), linkTo };
   });
 
   const capa = document.createElement('div');
@@ -38,7 +52,7 @@ export default function decorate(block) {
   const contentContainer = document.createElement('div');
   contentContainer.classList.add('capa__box__content');
   title.classList.add('capa__box__content__title');
-  title.innerHTML = decodeBase64(title.textContent)
+  title.innerHTML = decodeBase64(title.textContent);
   contentContainer.append(title);
 
   const anchorList = document.createElement('div');
@@ -55,18 +69,4 @@ export default function decorate(block) {
       capa.classList.add('isInEditor');
     }
   }, 1500);
-}
-
-function handleIndiceItem(indiceItem) {
-  const anchor = document.createElement('a');
-
-  anchor.setAttribute('href', `#${indiceItem?.linkTo}`);
-  anchor.setAttribute('target', '_self');
-
-  const iconElement = htmlToElement('<i class="fa-solid fa-angle-right"></i>');
-  const title = htmlToElement(`<div><p>${indiceItem?.title}</p></div>`);
-  anchor.append(iconElement);
-  anchor.append(title);
-
-  return anchor;
 }

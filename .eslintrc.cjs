@@ -8,15 +8,35 @@ module.exports = {
   env: {
     browser: true,
   },
+  globals: {
+    Jodit: true, Splide: true,
+  },
   parser: '@babel/eslint-parser',
   parserOptions: {
     allowImportExportEverywhere: true,
     sourceType: 'module',
     requireConfigFile: false,
   },
+  ignorePatterns: [
+    'styles/*.min.css',
+  ],
   rules: {
     'import/extensions': ['error', { js: 'always' }], // require js file extensions in imports
-    'linebreak-style': ['error', 'unix'], // enforce unix linebreaks
     'no-param-reassign': [2, { props: false }], // allow modifying properties of param
+    'max-len': 1,
+    'no-unused-vars': 1,
+    'linebreak-style': 0, // enforce unix linebreaks
+    'xwalk/max-cells': 0,
+    'no-plusplus': 0,
+    'xwalk/no-orphan-collapsible-fields': 0,
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          './build/**',
+        ],
+        peerDependencies: true,
+      },
+    ],
   },
 };

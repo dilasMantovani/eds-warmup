@@ -10,7 +10,7 @@ export default function decorate(block) {
   const id = block.children[6];
   if (id) {
     id.remove();
-    block.setAttribute("id", id?.textContent?.trim())
+    block.setAttribute('id', id?.textContent?.trim());
   }
 
   const titleText = title?.textContent.trim();
@@ -107,11 +107,11 @@ export default function decorate(block) {
   }
 
   if (uniquecssText) {
-    const id = randomString(6);
-    block.setAttribute('id', id);
+    const randomId = randomString(6);
+    block.setAttribute('id', randomId);
     const styleTag = document.createElement('style');
     styleTag.textContent = `
-        #${id}{
+        #${randomId}{
             ${uniquecssText}
         }`;
     block.append(styleTag);

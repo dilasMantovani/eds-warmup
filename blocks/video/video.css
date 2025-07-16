@@ -2,6 +2,7 @@
   margin-top: 40px;
   width: 100%;
 }
+
 .video p {
   text-align: center;
   font-size: 80%;
@@ -9,11 +10,12 @@
   margin: 10px 0;
   line-height: 1;
 }
+
 .video .plyr_ms {
   position: relative !important;
   z-index: 0 !important;
 }
 
 .video.deep-purple {
-  font-family: "Orbitron-Regular";
+  font-family: Orbitron-Regular;
 }

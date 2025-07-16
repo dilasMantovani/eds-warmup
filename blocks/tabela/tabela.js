@@ -23,7 +23,7 @@ export default function decorate(block) {
         toolbarAdaptive: false,
         buttons: 'bold,italic,fontsize,superscript,subscript,table',
       });
-      jodit.e.on('blur', (param) => {
+      jodit.e.on('blur', () => {
         content.querySelector('pre').textContent = `${jodit.value.replaceAll('border-collapse:', 'border-collapse: ')}`;
       });
     }

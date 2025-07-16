@@ -1,4 +1,4 @@
-import { decodeBase64 } from "../../scripts/scripts.js";
+import { decodeBase64 } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const variant = block?.children[0];
@@ -8,7 +8,7 @@ export default function decorate(block) {
   const id = block?.children[4];
   if (id) {
     id.remove();
-    block.setAttribute("id", id?.textContent?.trim())
+    block.setAttribute('id', id?.textContent?.trim());
   }
 
   const variantText = variant?.textContent?.trim();

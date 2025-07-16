@@ -44,7 +44,7 @@ figcaption {
   margin: 0;
 }
 
-@media (min-width: 350px) {
+@media (width >= 350px) {
   /**
    * The teaser component itself.
    * 1. Position context for children.
@@ -56,6 +56,7 @@ figcaption {
     padding-top: 100%; /* 2 */
     overflow: hidden; /* 3 */
   }
+
   /**
    * The teaser image.
    * 1. Absolute centering of the image inside the container.
@@ -66,25 +67,25 @@ figcaption {
     left: 50%; /* 1 */
     transform: translate(-50%, -50%); /* 1 */
   }
+
   /**
    * The teaser overlay. It acts as a container and is always fully visible.
    * Only its background color changes on hover/active states.
    */
   .teaser-overlay {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     transition: 0.2s ease-in-out;
   }
+
   /**
    * Overlay becomes transparent black when teaser is being hovered or active.
    */
   .teaser-overlay:hover,
   .teaser-overlay:active {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(0 0 0 / 80%);
   }
+
   /**
    * The teaser textual content container.
    * 1. Positioned off-screen as a default.
@@ -98,9 +99,10 @@ figcaption {
     right: 0;
     left: 0;
     padding: 0 20px 20px; /* 2 */
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     transition: inherit; /* 3 */
   }
+
   /**
    * When the teaser is being hovered or active, the content slide in from the
    * bottom.
@@ -109,6 +111,7 @@ figcaption {
   .teaser:active .teaser-meta {
     transform: translateY(-100%);
   }
+
   /**
    * The teaser title.
    * 1. `.teaser-meta` is off-screen but we want the title to remain visible at
@@ -124,6 +127,7 @@ figcaption {
     margin-bottom: 5px; /* 3 */
     transition: inherit;
   }
+
   /**
    * When teaser is being hovered or active, the title cancels its translation
    * to avoid having a huge gap between itself and the description. This acts as
@@ -134,6 +138,7 @@ figcaption {
     transform: translateY(0);
   }
 }
+
 * {
   box-sizing: border-box;
 }

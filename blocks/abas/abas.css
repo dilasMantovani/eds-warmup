@@ -2,9 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
+
 .abas .abas-header ul li a {
   padding: 0.2rem 1.5rem;
   cursor: pointer;
@@ -13,14 +14,17 @@
   line-height: 1.88;
   text-decoration: none;
 }
+
 .abas .abas-header ul li a:hover {
   color: #343a40;
 }
+
 .abas .abas-header ul li a.active {
   background-color: #007ABF;
   color: #fff;
   border-radius: 0.25rem;
 }
+
 .abas .hidden {
   display: none;
 }

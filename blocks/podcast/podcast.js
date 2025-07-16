@@ -5,16 +5,16 @@ export default function decorate(block) {
 
   const businessKey = block?.children[0]?.textContent?.trim();
   const mediastreamId = block?.children[1]?.textContent?.trim();
-  const videoLink = block?.children[2]?.textContent?.trim();
-  const captionLink = block?.children[3]?.textContent?.trim();
-  const size = block?.children[4]?.textContent?.trim();
+  // const videoLink = block?.children[2]?.textContent?.trim();
+  // const captionLink = block?.children[3]?.textContent?.trim();
+  // const size = block?.children[4]?.textContent?.trim();
   const title = block?.children[5];
-  const description = block?.children[6]
+  const description = block?.children[6];
 
   block.textContent = '';
 
-  if(businessKey){
-    block.setAttribute("id", businessKey)
+  if (businessKey) {
+    block.setAttribute('id', businessKey);
   }
 
   if (title && title.textContent.trim()) {
@@ -52,10 +52,10 @@ export default function decorate(block) {
         mdstrmPlayer.on('timeupdate', (time) => {
           window.parent.postMessage(['onTimeUpdate', { mediastreamId, time }], '*');
           if (isThefirstTimeShowingDuration) {
-            window.parent.postMessage(['videoDuration', { mediastreamId: mediastreamId, duration: mdstrmPlayer?.duration }], '*');
+            window.parent.postMessage(['videoDuration', { mediastreamId, duration: mdstrmPlayer?.duration }], '*');
             isThefirstTimeShowingDuration = false;
           }
-        },);
+        });
         mdstrmPlayer.on('error', (error) => {
           if (isThefirstError) {
             isThefirstError = false;

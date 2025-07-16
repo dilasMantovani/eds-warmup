@@ -1,5 +1,5 @@
 .indice .capa {
-  background-image: url(https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png);
+  background-image: url("https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png");
   background-color: #b5d4ed;
   overflow: hidden;
   position: relative;
@@ -15,25 +15,28 @@
   margin-left: -50vw;
   margin-right: -50vw;
 }
+
 .indice .capa.isInEditor {
   min-height: unset;
 }
+
 .indice .capa__box {
   background-color: #fff;
   width: 70%;
   max-width: 1200px;
   height: auto;
+  margin: 0 auto;
   margin-top: 60px !important;
   margin-bottom: 60px !important;
   border-radius: 10px;
-  box-shadow: 1px 2px 18px 12px rgba(60, 88, 112, 0.21);
+  box-shadow: 1px 2px 18px 12px rgb(60 88 112 / 21%);
   padding: 1rem;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
 }
+
 .indice .capa__box__content h1,
 .indice .capa__box__content h2,
 .indice .capa__box__content h3,
@@ -43,11 +46,13 @@
   margin: 0;
   text-transform: uppercase;
 }
+
 .indice .capa__box__content__anchor-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 .indice .capa__box__content__anchor-list a {
   line-height: 1.3;
   color: #3a3a3a;
@@ -59,39 +64,49 @@
   display: flex;
   gap: 3px;
 }
+
 .indice .capa__box__content__anchor-list a p {
   margin: 0;
 }
+
 .indice .capa__box__content__anchor-list a i {
   font-size: 12px;
   transform: translateY(4px);
 }
+
 .indice .capa__box__content__anchor-list a:hover {
   background-color: #c9c9c9;
 }
-@media (max-width: 992px) {
+
+@media (width <=992px) {
   .indice .capa {
     padding-top: 0;
     padding-bottom: 0;
   }
+
   .indice .capa__box {
     grid-template-columns: 1fr;
     padding: 1rem 30px;
   }
+
   .indice .capa__box__image picture {
     display: flex;
     width: 100%;
     justify-content: center;
   }
+
   .indice .capa__box__image picture img {
     max-width: 83%;
   }
+
   .indice .capa__box__content__title {
     display: flex;
     justify-content: center;
   }
 }
-@media (max-width: 767px) {
+
+@media (width <=767px) {
+
   .indice .capa__box__content__title h1,
   .indice .capa__box__content__title h2,
   .indice .capa__box__content__title h3,

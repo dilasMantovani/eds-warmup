@@ -1,4 +1,4 @@
-import { decodeBase64 } from "../../scripts/scripts.js";
+import { decodeBase64 } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const quoteType = block.children[0]?.textContent?.trim();
@@ -9,7 +9,7 @@ export default function decorate(block) {
   const id = block.children[5];
   if (id) {
     id.remove();
-    block.setAttribute("id", id?.textContent?.trim())
+    block.setAttribute('id', id?.textContent?.trim());
   }
 
   const content = block.children[2];

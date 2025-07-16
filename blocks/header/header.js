@@ -1,5 +1,5 @@
-import { getMetadata } from '../../scripts/aem.js';
-import { loadFragment } from '../fragment/fragment.js';
+// import { getMetadata } from '../../scripts/aem.js';
+// import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -90,7 +90,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
-export default async function decorate(block) {
+export default async function decorate() {
   // // load nav as fragment
   // const navMeta = getMetadata('nav');
   // const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
