@@ -54,6 +54,7 @@ function initializeJoditEditor(content, editor, onContainerReady) {
 
       onContainerReady(container);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Jodit error:', error);
     }
   }, 1000);

@@ -23,8 +23,8 @@ module.exports = {
   rules: {
     'import/extensions': ['error', { js: 'always' }], // require js file extensions in imports
     'no-param-reassign': [2, { props: false }], // allow modifying properties of param
-    'max-len': 1,
-    'no-unused-vars': 1,
+    'max-len': 0,
+    'no-unused-vars': 0,
     'linebreak-style': 0, // enforce unix linebreaks
     'xwalk/max-cells': 0,
     'no-plusplus': 0,
