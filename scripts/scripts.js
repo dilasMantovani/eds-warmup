@@ -249,11 +249,11 @@ export function decodeBase64(base64) {
   let text = null;
   try {
     text = atob(base64);
-  }catch(error){
+  } catch (error) {
     // string is not base64
     return base64;
   }
-    const length = text.length;
+  const length = text.length;
   const bytes = new Uint8Array(length);
   for (let i = 0; i < length; i++) {
     bytes[i] = text.charCodeAt(i);
@@ -269,5 +269,5 @@ export function handleRichTextElement(textElement) {
 }
 
 export function inIFrame() {
-    return window.location !== window.parent.location
+  return window.location !== window.parent.location
 }
