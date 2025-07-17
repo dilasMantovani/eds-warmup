@@ -29,19 +29,14 @@ export default function decorate(block) {
   function processRichTextContent(element) {
     const paragraphs = element.querySelectorAll('p');
     paragraphs.forEach((paragraph) => {
-      if (paragraph.textContent && paragraph.textContent.trim()) {
-        const richtextDiv = paragraph.closest('div[data-aue-type="richtext"]');
-        if (!richtextDiv) {
-          const decodedContent = decodeBase64(paragraph.textContent.trim());
-          paragraph.outerHTML = decodedContent;
-        }
-      }
+      if (paragraph.textContent && paragraph.textContent.trim()
+        && !paragraph.closest('div[data-aue-type="richtext"]')) paragraph.outerHTML = decodeBase64(paragraph.textContent.trim());
     });
   }
 
   let i = startAtValue === 'right' ? 0 : 1;
 
-  block?.children?.forEach((child) => {
+  Object.values(block?.children).forEach((child) => {
     if (i % 2 === 0) { child.className = 'timeline-item timeline-right invisible'; } else { child.className = 'timeline-item timeline-left invisible'; }
 
     const title = child?.children[0];
