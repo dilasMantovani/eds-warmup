@@ -2,34 +2,41 @@
   position: relative;
   user-select: none;
 }
+
 .comparador-de-imagens .comparison-slider {
   position: relative;
 }
+
 .comparador-de-imagens .comparison-slider img {
   max-width: unset;
 }
+
 .comparador-de-imagens .comparison-slider .overlay .overlay-wrapper {
   position: absolute;
   bottom: 20px;
   width: 250px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(0 0 0 / 40%);
   padding: 10px;
   box-sizing: border-box;
   color: #DDD;
   user-select: all;
 }
+
 .comparador-de-imagens .comparison-slider .overlay.right .overlay-wrapper {
   right: 20px;
   text-align: right;
 }
+
 .comparador-de-imagens .comparison-slider .overlay.left .overlay-wrapper {
   left: 20px;
 }
+
 .comparador-de-imagens .comparison-slider .divider {
   width: 2px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(255 255 255 / 20%);
 }
-.comparador-de-imagens .comparison-slider .divider:before {
+
+.comparador-de-imagens .comparison-slider .divider::before {
   content: "";
   position: absolute;
   width: 20px;
@@ -42,7 +49,8 @@
   transition: all 0.1s ease-in-out;
   border-radius: unset;
 }
-.comparador-de-imagens .comparison-slider .divider:after {
+
+.comparador-de-imagens .comparison-slider .divider::after {
   content: "";
   position: absolute;
   width: 12px;
@@ -54,23 +62,26 @@
   transform: rotate(45deg);
   transition: all 0.1s ease-in-out;
 }
-.comparador-de-imagens .comparison-slider .divider.draggable:before {
+
+.comparador-de-imagens .comparison-slider .divider.draggable::before {
   width: 30px;
   height: 30px;
   left: -14px;
   margin-top: -15px;
 }
-.comparador-de-imagens .comparison-slider .divider.draggable:after {
+
+.comparador-de-imagens .comparison-slider .divider.draggable::after {
   width: 20px;
   height: 20px;
   margin-top: -10px;
   background-color: #555;
 }
 
-.comparador-de-imagens.deep-purple .comparison-slider .divider:before {
+.comparador-de-imagens.deep-purple .comparison-slider .divider::before {
   background-color: #b982ff;
 }
-.comparador-de-imagens.deep-purple .comparison-slider .divider:after {
+
+.comparador-de-imagens.deep-purple .comparison-slider .divider::after {
   content: "";
   background-color: #b982ff;
 }

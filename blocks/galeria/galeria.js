@@ -1,11 +1,44 @@
 import { decodeBase64, isInEditor } from '../../scripts/scripts.js';
 
+function handleImage(imageElement) {
+  const img = imageElement?.children[0];
+  const title = imageElement?.children[1];
+  const desc = imageElement?.children[2];
+  const titleText = title?.textContent.trim();
+  const descText = desc?.textContent.trim();
+
+  title.remove();
+  desc.remove();
+
+  const pictureElement = img.querySelector('picture');
+  if (!pictureElement) return imageElement?.outerHTML;
+
+  const imgHeader = document.createElement('figcaption');
+  const imgFooter = document.createElement('figcaption');
+
+  imgHeader.textContent = titleText;
+  imgHeader.classList.add('img-header');
+  pictureElement.insertBefore(imgHeader, pictureElement.firstChild);
+
+  imgFooter.textContent = descText;
+  imgFooter.classList.add('img-footer');
+  pictureElement.appendChild(imgFooter);
+
+  return imageElement?.outerHTML;
+}
+
+function handleText(textElement) {
+  const elementToInjectHTML = textElement?.querySelector('div:last-child');
+  elementToInjectHTML.innerHTML = decodeBase64(textElement?.textContent);
+  return textElement?.outerHTML;
+}
+
 export default function decorate(block) {
   const variant = block?.children[0];
   const id = block?.children[1];
-  if (id && id?.querySelectorAll("div")?.length < 3) {
+  if (id && id?.querySelectorAll('div')?.length < 3) {
     id.remove();
-    block.setAttribute("id", id?.textContent?.trim())
+    block.setAttribute('id', id?.textContent?.trim());
   }
 
   const variantText = variant?.textContent?.trim();
@@ -67,8 +100,7 @@ export default function decorate(block) {
                           <div class="splide__slide__container">
                             ${handleImage(img)}
                           </div>
-                        </li>`)?.join('')
-        }
+                        </li>`)?.join('')}
             </ul>
           </div>
         </div>
@@ -84,8 +116,7 @@ export default function decorate(block) {
                           <div class="splide__slide__container">
                             ${handleText(text)}
                           </div>
-                        </li>`)?.join('')
-        }
+                        </li>`)?.join('')}
             </ul>
           </div>
         </div>
@@ -102,8 +133,7 @@ export default function decorate(block) {
                             ${handleText(text)}
                             ${handleImage(images[index])}
                           </div>
-                        </li>`)?.join('')
-        }
+                        </li>`)?.join('')}
             </ul>
           </div>
         </div>
@@ -119,8 +149,7 @@ export default function decorate(block) {
                           <div class="splide__slide__container">
                             ${handleText(text)}
                           </div>
-                        </li>`)?.join('')
-        }
+                        </li>`)?.join('')}
             </ul>
           </div>
         </div>
@@ -142,8 +171,7 @@ export default function decorate(block) {
                           <div class="splide__slide__container">
                             ${handleImage(img)}
                           </div>
-                        </li>`)?.join('')
-        }
+                        </li>`)?.join('')}
             </ul>
           </div>
         </div>
@@ -156,43 +184,10 @@ export default function decorate(block) {
   const elms = block.getElementsByClassName('splide');
 
   for (let i = 0; i < elms.length; i++) {
-    const splide = new Splide(elms[i], {
+    new Splide(elms[i], {
       rewind: true,
       rewindSpeed: 1000,
       pagination: true,
     }).mount();
   }
-}
-
-function handleImage(imageElement) {
-  const img = imageElement?.children[0];
-  const title = imageElement?.children[1];
-  const desc = imageElement?.children[2];
-  const titleText = title?.textContent.trim();
-  const descText = desc?.textContent.trim();
-
-  title.remove();
-  desc.remove();
-
-  const pictureElement = img.querySelector('picture');
-  if (!pictureElement) return imageElement?.outerHTML;
-
-  const imgHeader = document.createElement('figcaption');
-  const imgFooter = document.createElement('figcaption');
-
-  imgHeader.textContent = titleText;
-  imgHeader.classList.add('img-header');
-  pictureElement.insertBefore(imgHeader, pictureElement.firstChild);
-
-  imgFooter.textContent = descText;
-  imgFooter.classList.add('img-footer');
-  pictureElement.appendChild(imgFooter);
-
-  return imageElement?.outerHTML;
-}
-
-function handleText(textElement) {
-  const elementToInjectHTML = textElement?.querySelector("div:last-child");
-  elementToInjectHTML.innerHTML = decodeBase64(textElement?.textContent)
-  return textElement?.outerHTML;
 }

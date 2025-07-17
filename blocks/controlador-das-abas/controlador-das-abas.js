@@ -1,47 +1,3 @@
-export default function decorate(block) {
-  let tabsToRender = null;
-  if (block?.children[0]?.textContent?.trim() !== '') {
-    tabsToRender = block?.children[0]?.textContent?.trim()?.split(',');
-  }
-  let allTabSections;
-  if (tabsToRender) {
-    const selector = tabsToRender?.map((id) => `[data-tab-id="${id}"]`)?.join(',');
-    allTabSections = document.querySelectorAll(selector);
-  } else {
-    allTabSections = document.querySelectorAll('[data-tab-id]');
-  }
-
-  const id = block?.children[1]?.textContent?.trim();
-  console.log(id);
-
-  const tabData = Array.from(allTabSections)?.map((tabElement) => ({ tabId: tabElement.getAttribute('data-tab-id'), tabTitle: tabElement.getAttribute('data-tab-title') }));
-  let tabListItems = '';
-  tabData.forEach((tab) => {
-    tabListItems += `<li><a>${tab?.tabTitle}</a></li>`;
-  });
-
-  const outputHtml = `
-        <div class="controlador-das-abas-wrapper" id="${id}">
-            <ul tab-group="${tabData?.map((tab) => tab?.tabId)?.join(',')}">
-                ${tabData?.map((tab) => `<li>
-                                <a role="tab" tab-points-to="${tab?.tabId}">${tab?.tabTitle}</a>
-                            </li>`)?.join('')
-}
-            </ul>
-        </div>
-    `;
-
-  block.textContent = '';
-  block.innerHTML = outputHtml;
-
-  const tabs = block.querySelectorAll('[role="tab"]');
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', handleTabChange);
-  });
-
-  init(tabData);
-}
-
 function init(tabData) {
   if (!tabData) return;
 
@@ -69,4 +25,47 @@ function handleTabChange(e) {
     document.querySelector(`[data-tab-id="${tab?.tabId}"]`).classList.add('hidden');
     document.querySelector(`[tab-points-to="${tab?.tabId}"]`).classList.remove('active');
   });
+}
+
+export default function decorate(block) {
+  let tabsToRender = null;
+  if (block?.children[0]?.textContent?.trim() !== '') {
+    tabsToRender = block?.children[0]?.textContent?.trim()?.split(',');
+  }
+  let allTabSections;
+  if (tabsToRender) {
+    const selector = tabsToRender?.map((id) => `[data-tab-id="${id}"]`)?.join(',');
+    allTabSections = document.querySelectorAll(selector);
+  } else {
+    allTabSections = document.querySelectorAll('[data-tab-id]');
+  }
+
+  const id = block?.children[1]?.textContent?.trim();
+
+  const tabData = Array.from(allTabSections)?.map((tabElement) => ({ tabId: tabElement.getAttribute('data-tab-id'), tabTitle: tabElement.getAttribute('data-tab-title') }));
+  // eslint-disable-next-line no-unused-vars
+  let tabListItems = '';
+  tabData.forEach((tab) => {
+    tabListItems += `<li><a>${tab?.tabTitle}</a></li>`;
+  });
+
+  const outputHtml = `
+        <div class="controlador-das-abas-wrapper" id="${id}">
+            <ul tab-group="${tabData?.map((tab) => tab?.tabId)?.join(',')}">
+                ${tabData?.map((tab) => `<li>
+                                <a role="tab" tab-points-to="${tab?.tabId}">${tab?.tabTitle}</a>
+                            </li>`)?.join('')}
+            </ul>
+        </div>
+    `;
+
+  block.textContent = '';
+  block.innerHTML = outputHtml;
+
+  const tabs = block.querySelectorAll('[role="tab"]');
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', handleTabChange);
+  });
+
+  init(tabData);
 }

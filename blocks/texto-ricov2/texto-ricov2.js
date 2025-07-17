@@ -1,22 +1,9 @@
 import { enhancedIsInEditor } from '../../scripts/scripts.js';
 
-export default function decorate(block) {
-  if (!block?.children?.[0]) return;
-  console.log(block);
-  handleCustomRTE(block, block.children[0]);
-}
-
-function handleCustomRTE(block, rteField) {
-  const content = rteField;
-  content.style.display = 'none';
-  const editor = createEditor(content);
-  const mainContent = createMainContent(content);
-  let joditContainer;
-
-  initializeJoditEditor(content, editor, (container) => {
-    joditContainer = container;
-    setupEditButton(content, mainContent, joditContainer);
-  });
+function decodeContent(content) {
+  const preElement = content?.querySelector('pre');
+  if (!preElement?.textContent) return '';
+  return atob(preElement.textContent.trim());
 }
 
 function createEditor(content) {
@@ -34,10 +21,22 @@ function createMainContent(content) {
   return mainContent;
 }
 
-function decodeContent(content) {
-  const preElement = content?.querySelector('pre');
-  if (!preElement?.textContent) return '';
-  return atob(preElement.textContent.trim());
+function setupJoditEvents(jodit, content) {
+  jodit.e.on('blur', () => {
+    const preElement = content.querySelector('pre');
+    if (preElement) {
+      preElement.textContent = btoa(jodit?.value?.replaceAll('border-collapse:', 'border-collapse: '));
+    }
+  });
+}
+
+function initializeMathType(jodit) {
+  if (window.wrs_int_init && jodit?.places?.[0]) {
+    window.wrs_int_init(
+      jodit.places[0].editor,
+      jodit.places[0].container?.querySelector('.jodit-toolbar__box'),
+    );
+  }
 }
 
 function initializeJoditEditor(content, editor, onContainerReady) {
@@ -54,28 +53,31 @@ function initializeJoditEditor(content, editor, onContainerReady) {
       container.style.display = 'none';
 
       onContainerReady(container);
-      console.log(jodit);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Jodit error:', error);
     }
   }, 1000);
 }
 
-function setupJoditEvents(jodit, content) {
-  jodit.e.on('blur', () => {
-    const preElement = content.querySelector('pre');
-    if (preElement) {
-      preElement.textContent = btoa(jodit?.value?.replaceAll('border-collapse:', 'border-collapse: '));
-    }
-  });
+function createEditButton() {
+  const editButton = document.createElement('button');
+  editButton.classList.add('btn-edit');
+  editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+  return editButton;
 }
 
-function initializeMathType(jodit) {
-  if (window.wrs_int_init && jodit?.places?.[0]) {
-    window.wrs_int_init(
-      jodit.places[0].editor,
-      jodit.places[0].container?.querySelector('.jodit-toolbar__box'),
-    );
+function toggleEditMode(editMode, mainContent, joditContainer, editButton, content) {
+  if (editMode) {
+    mainContent.style.display = 'none';
+    joditContainer.style.display = 'block';
+    editButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    content.style.display = 'block';
+  } else {
+    mainContent.style.display = 'block';
+    joditContainer.style.display = 'none';
+    editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+    content.style.display = 'none';
   }
 }
 
@@ -97,25 +99,20 @@ function setupEditButton(content, mainContent, joditContainer) {
   }, 1500);
 }
 
-function createEditButton() {
-  const editButton = document.createElement('button');
-  editButton.classList.add('btn-edit');
-  editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
-  return editButton;
+function handleCustomRTE(block, rteField) {
+  const content = rteField;
+  content.style.display = 'none';
+  const editor = createEditor(content);
+  const mainContent = createMainContent(content);
+  let joditContainer;
+
+  initializeJoditEditor(content, editor, (container) => {
+    joditContainer = container;
+    setupEditButton(content, mainContent, joditContainer);
+  });
 }
 
-function toggleEditMode(editMode, mainContent, joditContainer, editButton, content) {
-  if (editMode) {
-    console.log('editMode');
-    mainContent.style.display = 'none';
-    joditContainer.style.display = 'block';
-    editButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    content.style.display = 'block';
-  } else {
-    console.log('not editMode');
-    mainContent.style.display = 'block';
-    joditContainer.style.display = 'none';
-    editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
-    content.style.display = 'none';
-  }
+export default function decorate(block) {
+  if (!block?.children?.[0]) return;
+  handleCustomRTE(block, block.children[0]);
 }

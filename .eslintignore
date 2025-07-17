@@ -2,3 +2,4 @@ helix-importer-ui
 *.min.js
 *.min.css
 scripts/
+styles/prism.css

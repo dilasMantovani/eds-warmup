@@ -1,4 +1,4 @@
-import { decodeBase64, handleRichTextElement } from "../../scripts/scripts.js";
+import { decodeBase64 } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const title = block?.children[0];
@@ -13,23 +13,23 @@ export default function decorate(block) {
   id.remove();
   icon.remove();
   iconType.remove();
-  
-  const headerElement = title?.querySelector("div:last-child");
+
+  const headerElement = title?.querySelector('div:last-child');
   if (id) {
     headerElement?.setAttribute('id', idText);
   }
 
   headerElement.innerHTML = `${decodeBase64(headerElement?.textContent?.trim())}`;
 
-  const sanitizedHeader = headerElement.querySelector("h1,h2,h3,h4,h5,h6");
-  headerElement.textContent="";
-  headerElement.append(sanitizedHeader)
+  const sanitizedHeader = headerElement.querySelector('h1,h2,h3,h4,h5,h6');
+  headerElement.textContent = '';
+  headerElement.append(sanitizedHeader);
 
   if (iconText) {
     const iconElement = document.createElement('i');
     iconElement.classList.add(`fa-${iconText}`);
     if (iconTypeText) iconElement.classList.add(`fa-${iconTypeText}`);
-    
+
     sanitizedHeader.insertBefore(iconElement, sanitizedHeader.firstChild);
   }
 }

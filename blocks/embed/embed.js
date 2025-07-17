@@ -5,7 +5,7 @@ export default function decorate(block) {
   const id = block.children[1];
   if (id) {
     id.remove();
-    block.setAttribute("id", id?.textContent?.trim())
+    block.setAttribute('id', id?.textContent?.trim());
   }
   let securityCheckPassed = true;
   const forbiddenTags = ['SCRIPT', 'STYLE'];
@@ -13,33 +13,34 @@ export default function decorate(block) {
 
   const element = htmlToElement(code);
 
-  if (forbiddenTags.includes(element.tagName)) {
-    securityCheckPassed = false;
-  } else {
-    Array.from(element.children).forEach((child) => {
-      if (forbiddenTags.includes(child.tagName)) {
-        securityCheckPassed = false;
-      }
-    });
-  }
-
-  if (element.tagName === 'IFRAME') {
-    const iframeSrc = element.src;
-    const correspondingItems = allowedHostsForIframe.filter((host) => iframeSrc.includes(host));
-    if (correspondingItems.length === 0) {
+  if (element) {
+    if (forbiddenTags.includes(element.tagName)) {
       securityCheckPassed = false;
-    }
-  } else {
-    Array.from(element.children).forEach((child) => {
-      if (child.tagName === 'IFRAME') {
-        const iframeSrc = child.src;
-        console.log('iframeSrc', iframeSrc);
-        const correspondingItems = allowedHostsForIframe.filter((host) => iframeSrc.includes(host));
-        if (correspondingItems.length === 0) {
+    } else {
+      Array.from(element.children).forEach((child) => {
+        if (forbiddenTags.includes(child.tagName)) {
           securityCheckPassed = false;
         }
+      });
+    }
+
+    if (element && element.tagName === 'IFRAME') {
+      const iframeSrc = element.src;
+      const correspondingItems = allowedHostsForIframe.filter((host) => iframeSrc.includes(host));
+      if (correspondingItems.length === 0) {
+        securityCheckPassed = false;
       }
-    });
+    } else {
+      Array.from(element.children).forEach((child) => {
+        if (child.tagName === 'IFRAME') {
+          const iframeSrc = child.src;
+          const correspondingItems = allowedHostsForIframe.filter((host) => iframeSrc.includes(host));
+          if (correspondingItems.length === 0) {
+            securityCheckPassed = false;
+          }
+        }
+      });
+    }
   }
 
   if (securityCheckPassed) {

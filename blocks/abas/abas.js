@@ -2,9 +2,9 @@ import { decodeBase64, htmlToElement } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const id = block?.children[0];
-  if (id && id?.querySelectorAll("div")?.length < 3) {
+  if (id && id?.querySelectorAll('div')?.length < 3) {
     id.remove();
-    block.setAttribute("id", id?.textContent?.trim())
+    block.setAttribute('id', id?.textContent?.trim());
   }
 
   const tabs = [];
@@ -18,13 +18,9 @@ export default function decorate(block) {
     contentElements.forEach((paragraph) => {
       if (paragraph.textContent && paragraph.textContent.trim()) {
         const richtextDiv = paragraph.closest('div[data-aue-type="richtext"]');
-        if (richtextDiv) {
-        } else {
-          try {
-            const decodedContent = decodeBase64(paragraph.textContent.trim());
-            paragraph.outerHTML = decodedContent;
-          } catch (e) {
-          }
+        if (!richtextDiv) {
+          const decodedContent = decodeBase64(paragraph.textContent.trim());
+          paragraph.outerHTML = decodedContent;
         }
       }
     });
@@ -38,9 +34,8 @@ export default function decorate(block) {
   <div class="abas-header">
       <ul>
           ${tabs?.map((tab, index) => `<li>
-                          <a role="tab" index="${index}" class="${index == 0 ? 'active' : ''}">${tab?.title}</a>
-                      </li>`)?.join('')
-}
+                          <a role="tab" index="${index}" class="${index === 0 ? 'active' : ''}">${tab?.title}</a>
+                      </li>`)?.join('')}
       </ul>
   </div>
 `);

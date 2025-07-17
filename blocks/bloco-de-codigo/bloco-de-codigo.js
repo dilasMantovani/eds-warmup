@@ -3,11 +3,12 @@ import { isInEditor } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const language = block?.children[1]?.textContent?.trim();
+  // eslint-disable-next-line radix
   const lineNumber = parseInt(block?.children[2]?.textContent?.trim() || 1);
   const id = block?.children[3];
   if (id) {
     id.remove();
-    block.setAttribute("id", id?.textContent?.trim())
+    block.setAttribute('id', id?.textContent?.trim());
   }
 
   block?.children[1]?.remove();
@@ -46,7 +47,6 @@ export default function decorate(block) {
       if (window.Prism) {
         window.Prism.highlightAll();
         clearInterval(intervalId);
-        console.log('highlighted code block');
       }
     }, 1500);
   }

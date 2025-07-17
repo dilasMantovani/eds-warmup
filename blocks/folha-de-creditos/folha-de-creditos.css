@@ -1,5 +1,5 @@
 .folha-de-creditos .capa {
-  background-image: url(https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png), linear-gradient(45deg, #007ABF, #0055A5), linear-gradient(180deg, #fff, #fff);
+  background-image: url("https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png"), linear-gradient(45deg, #007ABF, #0055A5), linear-gradient(180deg, #fff, #fff);
   overflow: hidden;
   position: relative;
   min-height: 60vh;
@@ -14,70 +14,84 @@
   margin-left: -50vw;
   margin-right: -50vw;
 }
+
 .folha-de-creditos .capa.isInEditor {
   min-height: unset;
 }
+
 .folha-de-creditos .capa__title {
   padding: 0 16px;
   max-width: 1200px;
   margin: auto;
 }
+
 .folha-de-creditos .capa__title h1 {
   font-size: 4rem;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
 }
-@media (max-width: 767px) {
+
+@media (width <= 767px) {
   .folha-de-creditos .capa__title h1 {
     font-size: 2rem;
   }
 }
+
 @media (width >= 600px) {
   .folha-de-creditos .capa__title {
     padding: 0 32px;
   }
 }
+
 .folha-de-creditos .folha {
   min-height: 200px;
-  box-shadow: 0 30px 50px 0 rgba(1, 1, 1, 0.15);
+  box-shadow: 0 30px 50px 0 rgb(1 1 1 / 15%);
   transform: translateY(-100px);
   z-index: 100;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 90px;
   font-size: 18px;
 }
+
 .folha-de-creditos .folha .direitosReservados, .folha-de-creditos .folha .informacoesDosResponsaveis, .folha-de-creditos .folha .rodapeFolhaDeCreditos {
   text-align: center;
   word-break: break-word;
 }
+
 .folha-de-creditos .folha .disclaimer__title {
   padding-left: 10px;
   border-left: solid 6px #007ABF;
 }
+
 .folha-de-creditos .folha .disclaimer__title p {
   font-size: 1.25rem;
   font-weight: bolder;
 }
+
 .folha-de-creditos .folha .fichaCatalografica__title {
   font-weight: bolder;
 }
+
 .folha-de-creditos .folha .fichaCatalografica__content {
   border-top: 1px solid #4C4C4C;
   padding: 0 1.5rem;
   line-height: 1.88;
 }
+
 .folha-de-creditos .folha .fichaCatalografica__cdd {
   text-align: right;
   border-bottom: 1px solid #4C4C4C;
 }
-@media (max-width: 767px) {
+
+@media (width <= 767px) {
   .folha-de-creditos .capa {
     min-height: 100vh;
     padding-top: 0;
     padding-bottom: 0;
   }
+
   .folha-de-creditos .folha {
     transform: unset;
     padding: 30px;
@@ -87,5 +101,5 @@
 }
 
 .folha-de-creditos.deep-purple .capa {
-  background-image: url(https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png), linear-gradient(45deg, #d9c5f5, #b982ff), linear-gradient(180deg, #fff, #fff);
+  background-image: url("https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png"), linear-gradient(45deg, #d9c5f5, #b982ff), linear-gradient(180deg, #fff, #fff);
 }

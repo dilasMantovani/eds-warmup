@@ -18,7 +18,7 @@
 }
 
 @font-face {
-  font-family: "Orbitron-Bold";
+  font-family: Orbitron-Bold;
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -27,7 +27,7 @@
 } 
 
 @font-face {
-  font-family: "Orbitron-Regular";
+  font-family: Orbitron-Regular;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
