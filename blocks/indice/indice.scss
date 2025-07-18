@@ -4,7 +4,6 @@
      background-color: #b5d4ed;
      overflow: hidden;
      position: relative;
-     min-height: 60vh;
      display: flex;
      align-items: center;
      background-attachment: fixed;
@@ -12,9 +11,8 @@
      padding-top: 80px;
      width: 100vw;
      left: 50%;
-     right: 50%;
+     margin: 0;
      margin-left: -50vw;
-     margin-right: -50vw;
 
      &.isInEditor {
        min-height: unset;
@@ -23,15 +21,14 @@
      &__box {
        background-color: #fff;
        width: 70%;
-      //  min-height: 60vh;
        max-width: 1200px;
        height: auto;
+       margin: 0 auto;
        margin-top: 60px !important;
        margin-bottom: 60px !important;
        border-radius: 10px;
        box-shadow: 1px 2px 18px 12px rgba(60, 88, 112, 0.21);
        padding: 1rem;
-       margin: 0 auto;
        display: grid;
        grid-template-columns: 1fr 1fr;
        gap: 2rem;
@@ -124,6 +121,7 @@
        &__box {
          &__content {
            &__title {
+
              h1,
              h2,
              h3,

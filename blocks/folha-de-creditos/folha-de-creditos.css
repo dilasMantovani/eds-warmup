@@ -6,14 +6,11 @@
   align-items: center;
   padding-bottom: 100px;
   padding-top: 80px;
-  margin: 0 -16px;
   min-height: 20rem;
-}
-
-@media (width >= 600px) {
-  .folha-de-creditos .capa {
-    margin: 0 -32px;
-  }
+  width: 100vw;
+  left: 50%;
+  margin: 0;
+  margin-left: -50vw;
 }
 .folha-de-creditos .capa.isInEditor {
   min-height: unset;
@@ -51,7 +48,9 @@
   padding: 90px;
   font-size: 18px;
 }
-.folha-de-creditos .folha .direitosReservados, .folha-de-creditos .folha .informacoesDosResponsaveis, .folha-de-creditos .folha .rodapeFolhaDeCreditos {
+.folha-de-creditos .folha .direitosReservados,
+.folha-de-creditos .folha .informacoesDosResponsaveis,
+.folha-de-creditos .folha .rodapeFolhaDeCreditos {
   text-align: center;
   word-break: break-word;
 }

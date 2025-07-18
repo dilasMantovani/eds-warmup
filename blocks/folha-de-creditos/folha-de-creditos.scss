@@ -1,5 +1,5 @@
-.folha-de-creditos{
-  .capa{
+.folha-de-creditos {
+  .capa {
     background-image: url(https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png), linear-gradient(45deg, #007ABF, #0055A5), linear-gradient(180deg, #fff, #fff);
     overflow: hidden;
     position: relative;
@@ -7,89 +7,103 @@
     align-items: center;
     padding-bottom: 100px;
     padding-top: 80px;
-    margin: 0 -16px;
     min-height: 20rem;
-    @media (width >= 600px) {
-      margin: 0 -32px;
+    width: 100vw;
+    left: 50%;
+    margin: 0;
+    margin-left: -50vw;
+
+    &.isInEditor {
+      min-height: unset;
     }
 
-    &.isInEditor{
-      min-height: unset; 
-    }
-    
-    &__title{
+    &__title {
       padding: 0 16px;
       max-width: 1200px;
       margin: auto;
 
-      h1{
+      h1 {
         font-size: 4rem;
         color: #ffffff;
         text-align: center;
         text-transform: uppercase;
         font-weight: 100;
+
         @media (max-width: 767px) {
           font-size: 2rem;
         }
       }
-      @media (width >= 600px) {
-          padding: 0 32px;
+
+      @media (width >=600px) {
+        padding: 0 32px;
       }
     }
   }
-  .folha{
+
+  .folha {
     min-height: 200px;
     box-shadow: 0 30px 50px 0 rgba(1, 1, 1, 0.15);
     transform: translateY(-100px);
     z-index: 100;
     background-color: #ffffff;
     padding: 90px;
-    font-size: 18px;;
-    .direitosReservados,.informacoesDosResponsaveis,.rodapeFolhaDeCreditos{
+    font-size: 18px;
+    ;
+
+    .direitosReservados,
+    .informacoesDosResponsaveis,
+    .rodapeFolhaDeCreditos {
       text-align: center;
       word-break: break-word;
     }
-    .disclaimer{
-      &__title{
+
+    .disclaimer {
+      &__title {
         padding-left: 10px;
         border-left: solid 6px #007ABF;
-        p{
+
+        p {
           font-size: 1.25rem;
           font-weight: bolder;
         }
       }
     }
-    .fichaCatalografica{
-      &__title{
+
+    .fichaCatalografica {
+      &__title {
         font-weight: bolder;
       }
-      &__content{
+
+      &__content {
         border-top: 1px solid #4C4C4C;
         padding: 0 1.5rem;
         line-height: 1.88;
       }
-      &__cdd{
+
+      &__cdd {
         text-align: right;
         border-bottom: 1px solid #4C4C4C;
       }
     }
   }
+
   @media (max-width: 767px) {
-    .capa{
+    .capa {
       padding-top: 0;
       padding-bottom: 0;
     }
-    .folha{
+
+    .folha {
       transform: unset;
       padding: 30px;
       max-width: 540px;
       margin: 0 auto;
     }
   }
-} 
+}
 
-.folha-de-creditos.deep-purple{
-  .capa{
+.folha-de-creditos.deep-purple {
+  .capa {
     background-image: url(https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png), linear-gradient(45deg, #d9c5f5, #b982ff), linear-gradient(180deg, #fff, #fff);
   }
 }

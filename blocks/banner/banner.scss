@@ -9,10 +9,10 @@
     padding-bottom: 100px;
     padding-top: 80px;
     background-size: cover;
-    margin: 0 -16px;
-    @media (width >= 600px) {
-      margin: 0 -32px;
-    }
+    width: 100vw;
+    left: 50%;
+    margin: 0;
+    margin-left: -50vw;
 
     &.isInEditor {
       min-height: unset;
@@ -31,8 +31,6 @@
     &__box {
       max-width: 1200px;
       height: auto;
-      margin-top: 60px;
-      margin-bottom: 60px;
       padding: 1rem;
       margin: 0 auto;
       align-items: center;
@@ -60,8 +58,8 @@
   }
 }
 
-.banner.deep-purple{
-  .capa{
-        background-image: url("https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png"), linear-gradient(45deg, #001f50 30%, #b982ff 100%);
+.banner.deep-purple {
+  .capa {
+    background-image: url("https://publish-p136102-e1403896.adobeaemcloud.com/content/dam/adobe-cms/pattern-ld.png"), linear-gradient(45deg, #001f50 30%, #b982ff 100%);
   }
 }
