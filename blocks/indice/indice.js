@@ -6,7 +6,8 @@ function handleIndiceItem(indiceItem) {
   const anchor = document.createElement('a');
 
   anchor.setAttribute('href', `#${indiceItem?.linkTo}`);
-  anchor.setAttribute('target', '_self');
+  if (window.self !== window.top) anchor.setAttribute('target', '_parent');
+  else anchor.setAttribute('target', '_self');
 
   const iconElement = htmlToElement('<i class="fa-solid fa-angle-right"></i>');
   const title = htmlToElement(`<div><p>${indiceItem?.title}</p></div>`);
