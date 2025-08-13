@@ -17,17 +17,14 @@
   --light-color: #eee;
   --dark-color: #ccc;
   --text-color: #3a3a3a;
-
   /* fonts */
   --body-font-family: "Open Sans", roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: "Open Sans", "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
-
   /* body sizes */
   --body-font-size-m: 22px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
-
   /* heading sizes */
   --heading-font-size-xxl: 48px;
   --heading-font-size-xl: 40px;
@@ -35,7 +32,6 @@
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
-
   /* nav height */
   --nav-height: 64px;
 }
@@ -46,8 +42,7 @@
   ascent-override: 95%;
   src: local("Arial");
 }
-
-@media (width >=900px) {
+@media (width >= 900px) {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
@@ -57,7 +52,6 @@
     --heading-font-size-xs: 22px;
   }
 }
-
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
@@ -75,6 +69,10 @@ body {
 
 body.appear {
   display: block;
+}
+
+.block {
+  scroll-margin-top: 150px;
 }
 
 header {
@@ -142,10 +140,6 @@ main pre {
 }
 
 /* links */
-a {
-  overflow-wrap: break-word;
-}
-
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
@@ -154,6 +148,10 @@ a:any-link {
 a:hover {
   text-decoration: underline;
   color: var(--link-hover-color);
+}
+
+a {
+  overflow-wrap: break-word;
 }
 
 main img {
@@ -178,19 +176,17 @@ main .section {
   padding: 0 16px;
 }
 
-@media (width >=600px) {
+@media (width >= 600px) {
   main .section {
     padding: 0 32px;
   }
 }
-
-@media (width >=900px) {
-  .section>div {
+@media (width >= 900px) {
+  .section > div {
     max-width: 1200px;
     margin: auto;
   }
 }
-
 /* section metadata */
 main .section.light,
 main .section.highlight {
@@ -208,11 +204,9 @@ main .section.columns-two {
   max-width: 1200px;
   margin: auto;
 }
-
-main .section.columns-two>* {
+main .section.columns-two > * {
   margin: 0;
 }
-
 main .section.columns-three {
   display: grid;
   gap: 10px;
@@ -220,8 +214,7 @@ main .section.columns-three {
   max-width: 1200px;
   margin: auto;
 }
-
-main .section.columns-three>* {
+main .section.columns-three > * {
   margin: 0;
 }
 
@@ -241,9 +234,7 @@ main .section.hidden {
   top: 50%;
   left: 50%;
 }
-
-.loader-15::after,
-.loader-15::before {
+.loader-15:after, .loader-15:before {
   content: "";
   position: absolute;
   width: inherit;
@@ -251,38 +242,30 @@ main .section.hidden {
   background: inherit;
   animation: inherit;
 }
-
-.loader-15::before {
+.loader-15:before {
   right: 0.5em;
   animation-delay: 0.2s;
 }
-
-.loader-15::after {
+.loader-15:after {
   left: 0.5em;
   animation-delay: 0.6s;
 }
-
 .loader-15.loading {
   display: block;
 }
 
 @keyframes loader-15 {
-
-  0%,
-  100% {
+  0%, 100% {
     box-shadow: 0 0 0 currentcolor, 0 0 0 currentcolor;
   }
-
   50% {
     box-shadow: 0 -0.25em 0 currentcolor, 0 0.25em 0 currentcolor;
   }
 }
-
 .loadable {
   opacity: 0.1;
 }
-
-.loadable::before {
+.loadable:before {
   content: "";
   width: 100%;
   height: 100%;
@@ -292,13 +275,10 @@ main .section.hidden {
 }
 
 .error-notice {
-  margin: 5px;
-
-  /* Make sure to keep some distance from all sides */
+  margin: 5px; /* Make sure to keep some distance from all sides */
 }
-
 .error-notice .oaerror {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 20px;
   border: 1px solid #eee;
   border-left-width: 5px;
@@ -307,43 +287,31 @@ main .section.hidden {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
 }
-
 .error-notice .oaerror.danger {
-  border-left-color: #d9534f;
-
-  /* Left side border color */
-  background-color: rgb(217 83 79 / 10%);
-
-  /* Same color as the left border with reduced alpha to 0.1 */
+  border-left-color: #d9534f; /* Left side border color */
+  background-color: rgba(217, 83, 79, 0.1); /*Same color as the left border with reduced alpha to 0.1*/
 }
-
 .error-notice .oaerror.danger strong {
   color: #d9534f;
 }
-
 .error-notice .oaerror.warning {
   border-left-color: #f0ad4e;
-  background-color: rgb(240 173 78 / 10%);
+  background-color: rgba(240, 173, 78, 0.1);
 }
-
 .error-notice .oaerror.warning strong {
   color: #f0ad4e;
 }
-
 .error-notice .oaerror.info {
   border-left-color: #5bc0de;
-  background-color: rgb(91 192 222 / 10%);
+  background-color: rgba(91, 192, 222, 0.1);
 }
-
 .error-notice .oaerror.info strong {
   color: #5bc0de;
 }
-
 .error-notice .oaerror.success {
   border-left-color: #2b542c;
-  background-color: rgb(43 84 44 / 10%);
+  background-color: rgba(43, 84, 44, 0.1);
 }
-
 .error-notice .oaerror.success strong {
   color: #2b542c;
 }
