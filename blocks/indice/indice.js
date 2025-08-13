@@ -5,7 +5,10 @@ import {
 function handleIndiceItem(indiceItem) {
   const anchor = document.createElement('a');
 
-  if (indiceItem?.linkTo) anchor.setAttribute('onclick', `(function scrollIntoView() {document.getElementById('${indiceItem?.linkTo}').scrollIntoView();})();`);
+  if (indiceItem?.linkTo) anchor.setAttribute('onclick', `(function scrollIntoView() {
+    document.getElementById('${indiceItem?.linkTo}').scrollIntoView();
+    window.parent.postMessage(['scrollTo', document.getElementById('${indiceItem?.linkTo}').getBoundingClientRect().top], '*');
+    })();`);
   if (window.self !== window.top) anchor.setAttribute('target', '_parent');
   else anchor.setAttribute('target', '_self');
 
