@@ -271,3 +271,26 @@ export function handleRichTextElement(textElement) {
 export function inIFrame() {
   return window.location !== window.parent.location
 }
+
+window.addEventListener('message', function (e) {
+  console.log(e.data)
+  var eventName = e?.data?.event;
+  var data = e?.data?.payload;
+  if (eventName === "set_navbar_height") {
+    let counter = 0
+    const intervalId = setInterval(() => {
+      if (counter >= 3) {
+        clearInterval(intervalId);
+      }
+      this.document.querySelectorAll('.block')?.forEach(element => {
+        element.setAttribute('style', `scroll-margin-top: ${data}px`);
+      });
+  
+      this.document.querySelector(".img-modal img")?.setAttribute('style', `scroll-margin-top: ${data}px`);
+      this.document.querySelector(".modal-content")?.setAttribute('style', `scroll-margin-top: ${data}px`);
+      counter++;
+      console.log(counter)
+
+    }, 1000);
+  }
+}, false);

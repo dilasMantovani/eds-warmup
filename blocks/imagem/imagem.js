@@ -92,6 +92,10 @@ export default function decorate(block) {
       modalElement.style.display = 'block';
       setTimeout(() => {
         modalElement.style.opacity = 1;
+        const img = modalElement.querySelector("img");
+        img.scrollIntoView();
+
+        window.parent.postMessage(['scrollTo', img.getBoundingClientRect().top], '*');
       }, 100);
     });
 
@@ -99,6 +103,8 @@ export default function decorate(block) {
     modalElement.addEventListener('click', (e) => {
       if (e.target === modalElement || e.target?.className.includes('fa-xmark')) {
         modalElement.style.opacity = 0;
+        block.scrollIntoView();
+        window.parent.postMessage(['scrollTo', block.getBoundingClientRect().top], '*');
         setTimeout(() => {
           modalElement.style.display = 'none';
         }, 500);

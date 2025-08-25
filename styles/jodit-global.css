@@ -3,7 +3,7 @@
 .jodit-toolbar,
 .jodit-ui-button,
 .jodit-toolbar-button {
-  font-family: Orbitron-Regular;
+  font-family: "Orbitron-Regular";
 }
 
 .btn-edit {
@@ -11,7 +11,6 @@
     color: #fff !important;
     font-size: 1rem !important;
   }
-
   background-color: #007ABF !important;
   border-color: #007ABF !important;
   text-decoration: none;
@@ -21,6 +20,7 @@
   vertical-align: middle;
   user-select: none;
   padding: 0.375rem 0.75rem;
+
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -32,5 +32,5 @@
 }
 
 .btn-edit:focus {
-  box-shadow: 0 0 0 0.2rem rgb(38 142 201 / 50%);
+  box-shadow: 0 0 0 0.2rem rgba(38, 142, 201, 0.5);
 } 

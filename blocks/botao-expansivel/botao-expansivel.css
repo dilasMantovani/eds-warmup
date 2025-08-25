@@ -1,7 +1,6 @@
 .botao-expansivel {
   margin-top: 40px;
 }
-
 .botao-expansivel .btn-modal {
   color: #fff;
   background-color: #007ABF;
@@ -18,16 +17,13 @@
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
 .botao-expansivel .btn-modal:hover {
   background-color: #006299;
   border-color: #00598c;
 }
-
 .botao-expansivel .btn-modal:focus {
-  box-shadow: 0 0 0 0.2rem rgb(38 142 201 / 50%);
+  box-shadow: 0 0 0 0.2rem rgba(38, 142, 201, 0.5);
 }
-
 .botao-expansivel .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -36,15 +32,13 @@
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0 0 0); /* Fallback color */
-  background-color: rgb(0 0 0 / 80%); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
   opacity: 0;
   transition: opacity 500ms ease;
   z-index: 20;
-
   /* Modal Content */
 }
-
 .botao-expansivel .modal-content {
   background-color: #fefefe;
   border-radius: 3px;
@@ -61,17 +55,14 @@
   max-height: 90%;
   overflow-y: auto;
 }
-
 .botao-expansivel .modal-content.active {
   top: 50%;
 }
-
 .botao-expansivel .modal-content-header {
   position: relative;
   border-bottom: 1px solid #dee2e6;
   padding: 15px;
 }
-
 .botao-expansivel .modal-content-header-title {
   margin: 0;
   font-family: "Open Sans";
@@ -80,7 +71,6 @@
   font-weight: 500;
   padding-right: 20px;
 }
-
 .botao-expansivel .modal-content-header i {
   position: absolute;
   top: 20px;
@@ -89,11 +79,9 @@
   color: #7f7f7f;
   cursor: pointer;
 }
-
 .botao-expansivel .modal-content-header i:hover {
   color: #404040;
 }
-
 .botao-expansivel .modal-content-body {
   padding: 15px;
   font-size: 18px;
@@ -101,11 +89,9 @@
   color: #3a3a3a;
   border-bottom: 1px solid #dee2e6;
 }
-
 .botao-expansivel .modal-content-body p {
   margin: 0;
 }
-
 .botao-expansivel .modal-content-body-img-wrapper p {
   text-align: center;
   margin-top: 0;
@@ -113,7 +99,6 @@
   color: #6c757d;
   font-size: 80%;
 }
-
 .botao-expansivel .modal-content-footer {
   padding: 15px;
 }
