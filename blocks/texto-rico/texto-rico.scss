@@ -25,6 +25,21 @@
             vertical-align: top;
         }
     }
+
+    figure:has(img) {
+        display: grid;
+        justify-content: center;
+        figcaption {
+            text-align: center;
+            font-size: 80%;
+            color: #6c757d;
+            margin: 10px 0;
+            line-height: 1;
+        }
+        img {
+            margin: 0 auto;
+        }
+    }
 }
 
 .texto-rico.deep-purple {
