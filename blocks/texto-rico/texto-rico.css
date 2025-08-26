@@ -4,14 +4,6 @@
   border-collapse: collapse;
   font-size: 18px;
 }
-.texto-rico table thead tr {
-  background-color: #dbe3ec;
-  font-weight: bold;
-}
-.texto-rico table:not(:has(thead)) tr:first-child {
-  background-color: #dbe3ec;
-  font-weight: bold;
-}
 .texto-rico table td {
   border: 1px solid #939393;
   padding: 0.75rem;
