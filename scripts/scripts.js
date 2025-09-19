@@ -272,6 +272,18 @@ export function inIFrame() {
   return window.location !== window.parent.location
 }
 
+export function createOptimizedPicture(pic) {
+  pic.querySelectorAll('source, img').forEach((el) => {
+    const attr = el.tagName === 'SOURCE' ? 'srcset' : 'src';
+    const val = el.getAttribute(attr);
+    if (val && /\bformat=webply\b/.test(val)) {
+      el.setAttribute(attr, val.replace(/\bformat=webply\b/g, 'format=webp'));
+    }
+  });
+  return pic;
+}
+
+
 window.addEventListener('message', function (e) {
   console.log(e.data)
   var eventName = e?.data?.event;
@@ -285,7 +297,7 @@ window.addEventListener('message', function (e) {
       this.document.querySelectorAll('.block')?.forEach(element => {
         element.setAttribute('style', `scroll-margin-top: ${data}px`);
       });
-  
+
       this.document.querySelector(".img-modal img")?.setAttribute('style', `scroll-margin-top: ${data}px`);
       this.document.querySelector(".modal-content")?.setAttribute('style', `scroll-margin-top: ${data}px`);
       counter++;
@@ -294,3 +306,17 @@ window.addEventListener('message', function (e) {
     }, 1000);
   }
 }, false);
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  setTimeout(() => {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js';
+    document.head.appendChild(script);
+    window.MathJax = {
+      loader: { load: ['input/mml', 'output/chtml'] }, // Entrada MathML, saída HTML/CSS
+      startup: {
+        typeset: true // processa automaticamente ao carregar
+      }
+    };
+  }, 1000);
+});

@@ -100,9 +100,10 @@
               &:before{
                 display: none !important;
               }
-              img{
-                width: -webkit-fill-available;
+              img {
+                width: min(100%, 100vw);
                 max-width: 1260px;
+                height: auto;
               }
           }
           &-footer{

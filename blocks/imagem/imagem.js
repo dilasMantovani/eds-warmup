@@ -1,4 +1,4 @@
-import { randomString, htmlToElement } from '../../scripts/scripts.js';
+import { randomString, htmlToElement, createOptimizedPicture } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const image = block.children[0];
@@ -28,6 +28,9 @@ export default function decorate(block) {
   const pictureElement = image.querySelector('picture');
 
   if (!pictureElement) return;
+
+  const pic = createOptimizedPicture(pictureElement);
+  pictureElement.replaceWith(pic);
 
   if (titleText) {
     const imageTitleElement = document.createElement('p');
