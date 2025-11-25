@@ -1,7 +1,8 @@
 {
   "mappings": [
     "/content/eds-warmup/:/",
-    "/content/eds-warmup/redirects:/redirects.json"
+    "/content/eds-warmup/redirects:/redirects.json",
+    "/content/eds-warmup/headers:/.helix/headers.json"
   ],
   "includes": [
     "/content/eds-warmup/"
