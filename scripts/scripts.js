@@ -320,3 +320,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     };
   }, 1000);
 });
+
+if (window.top === window.self) {
+  // Não está dentro de iframe
+  document.body.innerHTML = 'Acesso proibido.';
+} else {
+  // Está dentro de iframe – validar domínio
+  const parentOrigin = document.referrer;
+
+  if (!parentOrigin.includes('https://main--adobe-cms--diegodiasvilt.aem.live')) {
+    document.body.innerHTML = 'Domínio não autorizado.';
+  }
+}
